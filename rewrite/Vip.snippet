@@ -1,0 +1,44 @@
+# >>>>>>>>>> ✅ 会员功能解锁 ✅ <<<<<<<<<
+# 京东比价
+;hostname = api.m.jd.com
+^https?://api\.m\.jd\.com/(client\.action|api)\?functionId=(wareBusiness|serverConfig|basicConfig|lite_wareBusiness|pingou_item) url script-response-body https://raw.githubusercontent.com/zwf234/rules/master/js/jd_price.js
+
+# Spotify会员
+;hostname = spclient.wg.spotify.com
+^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$ url script-response-body https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-proto.js
+
+# AdGuard会员
+;hostname = mobile-api.adguard.org
+^https?:\/\/mobile-api\.adguard\.org\/api\/.+\/ios_validate_receipt url script-response-body https://raw.githubusercontent.com/yqc007/QuantumultX/master/AdGuardProCrack.js
+
+# Nicegram会员
+;hostname = restore-access.indream.app
+https?:\/\/restore-access\.indream\.app\/restoreAccess\?id=\d{5,10} url echo-response text/json echo-response https://github.com/ddgksf2013/dev/raw/main/NicegramProCrack.js
+
+# 人人视频会员
+;hostname = api.hujuvod.com, api.qwapp.top
+^https?:\/\/api\.(hujuvod\.com|qwapp\.top)\/(user\/personal\/information|app\/drama\/page) url script-response-body https://raw.githubusercontent.com/chxm1023/Rewrite/main/renrenshipin.js
+
+# 百度网盘会员
+;hostname = *.baidu.com
+^https:\/\/pan\.baidu\.com\/rest\/.*\/membership\/user\?app_id url script-response-body https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.vip.js
+
+# 网易云音乐会员
+;hostname = *.music.163.com
+^http[s]?:\/\/.+music.+(player\/url|playlist|entrance|\/eapi\/search\/).*$ url script-request-header https://raw.githubusercontent.com/Yu9191/Rewrite/main/wangyy.js
+
+# 扫描全能王会员
+;hostname = *.intsig.net, *.camscanner.com
+^https?:\/\/.*\.(intsig\.net|camscanner\.com) url script-response-body https://raw.githubusercontent.com/chxm1023/Rewrite/main/CamScanner.js
+
+# 解锁New Bing
+;hostname = www.bing.com
+^https?://www.bing.com url request-header (\r\n)User-Agent:(?=.+(?:iPhone))(?!.+(?:BingSapphire|EdgiOS)).+(\r\n) request-header $1User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 16_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) EdgiOS/110.0.1587.54 Version/16.0 Mobile/15E148 Safari/604.1$2
+
+# bilibili解锁大会员
+;hostname = *.biliapi.*, *.bilibili.*
+
+
+
+
+hostname = spclient.wg.spotify.com, mobile-api.adguard.org, www.bing.com, restore-access.indream.app, api.hujuvod.com, api.qwapp.top, *.intsig.net, *.camscanner.com
