@@ -1,0 +1,109 @@
+# ---(Apple)---
+host, amp-api.podcasts.apple.com, proxy
+host, beta.music.apple.com, proxy
+host, books.itunes.apple.com, proxy
+host, lookup-api.apple.com, proxy
+host, radio.itunes.apple.com, proxy
+host-suffix, books.apple.com, proxy
+host-suffix, tv.apple.com, proxy
+host, gateway.icloud.com, proxy
+host-suffix, apple.news, proxy
+host, news-assets.apple.com, proxy
+host, news-client.apple.com, proxy
+host, news-client-search.apple.com, proxy
+host, news-edge.apple.com, proxy
+host, news-events.apple.com, proxy
+
+# > Testflight
+host, beta.apple.com, proxy
+host, testflight.apple.com, proxy
+
+# > Microsoft
+host, assets1.xboxlive.com, proxy
+host, assets2.xboxlive.com, proxy
+host, az416426.vo.msecnd.net, proxy
+host, az668014.vo.msecnd.net, proxy
+host-suffix, bing.com, proxy
+host-suffix, linkedin.com, proxy
+host-suffix, licdn.com, proxy
+host-suffix, msn.com, proxy
+host-suffix, skype.com, proxy
+host-suffix, aka.ms, proxy
+host-suffix, github.blog, proxy
+host-suffix, github.com, proxy
+host-suffix, github.io, proxy
+host-suffix, githubassets.com, proxy
+host-suffix, githubusercontent.com, proxy
+host-keyword, github, proxy
+host-suffix, streaming.mediaservices.windows.net, proxy
+host-suffix, microsoft.com, proxy
+host-suffix, office.com, proxy
+host-suffix, office365.com, proxy
+host-suffix, outlook.com, proxy
+host-suffix, live.com, proxy
+host-suffix, appcenter.ms, proxy
+
+# > Wikimedia Foundation
+host-suffix, mediawiki.org, proxy
+host-suffix, wikibooks.org, proxy
+host-suffix, wikidata.org, proxy
+host-suffix, wikileaks.org, proxy
+host-suffix, wikimedia.org, proxy
+host-suffix, wikimediafoundation.org, proxy
+host-suffix, wikinews.org, proxy
+host-suffix, wikipedia.org, proxy
+host-suffix, wikiquote.org, proxy
+host-suffix, wikisource.org, proxy
+host-suffix, wikiversity.org, proxy
+host-suffix, wikivoyage.org, proxy
+host-suffix, wiktionary.org, proxy
+
+# > Yahoo
+host-suffix, yahoo.com, proxy
+host-keyword, yahoo, proxy
+
+# > Notion
+host-suffix, notion-static.com, proxy
+host-suffix, notion.com, proxy
+host-suffix, notion.new, proxy
+host-suffix, notion.site, proxy
+host-suffix, notion.so, proxy
+
+# > Gitlab
+host-suffix, gitlab.io, proxy
+host-suffix, gitlab.com, proxy
+host-suffix, gitlab.net, proxy
+
+# > Talkatone
+host, ocsp.sectigo.com, proxy
+host, ocsp.r2m01.amazontrust.com, proxy
+host-suffix, tktn.be, proxy
+host-suffix, mobilefuse.com, proxy
+host-keyword, tktn, proxy
+ip-cidr, 69.46.75.0/22, proxy
+ip-cidr, 131.153.7.0/22, proxy
+ip-cidr, 104.244.53.0/22, proxy
+ip-cidr, 198.24.161.0/22, proxy
+ip-cidr, 205.164.56.0/22, proxy
+
+# > Signal
+host-suffix, signal.org, proxy
+host-suffix, hcaptcha.com, proxy
+
+# > Proton
+host-suffix, proton.me, proxy
+
+# > Tutanota
+host-suffix, tuta.com, proxy
+host-suffix, tutanota.com, proxy
+
+# > Deepl
+host-suffix, deepl.com, proxy
+
+# > Papago
+host-suffix, naver.com, proxy
+host-suffix, naver.net, proxy
+
+# > 代理工具
+host-keyword, nsloon, proxy
+host-keyword, quantumult, proxy
