@@ -35,6 +35,9 @@ host, info6.video.qq.com, reject
 host, wxsmsdy.video.qq.com, reject
 host, ios.video.mpush.qq.com, reject
 host, vv6.video.qq.com, reject
+host, ipv4.gdt.qq.com, reject
+host, qqadapt.qpic.cn, reject
+ip-cidr, 47.110.187.87/32, reject
 
 # > 知乎
 host, appcloud.zhihu.com, reject
