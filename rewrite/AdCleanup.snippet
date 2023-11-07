@@ -39,7 +39,7 @@
 # > 百度网盘
 ; hostname = *.baidu.com
 # 开屏广告
-^https?:\/\/pan\.baidu\.com\/api\/getsyscfg url script-response-body https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.vip.js
+^https?:\/\/pan\.baidu\.com\/api\/getsyscfg url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/baiduwangpan.js
 # 设置信息流
 ^https?:\/\/pan\.baidu\.com\/act\/v\d\/(bchannel|welfare)\/list url reject-200
 # 通用广告
@@ -78,24 +78,6 @@
 ^https:\/\/apimg\.qunliao\.info\/fastdfs6 url reject-200
 
 
-# > 大众点评
-; hostname = *.meituan.net, *.meituan.com, p0.pipi.cn
-^https:\/\/img\.meituan\.net\/adunion url reject-dict
-^https:\/\/img\.meituan\.net\/dpmobile\/.*\.(jpg|gif) url reject-img
-^https:\/\/img\.meituan\.net\/dpmobile\/.+93241\.png url reject-dict
-^https:\/\/(p0|p1)\.meituan\.net\/travelcube\/.*\.gif url reject-img
-^https:\/\/p1\.meituan\.net\/travelcube\/.*\.png\.webp@1284w_1l url reject-dict
-^https:\/\/p0\.pipi\.cn\/adAdmin\/.*\.(gif|png)\?imageMogr2 url reject-dict
-^https:\/\/p0\.meituan\.net\/wmbanner\/hs\/.*\.png url reject-dict
-^https:\/\/p0\.meituan\.net\/travelcube\/.+5024\.jpg url reject-200
-^https:\/\/p0\.meituan\.net\/travelcube\/.+8552\.png url reject-img
-^https:\/\/img\.meituan\.net\/dpmobile\/11ffd4fe3accb6955e8bd7722c0390101795790\.png url reject-dict
-# 悬浮窗
-^https:\/\/p0\.meituan\.net\/dprainbow\/.+44677\.png url reject-dict
-# 屏蔽更新
-^https:\/\/api-unionid\.meituan\.com\/unionid\/ios\/update url reject
-
-
 # > 滴滴出行
 ; hostname = res.xiaojukeji.com, img-ys011.didistatic.com, common.diditaxi.com.cn
 https?://res\.xiaojukeji\.com\/resapi\/activity\/mget url reject-dict
@@ -120,6 +102,8 @@ https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNot
 ^https:\/\/keapi\.fenbi\.com\/app\/iphone\/.*\/(small_banner|popup)\? url reject-dict
 # 课程直播提醒
 ^https:\/\/ke\.fenbi\.com\/iphone\/v3\/remind\/instant url reject-dict
+# 屏蔽更新提醒
+^https:\/\/tiku\.fenbi\.com\/activity\/app\/versions url reject-dict
 
 
 
@@ -142,24 +126,18 @@ https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNot
 # >>>>>>>>>>>>>>> ✅ J ✅ <<<<<<<<<<<<<<
 # > 京东
 ; hostname = *.jd.com, *.360buyimg.com
-# 禁开屏广告
-^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(start|uniformRecommend|queryMaterialAdverts) url reject-dict
-# 分类页广告
-^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=getCmsPromotionsListByCatelogyID url reject
+^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(personinfoBusiness|start) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/jd.js
+^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(stationPullService|uniformRecommend) url reject-dict
 # 首页净化
 ^https:\/\/img13\.360buyimg\.com\/imagetools\/jfs\/t1 url reject-dict
 ^https:\/\/m11\.360buyimg\.com\/babel\/jfs\/t1\/.*\/.*\.jpg!q70\.dpg url reject-200
-^https:\/\/m15\.360buyimg\.com\/mobilecms\/jfs\/t1\/(.*)\.gif url reject
-https:\/\/m15\.360buyimg\.com\/mobilecms\/s1242x130_jfs url reject
-^https:\/\/m15\.360buyimg\.com\/mobilecms\/jfs\/t1\/(.*)\.jpg!q70\.jpg url reject-200
-^https:\/\/rsap\.jd\.com\/popup\/getXviewInfo\/v3 url reject-dict
 ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=xview2Config url reject-dict
+^https:\/\/m15\.360buyimg\.com\/mobilecms\/jfs\/t1\/(205743|107580|193098|167390|101906|193424|178236|238097|227034|106387|180386|197928|197227|227034|233063|101698|185999|101906|108576|233708|223250|192016) url reject-dict
+^https:\/\/m15\.360buyimg\.com\/mobilecms\/s1125x939_jfs\/t1 url reject
 # 悬浮窗、直播小窗
 ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(getWidgetV1052|getShopHomeActivityInfo) url reject-dict
 ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(subCartCount|babelGetGuideTips) url reject-dict
-^https:\/\/(bdsp-x|dsp-x)\.jd\.com\/adx\/ url reject-200
 ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=getTabHomeInfo url reject-dict
-^https:\/\/m15\.360buyimg\.com\/mobilecms\/jfs\/t1\/101906 url reject
 # 禁京东DNS
 ^https:\/\/dns\.jd\.com\/ url reject
 # 禁京东升级
@@ -184,24 +162,29 @@ https:\/\/m15\.360buyimg\.com\/mobilecms\/s1242x130_jfs url reject
 
 
 # >>>>>>>>>>>>>>> ✅ M ✅ <<<<<<<<<<<<<<
-# > 美团外卖
+# > 美团
 ; hostname = *.meituan.net, *.meituan.com
-^http:\/\/wmapi\.meituan\.com\/api\/v7\/(loadInfo|openscreen|startpicture) url reject
-^https:\/\/img\.meituan\.net\/(bizad|brandCpt)\/.*\.(jpg|png) url reject
-^http:\/\/s3plus\.meituan\.net\/.*\/brandcpt-vedio\/.*\?time url reject
-# 悬浮窗
-^https:\/\/img\.meituan\.net\/(120.0.60|108.0.80)\/sgbanner url reject
-# 拼好饭群广告
-^https:\/\/s3plus\.meituan\.net\/v1\/mss_fcbac516ca7144f186a386530c070b8e\/zero-material-bucket\/1089\/5837_bbb783c4abb06e19d523976bdbc58d38\.js url reject-dict
-# 送餐页悬浮窗
-^http:\/\/p0\.meituan\.net\/.*/wmbanner\/.*\.gif url reject
-^https:\/\/s3plus\.meituan\.net\/v1\/.*\/adx\/.*\.gif url reject
-^https:\/\/p1\.meituan\.net\/0\.0\.80\/travelcube url reject-dict
-# 禁首页下拉
-^http:\/\/(p0|p1)\.meituan\.net\/wmbanner\/.*\.png url reject-200
-^http:\/\/p0\.meituan\.net\/0\.2532\.80\/wmbanner\/.*\.png url reject
+^http:\/\/wmapi\.meituan\.com\/api\/v7\/(loadInfo|openscreen|startpicture)\? url reject-dict
+^https:\/\/flowplus\.meituan\.net\/v1\/mss_\w+\/linglong\/\d+\.jpg url reject
+^https:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg url reject-dict
+^https:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/(brandcpt-vedio|waimai-alita)\/\w+\.zip$ url reject-dict
+^https:\/\/game\.meituan\.com\/mgc\/gamecenter\/ad url reject
+#悬浮小窗
+^https:\/\/(p0|p1)\.meituan\.net\/(linglong|scarlett)\/\w+\.gif url reject
+^https:\/\/p1\.meituan\.net\/travelcube\/\w+\.gif url reject
+^https:\/\/p0\.meituan\.net\/travelcube\/\w+\.png\.webp@50w_50h_1e_1l url reject
+^https:\/\/p0\.meituan\.net\/linglong\/\w+\.png\.webp@200w_200h_1e_1l url reject
+^https:\/\/p1\.meituan\.net\/0\.0\.80\/travelcube\/\w+\.png\.webp url reject
+# 外卖送餐页悬浮窗
+^https:\/\/p0\.meituan\.net\/60\.0\.60\/wmbanner\/\w+\.gif url reject
+^https:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/adx\/\w+\.gif url reject
+# 外卖页下拉
+^https:\/\/(p0|p1)\.meituan\.net\/0\.2532\.80\/wmbanner\/\w+\.png\.webp url reject-200
+# 月付页下拉
+^https:\/\/mgm\.meituan\.com\/marketing\/unLoginapi\/pgy_sdk\/ad\/batchAdExchange url reject-200
+# 屏蔽更新
+^https:\/\/api-unionid\.meituan\.com\/unionid\/ios\/update url reject
 # 禁https dns
-^http:\/\/103\.37\.152\.15\/query url reject
 ^http:\/\/103\.37\.155\.60\/fetch url reject
 
 
@@ -216,6 +199,8 @@ https:\/\/m15\.360buyimg\.com\/mobilecms\/s1242x130_jfs url reject
 ^https:\/\/static(.*)\.pddpic\.com\/assets\/js\/mobile-dc\/DcSaveMoneyTreasure url reject-dict
 # 视频小窗
 ^https:\/\/m\.pinduoduo\.net\/vlayer_tab_popup\.html url reject
+# 聊天界面 多多买菜横幅
+#^https:\/\/commimg(.*)\.pddpic\.com\/flow-banner-entrance url reject
 # 营销小窗
 ^http:\/\/video(.*)\.pddpic\.com\/tower-video\/.*\.float url reject-dict
 ^http:\/\/video(.*)\.(pddpic|pddugc)\.com\/(tower-video|tower-video-b|tower-video-side|tower-video-side-b)\/.*\.highlights url reject-dict
@@ -228,8 +213,6 @@ https:\/\/m15\.360buyimg\.com\/mobilecms\/s1242x130_jfs url reject
 ^http:\/\/video(.*)\.pddpic\.com\/i1 url reject-dict
 ^http:\/\/.*/live-adapt\.pddpic\.com\/live url reject-dict
 ^http:\/\/live(.*)-adapt\.(pddpic|pddugc)\.com\/live url reject-dict
-# 聊天界面 多多买菜横幅
-^https:\/\/commimg(.*)\.pddpic\.com\/flow-banner-entrance url reject-img
 # 多多买菜 开屏广告
 ^https:\/\/mobile\.yangkeduo\.com\/proxy\/api\/api\/express\/post\/waybill\/red_packet\/goods_list$ url response-body "list":\[.+\] response-body "list":[]
 # 屏蔽升级
@@ -245,22 +228,12 @@ https:\/\/m15\.360buyimg\.com\/mobilecms\/s1242x130_jfs url reject
 # >>>>>>>>>>>>>>> ✅ Q ✅ <<<<<<<<<<<<<<
 # > QQ屏蔽升级提醒
 ; host = *.gdtimg.com
-^https:\/\/public\.gdtimg\.com\/ams-web\/public\/tangram-report url reject
+^https:\/\/public\.gdtimg\.com\/ams-web\/public\/tangram-report url reject-dict
 
 
 # > QQ钱包
 ; hostname = *.qq.com
 ^https:\/\/ecdn\.qianbao\.qq\.com\/services\/walletHome\/.*\?height url reject-dict
-
-
-# > QQ音乐
-; hostname = *.qq.com, *.gtimg.cn
-^https:\/\/us\.l\.qq\.com\/exapp url reject
-^https?:\/\/y\.gtimg\.cn\/music\/common\/upload\/t_splash_info\/ url reject
-^https?:\/\/.+?\/music\/common\/upload\/t_splash_info\/ url reject
-^https?:\/\/y\.gtimg\.cn\/music\/common\/\/upload\/kg_ad/.*?\d{4}\.jpg url reject-img
-^https?:\/\/y\.gtimg\.cn\/music\/common\/upload\/targeted_ads url reject-img
-^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\/music\/common\/upload\/t_splash_info\/ url reject
 
 
 # > 全民K歌
@@ -291,10 +264,9 @@ https:\/\/m15\.360buyimg\.com\/mobilecms\/s1242x130_jfs url reject
 ^https:\/\/ssp\.api\.tappx\.com\/sdk\/v3 url reject
 
 
-# > 腾讯游戏
+# > 王者荣耀
 ; hostname = *.qq.com
-^https?:\/\/ssl\.kohsocialapp\.qq\.com:\d+\/game\/buttons url reject
-^https?:\/\/qt\.qq\.com\/lua\/mengyou\/get_splash_screen_info url reject
+^https:\/\/jiazhang\.qq\.com\/wap\/family\/dist\/msdk\/parent\.html url reject-dict
 
 
 # > 腾讯新闻
@@ -347,9 +319,15 @@ https:\/\/m15\.360buyimg\.com\/mobilecms\/s1242x130_jfs url reject
 ^https:\/\/ccmsupport-sz\.tenpay\.com\/cgi-bin\/common\/ccm_page_element.cgi url reject
 
 
+# 网易新闻
+; hostname = *.163.com
+^https:\/\/b-c\.m\.163\.com\/nc\/gl\/newsclient\/ft\?p url reject-dict
+
+
 # > 网易严选
 ; hostname = *.163.com
 ^https?:\/\/support\.you\.163\.com\/xhr\/boot\/getBootMedia\.json url reject
+^https:\/\/m\.you\.163\.com\/activity\/popWindow url reject-dict
 
 
 # > WIFI万能钥匙
@@ -361,28 +339,30 @@ https:\/\/m15\.360buyimg\.com\/mobilecms\/s1242x130_jfs url reject
 # >>>>>>>>>>>>>>> ✅ X ✅ <<<<<<<<<<<<<<
 # > 小红书
 ; hostname = *.xiaohongshu.com
+# 评论区图片画质增强
+https://edith.xiaohongshu.com/api/sns/v5/note/comment/list url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/xiaohongshu_img.js
 # > 视频播放页商品推广
-^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/widgets url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/redbook_json.js
+^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/widgets url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/xiaohongshu.js
 # > 短视频流去水印+强制开启保存功能
-^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/redtube\? url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/redbook_json.js
+^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/redtube\? url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/xiaohongshu.js
 # > 信息流视频去水印+强制开启保存功能
-^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/videofeed\? url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/redbook_json.js
+^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/videofeed\? url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/xiaohongshu.js
 # > 信息流图片去水印
-^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/feed\? url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/redbook_json.js
+^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/feed\? url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/xiaohongshu.js
 # > 开屏广告
-^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/system_service\/splash_config url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/redbook_json.js
+^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/system_service\/splash_config url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/xiaohongshu.js
 # > 首页瀑布流
-^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/homefeed\? url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/redbook_json.js
+^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/homefeed\? url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/xiaohongshu.js
 # > 启动处理
-^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/system_service\/config\? url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/redbook_json.js
+^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/system_service\/config\? url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/xiaohongshu.js
 # > 热搜发现
-^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/hot_list url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/redbook_json.js
+^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/hot_list url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/xiaohongshu.js
 # > 默认填词
-^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/hint url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/redbook_json.js
+^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/hint url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/xiaohongshu.js
 # > 去除购物
-^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/homefeed\/categories url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/redbook_json.js
+^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/homefeed\/categories url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/xiaohongshu.js
 # > 猜你想搜
-^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/trending url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/redbook_json.js
+^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/trending url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/xiaohongshu.js
 # > 通用广告请求
 ^https?:\/\/www\.xiaohongshu\.com\/api\/sns\/v\d\/(tag\/)?ads url reject-dict
 # > 隐私屏蔽
@@ -402,9 +382,9 @@ https:\/\/m15\.360buyimg\.com\/mobilecms\/s1242x130_jfs url reject
 # > YouTube
 ; hostname = *.googlevideo.com, youtubei.googleapis.com
 # 请求体
-^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence)\? url script-request-body https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/youtube-request.js
+^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence)\? url script-request-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/youtube_request.js
 # 响应体
-^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting)\? url script-response-body https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/youtube-response.js
+^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting)\? url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/youtube-response.js
 # 播放页广告
 ^https:\/\/[\w-]+\.googlevideo\.com\/initplayback\?.+&oad url reject
 
