@@ -20,7 +20,7 @@ https?:\/\/restore-access\.indream\.app\/restoreAccess\?id=\d{5,10} url echo-res
 ^https?:\/\/api\.(hujuvod\.com|qwapp\.top)\/(user\/personal\/information|app\/drama\/page) url script-response-body https://raw.githubusercontent.com/chxm1023/Rewrite/main/renrenshipin.js
 
 # 百度网盘会员
-;hostname = *.baidu.com
+;hostname = pan.baidu.com
 ^https:\/\/pan\.baidu\.com\/rest\/.*\/membership\/user\?app_id url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/baiduwangpan.js
 
 # 网易云音乐会员
@@ -37,4 +37,4 @@ https?:\/\/restore-access\.indream\.app\/restoreAccess\?id=\d{5,10} url echo-res
 
 
 
-hostname = api.tidal.com, spclient.wg.spotify.com, mobile-api.adguard.org, www.bing.com, restore-access.indream.app, api.hujuvod.com, api.qwapp.top, *.intsig.net, *.camscanner.com
+hostname = spclient.wg.spotify.com, mobile-api.adguard.org, www.bing.com, restore-access.indream.app, api.hujuvod.com, api.qwapp.top, *.intsig.net, *.camscanner.com
