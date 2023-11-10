@@ -212,11 +212,11 @@ https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNot
 ^https:\/\/commimg(.*)\.pddpic\.com\/flow-banner-entrance url reject
 # 营销小窗
 ^http:\/\/video(.*)\.(pddpic|pddugc)\.com\/(tower-video|tower-video-b|tower-video-side|tower-video-side-b)\/.*\.(float|highlights) url reject-dict
-^http:\/\/video(.*)\.(pddpic|pddugc).com\/(tower-video|tower-video-side-b|tower-video-b)\/.*\/.*\.mp4 url reject-dict
+^http:\/\/video(.*)\.(pddpic|pddugc).com\/(tower-video|tower-video-side-b|tower-video-b)\/.*\.mp4 url reject-dict
 ^http:\/\/video(.*)\.(pddugc|pddpic)\.com\/tower-video-b\/pdd-live url reject-dict
 ^http:\/\/.*\/live-adapt\.pddpic\.com\/live url reject-dict
 ^http:\/\/live(.*)-adapt\.(pddpic|pddugc)\.com\/live url reject-dict
-^http(.*):\/\/video-snapshot(.*)\.pddpic\.com\/(kiwi-live-image|lupus-ms-img-b|lupus-ms-img) url reject-dict
+^http(.*):\/\/video-snapshot(.*)\.pddpic\.com\/kiwi-live-image url reject-dict
 # 多多买菜 开屏广告
 ^https:\/\/mobile\.yangkeduo\.com\/proxy\/api\/api\/express\/post\/waybill\/red_packet\/goods_list$ url response-body "list":\[.+\] response-body "list":[]
 # 屏蔽升级
