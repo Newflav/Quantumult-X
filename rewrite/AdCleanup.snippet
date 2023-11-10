@@ -140,7 +140,7 @@ https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNot
 ^https:\/\/img13\.360buyimg\.com\/imagetools\/jfs\/t1 url reject-dict
 ^https:\/\/m11\.360buyimg\.com\/babel\/jfs\/t1\/.*\/.*\.jpg!q70\.dpg url reject-200
 ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=xview2Config url reject-dict
-^https:\/\/m15\.360buyimg\.com\/mobilecms\/jfs\/t1\/(205743|107580|193098|167390|101906|193424|178236|238097|227034|106387|180386|197928|197227|227034|233063|101698|185999|101906|108576|233708|223250|192016) url reject-dict
+^https:\/\/m15\.360buyimg\.com\/mobilecms\/jfs\/t1\/(179502|195214|219230|89103|204074|205743|107580|193098|167390|101906|193424|178236|238097|227034|106387|180386|197928|197227|227034|233063|101698|185999|101906|108576|233708|223250|192016) url reject-dict
 ^https:\/\/m15\.360buyimg\.com\/mobilecms\/s1125x939_jfs\/t1 url reject
 # 悬浮窗、直播小窗
 ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(getWidgetV1052|getShopHomeActivityInfo) url reject-dict
@@ -182,7 +182,8 @@ https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNot
 ^https:\/\/p1\.meituan\.net\/travelcube\/\w+\.gif url reject
 ^https:\/\/p0\.meituan\.net\/travelcube\/\w+\.png\.webp@50w_50h_1e_1l url reject
 ^https:\/\/p0\.meituan\.net\/linglong\/\w+\.png\.webp(@1284w_1l|@200w_200h_1e_1l) url reject
-^https:\/\/p1\.meituan\.net\/0\.0\.80\/travelcube\/\w+\.png\.webp url reject
+^https:\/\/p0\.meituan\.net\/ioswhale\/\w+\.png url reject
+^https:\/\/p0\.meituan\.net\/(linglong|travelcube)\/(7ae4f2836035e4b439e58476985592142777|7b1797f1a0e9dd936ee134657470507f2067)\.png url reject-dict
 # 外卖送餐页悬浮窗
 ^https:\/\/p0\.meituan\.net\/60\.0\.60\/wmbanner\/\w+\.gif url reject
 ^https:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/adx\/\w+\.gif url reject
@@ -210,17 +211,12 @@ https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNot
 # 聊天界面 多多买菜横幅
 ^https:\/\/commimg(.*)\.pddpic\.com\/flow-banner-entrance url reject
 # 营销小窗
-^http:\/\/video(.*)\.pddpic\.com\/tower-video\/.*\.float url reject-dict
-^http:\/\/video(.*)\.(pddpic|pddugc)\.com\/(tower-video|tower-video-b|tower-video-side|tower-video-side-b)\/.*\.highlights url reject-dict
-^http:\/\/video(.*)\.(pddpic|pddugc)\.com\/tower-video\/.*\/.*\.mp4\.crop\.highlights url reject-dict
-^http:\/\/video(.*)\.pddpic.com\/(tower-video|tower-video-side-b|tower-video-b)\/.*\/.*\.mp4 url reject-dict
-^http:\/\/video(.*)\.(pddpic|pddugc)\.com\/(tower-video|tower-video-side|tower-video-b)\/.*\.crop\.highlights url reject-dict
-^http:\/\/video(.*)\.pddugc.com\/tower-video\/.*\/.*\.m4v\.crop\.highlights url reject-dict
+^http:\/\/video(.*)\.(pddpic|pddugc)\.com\/(tower-video|tower-video-b|tower-video-side|tower-video-side-b)\/.*\.(float|highlights) url reject-dict
+^http:\/\/video(.*)\.(pddpic|pddugc).com\/(tower-video|tower-video-side-b|tower-video-b)\/.*\/.*\.mp4 url reject-dict
 ^http:\/\/video(.*)\.(pddugc|pddpic)\.com\/tower-video-b\/pdd-live url reject-dict
-^http(.*):\/\/video-snapshot\.pddpic\.com url reject-dict
-^http:\/\/video(.*)\.pddpic\.com\/i1 url reject-dict
-^http:\/\/.*/live-adapt\.pddpic\.com\/live url reject-dict
+^http:\/\/.*\/live-adapt\.pddpic\.com\/live url reject-dict
 ^http:\/\/live(.*)-adapt\.(pddpic|pddugc)\.com\/live url reject-dict
+^http(.*):\/\/video-snapshot(.*)\.pddpic\.com\/(kiwi-live-image|lupus-ms-img-b|lupus-ms-img) url reject-dict
 # 多多买菜 开屏广告
 ^https:\/\/mobile\.yangkeduo\.com\/proxy\/api\/api\/express\/post\/waybill\/red_packet\/goods_list$ url response-body "list":\[.+\] response-body "list":[]
 # 屏蔽升级
@@ -230,7 +226,6 @@ https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNot
 ^http:\/\/101\.35\.212\.35\/d url reject
 ^http:\/\/114\.110\.96\.26\/d url reject
 ^http:\/\/114\.110\.97\.97\/d url reject
-^http:\/\/81\.69\.130\.131^http:\/\/81\.69\.130\.131\/d url reject
 
 
 
@@ -275,7 +270,7 @@ https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNot
 
 # > 王者荣耀
 ; hostname = *.qq.com
-^https:\/\/jiazhang\.qq\.com\/wap\/family\/dist\/msdk\/parent\.html url reject-dict
+^https:\/\/jiazhang\.qq\.com\/wap\/family\/dist\/msdk\/parent\.html url reject-img
 
 
 # > 腾讯新闻
