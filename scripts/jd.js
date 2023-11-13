@@ -1,9 +1,11 @@
 // 2023-11-13 18:40
 
+if (!$response.body) $done({});
 const url = $request.url;
-const isResponse = typeof $response !== "undefined";
 let body = $response.body;
 
+if (body) {
+  switch (true) {
     // 京东-个人主页
     case /^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=personinfoBusiness/.test(url):
       try {
@@ -103,9 +105,6 @@ let body = $response.body;
       console.log(`京东-首页配置, 出现异常: ` + error);
     }
     break;
-
-  default:
-    $done({});
+  }
+  $done({ body });
 }
-
-$done({ body });
