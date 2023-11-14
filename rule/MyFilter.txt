@@ -142,6 +142,7 @@ host-suffix, av01.tv, 台湾节点
 # > 其他分流修正
 host, video.xhyded.com, direct
 host, pull-gaia-bac.soucan.so, direct
+host-suffix, myd666.tv, direct
 host-suffix, meiyida01.com, direct
 host-suffix, bfzycdn.com, direct
 host-suffix, b7k.cc, direct
