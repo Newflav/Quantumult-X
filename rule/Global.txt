@@ -4,15 +4,15 @@ host, beta.music.apple.com, proxy
 host, books.itunes.apple.com, proxy
 host, lookup-api.apple.com, proxy
 host, radio.itunes.apple.com, proxy
-host-suffix, books.apple.com, proxy
-host-suffix, tv.apple.com, proxy
 host, gateway.icloud.com, proxy
-host-suffix, apple.news, proxy
 host, news-assets.apple.com, proxy
 host, news-client.apple.com, proxy
 host, news-client-search.apple.com, proxy
 host, news-edge.apple.com, proxy
 host, news-events.apple.com, proxy
+host-suffix, books.apple.com, proxy
+host-suffix, tv.apple.com, proxy
+host-suffix, apple.news, proxy
 
 # > Testflight
 host, beta.apple.com, proxy
