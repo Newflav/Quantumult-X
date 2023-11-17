@@ -1,4 +1,5 @@
 # > Apple
+host, ocsp.apple.com, reject
 host, api-adservices.apple.com, reject
 host, advertising.apple.com, reject
 host, apple.comscoreresearch.com, reject
@@ -114,7 +115,7 @@ ip-cidr, 172.16.0.0/12, direct
 ip-cidr, 192.168.0.0/16, direct
 ip-cidr, 224.0.0.0/24, direct
 
-# > 苹果
+# > 苹果直连
 ip-cidr, 17.249.0.0/16, direct
 ip-cidr, 17.252.0.0/16, direct
 ip-cidr, 17.57.144.0/22, direct
