@@ -37,9 +37,9 @@
 
 
 # > 百度贴吧
-; hostname = tiebac.baidu.com, c.tieba.baidu.com
-^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/(c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)$|tiebaads\/commonbatch|c\/s\/sync$) url script-response-body https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js
-^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd url script-response-body https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js
+; hostname = tiebac.baidu.com
+^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/(c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)$|tiebaads\/commonbatch|c\/s\/sync$) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/tieba_json.js
+^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/tieba_proto.js
 ^http:\/\/c\.tieba\.baidu\.com\/c\/s\/loop url reject-dict
 
 
@@ -150,7 +150,7 @@ https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNot
 # >>>>>>>>>>>>>>> ✅ M ✅ <<<<<<<<<<<<<<
 # > 美团
 ; hostname = *.meituan.net, *.meituan.com
-#^http:\/\/wmapi\.meituan\.com\/api\/v7\/(loadInfo|openscreen|startpicture) url reject-dict
+^http:\/\/wmapi\.meituan\.com\/api\/v7\/(loadInfo|openscreen|startpicture) url reject-dict
 ^https:\/\/flowplus\.meituan\.net\/v1\/mss_\w+\/linglong\/\d+\.jpg url reject
 ^https:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg url reject-dict
 ^https:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/(brandcpt-vedio|waimai-alita)\/\w+\.zip$ url reject-dict
@@ -159,15 +159,17 @@ https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNot
 #悬浮小窗
 ^https:\/\/(p0|p1)\.meituan\.net\/(travelcube|linglong|scarlett)\/\w+\.gif url reject
 ^https:\/\/p0\.meituan\.net\/travelcube\/\w+\.png\.webp@50w_50h_1e_1l url reject
-^https:\/\/p0\.meituan\.net\/linglong\/\w+\.png\.webp(@1284w_1l|@200w_200h_1e_1l) url reject
-^https:\/\/p0\.meituan\.net\/ioswhale\/\w+\.png url reject
+^https:\/\/(p0|p1)\.meituan\.net\/linglong\/\w+\.png\.webp(@1284w_1l|@200w_200h_1e_1l) url reject
+^https:\/\/p1\.meituan\.net\/linglong\/\w+\.jpg\.webp@1200w_0h_1e_1l url reject
+^https:\/\/p0\.meituan\.net\/ioswhale\/.*\.png\.webp url reject
 ^https:\/\/p0\.meituan\.net\/(linglong|travelcube)\/(7ae4f2836035e4b439e58476985592142777|7b1797f1a0e9dd936ee134657470507f2067|c3c05a3609eb6eeed5b3bf8f53a9b982640)\.png url reject-dict
-# 外卖送餐页悬浮窗
-^https:\/\/p0\.meituan\.net\/60\.0\.60\/wmbanner\/\w+\.gif url reject
+# 外卖悬浮窗
+^https:\/\/p0\.meituan\.net\/(60\.0\.60|0\.40\.60|0\.88\.60)\/wmbanner\/\w+\.gif url reject
 ^https:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/adx\/\w+\.gif url reject
+^https:\/\/p1\.meituan\.net\/0\.0\.80\/travelcube\/\w+\.png\.webp url reject
 # 外卖页下拉
 ^https:\/\/(p0|p1)\.meituan\.net\/0\.2532\.80\/wmbanner\/\w+\.png\.webp url reject-200
-^https:\/\/p0\.meituan\.net\/wmbanner\/\w+\.(jpg|gif) url reject-dict
+^https:\/\/(p0|p1)\.meituan\.net\/wmbanner\/\w+\.(jpg|gif) url reject-200
 # 月付页下拉
 ^https:\/\/mgm\.meituan\.com\/marketing\/unLoginapi\/pgy_sdk\/ad\/batchAdExchange url reject-200
 # 屏蔽更新
@@ -177,7 +179,8 @@ https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNot
 
 
 # > 咪咕视频
-; host = ggmk.miguvideo.com, display-sc.miguvideo.com, common-sc.miguvideo.com
+; host = app-sc.miguvideo.com, ggmk.miguvideo.com, display-sc.miguvideo.com, common-sc.miguvideo.com
+^https:\/\/app-sc\.miguvideo\.com\/common\/v1\/settings-list\/INITPARAM url reject-dict
 # 广告请求
 ^https:\/\/ggmk\.miguvideo\.com\/advertisement_adaptor\/request url reject
 # 我的界面净化
@@ -197,11 +200,11 @@ https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNot
 # 聊天界面 多多买菜横幅
 ^https:\/\/commimg(.*)\.pddpic\.com\/flow-banner-entrance url reject
 # 营销小窗
-^http:\/\/video(.*)\.(pddpic|pddugc)\.com\/(tower-video|tower-video-b|tower-video-side|tower-video-side-b)\/.*\.(float|highlights) url reject-dict
-^http:\/\/video(.*)\.(pddugc|pddpic)\.com\/tower-video-b\/pdd-live url reject-dict
-^http:\/\/.*/live-adapt\.pddpic\.com\/live url reject-dict
-^http:\/\/live(.*)-adapt\.(pddpic|pddugc)\.com\/live url reject-dict
-^http(.*):\/\/video-snapshot(.*)\.pddpic\.com\/kiwi-live-image url reject-dict
+^http:\/\/video(.*)\.(pddpic|pddugc)\.com\/(tower-video|tower-video-b|tower-video-side|tower-video-side-b)\/.*\.(float|highlights) url reject
+^http:\/\/video(.*)\.(pddugc|pddpic)\.com\/tower-video-b\/pdd-live url reject
+^http:\/\/.*/live-adapt\.pddpic\.com\/live url reject
+^http:\/\/live(.*)-adapt\.(pddpic|pddugc)\.com\/live url reject
+^http(.*):\/\/video-snapshot(.*)\.pddpic\.com\/kiwi-live-image url reject
 # 屏蔽升级
 ^https:\/\/meta\.pinduoduo\.com\/api\/app\/v(.*)\/upgrade\?pdduid url reject
 # 禁止https dns
@@ -213,9 +216,11 @@ https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNot
 
 
 # >>>>>>>>>>>>>>> ✅ Q ✅ <<<<<<<<<<<<<<
-# > QQ屏蔽升级提醒
+# > QQ
 ; host = public.gdtimg.com
+# 屏蔽升级提醒
 ^https:\/\/public\.gdtimg\.com\/ams-web\/public\/tangram-report url reject-dict
+^https:\/\/iosqqdata\.ab\.qq\.com\/wabt\/get_gray_policy url reject-dict
 
 
 # > QQ钱包
@@ -224,7 +229,7 @@ https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNot
 
 
 # > 全民K歌
-; hostname = *.gtimg.cn
+; hostname = y.gtimg.cn
 ^https?:\/\/y\.gtimg\.cn\/music\/common\/\/upload\/kg_ad\/.+?\d{3,4}x\d{4} url reject-200
 
 
@@ -256,32 +261,6 @@ https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNot
 ^https:\/\/(news\.ssp\.qq\.com\/app|r\.inews\.qq\.com\/(get(QQNewsUnreadList|TagFeedList)|gw\/page\/(channel_feed|event_detail)|news_feed\/hot_module_list)) url script-response-body https://raw.githubusercontent.com/app2smile/rules/master/js/qq-news.js
 
 
-# > 腾讯广告
-; hostname = *.qq.com, *.gtimg.cn, *.gtimg.com
-^https?:\/\/btrace\.qq\.com url reject-200
-^https?:\/\/api2\.helper\.qq\.com\/game\/buttons url reject-img
-^https?:\/\/\w+\.beacon\.qq\.com url reject
-^https?:\/\/mi\.gdt\.qq\.com\/gdt_mview\.fcg url reject
-^https?:\/\/lives\.l\.qq\.com\/livemsg\?sdtfrom= url reject-img
-^https?:\/\/imgcache\.qq\.com\/qqlive\/ url reject-img
-^https?:\/\/mtteve\.beacon\.qq\.com\/analytics url reject-img
-^https?:\/\/vv\.video\.qq\.com\/getvmind\? url reject-200
-^https?:\/\/ssl\.kohsocialapp\.qq\.com:10001\/game\/buttons url reject-200
-^https?:\/\/qt\.qq\.com\/lua\/mengyou\/get_splash_screen_info url reject-200
-^https?:\/\/3gimg\.qq\.com\/tencentMapTouch\/app\/activity\/ url reject-200
-^https?:\/\/3gimg\.qq\.com\/tencentMapTouch\/splash\/ url reject-200
-^https?:\/\/.+?\.l\.qq\.com url reject
-^https?:\/\/\w+\.gdt\.qq\.com url reject
-^https?:\/\/y\.gtimg\.cn\/music\/.*?_Ad/\d+\.png url reject-img
-^https?:\/\/splashqqlive\.gtimg\.com\/website\/\d{6} url reject-img
-^https?:\/\/qzonestyle\.gtimg\.cn\/qzone\/biz\/gdt\/mob\/sdk\/ios\/v2\/ url reject-img
-^https?:\/\/discuz\.gtimg\.cn\/cloud\/scripts\/discuz_tips\.js url reject-img
-^https?:\/\/bla\.gtimg\.com\/qqlive\/\d{6}.+?\.png url reject-img
-^https?:\/\/mmgr\.gtimg\.com\/gjsmall\/qiantu\/upload\/ url reject-img
-^https?:\/\/mmgr\.gtimg\.com\/gjsmall\/qqpim\/public\/ios\/splash\/.+?\/\d{4}_\d{4} url reject-img
-^https?://bk\.bingo\.qq\.com/bk/crx/data/videoAd.*$ url reject-dict
-
-
 
 # >>>>>>>>>>>>>>> ✅ W ✅ <<<<<<<<<<<<<<
 # > 微信
@@ -299,6 +278,11 @@ https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNot
 
 # > 微信乘车码小程序
 ^https:\/\/ccmsupport-sz\.tenpay\.com\/cgi-bin\/common\/ccm_page_element.cgi url reject
+
+
+# > 网易新闻签到cookies
+; hostname = *.m.163.com
+#^https:\/\/(.*?)c\.m\.163\.com\/uc\/api\/sign\/v3\/commit url script-request-body neteasenews.cookie.js
 
 
 # > 网易严选
@@ -338,7 +322,7 @@ https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNot
 ^https:\/\/interface\.music\.163\.com\/weapi\/middle\/clientcfg\/config\/list\? url reject-dict
 ^https:\/\/interface3?\.music\.163\.com\/w?eapi\/resource-exposure\/(activity\/config\/get|config)\? url reject-dict
 # > 网易云_屏蔽更新
-^https:\/\/interface(\d)?\.music\.163\.com\/w?e?api\/ios\/upgrade url reject-dict
+^https?:\/\/interface(\d)?\.music\.163\.com\/w?e?api\/ios\/upgrade url reject-dict
 
 
 # > WIFI万能钥匙
@@ -395,7 +379,7 @@ https://edith.xiaohongshu.com/api/sns/v5/note/comment/list url script-response-b
 # 请求体
 ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence)\? url script-request-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/youtube_request.js
 # 响应体
-^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting)\? url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/youtube-response.js
+^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting)\? url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/youtube_response.js
 # 播放页广告
 ^https:\/\/[\w-]+\.googlevideo\.com\/initplayback\?.+&oad url reject
 
@@ -412,10 +396,7 @@ https://edith.xiaohongshu.com/api/sns/v5/note/comment/list url script-response-b
 ^https:\/\/dev\.coc\.10086\.cn\/coc3\/coc3-market\/arrange\/(getProductByActivityId|getActGroupByVip|getProductByGroupId) url reject
 ^https:\/\/dev\.coc\.10086\.cn\/coc3\/gr\/risk-ability\/dfpRisk\/(getDfpOuterCode|getDfpJs) url reject
 ^https:\/\/dev\.coc\.10086\.cn\/coc3\/gr\/login\/specialRightsSso\/getPnsign url reject
-^https:\/\/dev\.coc\.10086\.cn\/coc3\/coc3-market\/api\/usergroup\/(getPreference|checkProductId|strategyCenterShuntRule) url reject
-# 多个悬浮窗
-^https:\/\/(client\.app\.coc|h\.app\.coc|app)\.10086\.cn\/biz-orange\/DN\/emotionMarket url reject
-^https:\/\/res\.coc\.10086\.cn\/res\/cdn\/coc1\/.*\/.*\/.*\/.*\/.*\.gif url reject-img
+^https:\/\/res\.coc\.10086\.cn\/res\/cdn\/coc1\/.*\.gif url reject-img
 
 
 # > 直播吧
@@ -433,4 +414,4 @@ https://edith.xiaohongshu.com/api/sns/v5/note/comment/list url script-response-b
 
 
 
-hostname = gab.122.gov.cn, list-app-m.i4.cn, acs.m.taobao.com, pan.baidu.com, tiebac.baidu.com, c.tieba.baidu.com, apps.api.ke.com, i-shadow2.ke.com, ap.dongqiudi.com, zc.dongqiudi.com, apimg.qunliao.info, res.xiaojukeji.com, img-ys011.didistatic.com, common.diditaxi.com.cn, tiku.fenbi.com, market-api.fenbi.com, ke.fenbi.com, keapi.fenbi.com, api.gongkaoleida.com, *.google.cn, *.google.com.hk, aag.enmonster.com, api.m.jd.com, dns.jd.com, s.jiediankeji.com, api-access.pangolin-sdk-toutiao.com, *.qq.com, open.e.kuaishou.com, *.meituan.net, *.meituan.com, ggmk.miguvideo.com, display-sc.miguvideo.com, common-sc.miguvideo.com, api.yangkeduo.com, *.pinduoduo.com, *.pinduoduo.net, *.pddpic.com, *.pddugc.com, public.gdtimg.com, *.gtimg.cn, api.shenyin.name, wxs-weixin.sd.zhumanggroup.com, ssp.api.tappx.com, *.gtimg.com, security.wechat.com, support.you.163.com, m.you.163.com, *.music.163.com, cds.wifi188.com, edith.xiaohongshu.com, www.xiaohongshu.com, referee.xiaohongshu.com, pages.xiaohongshu.com, *.googlevideo.com, youtubei.googleapis.com, clientaccess.10086.cn, *.coc.10086.cn, a.qiumibao.com, wx.mygolbs.com
+hostname = gab.122.gov.cn, list-app-m.i4.cn, acs.m.taobao.com, pan.baidu.com, tiebac.baidu.com, apps.api.ke.com, i-shadow2.ke.com, ap.dongqiudi.com, zc.dongqiudi.com, apimg.qunliao.info, res.xiaojukeji.com, img-ys011.didistatic.com, common.diditaxi.com.cn, tiku.fenbi.com, market-api.fenbi.com, ke.fenbi.com, keapi.fenbi.com, api.gongkaoleida.com, *.google.cn, *.google.com.hk, aag.enmonster.com, api.m.jd.com, dns.jd.com, s.jiediankeji.com, api-access.pangolin-sdk-toutiao.com, *.qq.com, open.e.kuaishou.com, *.meituan.net, *.meituan.com, app-sc.miguvideo.com, ggmk.miguvideo.com, display-sc.miguvideo.com, common-sc.miguvideo.com, api.yangkeduo.com, *.pinduoduo.com, *.pinduoduo.net, *.pddpic.com, *.pddugc.com, public.gdtimg.com, y.gtimg.cn, api.shenyin.name, wxs-weixin.sd.zhumanggroup.com, ssp.api.tappx.com, security.wechat.com, support.you.163.com, m.you.163.com, *.music.163.com, cds.wifi188.com, edith.xiaohongshu.com, www.xiaohongshu.com, referee.xiaohongshu.com, pages.xiaohongshu.com, *.googlevideo.com, youtubei.googleapis.com, clientaccess.10086.cn, *.coc.10086.cn, a.qiumibao.com, wx.mygolbs.com
