@@ -107,3 +107,6 @@ host-suffix, naver.net, proxy
 # > 代理工具
 host-keyword, nsloon, proxy
 host-keyword, quantumult, proxy
+
+# > 其他
+host-suffix, mil, proxy
