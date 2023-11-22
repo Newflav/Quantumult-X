@@ -152,6 +152,7 @@ host-suffix, qq.com, direct
 host-suffix, jd.com, direct
 host-suffix, 163.com, direct
 host-suffix, baidu.com, direct
+host-suffix, 360buyimg.com, direct
 host-suffix, hk, 香港节点
 host-suffix, tw, 台湾节点
 host-suffix, jp, 日本节点
