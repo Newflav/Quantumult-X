@@ -1,0 +1,11 @@
+# > Talkatone
+host, ocsp.sectigo.com, proxy
+host, ocsp.r2m01.amazontrust.com, proxy
+host-suffix, tktn.be, proxy
+host-suffix, mobilefuse.com, proxy
+host-keyword, tktn, proxy
+ip-cidr, 69.46.75.0/22, proxy
+ip-cidr, 131.153.7.0/22, proxy
+ip-cidr, 104.244.53.0/22, proxy
+ip-cidr, 198.24.161.0/22, proxy
+ip-cidr, 205.164.56.0/22, proxy
