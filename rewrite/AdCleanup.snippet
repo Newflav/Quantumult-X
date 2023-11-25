@@ -49,6 +49,8 @@
 ^https:\/\/apps\.api\.ke\.com\/config\/config\/(bootpage|getactivityconfig) url reject
 # 元素净化
 ^https:\/\/apps\.api\.ke\.com\/api\/user\/profile\/getusercenterinfov4 url reject
+#^https:\/\/apps\.api\.ke\.com\/xinfang\/shellapp\/index url reject-dict
+#^https:\/\/apps\.api\.ke\.com\/xinfang\/shellapp\/feed\/index url reject-dict
 # 升级提醒
 ^https:\/\/i-shadow2\.ke\.com\/app\/checkUpdate url reject
 
@@ -281,8 +283,8 @@ https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNot
 
 
 # > 网易新闻签到cookies
-; hostname = *.m.163.com
-#^https:\/\/(.*?)c\.m\.163\.com\/uc\/api\/sign\/v3\/commit url script-request-body neteasenews.cookie.js
+; hostname = *.163.com
+^https:\/\/(.*?)c\.m\.163\.com\/uc\/api\/sign\/v3\/commit url script-request-body https://raw.githubusercontent.com/chavyleung/scripts/master/neteasenews/neteasenews.cookie.js
 
 
 # > 网易严选
