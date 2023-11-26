@@ -59,12 +59,6 @@ ip-cidr, 219.143.187.136/32, reject
 # > 百度贴吧屏蔽域名dns查询
 ip-cidr, 180.76.76.200/32, reject
 
-# > bilibili 减少手机缓存占用
-host, upos-sz-staticcos.bilivideo.com, reject
-
-# > 小红书 减少手机缓存占用
-host, fe-static.xhscdn.com, reject
-
 # > 禁htpps dns
 # Alibaba
 host, httpdns.alicdn.com, reject
