@@ -133,7 +133,6 @@ host-suffix, mzstatic.com, direct
 host-suffix, mushroomtrack.com, direct
 host-suffix, akamai-content-network.com, direct
 host-suffix, supjav.com, direct
-host-suffix, techviba.com, direct
 host-suffix, javquick.com, direct
 host-suffix, pwaojdslfsa.buzz, direct
 host-suffix, helloavgirls.com, direct
