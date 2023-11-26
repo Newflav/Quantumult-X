@@ -284,7 +284,7 @@ https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNot
 
 # > 网易新闻签到cookies
 ; hostname = *.163.com
-^https:\/\/(.*?)c\.m\.163\.com\/uc\/api\/sign\/v3\/commit url script-request-body https://raw.githubusercontent.com/chavyleung/scripts/master/neteasenews/neteasenews.cookie.js
+#^https:\/\/(.*?)c\.m\.163\.com\/uc\/api\/sign\/v3\/commit url script-request-body https://raw.githubusercontent.com/chavyleung/scripts/master/neteasenews/neteasenews.cookie.js
 
 
 # > 网易严选
@@ -370,8 +370,6 @@ https://edith.xiaohongshu.com/api/sns/v5/note/comment/list url script-response-b
 ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/user\/teenager\/status url reject-dict
 # > 启动引导
 ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/guide\/home_guide url reject-dict
-# > 减少手机缓存占用
-(?=xhscdn.*\.(otf|OTF|ttf|TTF|zip)) url reject
 
 
 
