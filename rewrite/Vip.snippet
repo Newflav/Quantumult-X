@@ -1,11 +1,11 @@
 # >>>>>>>>>> ✅ 会员功能解锁 ✅ <<<<<<<<<
 # 京东比价
 ;hostname = api.m.jd.com
-^https?://api\.m\.jd\.com/(client\.action|api)\?functionId=(wareBusiness|serverConfig|basicConfig|lite_wareBusiness|pingou_item) url script-response-body https://raw.githubusercontent.com/zwf234/rules/master/js/jd_price.js
+^https?://api\.m\.jd\.com/(client\.action|api)\?functionId=(wareBusiness|serverConfig|basicConfig|lite_wareBusiness|pingou_item) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/jd_Price.js
 
 # Spotify会员
 ;hostname = spclient.wg.spotify.com
-^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$ url script-response-body https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-proto.js
+^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$ url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/spotify.js
 
 # AdGuard会员
 ;hostname = mobile-api.adguard.org
@@ -25,11 +25,11 @@ https?:\/\/restore-access\.indream\.app\/restoreAccess\?id=\d{5,10} url echo-res
 
 # 网易云音乐会员
 ;hostname = *.music.163.com
-#^http[s]?:\/\/.+music.+(player\/url|playlist|entrance|\/eapi\/search\/).*$ url script-request-header https://raw.githubusercontent.com/Yu9191/Rewrite/main/wangyy.js
+^http[s]?:\/\/.+music.+(player\/url|playlist|entrance|\/eapi\/search\/).*$ url script-request-header https://raw.githubusercontent.com/gjwj666/qx/main/Wyy.js
 
 # 扫描全能王会员
 ;hostname = *.intsig.net, *.camscanner.com
-^https?:\/\/.*\.(intsig\.net|camscanner\.com) url script-response-body https://raw.githubusercontent.com/chxm1023/Rewrite/main/CamScanner.js
+^https?:\/\/.*\.(intsig\.net|camscanner\.com) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/camScanner.js
 
 # 解锁New Bing
 ;hostname = www.bing.com
