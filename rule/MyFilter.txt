@@ -125,12 +125,10 @@ host-suffix, mzstatic.com, direct
 
 # > NSFW
 host-suffix, missav.com, direct
+host-suffix, bestjavcdn.com, direct
 host-suffix, mushroomtrack.com, direct
-host-suffix, akamai-content-network.com, direct
-host-suffix, supjav.com, direct
-host-suffix, techviba.com, direct
-host-suffix, javquick.com, direct
-host-suffix, pwaojdslfsa.buzz, direct
+host-suffix, bestjavporn.com, direct
+host-suffix, sw-cdnstream.com, direct
 host-suffix, helloavgirls.com, direct
 
 # > 其他分流修正
