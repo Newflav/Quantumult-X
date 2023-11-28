@@ -155,6 +155,7 @@ host-suffix, alicdn.com, direct
 host-suffix, aliyuncdn.com, direct
 host-suffix, tmall.com, direct
 host-suffix, taobao.com, direct
+host-suffix, alibaba.com, direct
 host-suffix, meituan.net, direct
 host-suffix, meituan.com, direct
 host-suffix, pinduoduo.net, direct
