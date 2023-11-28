@@ -147,6 +147,7 @@ host-suffix, wechat.com, direct
 host-suffix, weixin.com, direct
 host-suffix, wechatpay.com, direct
 host-suffix, gtimg.com, direct
+host-suffix, tenpay.com, direct
 host-suffix, qiumibao.com, direct
 host-suffix, dongqiudi.com, direct
 host-suffix, qunliao.info, direct
@@ -169,7 +170,7 @@ host-suffix, amap.com, direct
 host-suffix, netease.com, direct
 host-suffix, 126.net, direct
 host-suffix, 163.com, direct
-ip-asn, 132203, direct
+IP-ASN, 132203, direct
 host-suffix, hk, 香港节点
 host-suffix, tw, 台湾节点
 host-suffix, jp, 日本节点
