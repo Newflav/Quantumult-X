@@ -102,6 +102,7 @@ ip-cidr, 123.151.54.50/32, reject
 ip6-cidr, 2402:4e00:1900:1700:0:9554:1ad9:c3a/128, reject
 ip6-cidr, 240e:928:1400:10::25/128, reject
 
+
 # > local
 ip-cidr, 10.0.0.0/8, direct
 ip-cidr, 127.0.0.0/8, direct
@@ -124,6 +125,7 @@ host-suffix, icloud.com, direct
 host-suffix, mzstatic.com, direct
 
 # > NSFW
+host-suffix, missav.com, direct
 host-suffix, mushroomtrack.com, direct
 host-suffix, akamai-content-network.com, direct
 host-suffix, supjav.com, direct
@@ -141,6 +143,26 @@ host-suffix, livemi.live, direct
 host-suffix, wtmdjxkq.com, direct
 host-suffix, servicewechat.com, direct
 host-suffix, qq.com, direct
+host-suffix, qiumibao.com, direct
+host-suffix, dongqiudi.com, direct
+host-suffix, qunliao.info, direct
+host-suffix, baidu.com, direct
+host-suffix, jd.com, direct
+host-suffix, 360buyimg, direct
+host-suffix, alipay.com, direct
+host-suffix, aliyun.com, direct
+host-suffix, alicdn.com, direct
+host-suffix, aliyuncdn.com, direct
+host-suffix, tmall.com, direct
+host-suffix, taobao.com, direct
+host-suffix, meituan.net, direct
+host-suffix, meituan.com, direct
+host-suffix, pinduoduo.net, direct
+host-suffix, pinduoduo.com, direct
+host-suffix, pddpic.com, direct
+host-suffix, amap.com, direct
+host-suffix, 126.net, direct
+host-suffix, 163.com, direct
 host-suffix, hk, 香港节点
 host-suffix, tw, 台湾节点
 host-suffix, jp, 日本节点
