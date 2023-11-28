@@ -150,7 +150,7 @@ host-suffix, dongqiudi.com, direct
 host-suffix, qunliao.info, direct
 host-suffix, baidu.com, direct
 host-suffix, jd.com, direct
-host-suffix, 360buyimg, direct
+host-suffix, 360buyimg.com, direct
 host-suffix, alipay.com, direct
 host-suffix, aliyun.com, direct
 host-suffix, alicdn.com, direct
