@@ -176,6 +176,9 @@ host-suffix, jp, 日本节点
 host-suffix, sg, 新加坡节点
 host-suffix, cn, direct
 
+# > GeoIP
+geoip, cn, direct
+
 # > ChinaASN
 IP-ASN, 10111, direct
 IP-ASN, 10206, direct
@@ -1044,6 +1047,3 @@ IP-ASN, 9814, direct
 IP-ASN, 9818, direct
 IP-ASN, 9929, direct
 IP-ASN, 9939, direct
-
-# > GeoIP
-geoip, cn, direct
