@@ -58,9 +58,6 @@ host-suffix, wikiversity.org, proxy
 host-suffix, wikivoyage.org, proxy
 host-suffix, wiktionary.org, proxy
 
-# > Yahoo
-host-suffix, yahoo.com, proxy
-
 # > Notion
 host-suffix, notion-static.com, proxy
 host-suffix, notion.com, proxy
@@ -83,12 +80,12 @@ host-suffix, cloudflareclient.com, proxy
 host-suffix, signal.org, proxy
 host-suffix, hcaptcha.com, proxy
 
-# > Proton
-host-suffix, proton.me, proxy
-
 # > Tutanota
 host-suffix, tuta.com, proxy
 host-suffix, tutanota.com, proxy
+
+# > Proton
+host-suffix, proton.me, proxy
 
 # > Deepl
 host-suffix, deepl.com, proxy
@@ -96,6 +93,9 @@ host-suffix, deepl.com, proxy
 # > Papago
 host-suffix, naver.com, proxy
 host-suffix, naver.net, proxy
+
+# > Yahoo
+host-suffix, yahoo.com, proxy
 
 # > 代理工具
 host-keyword, nsloon, proxy
