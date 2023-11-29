@@ -73,14 +73,14 @@ host-suffix, gitlab.io, proxy
 host-suffix, gitlab.com, proxy
 host-suffix, gitlab.net, proxy
 
-# > Signal
-host-suffix, signal.org, proxy
-host-suffix, hcaptcha.com, proxy
-
 # > Cloudflare
 host-suffix, warp.plus, proxy
 host-suffix, cloudflare.com, proxy
 host-suffix, cloudflare.net, proxy
+
+# > Signal
+host-suffix, signal.org, proxy
+host-suffix, hcaptcha.com, proxy
 
 # > Proton
 host-suffix, proton.me, proxy
