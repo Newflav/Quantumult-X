@@ -77,6 +77,7 @@ host-suffix, gitlab.net, proxy
 host-suffix, warp.plus, proxy
 host-suffix, cloudflare.com, proxy
 host-suffix, cloudflare.net, proxy
+host-suffix, cloudflareclient.com, proxy
 
 # > Signal
 host-suffix, signal.org, proxy
