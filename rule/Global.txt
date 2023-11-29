@@ -60,7 +60,6 @@ host-suffix, wiktionary.org, proxy
 
 # > Yahoo
 host-suffix, yahoo.com, proxy
-host-keyword, yahoo, proxy
 
 # > Notion
 host-suffix, notion-static.com, proxy
@@ -77,6 +76,11 @@ host-suffix, gitlab.net, proxy
 # > Signal
 host-suffix, signal.org, proxy
 host-suffix, hcaptcha.com, proxy
+
+# > Cloudflare
+host-suffix, warp.plus, proxy
+host-suffix, cloudflare.com, proxy
+host-suffix, cloudflare.net, proxy
 
 # > Proton
 host-suffix, proton.me, proxy
