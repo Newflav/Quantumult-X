@@ -14,9 +14,16 @@ host-suffix, books.apple.com, proxy
 host-suffix, tv.apple.com, proxy
 host-suffix, apple.news, proxy
 
+# > AppleID
+host, appleid.apple.com, proxy
+host, appleid.cdn-apple.com, proxy
+host, gsa.apple.com, proxy
+host, idmsa.apple.com, proxy
+
 # > Testflight
 host, beta.apple.com, proxy
 host, testflight.apple.com, proxy
+host-keyword, testflight, proxy
 
 # > Microsoft
 host, assets1.xboxlive.com, proxy
@@ -29,12 +36,6 @@ host-suffix, licdn.com, proxy
 host-suffix, msn.com, proxy
 host-suffix, skype.com, proxy
 host-suffix, aka.ms, proxy
-host-suffix, github.blog, proxy
-host-suffix, github.com, proxy
-host-suffix, github.io, proxy
-host-suffix, githubassets.com, proxy
-host-suffix, githubusercontent.com, proxy
-host-keyword, github, proxy
 host-suffix, streaming.mediaservices.windows.net, proxy
 host-suffix, microsoft.com, proxy
 host-suffix, office.com, proxy
@@ -65,6 +66,16 @@ host-suffix, notion.new, proxy
 host-suffix, notion.site, proxy
 host-suffix, notion.so, proxy
 
+# > Github
+host-suffix, github.blog, proxy
+host-suffix, github.com, proxy
+host-suffix, github.io, proxy
+host-suffix, githubapp.com, proxy
+host-suffix, rawgithub.com, proxy
+host-suffix, githubassets.com, proxy
+host-suffix, githubusercontent.com, proxy
+host-keyword, github, proxy
+
 # > Gitlab
 host-suffix, gitlab.io, proxy
 host-suffix, gitlab.com, proxy
@@ -85,6 +96,8 @@ host-suffix, tuta.com, proxy
 host-suffix, tutanota.com, proxy
 
 # > Proton
+host-suffix, pm.me, proxy
+host-suffix, protonmail.com, proxy
 host-suffix, proton.me, proxy
 
 # > Deepl
