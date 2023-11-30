@@ -110,6 +110,9 @@ host-suffix, naver.net, proxy
 # > Yahoo
 host-suffix, yahoo.com, proxy
 
+# > Yahoo
+host-suffix, duckduckgo.com, proxy
+
 # > 代理工具
 host-keyword, nsloon, proxy
 host-keyword, quantumult, proxy
