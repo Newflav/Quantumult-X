@@ -144,9 +144,6 @@ host-suffix, weixin.com, direct
 host-suffix, wechatpay.com, direct
 host-suffix, gtimg.com, direct
 host-suffix, tenpay.com, direct
-host-suffix, qiumibao.com, direct
-host-suffix, dongqiudi.com, direct
-host-suffix, qunliao.info, direct
 host-suffix, baidu.com, direct
 host-suffix, jd.com, direct
 host-suffix, 360buyimg.com, direct
