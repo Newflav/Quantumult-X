@@ -1,25 +1,22 @@
 # > Apple
 host, ocsp.apple.com, reject
-host, api-adservices.apple.com, reject
 host, advertising.apple.com, reject
+host, api-adservices.apple.com, reject
 host, apple.comscoreresearch.com, reject
 host, iadcontent.apple.com, reject
 host, iadmoo.apple.com, reject
 host, iadworkbench.apple.com, reject
-host, launch.apple.com, reject
 host, qwapi.apple.com, reject
-host, securemetrics.apple.com, reject
-host, webproxy-advp.iad-apple.com, reject
-host, webproxy-advp.iad-apple.com.akadns.net, reject
+host, launch.apple.com, reject
 host-suffix, advp.apple.com, reject
+host-suffix, iad-apple.com, reject
 
 # > 高德地图
 host, awaken.amap.com, reject
 host, free-aos-cdn-image.amap.com, reject
 
 # > 建设银行
-host, adv.ccb.com, reject
-host, imageadv.ccb.com, reject
+host-keyword, adv.ccb.com, reject
 
 # > 美团
 host, al-log.d.meituan.net, reject
@@ -29,15 +26,11 @@ host, metrics-picture.d.meituan.net, reject
 host, route-stats.d.meituan.net, reject
 
 # > 腾讯
-host, qzs.qq.com, reject
 host, tpns.qq.com, reject
 host, info4.video.qq.com, reject
 host, info6.video.qq.com, reject
-host, wxsmsdy.video.qq.com, reject
 host, ios.video.mpush.qq.com, reject
 host, vv6.video.qq.com, reject
-host, ipv4.gdt.qq.com, reject
-host, qqadapt.qpic.cn, reject
 ip-cidr, 47.110.187.87/32, reject
 
 # > 知乎
@@ -81,8 +74,8 @@ ip6-cidr, 2402:db40:5100:1011::5/128, reject
 # JD Cloud
 ip-cidr, 103.224.222.208/32, reject
 # NetEase
-host, httpdns.n.netease.com, reject
 host, httpdns.music.163.com, reject
+host, httpdns.n.netease.com, reject
 host, music.httpdns.c.163.com, reject
 host, lofter.httpdns.c.163.com, reject
 ip-cidr, 59.111.239.61/32, reject
