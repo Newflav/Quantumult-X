@@ -31,6 +31,8 @@ host, assets2.xboxlive.com, proxy
 host, az416426.vo.msecnd.net, proxy
 host, az668014.vo.msecnd.net, proxy
 host-suffix, bing.com, proxy
+host-suffix, bing.net, proxy
+host-suffix, bingapis.com, proxy
 host-suffix, linkedin.com, proxy
 host-suffix, licdn.com, proxy
 host-suffix, msn.com, proxy
@@ -44,8 +46,6 @@ host-suffix, outlook.com, proxy
 host-suffix, live.com, proxy
 host-suffix, appcenter.ms, proxy
 host-suffix, msauth.net, proxy
-host-suffix, bing.net, proxy
-host-suffix, bingapis.com, proxy
 host-suffix, microsoftonline.com, proxy
 
 # > Wikimedia Foundation
