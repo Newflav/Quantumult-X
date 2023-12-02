@@ -43,6 +43,10 @@ host-suffix, office365.com, proxy
 host-suffix, outlook.com, proxy
 host-suffix, live.com, proxy
 host-suffix, appcenter.ms, proxy
+host-suffix, msauth.net, proxy
+host-suffix, bing.net, proxy
+host-suffix, bingapis.com, proxy
+host-suffix, microsoftonline.com, proxy
 
 # > Wikimedia Foundation
 host-suffix, mediawiki.org, proxy
