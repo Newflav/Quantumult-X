@@ -114,7 +114,7 @@ host-suffix, naver.net, proxy
 # > Yahoo
 host-suffix, yahoo.com, proxy
 
-# > mail
+# > Mail
 host-suffix, mail.com, proxy
 host, img.ui-portal.de, proxy
 host, js.ui-portal.de, proxy
@@ -124,7 +124,7 @@ host, cdn.cookielaw.org, proxy
 # > Yahoo
 host-suffix, yahoo.com, proxy
 
-# > duckduckgo
+# > Duckduckgo
 host-suffix, duckduckgo.com, proxy
 
 # > 代理工具
