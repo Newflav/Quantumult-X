@@ -120,7 +120,7 @@ host-suffix, duckduckgo.com, proxy
 # > 代理工具
 host-keyword, nsloon, proxy
 host-keyword, quantumult, proxy
+host-keyword, swiftgram
 
 # > 其他
-host-suffix, swiftgram.app
 host-suffix, mil, proxy
