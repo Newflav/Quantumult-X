@@ -122,4 +122,5 @@ host-keyword, nsloon, proxy
 host-keyword, quantumult, proxy
 
 # > 其他
+host-suffix, swiftgram.app
 host-suffix, mil, proxy
