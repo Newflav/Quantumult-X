@@ -111,9 +111,6 @@ host-suffix, deepl.com, proxy
 host-suffix, naver.com, proxy
 host-suffix, naver.net, proxy
 
-# > Yahoo
-host-suffix, yahoo.com, proxy
-
 # > Mail
 host-suffix, mail.com, proxy
 host, img.ui-portal.de, proxy
