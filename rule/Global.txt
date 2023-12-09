@@ -119,6 +119,7 @@ host, s.uicdn.com, proxy
 host, cdn.cookielaw.org, proxy
 
 # > Yahoo
+host-suffix, oath.com, proxy
 host-suffix, yahoo.com, proxy
 
 # > Duckduckgo
