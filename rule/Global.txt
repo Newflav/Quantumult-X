@@ -112,12 +112,10 @@ host-suffix, naver.com, proxy
 host-suffix, naver.net, proxy
 
 # > Mail
-host-suffix, mail.com, proxy
-host, img.ui-portal.de, proxy
-host, js.ui-portal.de, proxy
 host, s.uicdn.com, proxy
 host, cdn.cookielaw.org, proxy
-host, wa.ui-portal.de, proxy
+host-suffix, mail.com, proxy
+host-suffix, ui-portal.de, proxy
 
 # > Yahoo
 host-suffix, oath.com, proxy
