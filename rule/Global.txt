@@ -117,6 +117,7 @@ host, img.ui-portal.de, proxy
 host, js.ui-portal.de, proxy
 host, s.uicdn.com, proxy
 host, cdn.cookielaw.org, proxy
+host, wa.ui-portal.de, proxy
 
 # > Yahoo
 host-suffix, oath.com, proxy
