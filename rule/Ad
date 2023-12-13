@@ -54,7 +54,6 @@ ip-cidr, 180.76.76.200/32, reject
 # > Talkatone
 host-suffix, adxinspidsp.com, reject
 
-
 # > 禁htpps dns
 # Alibaba
 host, httpdns.alicdn.com, reject
