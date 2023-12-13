@@ -117,6 +117,13 @@ host, cdn.cookielaw.org, proxy
 host-suffix, mail.com, proxy
 host-suffix, ui-portal.de, proxy
 
+# > TextNow
+host-suffix, textnow.me, proxy
+host-suffix, textnow.com, proxy
+host-suffix, ironsrc.mobi, proxy
+host-suffix, ssacdn.com, proxy
+host-suffix, emb-api.com, proxy
+
 # > Yahoo
 host-suffix, oath.com, proxy
 host-suffix, yahoo.com, proxy
