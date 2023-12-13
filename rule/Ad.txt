@@ -58,6 +58,7 @@ host-suffix, adxinspidsp.com, reject
 host, got.pubnative.net, reject
 host, mfx.mobilefuse.com, reject
 host, hermes-us.inspidspad.com, reject
+host, s3.amazonaws.com, reject
 
 # > TextFree
 host, cf-ads.pinger.com, reject
