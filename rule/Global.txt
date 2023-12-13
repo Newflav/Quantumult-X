@@ -48,7 +48,7 @@ host-suffix, appcenter.ms, proxy
 host-suffix, msauth.net, proxy
 host-suffix, microsoftonline.com, proxy
 
-# > Wikimedia Foundation
+# > Wikimedia
 host-suffix, mediawiki.org, proxy
 host-suffix, wikibooks.org, proxy
 host-suffix, wikidata.org, proxy
