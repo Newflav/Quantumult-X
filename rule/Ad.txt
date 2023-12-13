@@ -58,6 +58,15 @@ host, got.pubnative.net, reject
 host, mfx.mobilefuse.com, reject
 host, hermes-us.inspidspad.com, reject
 
+# > TextFree
+host, cf-ads.pinger.com, reject
+host, us.a.iteleserve.com, reject
+host, notify.rtbuniverse.com, reject
+host-suffix, pubnative.net, reject
+host-suffix, vrtcal.com, reject
+host-suffix, vungle.com, reject
+host-suffix, amazon-adsystem.com, reject
+
 
 # > 禁htpps dns
 # Alibaba
