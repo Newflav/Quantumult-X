@@ -53,6 +53,7 @@ ip-cidr, 180.76.76.200/32, reject
 
 # > Talkatone
 host, a1.tktn.be, reject
+host, cdn.mobilefuse.com, reject
 host-suffix, adxinspidsp.com, reject
 host, got.pubnative.net, reject
 host, mfx.mobilefuse.com, reject
