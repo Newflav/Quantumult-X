@@ -52,11 +52,11 @@ ip-cidr, 219.143.187.136/32, reject
 ip-cidr, 180.76.76.200/32, reject
 
 # > Talkatone
-host, a1.tktn.be
-host-suffix, adxinspidsp.com
-host, got.pubnative.net
-host, mfx.mobilefuse.com
-host, hermes-us.inspidspad.com
+host, a1.tktn.be, reject
+host-suffix, adxinspidsp.com, reject
+host, got.pubnative.net, reject
+host, mfx.mobilefuse.com, reject
+host, hermes-us.inspidspad.com, reject
 
 
 # > 禁htpps dns
