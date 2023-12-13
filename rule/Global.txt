@@ -124,9 +124,6 @@ host-suffix, yahoo.com, proxy
 # > Duckduckgo
 host-suffix, duckduckgo.com, proxy
 
-# > TextFree
-host-suffix, pinger.com, proxy
-
 # > 代理工具
 host-keyword, nsloon, proxy
 host-keyword, quantumult, proxy
