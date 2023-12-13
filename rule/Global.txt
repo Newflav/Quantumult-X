@@ -123,6 +123,7 @@ host-suffix, textnow.com, proxy
 host-suffix, ironsrc.mobi, proxy
 host-suffix, ssacdn.com, proxy
 host-suffix, emb-api.com, proxy
+ip-cidr, 3.226.103.0/22, proxy
 
 # > Yahoo
 host-suffix, oath.com, proxy
