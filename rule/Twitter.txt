@@ -1,5 +1,5 @@
 # > Twitter
-host, albtls.t.co, twitter
+host-suffix, albtls.t.co, twitter
 host-suffix, cms-twdigitalassets.com, twitter
 host-suffix, periscope.tv, twitter
 host-suffix, pscp.tv, twitter
