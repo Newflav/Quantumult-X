@@ -4,6 +4,3 @@ host, ocsp.sectigo.com, proxy
 host-suffix, talkatone.com, proxy
 host, ocsp.r2m01.amazontrust.com, proxy
 IP-ASN, 18779, proxy
-
-# > TextFree
-host-suffix, pinger.com, proxy
