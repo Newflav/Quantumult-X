@@ -60,6 +60,15 @@ host, mfx.mobilefuse.com, reject
 host, hermes-us.inspidspad.com, reject
 host, s3.amazonaws.com, reject
 
+# > 其他
+host, cf-ads.pinger.com
+host, us.a.iteleserve.com
+host, notify.rtbuniverse.com
+host-suffix, pubnative.net
+host-suffix, vrtcal.com
+host-suffix, vungle.com
+host-suffix, amazon-adsystem.com
+
 
 # > 禁htpps dns
 # Alibaba
