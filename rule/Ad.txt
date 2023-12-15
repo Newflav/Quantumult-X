@@ -10,6 +10,9 @@ host, launch.apple.com, reject
 host-suffix, advp.apple.com, reject
 host-suffix, iad-apple.com, reject
 
+# > 滴滴出行
+host, gwp.xiaojukeji.com, reject
+
 # > 高德地图
 host, awaken.amap.com, reject
 host, free-aos-cdn-image.amap.com, reject
