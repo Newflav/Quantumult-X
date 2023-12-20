@@ -41,6 +41,7 @@ host-suffix, aka.ms, proxy
 host-suffix, streaming.mediaservices.windows.net, proxy
 host-suffix, microsoft.com, proxy
 host-suffix, office.com, proxy
+host-suffix, office.net, proxy
 host-suffix, office365.com, proxy
 host-suffix, outlook.com, proxy
 host-suffix, live.com, proxy
