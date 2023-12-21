@@ -19,10 +19,6 @@ host-suffix, ut.taobao.com, reject
 # > 滴滴出行
 host, gwp.xiaojukeji.com, reject
 
-# > 高德地图
-#host, awaken.amap.com, reject
-#host, free-aos-cdn-image.amap.com, reject
-
 # > 建设银行
 host-keyword, adv.ccb.com, reject
 
