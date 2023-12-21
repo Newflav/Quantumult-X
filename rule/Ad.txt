@@ -10,6 +10,12 @@ host, launch.apple.com, reject
 host-suffix, advp.apple.com, reject
 host-suffix, iad-apple.com, reject
 
+# 阿里巴巴
+host, ossgw.alicdn.com, reject
+host, ems.youku.com, reject
+host, hudong.alicdn.com, reject
+host-suffix, ut.taobao.com, reject
+
 # > 滴滴出行
 host, gwp.xiaojukeji.com, reject
 
@@ -26,6 +32,7 @@ host, babel-statistics-android.d.meituan.net, reject
 host, maplocatesdksnapshot.d.meituan.net, reject
 host, metrics-picture.d.meituan.net, reject
 host, route-stats.d.meituan.net, reject
+host, open.kuaishouzt.com, reject
 
 # > 腾讯
 host, tpns.qq.com, reject
