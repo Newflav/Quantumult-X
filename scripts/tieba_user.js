@@ -32,5 +32,7 @@ if (json.hasOwnProperty("user") && json["user"].hasOwnProperty("ip_address")) {�
 if (json.hasOwnProperty("user") && json["user"].hasOwnProperty("gift_list")) { delete json["user"]["gift_list"]; }
 if (json.hasOwnProperty("user") && json["user"].hasOwnProperty("shake_ad_switch")) { delete json["user"]["shake_ad_switch"]; }
 if (json.hasOwnProperty("user") && json["user"].hasOwnProperty("virtual_image_info")) { delete json["user"]["virtual_image_info"]; }
+if (json.hasOwnProperty("user") && json["user"].hasOwnProperty("consume_info")) { delete json["user"]["consume_info"]; }
+if (json.hasOwnProperty("user") && json["user"].hasOwnProperty("vip_show_info")) { delete json["user"]["vip_show_info"]; }
 
 $done({ body: JSON.stringify(json) });
