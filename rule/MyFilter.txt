@@ -21,7 +21,7 @@ ip6-cidr, 2a01:b740:a42::/48, direct
 
 # > NSFW
 host-suffix, bestjavporn.com, direct
-host-suffix, video-delivery.net
+host-suffix, video-delivery.net, direct
 host-suffix, bestjavcdn.com, direct
 host-suffix, helloavgirls.com, direct
 host-suffix, mushroomtrack.com, direct
