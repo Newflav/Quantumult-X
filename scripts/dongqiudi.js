@@ -1,1 +1,1 @@
-{"ad_content":[],"column":{}}
+{"ad_content":[]}
