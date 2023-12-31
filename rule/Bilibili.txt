@@ -1,7 +1,0 @@
-# > Bilibili
-host, upos-hz-mirrorakam.akamaized.net, Bilibili
-host-suffix, biliapi.com, Bilibili
-host-suffix, biliapi.net, Bilibili
-host-suffix, bilibili.com, Bilibili
-host-keyword, cn-hk-eq-bcache-, Bilibili
-host-keyword, bilibili, Bilibili
