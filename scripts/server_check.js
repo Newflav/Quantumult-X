@@ -37,14 +37,11 @@ function Area_check(para) {
 // 运行脚本
 var body = $response.body;
 var obj = JSON.parse(body);
-
 // 展示在顶部开关左边（第1行） 格式：国旗 地区名
 var title = flags.get(obj["countryCode"]) + " " + City_ValidCheck(obj["city"]); //+Area_check(obj['country']);
-
 // 展示在顶部开关左边（第2行）
 var subtitle = obj['query'] + ' ' + ISP_ValidCheck(obj['as']);
 var ip = obj["query"];
-
 // 长按节点选择“查看节点信息”时的信息
 var description =
   "国家:" + 
