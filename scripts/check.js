@@ -33,20 +33,21 @@ function Area_check(para) {
   }
 }
 
+// 运行脚本
 var body = $response.body;
 var obj = JSON.parse(body);
 var title = flags.get(obj["countryCode"]) + " " + City_ValidCheck(obj["city"]); //+Area_check(obj['country']);
-var subtitle = obj['query'] + ' ' + ISP_ValidCheck(obj['as']);
+var subtitle = ISP_ValidCheck(obj['as']) + ' ' + obj['query'];
 var ip = obj["query"];
 var description =
   "服务商:" +
   obj["isp"] +
   "\n" +
-  "地区:" +
-  City_ValidCheck(obj["regionName"]) +
-  "\n" +
   "IP:" +
   obj["query"] +
+  "\n" +
+  "地区:" +
+  City_ValidCheck(obj["regionName"]) +
   "\n" +
   "时区:" +
   obj["timezone"];
