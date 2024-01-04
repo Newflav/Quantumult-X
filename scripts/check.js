@@ -10,37 +10,47 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
-function city_check(para) {
-  return para || city0;
+function City_ValidCheck(para) {
+  if (para) {
+    return para;
+  } else {
+    return city0;
+    //emojis[getRandomInt(emojis.length)]
+  }
 }
 
-function isp_check(para) {
-  return para || isp0;
+function ISP_ValidCheck(para) {
+  if (para) {
+    return para;
+  } else {
+    return isp0;
+    //emojis[getRandomInt(emojis.length)]
+  }
 }
 
-function area_check(para) {
-  return para === "中华民国" ? "台湾" : para;
+function Area_check(para) {
+  if (para == "中华民国") {
+    return "台湾";
+  } else {
+    return para;
+  }
 }
 
-function append(country, city) {
-  return country === city ? country : country + ' ' + city;
-}
-
-// 脚本开始
 var body = $response.body;
 var obj = JSON.parse(body);
-
-// 展示在顶部开关左边（第1行） 格式：国旗 国家名 地区名
-var title = flags.get(obj['countryCode']) + ' ' + append(country, city);
-// 展示在顶部开关左边（第2行）
-var subtitle = obj['query'] + ' ' + isp_check(obj['as']);
-// 不展示
-var ip = obj['query'];
-// 长按节点选择“查看节点信息”时的信息
-var description = '国家：' + obj['countryCode'] + ' ' + obj['country'] + '\n'
-  + '地区：' + obj['region'] + ' ' + city_check(obj['regionName']) + '\n'
-  + 'IP：' + obj['query'] + '\n'
-  + '服务商：' + obj['isp'] + '\n'
-  + '经纬度：' + obj['lat'] + ' / ' + obj['lon'] + '\n'
-  + '时区：' + obj['timezone'];
-$done({title, subtitle, ip, description});
+var title = flags.get(obj["countryCode"]) + " " + City_ValidCheck(obj["city"]); //+Area_check(obj['country']);
+var subtitle = ISP_ValidCheck(obj["org"] || obj.as);
+var ip = obj["query"];
+var description =
+  "服务商:" +
+  obj["isp"] +
+  "\n" +
+  "地区:" +
+  City_ValidCheck(obj["regionName"]) +
+  "\n" +
+  "IP:" +
+  obj["query"] +
+  "\n" +
+  "时区:" +
+  obj["timezone"];
+$done({ title, subtitle, ip, description });
