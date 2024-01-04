@@ -34,7 +34,7 @@ const country = convertToSimplifiedChinese(city_check(obj['country']));
 const city = convertToSimplifiedChinese(city_check(obj['city']));
 
 // 展示在顶部开关左边（第1行） 格式：国旗 地区名
-var title = flags.get(obj["countryCode"]) + " " + city_check(obj["city"]);
+var title = flags.get(obj['countryCode']) + ' ' + append(city);
 // 展示在顶部开关左边（第2行）
 var subtitle = obj['query'] + ' ' + isp_check(obj['as']);
 // 不展示
