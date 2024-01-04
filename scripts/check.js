@@ -41,7 +41,7 @@ var subtitle = ISP_ValidCheck(obj['as']) + ' ' + obj['query'];
 var ip = obj["query"];
 var description =
   "国家:" + 
-  obj["countryCode"] + ' ' + obj["country"] +            
+  flags.get(obj["countryCode"]) + ' ' + obj["countryCode"] + ' ' + obj["country"] +            
   "\n" +
   "服务商:" +
   obj["isp"] +
