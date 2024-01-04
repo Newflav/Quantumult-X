@@ -50,7 +50,7 @@ var description =
   "服务商:" +
   obj["isp"] +
   "\n" +
-  "ip:" +
+  "IP:" +
   obj["query"] +
   "\n" +
   "地区:" +
