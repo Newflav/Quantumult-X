@@ -22,14 +22,19 @@ function area_check(para) {
   return para === "中华民国" ? "台湾" : para;
 }
 
+function append(country, city) {
+  return country === city ? country : country + ' ' + city;
+}
+
+// 脚本开始
 var body = $response.body;
 var obj = JSON.parse(body);
 
 const country = convertToSimplifiedChinese(city_check(obj['country']));
 const city = convertToSimplifiedChinese(city_check(obj['city']));
 
-// 展示在顶部开关左边（第1行） 格式：国旗 国家名 地区名
-var title = flags.get(obj['countryCode']) + ' ' + append(country, city);
+// 展示在顶部开关左边（第1行） 格式：国旗 地区名
+var title = flags.get(obj['countryCode']) + ' ' + append(city);
 // 展示在顶部开关左边（第2行）
 var subtitle = obj['query'] + ' ' + isp_check(obj['as']);
 // 不展示
