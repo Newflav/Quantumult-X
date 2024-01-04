@@ -38,7 +38,7 @@ function Area_check(para) {
 var body = $response.body;
 var obj = JSON.parse(body);
 // 展示在顶部开关左边（第1行） 格式：国旗 地区名
-var title = flags.get(obj["countryCode"]) + " " + City_ValidCheck(obj["city"]); //+Area_check(obj['country']);
+var title = flags.get(obj["countryCode"]) + " " + City_ValidCheck(obj["city"]) + " " + Area_check(obj['country']);
 // 展示在顶部开关左边（第2行）
 var subtitle = obj['query'] + ' ' + ISP_ValidCheck(obj['as']);
 var ip = obj["query"];
@@ -50,12 +50,12 @@ var description =
   "服务商:" +
   obj["isp"] +
   "\n" +
-  "IP:" +
+  "IP地址:" +
   obj["query"] +
   "\n" +
-  "地区:" +
+  "所在地区:" +
   City_ValidCheck(obj["regionName"]) +
   "\n" +
-  "时区:" +
+  "所在时区:" +
   obj["timezone"];
 $done({ title, subtitle, ip, description });
