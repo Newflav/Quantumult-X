@@ -54,6 +54,5 @@ var description =
   obj["timezone"] +
   "\n" +
   "国家地区:" +
-  flags.get(obj["countryCode"]) + ' ' + obj["country"] + ' ' + City_ValidCheck(obj["regionName"]) +
-  "\n" +
+  flags.get(obj["countryCode"]) + ' ' + obj["country"] + ' ' + City_ValidCheck(obj["regionName"]);
 $done({ title, subtitle, ip, description });
