@@ -43,16 +43,16 @@ var title = flags.get(obj["countryCode"]) + " " + City_ValidCheck(obj["city"]); 
 var subtitle = obj['query'] + ' ' + ISP_ValidCheck(obj['isp']);
 var ip = obj["query"];
 // 长按节点选择“查看节点信息”时的信息
-var description = 
-  "IP:" +
-  obj["query"] +
+var description =
+  "地区:" + 
+  flags.get(obj["countryCode"]) + ' ' + obj["country"] + ' ' + City_ValidCheck(obj["regionName"]) +            
   "\n" +
   "服务商:" +
   obj["isp"] +
   "\n" +
-  "时区:" +
-  obj["timezone"] +
+  "IP:" +
+  obj["query"] +
   "\n" +
-  "国家地区:" +
-  flags.get(obj["countryCode"]) + ' ' + obj["country"] + ' ' + City_ValidCheck(obj["regionName"]);
+  "时区:" +
+  obj["timezone"];
 $done({ title, subtitle, ip, description });
