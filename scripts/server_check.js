@@ -44,14 +44,17 @@ var subtitle = obj['query'] + ' ' + ISP_ValidCheck(obj['isp']);
 var ip = obj["query"];
 // 长按节点选择“查看节点信息”时的信息
 var description =
-  "地区:" + 
-  flags.get(obj["countryCode"]) + ' ' + obj["country"] + ' ' + City_ValidCheck(obj["regionName"]) +            
+  "国家:" + 
+  flags.get(obj["countryCode"]) + ' ' + obj["country"] +            
   "\n" +
   "服务商:" +
   obj["isp"] +
   "\n" +
   "IP:" +
   obj["query"] +
+  "\n" +
+  "地区:" +
+  City_ValidCheck(obj["regionName"]) +
   "\n" +
   "时区:" +
   obj["timezone"];
