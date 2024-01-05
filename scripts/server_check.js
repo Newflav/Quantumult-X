@@ -40,12 +40,12 @@ var obj = JSON.parse(body);
 // 展示在顶部开关左边（第1行） 格式：国旗 地区名
 var title = flags.get(obj["countryCode"]) + " " + City_ValidCheck(obj["city"]); //+Area_check(obj['country']);
 // 展示在顶部开关左边（第2行）
-var subtitle = obj['query'] + ' ' + ISP_ValidCheck(obj['as']);
+var subtitle = obj['query'] + ' ' + ISP_ValidCheck(obj['isp']);
 var ip = obj["query"];
 // 长按节点选择“查看节点信息”时的信息
 var description =
   "国家:" + 
-  flags.get(obj["countryCode"]) + ' ' + obj["countryCode"] + ' ' + obj["country"] +            
+  flags.get(obj["countryCode"]) + ' ' + obj["country"] +            
   "\n" +
   "服务商:" +
   obj["isp"] +
