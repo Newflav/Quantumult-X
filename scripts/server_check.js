@@ -54,7 +54,7 @@ var description =
   obj["query"] +
   "\n" +
   "地区:" +
-  City_ValidCheck(obj["city"]) +
+  City_ValidCheck(obj["regionName"]) +
   "\n" +
   "时区:" +
   obj["timezone"];
