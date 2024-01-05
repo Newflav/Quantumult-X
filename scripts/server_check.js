@@ -51,7 +51,7 @@ var description =
   obj["isp"] +
   "\n" +
   "时区:" +
-  obj["timezone"];
+  obj["timezone"] +
   "\n" +
   "国家地区:" +
   flags.get(obj["countryCode"]) + ' ' + obj["country"] + ' ' + City_ValidCheck(obj["regionName"]) +
