@@ -75,7 +75,6 @@ host-suffix, vrtcal.com, reject
 host-suffix, vungle.com, reject
 host-suffix, amazon-adsystem.com, reject
 
-
 # > 禁htpps dns
 # Alibaba
 host, httpdns.alicdn.com, reject
@@ -104,26 +103,33 @@ ip6-cidr, 2402:db40:5100:1011::5/128, reject
 # JD Cloud
 ip-cidr, 103.224.222.208/32, reject
 
+# Kuaishou
+host, kuaishou.httpdns.pro, reject
+
 # Netease
-host, httpdns.music.163.com, reject
-host, httpdns.n.netease.com, reject
-host, music.httpdns.c.163.com, reject
-host, lofter.httpdns.c.163.com, reject
-ip-cidr, 59.111.239.61/32, reject
-ip-cidr, 59.111.239.62/32, reject
-ip-cidr, 115.236.121.51/32, reject
-ip-cidr, 115.236.121.195/32, reject
+host,httpdns.n.netease.com, reject
+host,httpdns.music.163.com, reject
+host,music.httpdns.c.163.com, reject
+host,lofter.httpdns.c.163.com, reject
+ip-cidr,59.111.239.61/32, reject
+ip-cidr,59.111.239.62/32, reject
+ip-cidr,115.236.121.51/32, reject
+ip-cidr,115.236.121.195/32, reject
 
 # Meituan
 host, httpdns.meituan.com, reject
 
 # WeChat
-host, dns.weixin.qq.com, reject
-host, dns.weixin.qq.com.cn, reject
-ip-cidr, 42.81.232.18/32, reject
-ip-cidr, 42.187.182.106/32, reject
-ip-cidr, 42.187.182.123/32, reject
-ip-cidr, 42.187.184.154/32, reject
-ip-cidr, 123.151.54.50/32, reject
-ip6-cidr, 2402:4e00:1900:1700:0:9554:1ad9:c3a/128, reject
-ip6-cidr, 240e:928:1400:10::25/128, reject
+host,dns.weixin.qq.com, reject
+host,dns.weixin.qq.com.cn, reject
+ip-cidr,42.81.232.18/32, reject
+ip-cidr,42.187.182.106/32, reject
+ip-cidr,42.187.182.123/32, reject
+ip-cidr,42.187.184.154/32, reject
+ip-cidr,123.151.54.50/32, reject
+ip6-cidr,2402:4e00:1900:1700:0:9554:1ad9:c3a/128, reject
+ip6-cidr,240e:928:1400:10::25/128, reject
+
+# Zhihu
+ip-cidr,118.89.204.198/23, reject
+ip6-cidr,2402:4e00:1200:ed00:0:9089:6dac:96b6/128, reject
