@@ -75,7 +75,7 @@ host-suffix, vrtcal.com, reject
 host-suffix, vungle.com, reject
 host-suffix, amazon-adsystem.com, reject
 
-# > 禁htpps dns
+# > 禁htppsdns解析
 # Alibaba
 host, httpdns.alicdn.com, reject
 
