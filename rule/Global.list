@@ -1,4 +1,4 @@
-# > apple
+# > Apple
 host, amp-api.podcasts.apple.com, proxy
 host, beta.music.apple.com, proxy
 host, books.itunes.apple.com, proxy
@@ -14,18 +14,18 @@ host-suffix, books.apple.com, proxy
 host-suffix, tv.apple.com, proxy
 host-suffix, apple.news, proxy
 
-# > appleid
+# > AppleID
 host, appleid.apple.com, proxy
 host, appleid.cdn-apple.com, proxy
 host, gsa.apple.com, proxy
 host, idmsa.apple.com, proxy
 
-# > testflight
+# > Testflight
 host, beta.apple.com, proxy
 host, testflight.apple.com, proxy
 host-keyword, testflight, proxy
 
-# > microsoft
+# > Microsoft
 host, assets1.xboxlive.com, proxy
 host, assets2.xboxlive.com, proxy
 host, az416426.vo.msecnd.net, proxy
@@ -52,7 +52,7 @@ host-suffix, microsoftapp.net, proxy
 host-suffix, microsoft-falcon.io, proxy
 host-suffix, microsofttranslator.com, proxy
 
-# > wikimedia
+# > Wikimedia
 host-suffix, mediawiki.org, proxy
 host-suffix, wikibooks.org, proxy
 host-suffix, wikidata.org, proxy
@@ -67,14 +67,14 @@ host-suffix, wikiversity.org, proxy
 host-suffix, wikivoyage.org, proxy
 host-suffix, wiktionary.org, proxy
 
-# > notion
+# > Notion
 host-suffix, notion-static.com, proxy
 host-suffix, notion.com, proxy
 host-suffix, notion.new, proxy
 host-suffix, notion.site, proxy
 host-suffix, notion.so, proxy
 
-# > github
+# > GitHub
 host-suffix, github.blog, proxy
 host-suffix, github.com, proxy
 host-suffix, github.io, proxy
@@ -84,48 +84,48 @@ host-suffix, githubassets.com, proxy
 host-suffix, githubusercontent.com, proxy
 host-keyword, github, proxy
 
-# > gitlab
+# > Gitlab
 host-suffix, gitlab.io, proxy
 host-suffix, gitlab.com, proxy
 host-suffix, gitlab.net, proxy
 
-# > cloudflare
+# > Cloudflare
 host-suffix, warp.plus, proxy
 host-suffix, cloudflare.com, proxy
 host-suffix, cloudflare.net, proxy
 host-suffix, cloudflareclient.com, proxy
 
-# > signal
+# > Signal
 host-suffix, signal.org, proxy
 host-suffix, hcaptcha.com, proxy
 
-# > tutanota
+# > Tutanota
 host-suffix, tuta.com, proxy
 host-suffix, tutanota.com, proxy
 
-# > proton
+# > Proton
 host-suffix, pm.me, proxy
 host-suffix, protonmail.com, proxy
 host-suffix, proton.me, proxy
 
-# > deepl
+# > Deepl
 host-suffix, deepl.com, proxy
 
-# > papago
+# > Papago
 host-suffix, naver.com, proxy
 host-suffix, naver.net, proxy
 
-# > mail
+# > Mail
 host, s.uicdn.com, proxy
 host, cdn.cookielaw.org, proxy
 host-suffix, mail.com, proxy
 host-suffix, ui-portal.de, proxy
 
-# > yahoo
+# > Yahoo
 host-suffix, oath.com, proxy
 host-suffix, yahoo.com, proxy
 
-# > duckduckgo
+# > DuckDuckGo
 host-suffix, duckduckgo.com, proxy
 
 # > 代理工具
