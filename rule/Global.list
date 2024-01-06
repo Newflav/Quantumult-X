@@ -50,6 +50,7 @@ HOST-SUFFIX, msauth.net, PROXY
 HOST-SUFFIX, microsoftonline.com, PROXY
 HOST-SUFFIX, microsoftapp.net, PROXY
 HOST-SUFFIX, microsoft-falcon.io, PROXY
+HOST-SUFFIX, microsofttranslator.com, PROXY
 
 # > Wikimedia
 HOST-SUFFIX, mediawiki.org, PROXY
