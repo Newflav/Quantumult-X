@@ -1075,6 +1075,3 @@ IP-ASN, 9818, direct
 IP-ASN, 9819, direct
 IP-ASN, 9929, direct
 IP-ASN, 9939, direct
-
-# > GeoIP
-geoip, cn, direct
