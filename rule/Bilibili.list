@@ -1,7 +1,7 @@
 # > Bilibili
-HOST-SUFFIX, biliapi.com, Bilibili
-HOST-SUFFIX, biliapi.net, Bilibili
-HOST-SUFFIX, bilibili.com, Bilibili
-HOST, upos-hz-mirrorakam.akamaized.net, Bilibili
-HOST-KEYWORD, cn-hk-eq-bcache-, Bilibili
-HOST-KEYWORD, bilibili, Bilibili
+HOST-SUFFIX, biliapi.com, bilibili
+HOST-SUFFIX, biliapi.net, bilibili
+HOST-SUFFIX, bilibili.com, bilibili
+HOST, upos-hz-mirrorakam.akamaized.net, bilibili
+HOST-KEYWORD, cn-hk-eq-bcache-, bilibili
+HOST-KEYWORD, bilibili, bilibili
