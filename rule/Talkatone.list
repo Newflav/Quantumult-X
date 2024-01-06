@@ -1,4 +1,4 @@
 # > Talkatone
-HOST-SUFFIX, tktn.be, PROXY
-HOST-SUFFIX, talkatone.com, PROXY
-IP-ASN, 18779, PROXY
+host-suffix, tktn.be, proxy
+host-suffix, talkatone.com, proxy
+IP-ASN, 18779, proxy
