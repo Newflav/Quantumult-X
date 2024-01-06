@@ -1,7 +1,7 @@
 # >>>>>>>>>> ✅ 会员功能解锁 ✅ <<<<<<<<<
 # 京东比价
 ;hostname = api.m.jd.com
-^https?://api\.m\.jd\.com/(client\.action|api)\?functionId=(wareBusiness|serverConfig|basicConfig|lite_wareBusiness|pingou_item) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/jd_Price.js
+^https?://api\.m\.jd\.com/(client\.action|api)\?functionId=(wareBusiness|serverConfig|basicConfig|lite_wareBusiness|pingou_item) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/jd_price.js
 
 # Spotify会员
 ;hostname = spclient.wg.spotify.com
@@ -10,10 +10,6 @@
 # AdGuard会员
 ;hostname = mobile-api.adguard.org
 ^https?:\/\/mobile-api\.adguard\.org\/api\/.+\/ios_validate_receipt url script-response-body https://raw.githubusercontent.com/yqc007/QuantumultX/master/AdGuardProCrack.js
-
-# Nicegram会员
-;hostname = restore-access.indream.app
-https?:\/\/restore-access\.indream\.app\/restoreAccess\?id=\d{5,10} url echo-response text/json echo-response https://github.com/ddgksf2013/dev/raw/main/NicegramProCrack.js
 
 # 人人视频会员
 ;hostname = api.hujuvod.com, api.qwapp.top
@@ -24,8 +20,8 @@ https?:\/\/restore-access\.indream\.app\/restoreAccess\?id=\d{5,10} url echo-res
 ^https:\/\/pan\.baidu\.com\/rest\/.*\/membership\/user\?app_id url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/baiduwangpan.js
 
 # 网易云音乐会员
-;hostname = *.music.163.com
-^http[s]?:\/\/.+music.+(player\/url|playlist|entrance|\/eapi\/search\/).*$ url script-request-header https://raw.githubusercontent.com/gjwj666/qx/main/Wyy.js
+;hostname = interface*.music.163.com
+^http[s]?:\/\/.+music.+(player\/url|playlist|entrance|\/eapi\/search\/).*$ url script-request-header http://gjds666.cf/quantumultx/Wyy.js
 
 # 扫描全能王会员
 ;hostname = *.intsig.net, *.camscanner.com
@@ -37,4 +33,4 @@ https?:\/\/restore-access\.indream\.app\/restoreAccess\?id=\d{5,10} url echo-res
 
 
 
-hostname = spclient.wg.spotify.com, mobile-api.adguard.org, www.bing.com, restore-access.indream.app, api.hujuvod.com, api.qwapp.top, *.intsig.net, *.camscanner.com
+hostname = spclient.wg.spotify.com, mobile-api.adguard.org, api.hujuvod.com, api.qwapp.top, *.intsig.net, *.camscanner.com, www.bing.com
