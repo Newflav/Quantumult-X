@@ -3,7 +3,6 @@ ip-cidr, 10.0.0.0/8, direct
 ip-cidr, 127.0.0.0/8, direct
 ip-cidr, 172.16.0.0/12, direct
 ip-cidr, 192.168.0.0/16, direct
-ip-cidr, 224.0.0.0/24, direct
 ip6-cidr, ::1/128, direct
 ip6-cidr, fc00::/7, direct
 ip6-cidr, fe80::/10, direct
@@ -68,6 +67,9 @@ host-suffix, tw, 台湾节点
 host-suffix, jp, 日本节点
 host-suffix, sg, 新加坡节点
 host-suffix, cn, direct
+
+# > GeoIP
+geoip, cn, direct
 
 # > ChinaASN
 IP-ASN, 10111, direct
@@ -1072,6 +1074,3 @@ IP-ASN, 9818, direct
 IP-ASN, 9819, direct
 IP-ASN, 9929, direct
 IP-ASN, 9939, direct
-
-# > GeoIP
-geoip, cn, direct
