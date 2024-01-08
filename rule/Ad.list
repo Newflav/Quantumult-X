@@ -64,6 +64,9 @@ host, got.pubnative.net, reject
 host, mfx.mobilefuse.com, reject
 host, hermes-us.inspidspad.com, reject
 host, s3.amazonaws.com, reject
+host, cfg.talkatone.com, reject
+host, d.tktn.be, reject
+host-suffix, tappx.com, reject
 host-suffix, adxinspidsp.com, reject
 
 # > 其他
