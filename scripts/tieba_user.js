@@ -23,13 +23,13 @@ delete json["recom_swan_list"];
 if (json.hasOwnProperty("finance_tab")) {
 delete json["finance_tab"];
 }
-if (json.hasOwnProperty("video_channel_info")) {
-delete json["video_channel_info"];
-}
 
 // 过滤掉"user"中的"user_growth"
 if (json.hasOwnProperty("user") && json["user"].hasOwnProperty("user_growth")) {
 delete json["user"]["user_growth"];
+}
+if (json.hasOwnProperty("user") && json["user"].hasOwnProperty("ala_info")) {
+delete json["user"]["ala_info"];
 }
 if (json.hasOwnProperty("user") && json["user"].hasOwnProperty("ip_address")) { delete json["user"]["ip_address"]; }
 if (json.hasOwnProperty("user") && json["user"].hasOwnProperty("gift_list")) { delete json["user"]["gift_list"]; }
