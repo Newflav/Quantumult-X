@@ -2,6 +2,9 @@ var body = $response.body;
 var json = JSON.parse(body);
 
 // 过滤掉特定关键词的对象
+if (json.hasOwnProperty("video_channel_info")) {
+delete json["video_channel_info"];
+}
 if (json.hasOwnProperty("vip_banner")) {
 delete json["vip_banner"];
 }
