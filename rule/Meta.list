@@ -1,22 +1,22 @@
 # > Meta
-host-suffix, accountkit.com
-host-suffix, cdninstagram.com
-host-suffix, f8.com
-host-suffix, facebookmail.com
-host-suffix, fb.com
-host-suffix, fb.me
-host-suffix, fb.watch
-host-suffix, fbaddins.com
-host-suffix, fbcdn.net
-host-suffix, fbsbx.com
-host-suffix, fbworkmail.com
-host-suffix, instagram.com
-host-suffix, m.me
-host-suffix, messenger.com
-host-suffix, oculus.com
-host-suffix, oculuscdn.com
-host-suffix, readyatdawn.com
-host-suffix, rocksdb.org
-host-suffix, whatsapp.com
-host-suffix, whatsapp.net
-host-keyword, .facebook.
+host-suffix, accountkit.com, proxy
+host-suffix, cdninstagram.com, proxy
+host-suffix, f8.com, proxy
+host-suffix, facebookmail.com, proxy
+host-suffix, fb.com, proxy
+host-suffix, fb.me, proxy
+host-suffix, fb.watch, proxy
+host-suffix, fbaddins.com, proxy
+host-suffix, fbcdn.net, proxy
+host-suffix, fbsbx.com, proxy
+host-suffix, fbworkmail.com, proxy
+host-suffix, instagram.com, proxy
+host-suffix, m.me, proxy, proxy
+host-suffix, messenger.com, proxy
+host-suffix, oculus.com, proxy
+host-suffix, oculuscdn.com, proxy
+host-suffix, readyatdawn.com, proxy
+host-suffix, rocksdb.org, proxy
+host-suffix, whatsapp.com, proxy
+host-suffix, whatsapp.net, proxy
+host-keyword, .facebook., proxy
