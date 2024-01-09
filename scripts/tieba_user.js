@@ -23,6 +23,9 @@ delete json["recom_swan_list"];
 if (json.hasOwnProperty("finance_tab")) {
 delete json["finance_tab"];
 }
+if (json.hasOwnProperty("video_channel_info")) {
+delete json["video_channel_info"];
+}
 
 // 过滤掉"user"中的"user_growth"
 if (json.hasOwnProperty("user") && json["user"].hasOwnProperty("user_growth")) {
