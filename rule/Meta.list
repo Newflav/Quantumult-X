@@ -17,7 +17,5 @@ host-suffix, oculus.com, proxy
 host-suffix, oculuscdn.com, proxy
 host-suffix, readyatdawn.com, proxy
 host-suffix, rocksdb.org, proxy
-host-suffix, whatsapp.com, proxy
-host-suffix, whatsapp.net, proxy
 host-suffix, facebook.com, proxy
 host-keyword, .facebook., proxy
