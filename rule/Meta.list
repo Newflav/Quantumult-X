@@ -11,7 +11,7 @@ host-suffix, fbcdn.net, proxy
 host-suffix, fbsbx.com, proxy
 host-suffix, fbworkmail.com, proxy
 host-suffix, instagram.com, proxy
-host-suffix, m.me, proxy, proxy
+host-suffix, m.me, proxy
 host-suffix, messenger.com, proxy
 host-suffix, oculus.com, proxy
 host-suffix, oculuscdn.com, proxy
