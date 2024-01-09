@@ -41,5 +41,6 @@ if (json.hasOwnProperty("user") && json["user"].hasOwnProperty("virtual_image_in
 if (json.hasOwnProperty("user") && json["user"].hasOwnProperty("consume_info")) { delete json["user"]["consume_info"]; }
 if (json.hasOwnProperty("user") && json["user"].hasOwnProperty("vip_show_info")) { delete json["user"]["vip_show_info"]; }
 if (json.hasOwnProperty("user") && json["user"].hasOwnProperty("bg_pic")) { delete json["user"]["bg_pic"]; }
+if (json.hasOwnProperty("user") && json["user"].hasOwnProperty("workcreation_data")) { delete json["user"]["workcreation_data"]; }
 
 $done({ body: JSON.stringify(json) });
