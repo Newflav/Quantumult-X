@@ -1,8 +1,8 @@
 var body = $response.body;
 var json = JSON.parse(body);
 
-if (json.hasOwnProperty("data") && json["data"].hasOwnProperty("infos")) {
-delete json["data"]["infos"];
+if (json.hasOwnProperty("infos") && json["infos"].hasOwnProperty("ad_content")) {
+delete json["infos"]["ad_content"];
 }
 
 $done({ body: JSON.stringify(json) });
