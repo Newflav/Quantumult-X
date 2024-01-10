@@ -15,7 +15,7 @@ if (json.hasOwnProperty("live_fuse_forum")) {
 delete json["live_fuse_forum"];
 }
 if (json.hasOwnProperty("star_enter")) {
-delete json["live_fuse_forum"];
+delete json["star_enter"];
 }
 if (json.hasOwnProperty("vitality_info")) {
 delete json["vitality_info"];
