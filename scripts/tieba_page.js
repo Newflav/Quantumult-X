@@ -14,6 +14,12 @@ delete json["anti"];
 if (json.hasOwnProperty("live_fuse_forum")) {
 delete json["live_fuse_forum"];
 }
+if (json.hasOwnProperty("star_enter")) {
+delete json["live_fuse_forum"];
+}
+if (json.hasOwnProperty("vitality_info")) {
+delete json["vitality_info"];
+}
 
 // 过滤掉"user"中的"user_growth"
 if (json.hasOwnProperty("thread") && json["thread"].hasOwnProperty("thread_recommend_infos")) {
