@@ -25,6 +25,8 @@ delete json["forum"]["banner_list"];
 if (json.hasOwnProperty("frs_common_info") && json["frs_common_info"].hasOwnProperty("banner_list")) {
 delete json["frs_common_info"]["banner_list"];
 }
-
+if (json.hasOwnProperty("thread_list") && json["thread_list"].hasOwnProperty("ala_info")) {
+delete json["thread_list"]["ala_info"];
+}
 
 $done({ body: JSON.stringify(json) });
