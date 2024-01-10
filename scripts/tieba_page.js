@@ -19,14 +19,12 @@ delete json["live_fuse_forum"];
 if (json.hasOwnProperty("thread") && json["thread"].hasOwnProperty("thread_recommend_infos")) {
 delete json["thread"]["thread_recommend_infos"];
 }
-if (json.hasOwnProperty("thread_list") && json["thread_list"].hasOwnProperty("ala_info")) {
-delete json["thread_list"]["ala_info"];
-}
 if (json.hasOwnProperty("forum") && json["forum"].hasOwnProperty("banner_list")) {
 delete json["forum"]["banner_list"];
 }
 if (json.hasOwnProperty("frs_common_info") && json["frs_common_info"].hasOwnProperty("banner_list")) {
 delete json["frs_common_info"]["banner_list"];
 }
+
 
 $done({ body: JSON.stringify(json) });
