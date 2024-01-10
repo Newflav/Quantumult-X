@@ -14,7 +14,7 @@ if (json.hasOwnProperty("thread") && json["thread"].hasOwnProperty("thread_recom
 delete json["thread"]["thread_recommend_infos"];
 }
 if (json.hasOwnProperty("forum") && json["forum"].hasOwnProperty("banner_list")) {
-delete json["thread"]["banner_list"];
+delete json["forum"]["banner_list"];
 }
 
 $done({ body: JSON.stringify(json) });
