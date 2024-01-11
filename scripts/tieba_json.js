@@ -155,9 +155,6 @@ if (url.includes("tiebaads/commonbatch") && method === postMethod) {
     removeGoodsInfo(body.forum?.banner_list?.app);
 } else if (url.includes("c/f/frs/threadlist")) {
     console.log('贴吧-threadlist');
-    removeThreadRecommendInfos(body.thread);
-} else if (url.includes("c/f/pb/page")) {
-    console.log('贴吧-PbPage');
     removeGoodsInfo(body.banner_list?.app);
 } else if (url.includes("c/f/pb/page")) {
     console.log('贴吧-PbPage');
