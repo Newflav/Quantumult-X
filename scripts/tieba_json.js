@@ -42,11 +42,9 @@ if (url.includes("tiebaads/commonbatch") && method === postMethod) {
     } else {
         console.log(`不去除用户中心广告`);
     }
-    if (body.user?.length) {
-    body.user = [];
-    console.log(`去除贴吧成长等级`);
-    } else {
-        console.log(`不去除贴吧成长等级`);
+    if (body.user?.user_growth?.length) {
+        console.log(`去除贴吧成长等级`);
+        body.user.user_growth = {};
     }
 } else if (url.includes('c/s/sync')) {
     // get post(贴吧使用了post)均可访问
