@@ -41,8 +41,7 @@ if (url.includes("tiebaads/commonbatch") && method === postMethod) {
         console.log(`去除用户中心广告`);
     } else {
         console.log(`无需用户中心广告`);
-} else if (url.includes("c/u/user/profile")) {
-    console.log('贴吧-user');
+    }
     if (body.user?.user_growth?.length) {
         body.user.user_growth = {};
         console.log(`去除用户成长广告`);
