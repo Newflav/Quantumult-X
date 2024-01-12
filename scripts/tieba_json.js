@@ -164,7 +164,11 @@ if (url.includes("tiebaads/commonbatch") && method === postMethod) {
     } else {
         console.log('帖子详情页无直播广告');
     }
-
+    
+    if (body.thread?.thread_recommend_infos) {
+    delete body.thread.thread_recommend_infos;
+    }
+    
     if (body.post_list?.length) {
         for (const post of body.post_list) {
             if (post.outer_item) {
