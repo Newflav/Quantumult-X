@@ -1,8 +1,10 @@
-var body = $response.body;
-var json = JSON.parse(body);
+const url = $request.url;
+console.log(`json-2024.1.13`);
 
-if (json.hasOwnProperty("data") && json["infos"].hasOwnProperty("ad_content")) {
-delete json["data"]["ad_content"];
-}
+let body = JSON.parse($response.body);
+if (body.data?.infos?.ad_content) {
+    delete body.data.infos.ad_content;
+console.log(`去除横幅广告`);
+    }
 
-$done({ body: JSON.stringify(json) });
+body = JSON.stringify(body);
