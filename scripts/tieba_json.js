@@ -44,8 +44,8 @@ if (url.includes("tiebaads/commonbatch") && method === postMethod) {
     }
     
     if (body.user?.user_growth?.is_ad) {
-        body.user.user_growth = {};
         console.log(`去除用户成长广告`);
+        body.user.user_growth = {};
     } else {
         console.log(`无需用户成长广告`);
     }
