@@ -200,8 +200,15 @@ if (url.includes("tiebaads/commonbatch") && method === postMethod) {
     removeGoodsInfo(body.app_list);
 } else {
     $notification.post(notifyTitle, "路径/请求方法匹配错误:", method + "," + url);
+} else if (url.includes("c/u/user/profile")) {
+    console.log('贴吧-user');
+    if (body.banner?.length) {
+        body.banner = [];
+        console.log(`去除用户中心广告`);
+    } else {
+        console.log(`无需去除用户中心广告`);
+    }
 }
-
 body = JSON.stringify(body);
 
 $done({
