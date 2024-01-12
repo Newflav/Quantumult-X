@@ -42,8 +42,8 @@ if (url.includes("tiebaads/commonbatch") && method === postMethod) {
     } else {
         console.log(`不去除用户中心广告`);
     }
-    if (body.user_growth?.length) {
-    body.user_growth = {};
+    if (body.user?.length) {
+    body.user = [];
     console.log(`去除贴吧成长等级`);
     } else {
         console.log(`不去除贴吧成长等级`);
