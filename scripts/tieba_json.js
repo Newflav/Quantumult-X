@@ -164,11 +164,12 @@ if (url.includes("tiebaads/commonbatch") && method === postMethod) {
     } else {
         console.log('帖子详情页无直播广告');
     }
-    
-    if (body.thread?.thread_recommend_infos) {
-    delete body.thread.thread_recommend_infos;
+    if (body.thread?.thread_recommend_infos?.length) {
+        body.thread.thread_recommend_infos = [];
+        console.log(`去除进入话题提醒`);
+    } else {
+        console.log(`无需去除话题提醒`);
     }
-    
     if (body.post_list?.length) {
         for (const post of body.post_list) {
             if (post.outer_item) {
