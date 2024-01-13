@@ -42,7 +42,7 @@ if (url.includes("tiebaads/commonbatch") && method === postMethod) {
         body.banner = [];
     }
     if (body.user.user_growth) {
-        user.user_growth = {};
+        body.user.user_growth = {};
         console.log('去除贴吧等级提醒');
     }
 } else if (url.includes('c/s/sync')) {
