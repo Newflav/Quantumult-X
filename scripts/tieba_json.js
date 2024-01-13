@@ -41,10 +41,9 @@ if (url.includes("tiebaads/commonbatch") && method === postMethod) {
         console.log(`去除用户中心广告`);
         body.banner = [];
     }
-    const usergrowthLength = body.user?.user_growth?.length;
-    if (usergrowthLength) {
-    console.log(`去除贴吧等级提醒`);
-    body.user.user_growth = {};
+    if (body.user?.user_growth?.is_ad) {
+        body.user.user_growth = {};
+        console.log('去除贴吧等级提醒');
     }
 } else if (url.includes('c/s/sync')) {
     // get post(贴吧使用了post)均可访问
