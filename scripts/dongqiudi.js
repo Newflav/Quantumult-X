@@ -1,14 +1,9 @@
-const notifyTitle = "贴吧json脚本错误";
-console.log(`json-2024.1.14`);
+var body = $response.body;
+var json = JSON.parse(body);
 
-let body = JSON.parse($response.body);
-    if (body.data?.infos?.ad_content) {
-    delete body.data.infos.ad_content;
-console.log(`去除进入话题提醒`);
-    }
+// 过滤掉特定关键词的对象
+if (json.hasOwnProperty("ad_content")) {
+delete json["ad_content"];
+}
 
-body = JSON.stringify(body);
-
-$done({
-    body
-});
+$done({ body: JSON.stringify(json) });
