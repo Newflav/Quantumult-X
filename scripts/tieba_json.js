@@ -40,6 +40,42 @@ if (url.includes("tiebaads/commonbatch") && method === postMethod) {
         console.log(`去除用户中心广告`);
         body.banner = [];
     }
+    if (body.duxiaoman_entry) {
+        console.log(`去除用户中心度小满广告`);
+        body.duxiaoman_entry = [];
+    }
+    if (body.recom_naws_list) {
+        console.log(`去除用户中心app推广1`);
+        body.recom_naws_list = [];
+    }
+    if (body.recom_swan_list) {
+        console.log(`去除用户中心app推广2`);
+        body.recom_swan_list = [];
+    }
+    if (body.finance_tab) {
+        console.log(`去除用户中心金融广告`);
+        body.finance_tab = [];
+    }
+    if (body.namoaixud_entry) {
+        console.log(`去除用户中心贷款广告`);
+        body.namoaixud_entry = [];
+    }
+    if (body.user.gift_list) {
+        console.log(`去除用户中心棋牌广告`);
+        body.user.gift_list = [];
+    }
+    if (body.user.consume_info) {
+        console.log('去除用户中心消费广告');
+        body.user.consume_info = [];
+    }
+    if (body.user.vip_show_info) {
+        console.log('去除贴吧vip展示信息');
+        body.user.vip_show_info = [];
+    }
+    if (body.user.shake_ad_switch) {
+        console.log('去除贴吧成长等级');
+        body.user.shake_ad_switch = [];
+    }
     if (body.user.user_growth) {
         console.log('去除贴吧成长等级');
         body.user.user_growth = [];
