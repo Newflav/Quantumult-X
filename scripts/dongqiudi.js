@@ -8,3 +8,7 @@ console.log(`去除横幅广告`);
     }
 
 body = JSON.stringify(body);
+
+$done({
+    body
+});
