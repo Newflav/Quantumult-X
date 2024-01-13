@@ -36,14 +36,13 @@ if (url.includes("tiebaads/commonbatch") && method === postMethod) {
     }
 } else if (url.includes("c/u/user/profile")) {
     console.log('贴吧-user');
-    const bannerLength = body.banner?.length;
-    if (bannerLength) {
+    if (body.banner) {
         console.log(`去除用户中心广告`);
         body.banner = [];
     }
     if (body.user.user_growth) {
-        body.user.user_growth = [];
         console.log('去除贴吧成长等级');
+        body.user.user_growth = [];
     }
 } else if (url.includes('c/s/sync')) {
     // get post(贴吧使用了post)均可访问
@@ -176,9 +175,8 @@ if (url.includes("tiebaads/commonbatch") && method === postMethod) {
         console.log('帖子详情页无直播广告');
     }
     
-    const recommendLength = body.thread?.thread_recommend_infos?.length;
-    if (recommendLength) {
-        console.log(`去除用户中心广告`);
+    if (body.thread.thread_recommend_infos) {
+        console.log(`去除进入话题小窗`);
         body.thread.thread_recommend_infos = [];
     }
     if (body.post_list?.length) {
