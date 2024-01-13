@@ -43,7 +43,7 @@ if (url.includes("tiebaads/commonbatch") && method === postMethod) {
     }
     if (body.user.user_growth) {
         body.user.user_growth = {};
-        console.log('去除贴吧等级提醒');
+        console.log('去除贴吧成长等级');
     }
 } else if (url.includes('c/s/sync')) {
     // get post(贴吧使用了post)均可访问
