@@ -42,7 +42,7 @@ if (url.includes("tiebaads/commonbatch") && method === postMethod) {
         body.banner = [];
     }
     if (body.user.user_growth) {
-        body.user.user_growth = {};
+        body.user.user_growth = [];
         console.log('去除贴吧成长等级');
     }
 } else if (url.includes('c/s/sync')) {
