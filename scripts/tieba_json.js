@@ -41,7 +41,7 @@ if (url.includes("tiebaads/commonbatch") && method === postMethod) {
         console.log(`去除用户中心广告`);
         body.banner = [];
     }
-    if (body.user?.user_growth?.is_ad) {
+    if (body.user?.user_growth?.length > 0) {
         body.user.user_growth = {};
         console.log('去除贴吧等级提醒');
     }
