@@ -1,13 +1,11 @@
-console.log(`json-2024.1.13`);
-let body = JSON.parse($response.body);
+if (!$response.body) $done({});
+let obj = JSON.parse($response.body);
 
-    if (body.data.infos.ad_content) {
-        console.log('去除横幅广告');
-        body.data.infos.ad_content = [];
-    }
+if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTrackBusiness")) {
+  // 物流页面
+  if (obj?.data.infos.ad_content) {
+    // 收货时寄快递享八折 享受条件苛刻 故移除
+    delete obj.data.infos.ad_content;
+  }
     
-body = JSON.stringify(body);
-
-$done({
-    body
-});
+$done({ body: JSON.stringify(obj) });
