@@ -1,8 +1,11 @@
 if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
 
-  if (obj.data?.infos?.ad_content) {
-      delete.obj.data.infos.ad_content;
-  }
+if ('data' in body) {
+        if (!body.data?.infos?.ad_content) {
+            console.log('无需处理');
+        } else {
+            console.log(`ad_str}`);
+            body.ad_content = null;
 
 $done({ body: JSON.stringify(obj) });
