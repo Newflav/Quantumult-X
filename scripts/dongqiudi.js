@@ -1,6 +1,6 @@
-if (!$response.body) $done({});
-let obj = JSON.parse($response.body);
+console.log(`贴吧json-2024.1.14`);
 
+let body = JSON.parse($response.body);
 if ('data' in body) {
         if (!body.data?.infos?.ad_content) {
             console.log('无需处理');
