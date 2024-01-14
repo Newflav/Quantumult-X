@@ -6,7 +6,6 @@ let body = JSON.parse($response.body);
             body.data.not_show_m_ad = '1';
             console.log('不展示广告');
         }
-}
 
 body = JSON.stringify(body);
 
