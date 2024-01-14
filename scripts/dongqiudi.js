@@ -8,6 +8,7 @@ let body = JSON.parse($response.body);
         } else {
             console.log('无需修改screen_fill_advertisement_bear_switch');
         }
+}
 
 body = JSON.stringify(body);
 
