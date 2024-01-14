@@ -5,4 +5,4 @@ let obj = JSON.parse($response.body);
       obj.data.infos.ad_content = null;
   }
 
-$done({ body: JSON.stringify(json) });
+$done({ body: JSON.stringify(obj) });
