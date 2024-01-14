@@ -3,10 +3,10 @@ let body = JSON.parse($response.body);
 
 if ('ad_content' in body) {
         if (!body.data?.infos?.ad_content) {
-            console.log('无需处理');
-        } else {
-            console.log(`ad_str}`);
+            console.log(`ad_str`);
             body.ad_content = null;
+            }
+}
 
 body = JSON.stringify(body);
 
