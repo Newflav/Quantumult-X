@@ -7,8 +7,4 @@ let body = JSON.parse($response.body);
             console.log('不展示广告');
         }
 
-body = JSON.stringify(body);
-
-$done({
-    body
-});
+$done({ body: JSON.stringify(body) });
