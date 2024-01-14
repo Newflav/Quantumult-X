@@ -1,4 +1,3 @@
-console.log(`json-2024.1.14`);
 let body = JSON.parse($response.body);
 
     if ('data' in body) {
