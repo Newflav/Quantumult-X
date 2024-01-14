@@ -7,5 +7,3 @@ let body = JSON.parse($response.body);
         }
 
 $done({ body: JSON.stringify(body) });
-
-$done({ JSON.stringify(body); });
