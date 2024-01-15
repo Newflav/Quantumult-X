@@ -1,8 +1,5 @@
 let body = JSON.parse($response.body);
 
-    if (body.data.infos.ad_content.ad_source.image) {
-        body.data.infos.ad_content.ad_source.image = [];
-    }
     if (body.data.infos) {
         body.data.infos = [];
     }
