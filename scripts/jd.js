@@ -135,9 +135,6 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
   if (obj?.topBgImgBig) {
     delete obj.topBgImgBig;
   }
-    if (obj?.floorList?.content?.subFloors?.data) {
-    delete obj.floorList.content.subFloors.data;
-  }
   // 首页 下拉二楼
   if (obj?.webViewFloorList?.length > 0) {
     obj.webViewFloorList = [];
