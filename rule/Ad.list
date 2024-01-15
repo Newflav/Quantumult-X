@@ -20,7 +20,7 @@ host-suffix, ut.taobao.com, reject
 host, gwp.xiaojukeji.com, reject
 
 # > 建设银行
-host-keyword, adv.ccb.com, reject
+host, adv.ccb.com, reject
 
 # > 美团
 host, al-log.d.meituan.net, reject
