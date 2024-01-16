@@ -4,7 +4,7 @@ let obj = JSON.parse($response.body);
 
 if (url.includes("/v2/article/detail")) {
 if (ojb?.data?.infos?.ad_content) {
-        ojb.data.infos.ad_content = {};
+        ojb.data.infos.ad_content = [1];
     }
 } else {
   $done({});
