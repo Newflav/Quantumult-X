@@ -8,8 +8,13 @@ let obj = JSON.parse($response.body);
     if (obj.data?.not_show_m_ad) {
     obj.data.not_show_m_ad = null;
   }
-    if ("ad_content" in obj) {
-    delete obj;
+    if (obj.data?.infos) {
+    obj.data.infos = obj.data.infos.filter(
+      (item) =>
+        item.name === "channels" ||
+        item.name === "column" ||
+    );
+    fixPos(obj.data.infos);
   }
 } else {
   $done({});
