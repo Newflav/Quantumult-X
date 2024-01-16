@@ -18,11 +18,16 @@ if (url.includes("/x/resource/show/skin")) {
       .sort((a, b) => sortLists.indexOf(a?.name) - sortLists.indexOf(b?.name));
   }
   // 首页导航栏
-  if (obj?.data?.tab?.length > 0) {
-    const sortLists = ["推荐", "热门", "影视", "动画"];
-    obj.data.tab = obj.data.tab
-      .filter((i) => sortLists?.includes(i?.name))
-      .sort((a, b) => sortLists.indexOf(a?.name) - sortLists.indexOf(b?.name));
+  if (obj.data?.tab) {
+    obj.data.tab = obj.data.tab.filter(
+      (item) =>
+        item.name === "直播" ||
+        item.name === "推荐" ||
+        item.name === "热门" ||
+        item.name === "动画" ||
+        item.name === "影视" 
+    );
+    fixPos(obj.data.tab);
   }
   // 右上角按钮
   if (obj?.data?.top?.length > 0) {
