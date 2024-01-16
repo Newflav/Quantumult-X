@@ -4,7 +4,7 @@ let obj = JSON.parse($response.body);
 
 if (url.includes("/v2/article/detail")) {
       if (obj.data.dqd_ads) {
-    delete obj.data.dqd_ads;
+    delete obj.data.dqd_ads
   }
       if (obj.data.infos.ad_content) {
     delete obj.data.infos.ad_content
