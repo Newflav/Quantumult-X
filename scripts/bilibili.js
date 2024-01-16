@@ -53,71 +53,57 @@ if (url.includes("/x/resource/show/skin")) {
   };
 } else if (url.includes("/x/v2/account/mine?")) {
   // 我的页面
-  const del = ["rework_v1", "vip_section", "vip_section_v2"];
-  for (let i of del) {
-    // 不必要项目
-    delete obj.data[i];
-  }
-  if (obj?.data?.sections_v2?.length > 0) {
-    let newSects = [];
-    for (let item of obj.data.sections_v2) {
-      if (item?.button) {
-        delete item.button;
+  // 标准版：
+  // 396离线缓存 397历史记录 398我的收藏 399稍后再看 171个性装扮 172我的钱包 407联系客服 410设置
+  // 港澳台：
+  // 534离线缓存 8历史记录 4我的收藏 428稍后再看
+  // 352离线缓存 1历史记录 405我的收藏 402个性装扮 404我的钱包 544创作中心
+  // 概念版：
+  // 425离线缓存 426历史记录 427我的收藏 428稍后再看 171创作中心 430我的钱包 431联系客服 432设置
+  // 国际版：
+  // 494离线缓存 495历史记录 496我的收藏 497稍后再看 741我的钱包 742稿件管理 500联系客服 501设置
+  // 622为会员购中心 425开始为概念版id
+  const itemList = new Set([
+    396, 397, 398, 399, 407, 410, 494, 495, 496, 497, 500, 501
+  ]);
+  if (obj.data?.sections_v2) {
+    obj.data.sections_v2.forEach((element, index) => {
+      let items = element.items.filter((e) => itemList.has(e.id));
+      obj.data.sections_v2[index].button = {};
+      obj.data.sections_v2[index].tip_icon = "";
+      obj.data.sections_v2[index].be_up_title = "";
+      obj.data.sections_v2[index].tip_title = "";
+      if (
+        obj.data.sections_v2[index].title === "推荐服务" ||
+        obj.data.sections_v2[index].title === "更多服务" ||
+        obj.data.sections_v2[index].title === "创作中心"
+      ) {
+        obj.data.sections_v2[index].title = "";
+        obj.data.sections_v2[index].type = "";
       }
-      if (item?.style) {
-        if (item?.style === 1 || item?.style === 2) {
-          if (item?.title) {
-            if (item?.title === "创作中心" || item?.title === "推荐服务") {
-              // 创作中心 推荐服务
-              continue;
-            } else if (item?.title === "更多服务") {
-              delete item.title;
-              if (item?.items?.length > 0) {
-                let newItems = [];
-                for (let i of item.items) {
-                  if (/user_center\/feedback/g.test(i?.uri)) {
-                    // 联系客服
-                    newItems.push(i);
-                  } else if (/user_center\/setting/g.test(i?.uri)) {
-                    // 设置
-                    newItems.push(i);
-                  } else {
-                    continue;
-                  }
-                }
-                item.items = newItems;
-              }
-            }
-          }
+      obj.data.sections_v2[index].items = items;
+      obj.data.vip_section_v2 = "";
+      obj.data.vip_section = "";
+      if (obj.data?.live_tip) {
+        obj.data.live_tip = "";
+      }
+      if (obj.data?.answer) {
+        obj.data.answer = "";
+      }
+      // 开启本地会员标识
+      if (obj.data?.vip) {
+        if (obj.data.vip.status === 1) {
+          return false;
         } else {
-          // 其他style
-          continue;
+          obj.data.vip_type = 2;
+          obj.data.vip.type = 2;
+          obj.data.vip.status = 1;
+          obj.data.vip.vip_pay_type = 1;
+          obj.data.vip.due_date = 2208960000; // Unix 时间戳 2040-01-01 00:00:00
+          obj.data.vip.role = 3;
         }
       }
-      newSects.push(item);
-    }
-    obj.data.sections_v2 = newSects;
-  }
-  // 非会员开启本地会员标识
-  if (obj?.data?.vip) {
-    if (obj?.data?.vip?.status === 0) {
-      obj.data.vip_type = 2;
-      obj.data.vip.type = 2;
-      obj.data.vip.status = 1;
-      obj.data.vip.due_date = 3818419199; // Unix 时间戳 2090-12-31 23:59:59
-      obj.data.vip.label = {
-        path: "",
-        text: "年度大会员",
-        label_theme: "annual_vip",
-        text_color: "#FFFFFF",
-        bg_style: 1,
-        bg_color: "#FB7299",
-        border_color: "",
-        image: "https://i0.hdslb.com/bfs/vip/8d4f8bfc713826a5412a0a27eaaac4d6b9ede1d9.png"
-      };
-      obj.data.vip.nickname_color = "#FB7299";
-      obj.data.vip.role = 3;
-    }
+    });
   }
 } else if (url.includes("/x/v2/account/mine/ipad")) {
   if (obj.data?.ipad_upper_sections) {
