@@ -6,6 +6,9 @@ if (url.includes("/v2/article/detail")) {
   if (obj.data?.infos?.ad_content) {
     delete obj.data.infos.ad_content;
   }
+      if (obj.data?.not_show_m_ad) {
+       obj.data.not_show_m_ad = 1;
+  }
 } else {
   $done({});
 }
