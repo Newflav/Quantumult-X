@@ -19,9 +19,6 @@
 ^https:\/\/app\.bilibili\.com\/x\/v2\/(feed\/index(\/story)?|search\/square)\? url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/bilibili.js
 ^https:\/\/app\.bilibili\.com\/x\/resource\/(top\/activity|show\/tab\/v2)\? url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/bilibili.js
 
-# 满意度调研
-^https:\/\/api\.bilibili\.com\/x\/v2\/dm\/qoe\/show\? url reject-dict
-
 # 开屏广告 //app.bilibili.com
 ^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH url reject-dict
 ^http:\/\/upos-sz-static\.bilivideo\.com\/ssaxcode\/\w{2}\/\w{2}\/\w{32}-1-SPLASH url reject-dict
@@ -35,5 +32,9 @@
 # IP请求,地理位置请求 //api.bilibili.com
 ^https:\/\/api\.bilibili\.com\/x\/web-interface\/zone\?jsonp url reject-dict
 ^https:\/\/app\.bilibili\.com\/x\/resource\/ip url reject-dict
+# 满意度调研
+^https:\/\/api\.bilibili\.com\/x\/v2\/dm\/qoe\/show\? url reject-dict
+
+
 
 hostname = app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net
