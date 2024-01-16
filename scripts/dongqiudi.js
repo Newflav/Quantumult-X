@@ -2,9 +2,9 @@ const url = $request.url;
 if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
 
-   if (ojb.data.infos.ad_content) {
-        delete ojb.data.infos.ad_content;
-    }
+  if (obj?.data?.infos?.ad_content?.ad_resource?.length > 0) {
+    obj.data.infos.ad_content.ad_resource = [];
+  }
 } else {
   $done({});
 }
