@@ -7,7 +7,7 @@ let obj = JSON.parse($response.body);
     delete obj.data.dqd_ads;
   }
     if (obj.data?.not_show_m_ad) {
-    obj.data.not_show_m_ad = 1;
+      obj.data.not_show_m_ad = 1;
   }
     if (obj.data?.infos) {
     obj.data.infos = obj.data.infos.filter(
