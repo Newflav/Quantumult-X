@@ -8,7 +8,6 @@ if (url.includes("/v2/article/detail")) {
     "ad_type",
     "ad_source",
     "image"
-    
   ];
   if (obj?.data?.infos?.ad_content) {
     for (let i of items) {
