@@ -3,9 +3,15 @@ if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
 
 if (url.includes("/v2/article/detail")) {
-  if (obj?.data?.infos?.length > 0) {
-    const items = ["channels", "column"];
+  const items = [
+    "ad_content",
+    "column"
+  ];
+  if (obj?.data?.infos) {
+    for (let i of items) {
+      delete obj.data.infos[i];
     }
+  }
 } else {
   $done({});
 }
