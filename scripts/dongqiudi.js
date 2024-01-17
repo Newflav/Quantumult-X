@@ -7,7 +7,6 @@ if (url.includes("/v2/article/detail")) {
     obj.data.infos = [
       {
         channels: 
-        column: 
       }
     ];
   }
