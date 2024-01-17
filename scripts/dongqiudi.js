@@ -4,8 +4,7 @@ let obj = JSON.parse($response.body);
 
 if (url.includes("/v2/article/detail")) {
   const items = [
-    "ad_content",
-    "column"
+    "ad_content"
   ];
   if (obj?.data?.infos) {
     for (let i of items) {
