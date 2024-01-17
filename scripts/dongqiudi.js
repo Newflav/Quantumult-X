@@ -4,14 +4,15 @@ let obj = JSON.parse($response.body);
 
 if (url.includes("/v2/article/detail")) {
   const items = [
-    "request_id",
-    "ad_type",
-    "ad_source",
-    "image"
+    "user_id",
+    "dqd_ads",
+    "topic_tags",
+    "not_show_m_ad",
+    "code"
   ];
-  if (obj?.data?.infos?.ad_content) {
+  if (obj?.data) {
     for (let i of items) {
-      delete obj.data.infos.ad_content[i];
+      delete obj.data[i];
     }
   }
 } else {
