@@ -264,6 +264,12 @@ if (url.includes("/x/resource/show/skin")) {
     });
   }
 } else if (url.includes("/xlive/app-room/v1/index/getInfoByRoom")) {
+  if (obj?.data?.function_card?.length > 0) {
+    obj.data.function_card = [];
+  }
+  if (obj?.data?.new_tab_info?.outer_list?.length > 0) {
+    obj.data.new_tab_info.outer_list = [];
+  }
   // 直播广告
   if (obj.data?.activity_banner_info) {
     obj.data.activity_banner_info = null;
