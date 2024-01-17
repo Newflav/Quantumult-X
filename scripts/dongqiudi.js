@@ -3,14 +3,13 @@ if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
 
 if (url.includes("/v2/article/detail")) {
-  if (obj.data?.not_show_m_ad) {
-    obj.data.not_show_m_ad = 1;
-  }
-  if (obj.data?.infos?.ad_content?.vip) {
-    obj.data.infos.ad_content.vip = 1;
-  }
-  if (obj.data?.infos?.ad_content?.request_id) {
-    obj.data.infos.ad_content.request_id = null;
+  if (obj.data?.infos) {
+    obj.data.infos = [
+      {
+        channels: 
+        column: 
+      }
+    ];
   }
 } else {
   $done({});
