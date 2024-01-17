@@ -267,9 +267,6 @@ if (url.includes("/x/resource/show/skin")) {
   if (obj.data?.function_card) {
     delete obj.data.function_card;
   }
-  if (obj?.data?.new_tab_info?.outer_list?.length > 0) {
-    obj.data.new_tab_info.outer_list = [];
-  }
   // 直播广告
   if (obj.data?.activity_banner_info) {
     obj.data.activity_banner_info = null;
