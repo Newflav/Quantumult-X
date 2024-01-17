@@ -3,9 +3,9 @@ if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
 
 if (url.includes("/v2/article/detail")) {
-  if ("ad_content" in obj) {
-    delete obj;
-  }
+  if (obj?.data?.infos?.length > 0) {
+    const items = ["channels", "column"];
+    }
 } else {
   $done({});
 }
