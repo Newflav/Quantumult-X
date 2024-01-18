@@ -264,7 +264,7 @@ if (url.includes("/x/resource/show/skin")) {
   }
 } else if (url.includes("/app-interface/v2/index/feed")) {
   // 直播页置顶横幅
-  if (obj.data?.card_list?.card_data?.banner_v1) {
+  if (obj?.data?.card_list?.card_data?.banner_v1) {
     delete obj.data.card_list.card_data.banner_v1;
   }
 } else if (url.includes("/xlive/app-room/v1/index/getInfoByRoom")) {
