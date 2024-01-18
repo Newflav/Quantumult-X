@@ -17,6 +17,7 @@ if (url.includes("/x/resource/show/skin")) {
         item.name === "直播" ||
         item.name === "推荐" ||
         item.name === "番剧" ||
+        item.name === "热门"
     );
     fixPos(obj.data.tab);
   }
@@ -267,9 +268,9 @@ if (url.includes("/x/resource/show/skin")) {
   if (obj.data?.function_card) {
     delete obj.data.function_card;
   }
-  if (obj.data?.new_tab_info?.outer_list) {
-    delete obj.data.new_tab_info.outer_list;
-  }
+// if (obj.data?.new_tab_info?.outer_list) {
+    //delete obj.data.new_tab_info.outer_list;
+  //}
   // 直播广告
   if (obj.data?.activity_banner_info) {
     obj.data.activity_banner_info = null;
