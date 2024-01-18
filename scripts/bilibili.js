@@ -132,14 +132,11 @@ if (url.includes("/x/resource/show/skin")) {
   }
 } else if (url.includes("/x/v2/account/myinfo")) {
   // 会员清晰度
-  if (obj.data?.vip) {
-    if (obj.data.vip.status === 1) {
-      $done({});
-    } else {
+  if (obj?.data?.vip) {
+    if (obj?.data?.vip?.status === 0) {
       obj.data.vip.type = 2;
       obj.data.vip.status = 1;
-      obj.data.vip.vip_pay_type = 1;
-      obj.data.vip.due_date = 2208960000; // Unix 时间戳 2040-01-01 00:00:00
+      obj.data.vip.due_date = 3818419199; // Unix 时间戳 2090-12-31 23:59:59
       obj.data.vip.role = 3;
     }
   }
