@@ -8,7 +8,7 @@ if (url.includes("/v2/article/detail")) {
       request_id: "false",
       ad_type: "null",
       ad_source: {}
-      aid:null
+      aid: "null"
     };
   }
 } else {
