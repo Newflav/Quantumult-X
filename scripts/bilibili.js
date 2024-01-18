@@ -276,6 +276,8 @@ if (url.includes("/x/resource/show/skin")) {
       is_show: 0
     };
   }
+} else if (url.includes("/xlive/app-interface/v2/index/feed")) {
+
   if (obj.data?.new_tab_info?.outer_list?.length > 0) {
     obj.data.new_tab_info.outer_list = obj.data.new_tab_info.outer_list.filter(
       (i) => i.biz_id !== 33
