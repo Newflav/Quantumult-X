@@ -3,12 +3,11 @@ if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
 
 if (url.includes("/v2/article/detail")) {
-    if (obj.data?.not_show_m_ad) {
-        obj.data.not_show_m_ad = 1;
-    }
-    if (obj.data?.infos?.ad_content) {
-        obj.data.infos.ad_content = [];
-    }
+   if (obj?.data?.body?.length > 0) {
+    obj.data.body = obj.data.body.filter(
+      (i) => !["1080"]?.includes(i?.data-width)
+    );
+  }
 } else {
   $done({});
 }
