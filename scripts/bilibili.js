@@ -49,6 +49,14 @@ if (url.includes("/x/resource/show/skin")) {
     ttl: 1,
     data: null
   };
+} else if (url.includes("/v2/schedule/GetReserveInfo")) {
+  // 左上角活动入口
+  obj = {
+    code: -404,
+    message: "啥都木有",
+    ttl: 1,
+    data: null
+  };
 } else if (url.includes("/x/v2/account/mine")) {
   // 我的页面
   // 标准版：
