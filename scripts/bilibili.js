@@ -9,17 +9,12 @@ if (url.includes("/x/resource/show/skin")) {
   if (obj.data?.common_equip) {
     delete obj.data.common_equip;
   }
-} else if (url.includes("/xlive/app-interface/v2/index/feed")) {
-        if (obj.data?.card_list) {
-        if (obj.data.card_list.card_type === banner_v1) {
-          return false;
-        }
 } else if (url.includes("/x/resource/show/tab/v2")) {
   // 标签页
   if (obj.data?.tab) {
     obj.data.tab = obj.data.tab.filter(
       (item) =>
-item.name === "直播" ||
+        item.name === "直播" ||
         item.name === "推荐" ||
         item.name === "热门" ||
         item.name === "动画" ||
@@ -257,18 +252,19 @@ item.name === "直播" ||
     });
   }
 } else if (url.includes("/xlive/app-room/v1/index/getInfoByRoom")) {
-  if (obj.data?.function_card?.length > 0) {
-    obj.data.function_card = [];
-  }
   // 直播广告
-  if (obj?.data?.activity_banner_info) {
-    delete obj.data.activity_banner_info;
+  if (obj.data?.activity_banner_info) {
+    obj.data.activity_banner_info = null;
   }
-  if (obj?.data?.shopping_info) {
-    obj.data.shopping_info = { is_show: 0 };
+  if (obj.data?.shopping_info) {
+    obj.data.shopping_info = {
+      is_show: 0
+    };
   }
-  if (obj?.data?.new_tab_info?.outer_list?.length > 0) {
-    obj.data.new_tab_info.outer_list = obj.data.new_tab_info.outer_list.filter((i) => i?.biz_id !== 33);
+  if (obj.data?.new_tab_info?.outer_list?.length > 0) {
+    obj.data.new_tab_info.outer_list = obj.data.new_tab_info.outer_list.filter(
+      (i) => i.biz_id !== 33
+    );
   }
 }
 
