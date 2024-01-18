@@ -50,7 +50,7 @@ if (url.includes("/x/resource/show/skin")) {
     data: null
   };
 } else if (url.includes("/v2/schedule/GetReserveInfo")) {
-  // 左上角活动入口
+  // 直播左上角活动入口
   obj = {
     code: -404,
     message: "啥都木有",
