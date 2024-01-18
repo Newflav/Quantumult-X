@@ -3,10 +3,8 @@ if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
 
 if (url.includes("/v2/article/detail")) {
-   if (obj?.data?.body?.length > 0) {
-    obj.data.body = obj.data.body.filter(
-      (i) => !["1080"]?.includes(i?.data-width)
-    );
+     if ("ad_content" in obj) {
+        delete ad_content;
   }
 } else {
   $done({});
