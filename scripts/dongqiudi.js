@@ -3,13 +3,10 @@ if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
 
 if (url.includes("/v2/article/detail")) {
-  const items = [
-    "ad_content"
-  ];
-  if (obj?.data?.infos) {
-    for (let i of items) {
-      delete obj.data.infos[i];
-    }
+  if (obj?.data?.infos?.ad_content?.length > 0) {
+    obj.data.infos.ad_content = obj.data.infos.ad_content.filter(
+      (i) => !["banner"]?.includes(i?.ad_type)
+    );
   }
 } else {
   $done({});
