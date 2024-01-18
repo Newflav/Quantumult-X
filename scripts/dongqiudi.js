@@ -7,7 +7,7 @@ if (url.includes("/v2/article/detail")) {
     obj.data.infos.ad_content = {
       request_id: "false",
       ad_type: "null",
-      ad_source: {}
+      ad_source: "{}"
       aid: "null"
     };
   }
