@@ -6,9 +6,7 @@ if (url.includes("/v2/article/detail")) {
   if (obj.data?.infos?.ad_content) {
     obj.data.infos.ad_content = {
       request_id: "false",
-      ad_type: "null",
-      ad_source: "{}"
-      aid: "null"
+      ad_type: "null"
     };
   }
 } else {
