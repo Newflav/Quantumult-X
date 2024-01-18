@@ -9,8 +9,11 @@ if (url.includes("/x/resource/show/skin")) {
   if (obj.data?.common_equip) {
     delete obj.data.common_equip;
   }
-if (url.includes("/xlive/app-interface/v2/index/feed")) {
-
+} else if (url.includes("/xlive/app-interface/v2/index/feed")) {
+        if (obj.data?.card_list) {
+        if (obj.data.card_list.card_type === banner_v1) {
+          return false;
+        }
 } else if (url.includes("/x/resource/show/tab/v2")) {
   // 标签页
   if (obj.data?.tab) {
