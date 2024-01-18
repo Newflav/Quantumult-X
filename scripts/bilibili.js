@@ -256,18 +256,14 @@ if (url.includes("/x/resource/show/skin")) {
   }
 } else if (url.includes("/xlive/app-room/v1/index/getInfoByRoom")) {
   // 直播广告
-  if (obj.data?.activity_banner_info) {
-    obj.data.activity_banner_info = null;
+  if (obj?.data?.activity_banner_info) {
+    delete obj.data.activity_banner_info;
   }
-  if (obj.data?.shopping_info) {
-    obj.data.shopping_info = {
-      is_show: 0
-    };
+  if (obj?.data?.shopping_info) {
+    obj.data.shopping_info = { is_show: 0 };
   }
-  if (obj.data?.new_tab_info?.outer_list?.length > 0) {
-    obj.data.new_tab_info.outer_list = obj.data.new_tab_info.outer_list.filter(
-      (i) => i.biz_id !== 33
-    );
+  if (obj?.data?.new_tab_info?.outer_list?.length > 0) {
+    obj.data.new_tab_info.outer_list = obj.data.new_tab_info.outer_list.filter((i) => i?.biz_id !== 33);
   }
 }
 
