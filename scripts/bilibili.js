@@ -9,6 +9,8 @@ if (url.includes("/x/resource/show/skin")) {
   if (obj.data?.common_equip) {
     delete obj.data.common_equip;
   }
+if (url.includes("/xlive/app-interface/v2/index/feed")) {
+
 } else if (url.includes("/x/resource/show/tab/v2")) {
   // 标签页
   if (obj.data?.tab) {
