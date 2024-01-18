@@ -256,6 +256,9 @@ if (url.includes("/x/resource/show/skin")) {
   }
 } else if (url.includes("/xlive/app-room/v1/index/getInfoByRoom")) {
   // 直播广告
+  if (obj?.data?.function_card) {
+    delete obj.data.function_card;
+  }
   if (obj?.data?.activity_banner_info) {
     delete obj.data.activity_banner_info;
   }
