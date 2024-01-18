@@ -91,19 +91,25 @@ if (url.includes("/x/resource/show/skin")) {
         obj.data.answer = "";
       }
       // 开启本地会员标识
-      if (obj.data?.vip) {
-        if (obj.data.vip.status === 1) {
-          return false;
-        } else {
-          obj.data.vip_type = 2;
-          obj.data.vip.type = 2;
-          obj.data.vip.status = 1;
-          obj.data.vip.vip_pay_type = 1;
-          obj.data.vip.due_date = 2208960000; // Unix 时间戳 2040-01-01 00:00:00
-          obj.data.vip.role = 3;
-        }
-      }
-    });
+  if (obj?.data?.vip) {
+    if (obj?.data?.vip?.status === 0) {
+      obj.data.vip_type = 2;
+      obj.data.vip.type = 2;
+      obj.data.vip.status = 1;
+      obj.data.vip.due_date = 3818419199; // Unix 时间戳 2090-12-31 23:59:59
+      obj.data.vip.label = {
+        path: "",
+        text: "年度大会员",
+        label_theme: "annual_vip",
+        text_color: "#FFFFFF",
+        bg_style: 1,
+        bg_color: "#FB7299",
+        border_color: "",
+        image: "https://i0.hdslb.com/bfs/vip/8d4f8bfc713826a5412a0a27eaaac4d6b9ede1d9.png"
+      };
+      obj.data.vip.nickname_color = "#FB7299";
+      obj.data.vip.role = 3;
+    }
   }
 } else if (url.includes("/x/v2/account/mine/ipad")) {
   if (obj.data?.ipad_upper_sections) {
@@ -126,14 +132,11 @@ if (url.includes("/x/resource/show/skin")) {
   }
 } else if (url.includes("/x/v2/account/myinfo")) {
   // 会员清晰度
-  if (obj.data?.vip) {
-    if (obj.data.vip.status === 1) {
-      $done({});
-    } else {
+  if (obj?.data?.vip) {
+    if (obj?.data?.vip?.status === 0) {
       obj.data.vip.type = 2;
       obj.data.vip.status = 1;
-      obj.data.vip.vip_pay_type = 1;
-      obj.data.vip.due_date = 2208960000; // Unix 时间戳 2040-01-01 00:00:00
+      obj.data.vip.due_date = 3818419199; // Unix 时间戳 2090-12-31 23:59:59
       obj.data.vip.role = 3;
     }
   }
