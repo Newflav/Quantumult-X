@@ -264,9 +264,12 @@ if (url.includes("/x/resource/show/skin")) {
   }
 } else if (url.includes("/app-interface/v2/index/feed")) {
   // 直播页置顶横幅
-  if (obj?.data?.length > 0) {
-    obj.data = obj.data.filter((i) => !i.card_list?.card_data?.banner_v1?.includes("banner"));
-  }
+  if (obj.data?.card_list) {
+    obj.data.card_list = obj.data.card_list.filter((i) => {
+      const { card_type: cardType, card_data: cardData } = i;
+      if (cardType && cardData) {
+        if (cardType.includes("banner") && cardData.includes("banner")) {
+          return false;
 } else if (url.includes("/xlive/app-room/v1/index/getInfoByRoom")) {
   // 直播广告
   if (obj?.data?.function_card) {
