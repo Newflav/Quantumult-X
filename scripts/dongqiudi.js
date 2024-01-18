@@ -3,10 +3,13 @@ if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
 
 if (url.includes("/v2/article/detail")) {
-  if (obj?.data?.infos?.ad_content?.length > 0) {
-    obj.data.infos.ad_content = obj.data.infos.ad_content.filter(
-      (i) => !["banner"]?.includes(i?.ad_type)
-    );
+  if (obj.data?.infos?.ad_content) {
+    obj.data.infos.ad_content = {
+      request_id: "false",
+      ad_type: "null",
+      ad_source: {}
+      aid:null
+    };
   }
 } else {
   $done({});
