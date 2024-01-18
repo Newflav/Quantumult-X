@@ -16,9 +16,7 @@ if (url.includes("/x/resource/show/skin")) {
       (item) =>
         item.name === "直播" ||
         item.name === "推荐" ||
-        item.name === "热门" ||
-        item.name === "动画" ||
-        item.name === "影视" 
+        item.name === "热门" 
     );
     fixPos(obj.data.tab);
   }
