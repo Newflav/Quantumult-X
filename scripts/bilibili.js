@@ -269,8 +269,10 @@ if (url.includes("/x/resource/show/skin")) {
       (i) =>
         !(
           i?.card_list?.card_type?.includes("banner") ||
-          i?.card_list?.card_data?.includes("banner") ||
-
+          i?.card_list?.card_data?.includes("banner") 
+        )
+    );
+  }
 } else if (url.includes("/xlive/app-room/v1/index/getInfoByRoom")) {
   // 直播广告
   if (obj?.data?.function_card) {
