@@ -66,8 +66,7 @@ if (url.includes("frs/page")) {
         console.log(`去除pb_banner_ad的goods_info:${bannerGoodsInfoLength}`)
         body.banner_list.pb_banner_ad.goods_info = []
     }
-} else if (url.includes("pb/page")) {
-    console.log('贴吧-PbPage');
+    
     let pbPageResIdlType = tiebaRoot.lookupType("model.pb.PbPageResIdl");
     let pbPageResIdlObj = pbPageResIdlType.decode(binaryBody);
     if(pbPageResIdlObj.data.postList?.length){
