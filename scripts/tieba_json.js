@@ -176,7 +176,7 @@ if (url.includes("tiebaads/commonbatch") && method === postMethod) {
     }
   if (body.thread?.thread_recommend_infos) {
     console.log(`去除进入话题小窗`);
- delete body.thread.thread_recommend_infos;
+    delete body.thread.thread_recommend_infos;
   }
   if (body.thread?.carTips?.data?.popupInfo) {
     delete body.data.carTips.data.popupInfo;
