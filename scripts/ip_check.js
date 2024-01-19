@@ -35,9 +35,6 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
-function getRandomInt(max) {
-  return Math.floor(Math.random() * Math.floor(max));
-}
 function City_ValidCheck(para) {
   if (para) {
     return para;
@@ -46,6 +43,7 @@ function City_ValidCheck(para) {
     //emojis[getRandomInt(emojis.length)]
   }
 }
+
 function ISP_ValidCheck(para) {
   if (para) {
     return para;
@@ -54,6 +52,7 @@ function ISP_ValidCheck(para) {
     //emojis[getRandomInt(emojis.length)]
   }
 }
+
 function Area_check(para) {
   if (para == "中华民国") {
     return "台湾";
@@ -187,7 +186,6 @@ var flags = new Map([
   ["KP", "🇰🇵"],
   ["KY", "🇰🇾"],
   ["KZ", "🇰🇿"],
-  ["LA", "🇱🇦"],
   ["NZ", "🇳🇿"],
   ["PK", "🇵🇰"],
   ["NO", "🇳🇴"],
