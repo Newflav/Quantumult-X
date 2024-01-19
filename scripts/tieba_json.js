@@ -2,7 +2,7 @@ const url = $request.url;
 const method = $request.method;
 const postMethod = "POST";
 const notifyTitle = "贴吧json脚本错误";
-console.log(`贴吧json-2024.1.14`);
+console.log(`贴吧json-2023.06.12.2`);
 
 let body = JSON.parse($response.body);
 // 直接全局搜索 @Modify(
@@ -33,16 +33,6 @@ if (url.includes("tiebaads/commonbatch") && method === postMethod) {
     if (liveLength) {
         console.log(`去除直播:${liveLength}`);
         body.recom_live_list = [];
-    }
-} else if (url.includes("c/u/user/profile")) {
-    console.log('贴吧-user');
-    if (body.banner) {
-        console.log(`去除用户中心广告`);
-        body.banner = [];
-    }
-    if (body.user.user_growth) {
-        console.log('去除贴吧成长等级');
-        body.user.user_growth = [];
     }
 } else if (url.includes('c/s/sync')) {
     // get post(贴吧使用了post)均可访问
@@ -174,13 +164,7 @@ if (url.includes("tiebaads/commonbatch") && method === postMethod) {
     } else {
         console.log('帖子详情页无直播广告');
     }
-    if (body.thread.thread_recommend_infos) {
-     console.log(`去除进入话题小窗`);
-     body.thread.thread_recommend_infos = [];
-    }
-  if (body.thread?.carTips?.data?.popupInfo) {
-    delete body.data.carTips.data.popupInfo;
-  }
+
     if (body.post_list?.length) {
         for (const post of body.post_list) {
             if (post.outer_item) {
