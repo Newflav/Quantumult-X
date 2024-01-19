@@ -29,8 +29,8 @@ const emojis = [
   "🐌",
   "👥",
 ];
-var city0 = "高谭市";
-var isp0 = "Cross-GFW.org";
+var city0 = "未知地区";
+var isp0 = "未知服务商";
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
