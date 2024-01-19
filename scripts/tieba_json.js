@@ -34,6 +34,16 @@ if (url.includes("tiebaads/commonbatch") && method === postMethod) {
         console.log(`去除直播:${liveLength}`);
         body.recom_live_list = [];
     }
+} else if (url.includes("c/u/user/profile")) {
+    console.log('贴吧-user');
+    if (body.banner) {
+        console.log(`去除用户中心广告`);
+        body.banner = [];
+    }
+    if (body.user.user_growth) {
+        console.log('去除贴吧成长等级');
+        body.user.user_growth = [];
+    }
 } else if (url.includes('c/s/sync')) {
     // get post(贴吧使用了post)均可访问
     console.log('贴吧-sync');
