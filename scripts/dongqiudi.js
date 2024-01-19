@@ -1,1 +1,1 @@
-{"image":[]}
+{"ad_content":[]}
