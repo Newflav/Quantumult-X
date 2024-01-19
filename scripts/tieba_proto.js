@@ -36,7 +36,7 @@ if (url.includes("frs/page")) {
     let threadListResIdlObj = threadListResIdlType.decode(binaryBody);
 
     body = threadListResIdlType.encode(threadListResIdlObj).finish();
-} else if (url.includes("c/f/pb/page")) {
+} else if (url.includes("pb/page")) {
     console.log('贴吧-PbPage');
     if (body.recom_ala_info?.live_id) {
         console.log('帖子详情页推荐的直播广告去除');
@@ -66,7 +66,8 @@ if (url.includes("frs/page")) {
         console.log(`去除pb_banner_ad的goods_info:${bannerGoodsInfoLength}`)
         body.banner_list.pb_banner_ad.goods_info = []
     }
-    
+} else if (url.includes("pb/page")) {
+    console.log('贴吧-PbPage');
     let pbPageResIdlType = tiebaRoot.lookupType("model.pb.PbPageResIdl");
     let pbPageResIdlObj = pbPageResIdlType.decode(binaryBody);
     if(pbPageResIdlObj.data.postList?.length){
