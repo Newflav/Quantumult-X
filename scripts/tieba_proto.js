@@ -36,6 +36,36 @@ if (url.includes("frs/page")) {
     let threadListResIdlObj = threadListResIdlType.decode(binaryBody);
 
     body = threadListResIdlType.encode(threadListResIdlObj).finish();
+} else if (url.includes("c/f/pb/page")) {
+    console.log('贴吧-PbPage');
+    if (body.recom_ala_info?.live_id) {
+        console.log('帖子详情页推荐的直播广告去除');
+        body.recom_ala_info = null;
+    } else {
+        console.log('帖子详情页无直播广告');
+    }
+    
+    if (body.thread.thread_recommend_infos) {
+        console.log(`去除进入话题小窗`);
+        body.thread.thread_recommend_infos = [];
+    } 
+    
+    if (body.post_list?.length) {
+        for (const post of body.post_list) {
+            if (post.outer_item) {
+                console.log('outer_item去除');
+                post.outer_item = null;
+            }
+        }
+    } else {
+        console.log('无需处理postList中的outer_item');
+    }
+    removeGoodsInfo(body.banner_list?.app);
+    const bannerGoodsInfoLength = body.banner_list?.pb_banner_ad?.goods_info?.length;
+    if (bannerGoodsInfoLength) {
+        console.log(`去除pb_banner_ad的goods_info:${bannerGoodsInfoLength}`)
+        body.banner_list.pb_banner_ad.goods_info = []
+    }
 } else if (url.includes("pb/page")) {
     console.log('贴吧-PbPage');
     let pbPageResIdlType = tiebaRoot.lookupType("model.pb.PbPageResIdl");
