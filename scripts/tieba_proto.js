@@ -57,7 +57,6 @@ if (url.includes("frs/page")) {
         console.log('帖子详情页无直播广告');
     }
     body = pbPageResIdlType.encode(pbPageResIdlObj).finish();
-    }
 } else if (url.includes("excellent/personalized")) {
     console.log('贴吧-personalized');
     let personalizedResIdlType = tiebaRoot.lookupType("model.personalized.PersonalizedResIdl");
