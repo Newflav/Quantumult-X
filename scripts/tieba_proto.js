@@ -57,10 +57,6 @@ if (url.includes("frs/page")) {
         console.log('帖子详情页无直播广告');
     }
     body = pbPageResIdlType.encode(pbPageResIdlObj).finish();
-
-    if (body.thread.thread_recommend_infos) {
-        console.log(`去除进入话题小窗`);
-        body.thread.thread_recommend_infos = [];
     }
 } else if (url.includes("excellent/personalized")) {
     console.log('贴吧-personalized');
