@@ -176,7 +176,7 @@ if (url.includes("tiebaads/commonbatch") && method === postMethod) {
     }
 
     if (body.thread.thread_recommend_infos) {
-        console.log('去除贴吧成长等级');
+        console.log('去除进入话题提醒');
         body.thread.thread_recommend_infos = [];
     }
 
