@@ -176,9 +176,10 @@ if (url.includes("tiebaads/commonbatch") && method === postMethod) {
     }
 
     if (body.thread.thread_recommend_infos) {
-        console.log(`去除进入话题小窗`);
+        console.log('去除贴吧成长等级');
         body.thread.thread_recommend_infos = [];
     }
+
     if (body.post_list?.length) {
         for (const post of body.post_list) {
             if (post.outer_item) {
