@@ -166,7 +166,7 @@ if (url.includes("tiebaads/commonbatch") && method === postMethod) {
 } else if (url.includes("c/f/frs/threadlist")) {
     console.log('贴吧-threadlist');
     removeGoodsInfo(body.banner_list?.app);
-} else if (url.includes("c/f/pb/page")) {
+} else if (url.includes("pb/page")) {
     console.log('贴吧-PbPage');
     if (body.recom_ala_info?.live_id) {
         console.log('帖子详情页推荐的直播广告去除');
