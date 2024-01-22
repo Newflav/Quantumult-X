@@ -26,6 +26,11 @@ let obj = JSON.parse($response.body);
       (i) => !["xinfang_prefer"]?.includes(i?.item_type)
     );
   }
+  if (obj?.data?.list?.length > 0) {
+    obj.data.list = obj.data.list.filter(
+      (i) => !["feedback"]?.includes(i?.item_type)
+    );
+  }
 } else {
   $done({});
 }
