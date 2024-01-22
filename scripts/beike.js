@@ -31,6 +31,17 @@ let obj = JSON.parse($response.body);
       (i) => !["feedback"]?.includes(i?.item_type)
     );
   }
+} else if (url.includes("/config/recommend/home")) {
+  if (obj?.data?.list?.length > 0) {
+    obj.data.list = obj.data.list.filter(
+      (i) => !["直播看房"]?.includes(i?.title)
+    );
+  }
+  if (obj?.data?.list?.length > 0) {
+    obj.data.list = obj.data.list.filter(
+      (i) => !["满意度小调研"]?.includes(i?.title)
+    );
+  }
 } else {
   $done({});
 }
