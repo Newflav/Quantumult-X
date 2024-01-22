@@ -20,7 +20,7 @@ let obj = JSON.parse($response.body);
     );
   }
 } else if (url.includes("/xinfang/shellapp/feed/index")) {
-  //新房页面调查问卷
+  //新房页面调查问卷、反馈
   if (obj?.data?.list?.length > 0) {
     obj.data.list = obj.data.list.filter(
       (i) => !["xinfang_prefer","feedback"]?.includes(i?.item_type)
