@@ -23,23 +23,14 @@ let obj = JSON.parse($response.body);
   //新房页面调查问卷
   if (obj?.data?.list?.length > 0) {
     obj.data.list = obj.data.list.filter(
-      (i) => !["xinfang_prefer"]?.includes(i?.item_type)
-    );
-  }
-  if (obj?.data?.list?.length > 0) {
-    obj.data.list = obj.data.list.filter(
-      (i) => !["feedback"]?.includes(i?.item_type)
+      (i) => !["xinfang_prefer","feedback"]?.includes(i?.item_type)
     );
   }
 } else if (url.includes("/config/recommend/home")) {
+  //首页直播、调查问卷
   if (obj?.data?.list?.length > 0) {
     obj.data.list = obj.data.list.filter(
-      (i) => !["直播看房"]?.includes(i?.title)
-    );
-  }
-  if (obj?.data?.list?.length > 0) {
-    obj.data.list = obj.data.list.filter(
-      (i) => !["满意度小调研"]?.includes(i?.title)
+      (i) => !["直播看房","满意度小调研"]?.includes(i?.title)
     );
   }
 } else {
