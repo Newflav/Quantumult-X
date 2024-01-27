@@ -20,5 +20,6 @@ host-suffix, rocksdb.org, proxy
 host-suffix, whatsapp.net, proxy
 host-suffix, whatsapp.com, proxy
 host-suffix, facebook.com, proxy
+host-suffix, meta.com, proxy
 host-keyword, .facebook., proxy
 ip-cidr, 157.240.0.0/17, proxy
