@@ -17,7 +17,7 @@
 ^https:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\? url reject-dict
 ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords url reject-dict
 ^https:\/\/app\.bilibili\.com\/x\/v2\/(feed\/index(\/story)?|search\/square)\? url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/bilibili.js
-^https:\/\/app\.bilibili\.com\/x\/resource\/(top\/activity|show\/tab\/v2)\? url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/bilibili.js
+^https:\/\/app\.bilibili\.com\/x\/resource\/(top\/activity|show\/tab\/v2)\? url script-response-body bili.js
 ^https:\/\/api\.live\.bilibili\.com\/xlive\/app-interface\/v2\/index\/feed url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/bilibili.js
 ^https:\/\/api\.live\.bilibili\.com\/xlive\/app-ucenter\/v2\/schedule\/GetReserveInfo url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/bilibili.js
 
