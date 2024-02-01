@@ -9,38 +9,6 @@ if (url.includes("/x/resource/show/skin")) {
   if (obj.data?.common_equip) {
     delete obj.data.common_equip;
   }
-} else if (url.includes("/x/resource/show/tab/v2")) {
-  // 标签页
-  if (obj.data?.tab) {
-    obj.data.tab = obj.data.tab.filter(
-      (item) =>
-        item.name === "直播" ||
-        item.name === "推荐" ||
-        item.name === "热门"
-    );
-    fixPos(obj.data.tab);
-  }
-  if (obj.data?.top) {
-    obj.data.top = [
-      {
-        id: 176,
-        icon: "http://i0.hdslb.com/bfs/archive/d43047538e72c9ed8fd8e4e34415fbe3a4f632cb.png",
-        tab_id: "消息Top",
-        name: "消息",
-        uri: "bilibili://link/im_home",
-        pos: 1
-      }
-    ];
-  }
-  if (obj.data?.bottom) {
-    obj.data.bottom = obj.data.bottom.filter(
-      (item) =>
-        item.name === "首页" ||
-        item.name === "动态" ||
-        item.name === "我的"
-    );
-    fixPos(obj.data.bottom);
-  }
 } else if (url.includes("/x/resource/top/activity")) {
   // 右上角活动入口
   obj = {
