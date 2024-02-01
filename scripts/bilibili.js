@@ -11,14 +11,11 @@ if (url.includes("/x/resource/show/skin")) {
   }
 } else if (url.includes("/x/resource/show/tab/v2")) {
   // 标签页
-  if (obj.data?.tab) {
-    obj.data.tab = obj.data.tab.filter(
-      (item) =>
-        item.name === "直播" ||
-        item.name === "推荐" ||
-        item.name === "热门"
-    );
-    fixPos(obj.data.tab);
+  if (obj?.data?.tab?.length > 0) {
+    const sortLists = ["推荐", "热门", "影视", "动画"];
+    obj.data.tab = obj.data.tab
+      .filter((i) => sortLists?.includes(i?.name))
+      .sort((a, b) => sortLists.indexOf(a?.name) - sortLists.indexOf(b?.name));
   }
   if (obj.data?.top) {
     obj.data.top = [
