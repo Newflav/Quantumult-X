@@ -20,7 +20,7 @@ if (url.includes("/feed/dynamic/headline-list")) {
 } else if (url.includes("/feed/dynamic/video-normal-list")) {
   // 视频页顶部横幅
   if (obj?.data?.items?.videobanner?.length > 0) {
-      obj.data.items.videobanner = [];
+      obj.data.items.videobanner = {};
   }
 } else {
   $done({});
