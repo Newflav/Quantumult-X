@@ -9,7 +9,7 @@ if (url.includes("/gentie-web/api/v3/products")) {
   }
 } else if (url.includes("/feed/dynamic/video-normal-list")) {
   if (obj.data?.items?.videobanner) {
-  // 视频页顶部横幅
+    // 视频页顶部横幅
     delete obj.data.items.videobanner;
   }
 } else {
