@@ -13,9 +13,9 @@ if (url.includes("/feed/dynamic/headline-list")) {
     obj.data.special = [];
   }
 } else if (url.includes("/gentie-web/api/v3/products")) {
-  if (obj?.data?.secretaryVO?.length > 0) {
+  if (obj?.data?.secretaryVO) {
     // 跟帖小秘书
-    obj.data.secretaryVO = [];
+    delete obj.data.secretaryVO;
   }
 } else {
   $done({});
