@@ -8,16 +8,18 @@ if (url.includes("/gentie-web/api/v3/products")) {
     delete obj.data.secretaryVO;
   }
 } else if (url.includes("/feed/dynamic/video-normal-list")) {
-if (obj?.data?.items?.length > 0) {
+  if (obj?.data?.items?.length > 0) {
     // 视频页顶部横幅
     obj.data.items = obj.data.items.filter((i) => !i.hasOwnProperty("videobanner"));
   }
 } else if (url.includes("/api/v1/doc/unitedCardView")) {
   if (obj?.data) {
+    // 文章页底部圈子推广
     obj.data = {};
   }
 } else if (url.includes("/commons/config/user/global")) {
   if (obj?.data) {
+    // 个人主页VIP
     obj.data = {};
   }
 } else {
