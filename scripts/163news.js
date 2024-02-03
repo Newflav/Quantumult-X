@@ -16,6 +16,10 @@ if (obj?.data?.items?.length > 0) {
   if (obj?.data) {
     obj.data = {};
   }
+} else if (url.includes("/commons/config/user/global")) {
+  if (obj?.data) {
+    obj.data = {};
+  }
 } else {
   $done({});
 }
