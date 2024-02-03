@@ -12,6 +12,11 @@ if (url.includes("/feed/dynamic/headline-list")) {
     // 猜你想搜
     obj.data.special = [];
   }
+} else if (url.includes("/gentie-web/api/v3/products")) {
+  if (obj?.data?.secretaryVO?.length > 0) {
+    // 跟帖小秘书
+    obj.data.secretaryVO = [];
+  }
 } else {
   $done({});
 }
