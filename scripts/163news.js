@@ -18,9 +18,9 @@ if (url.includes("/feed/dynamic/headline-list")) {
     delete obj.data.secretaryVO;
   }
 } else if (url.includes("/feed/dynamic/video-normal-list")) {
-  if (obj.data.items.videobanner) {
+  if (obj?.data?.items?.videobanner?.length > 0) {
     // 视频页横幅
-    delete obj.data.items.videobanner;
+    obj.data.items.videobanner = [];
   }
 } else {
   $done({});
