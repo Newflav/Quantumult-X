@@ -12,6 +12,10 @@ if (obj?.data?.items?.length > 0) {
     // 视频页顶部横幅
     obj.data.items = obj.data.items.filter((i) => !i.hasOwnProperty("videobanner"));
   }
+} else if (url.includes("/api/v1/doc/unitedCardView")) {
+  if (obj?.data) {
+    obj.data = {};
+  }
 } else {
   $done({});
 }
