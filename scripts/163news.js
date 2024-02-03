@@ -12,8 +12,6 @@ if (url.includes("/gentie-web/api/v3/products")) {
     // 视频页顶部横幅
     delete obj.data.items.videobanner;
   }
-} else {
-  $done({});
 }
 
 $done({ body: JSON.stringify(obj) });
