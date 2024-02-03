@@ -8,9 +8,11 @@ if (url.includes("/gentie-web/api/v3/products")) {
     delete obj.data.secretaryVO;
   }
 } else if (url.includes("/feed/dynamic/video-normal-list")) {
-  if (obj.data?.items?.videobanner) {
     // 视频页顶部横幅
-    delete obj.data.items.videobanner;
+  if (obj?.data?.items?.videobanner?.length > 0) {
+    obj.data.items.videobanner = obj.data.items.videobanner.filter(
+      (i) => !["春节活动"]?.includes(i?.title)
+    );
   }
 } else {
   $done({});
