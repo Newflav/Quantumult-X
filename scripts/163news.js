@@ -22,6 +22,11 @@ if (url.includes("/gentie-web/api/v3/products")) {
     // 个人主页VIP
     obj.data = {};
   }
+} else if (url.includes("/api/v1/daily-guess/today-question")) {
+  if (obj?.data) {
+    // 文章底部每日竞猜
+    obj.data = {};
+  }
 } else {
   $done({});
 }
