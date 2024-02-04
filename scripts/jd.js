@@ -132,7 +132,7 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
     );
   }
 if (obj?.floorList?.content?.subFloors?.data?.groupInfoList?.length > 0) {
-    obj.floorList.content.subFloors.data.groupInfoList = [];
+obj.floorList.content.subFloors.data.groupInfoList = [];
   }
   // 首页 顶部背景图
   if (obj?.topBgImgBig) {
