@@ -31,6 +31,7 @@
 ^https:\/\/www\.zhihu\.com\/api\/v4\/(articles|answers)\/\d+\/recommendations?\? url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/zhihu.js
 
 # 其他,服务器推送配置
+^https:\/\/api\.zhihu\.com\/root\/tab url reject-dict
 ^https:\/\/api\.zhihu\.com\/ab\/api\/v1\/products\/zhihu\/platforms\/ios\/config url reject
 ^https:\/\/api\.zhihu\.com\/ad-style-service\/request url reject-dict
 ^https:\/\/appcloud2\.zhihu\.com\/v3\/config url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/zhihu.js
