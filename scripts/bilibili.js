@@ -297,7 +297,7 @@ if (url.includes("/x/resource/show/skin")) {
   // 直播页横幅
   if (obj?.data?.card_list?.length > 0) {
     obj.data.card_list = obj.data.card_list.filter(
-      (i) => !["banner_v1"]?.includes(i?.card_type)
+      (i) => !["banner_v1", "activity_card_v1"]?.includes(i?.card_type)
     );
   }
 } else if (url.includes("/xlive/app-room/v1/index/getInfoByRoom")) {
