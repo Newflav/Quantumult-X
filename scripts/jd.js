@@ -123,8 +123,8 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
     obj.showTimesDaily = 0;
   }
 } else if (url.includes("functionId=welcomeHome")) {
-  if (obj?.floorList?.content?.subFloors?.length > 0) {
-    obj.floorList.content.subFloors = [];
+  if (obj?.floorList?.content?.length > 0) {
+    obj.floorList.content = obj.floorList.content.filter((i) => !i.hasOwnProperty("subFloors"));
   }
   // 首页配置
   if (obj?.floorList?.length > 0) {
