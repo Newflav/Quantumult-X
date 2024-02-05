@@ -4,7 +4,7 @@ let obj = JSON.parse($response.body);
 
 if (url.includes("/v2/article/detail")) {
   if (obj?.data?.infos?.ad_content?.length > 0) {
-    obj.data.infos.ad_content = {};
+    delete obj.data.infos.ad_content
   }
   if (obj?.data?.infos?.length > 0) {
     obj.data.infos = obj.data.infos.filter((i) => !i.hasOwnProperty("column"));
