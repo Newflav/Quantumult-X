@@ -133,7 +133,7 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
   }
   if (obj?.floorList?.length > 0) {
     obj.floorList = obj.floorList.filter(
-      (i) => ![""""]?.includes(i?.showName)
+      (i) => ![""]?.includes(i?.showName)
     );
   }
   // 首页 顶部背景图
