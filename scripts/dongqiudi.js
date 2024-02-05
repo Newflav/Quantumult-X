@@ -21,8 +21,6 @@ if (url.includes("/v2/article/detail")) {
   if (obj?.asian_plans) {
     obj.asian_plans = {};
   }
-} else {
-  $done({});
 }
 
 $done({ body: JSON.stringify(obj) });
