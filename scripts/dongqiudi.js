@@ -4,7 +4,7 @@ let obj = JSON.parse($response.body);
 
 if (url.includes("/article/detail")) {
   if (obj?.data?.topic_tags) {
-    delete obj.data.topic_tags;
+    obj.data.topic_tags = {};
   }
   if (obj?.data?.infos?.length > 0) {
     obj.data.infos = obj.data.infos.filter((i) => !i.hasOwnProperty("column"));
