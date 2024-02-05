@@ -9,6 +9,7 @@ if (url.includes("/article/detail")) {
   if (obj.data?.infos?.length > 0) {
     obj.data.infos = obj.data.infos.filter((i) => !i.hasOwnProperty("column"));
   }
+/data/match/pre_analysis
 } else {
   $done({});
 }
