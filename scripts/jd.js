@@ -133,7 +133,7 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
   }
   if (obj?.floorList?.content?.subFloors?.length > 0) {
     obj.floorList.content.subFloors = obj.floorList.content.subFloors.filter(
-      (i) => !["09017"]?.includes(i?.tpl)
+      (i) => !["flexCube"]?.includes(i?.type)
     );
   }
   // 首页 顶部背景图
