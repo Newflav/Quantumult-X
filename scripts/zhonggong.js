@@ -6,8 +6,6 @@ if (url.includes("/visitor/home/list")) {
   if (obj.data?.floats) {
     delete obj.data.floats;
   }
-} else {
-  $done({});
 }
 
 $done({ body: JSON.stringify(obj) });
