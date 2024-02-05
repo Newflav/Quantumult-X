@@ -33,8 +33,6 @@ let obj = JSON.parse($response.body);
       (i) => !["直播看房","满意度小调研"]?.includes(i?.title)
     );
   }
-} else {
-  $done({});
 }
 
 $done({ body: JSON.stringify(obj) });
