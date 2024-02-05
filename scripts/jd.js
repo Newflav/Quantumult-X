@@ -131,8 +131,8 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
       (i) => !["float", "photoCeiling", "ruleFloat", "searchIcon", "topRotate"]?.includes(i?.type)
     );
   }
-  if (obj?.layOut?.09017) {
-    delete obj.layOut.09017;
+  if (obj?.layOut?.length > 0) {
+    obj.layOut = obj.layOut.filter((i) => !i.hasOwnProperty("09017"));
   }
   // 首页 顶部背景图
   if (obj?.topBgImgBig) {
