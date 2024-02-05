@@ -123,17 +123,17 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
     obj.showTimesDaily = 0;
   }
 } else if (url.includes("functionId=welcomeHome")) {
-  if (obj?.floorList?.content?.subFloors?.length > 0) {
-    obj.floorList.content.subFloors = obj.floorList.content.subFloors.filter(
-      (i) => !["flexCube"]?.includes(i?.type)
-    );
-  }
   // 首页配置
   if (obj?.floorList?.length > 0) {
     // 首页 图层列表
     // float推广浮层 recommend为你推荐 ruleFloat资质与规则 searchIcon右上角消费券 topRotate左上角logo
     obj.floorList = obj.floorList.filter(
       (i) => !["float", "photoCeiling", "ruleFloat", "searchIcon", "topRotate"]?.includes(i?.type)
+    );
+  }
+  if (obj?.floorList?.content?.subFloors?.length > 0) {
+    obj.floorList.content.subFloors = obj.floorList.content.subFloors.filter(
+      (i) => !["flexCube"]?.includes(i?.type)
     );
   }
   // 首页 顶部背景图
