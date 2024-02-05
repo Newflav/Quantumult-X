@@ -9,7 +9,7 @@ if (url.includes("/v2/article/detail")) {
     }
   }
   if (obj?.data?.infos?.length > 0) {
-    obj.data.infos = obj.data.infos.filter((i) => !i.hasOwnProperty("ad_content"));
+    obj.data.infos = obj.data.infos.filter((i) => !i.hasOwnProperty("column"));
   }
 } else {
   $done({});
