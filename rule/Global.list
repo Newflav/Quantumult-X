@@ -51,6 +51,7 @@ host-suffix, microsoftonline.com, proxy
 host-suffix, microsoftapp.net, proxy
 host-suffix, microsoft-falcon.io, proxy
 host-suffix, microsofttranslator.com, proxy
+host-suffix, api.cortana.ai, proxy
 
 # > Wikimedia
 host-suffix, mediawiki.org, proxy
