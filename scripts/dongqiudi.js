@@ -2,7 +2,7 @@ const url = $request.url;
 if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
 
-if (url.includes("/v2/article/detail")) {
+if (url.includes("/article/detail")) {
   if (obj?.data?.topic_tags?.length > 0) {
     obj.data.topic_tags = [];
   }
