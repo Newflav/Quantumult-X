@@ -131,9 +131,9 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
       (i) => !["float", "photoCeiling", "ruleFloat", "searchIcon", "topRotate"]?.includes(i?.type)
     );
   }
-  if (obj?.floorList?.content?.subFloors?.length > 0) {
-    obj.floorList.content.subFloors = obj.floorList.content.subFloors.filter(
-      (i) => !["flexCube"]?.includes(i?.type)
+  if (obj?.floorList?.length > 0) {
+    obj.floorList = obj.floorList.filter(
+      (i) => ![""""]?.includes(i?.showName)
     );
   }
   // 首页 顶部背景图
