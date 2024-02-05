@@ -123,8 +123,8 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
     obj.showTimesDaily = 0;
   }
 } else if (url.includes("functionId=welcomeHome")) {
-  if (obj?.floorList?.content?.subFloors?.length > 0) {
-    delete obj.floorList.content.subFloors
+  if (obj?.floorList?.content?.subFloors) {
+    obj.floorList.content.subFloors = {};
   }
   // 首页配置
   if (obj?.floorList?.length > 0) {
