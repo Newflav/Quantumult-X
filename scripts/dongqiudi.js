@@ -10,8 +10,8 @@ if (url.includes("/article/detail")) {
     obj.data.infos = obj.data.infos.filter((i) => !i.hasOwnProperty("column"));
   }
 } else if (url.includes("/data/match/pre_analysis")) {
-  if (obj.asian_plans?.length > 0) {
-    ojb.asian_plans = [];
+  if (obj?.asian_plans) {
+    obj.asian_plans = {};
   }
 } else {
   $done({});
