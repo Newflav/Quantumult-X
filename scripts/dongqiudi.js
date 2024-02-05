@@ -7,7 +7,7 @@ if (url.includes("/v2/article/detail")) {
     delete obj.data.infos.ad_content
   }
   if (obj?.data?.infos?.length > 0) {
-    obj.data.infos = obj.data.infos.filter((i) => !i.hasOwnProperty("column"));
+    delete obj.data.infos.column;
   }
 } else if (url.includes("/data/match/pre_analysis")) {
   if (obj?.asian_plans) {
