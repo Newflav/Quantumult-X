@@ -131,49 +131,9 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
       (i) => !["float", "photoCeiling", "ruleFloat", "searchIcon", "topRotate"]?.includes(i?.type)
     );
   }
-  if (obj?.layOut) {
-    obj?.layOut = [
-      {
-            "N003" : {
-      "child" : [
-        {
-          "type" : "core2x2"
-        },
-        {
-          "loc" : "R_B",
-          "type" : "core2x2"
-        }
-      ],
-      "type" : "core",
-      "hType" : 1,
-      "height" : "218"
-    },
-    "M101" : {
-      "type" : "core",
-      "child" : [
-        {
-          "sType" : "1",
-          "type" : "core1x2L"
-        },
-        {
-          "sType" : "1",
-          "type" : "core1x2R",
-          "mar" : "174,0,0,0"
-        },
-        {
-          "sType" : "1",
-          "loc" : "R_T",
-          "type" : "core1x2L",
-          "mar" : "0,0,172,0"
-        },
-        {
-          "sType" : "1",
-          "loc" : "R_T",
-          "type" : "core1x2R"
-        }
-      ],
-      "height" : "218"
-    },
+  if (obj?.layOut?.09017) {
+    obj.layOut?.09017 = {};
+  }
   // 首页 顶部背景图
   if (obj?.topBgImgBig) {
     delete obj.topBgImgBig;
