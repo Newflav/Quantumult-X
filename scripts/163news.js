@@ -27,8 +27,6 @@ if (url.includes("/gentie-web/api/v3/products")) {
     // 文章底部每日竞猜
     obj.data = {};
   }
-} else {
-  $done({});
 }
 
 $done({ body: JSON.stringify(obj) });
