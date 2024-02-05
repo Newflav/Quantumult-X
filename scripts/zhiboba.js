@@ -6,8 +6,6 @@ if (url.includes("activities/config")) {
   obj = [];
 } else if (url.includes("/found")) {
   obj = [];
-} else {
-  $done({});
 }
 
 $done({ body: JSON.stringify(obj) });
