@@ -123,12 +123,11 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
     obj.showTimesDaily = 0;
   }
 } else if (url.includes("functionId=welcomeHome")) {
-  if (obj.floorList?.content?.subFloors?.data?.groupInfoList?.length > 0) {
-obj.floorList.content.subFloors.data.groupInfoList = [];
+  if (obj?.floorList?.content?.subFloors?.length > 0) {
+    obj.floorList.content.subFloors = obj.floorList.content.subFloors.filter(
+      (i) => !["flexCube"]?.includes(i?.type)
+    );
   }
-  if (obj.floorList?.content?.subFloors?.height) {
-  obj.floorList.content.subFloors.heigh = 0;
-    }
   // 首页配置
   if (obj?.floorList?.length > 0) {
     // 首页 图层列表
