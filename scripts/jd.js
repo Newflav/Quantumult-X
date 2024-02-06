@@ -131,7 +131,12 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
       (i) => !["float", "photoCeiling", "ruleFloat", "searchIcon", "topRotate"]?.includes(i?.type)
     );
   }
-
+  // 首页 多余方框元素
+  if (obj?.floorList?.length > 0) {
+    obj.floorList = obj.floorList.filter(
+      (i) => ![""]?.includes(i?.showName)
+    );
+  }
   // 首页 顶部背景图
   if (obj?.topBgImgBig) {
     delete obj.topBgImgBig;
