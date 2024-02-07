@@ -12,6 +12,7 @@ if (url.includes("/config/ershoufang/content")) {
   const items = [
     "banners",
     "promises",
+    "otherInfo",
     "myhouse"
   ];
   if (obj?.data) {
