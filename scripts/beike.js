@@ -43,6 +43,9 @@ if (url.includes("/config/ershoufang/content")) {
   if (obj.data?.banners) {
      delete obj.data.banners;
   }
+  if (obj.data?.bannerList) {
+     delete obj.data.bannerList;
+  }
 }
 
 $done({ body: JSON.stringify(obj) });
