@@ -31,6 +31,7 @@ if (url.includes("/config/ershoufang/content")) {
     const items = ["descVice", "title"];
     if (obj?.data?.list?.length > 0) {
       obj.data.list = obj.data.list.filter((i) => items?.includes(i));
+    }
   }
 } else if (url.includes("v3/house/list")) {
   // 租房宝典
