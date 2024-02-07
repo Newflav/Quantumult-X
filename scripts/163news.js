@@ -14,7 +14,7 @@ if (url.includes("/gentie-web/api/v3/products")) {
   }
 } else if (url.includes("/commons/user/profile/main")) {
   if (obj?.data?.creativeCenter) {
-    // 主页创作中心
+    // 个人主页创作中心
     delete obj.data.creativeCenter;
   }
 } else if (url.includes("/api/v1/doc/unitedCardView")) {
