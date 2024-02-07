@@ -8,9 +8,15 @@ if (url.includes("/config/ershoufang/content")) {
     delete obj.data.top_banner;
   }
 } else if (url.includes("/user/profile/getusercenterinfov4")) {
-  //我的页面底部经纪人横幅
+  //我的页面净化
   if (obj.data?.banners) {
      delete obj.data.banners;
+  }
+  if (obj.data?.promises) {myhouse
+     delete obj.data.promises;
+  }
+  if (obj.data?.myhouse) {
+     delete obj.data.myhouse;
   }
 } else if (url.includes("/xinfang/shellapp/index/indexv1")) {
   //新房页面文章区域
