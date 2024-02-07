@@ -12,7 +12,6 @@ if (url.includes("/config/ershoufang/content")) {
   const items = [
     "banners",
     "promises",
-    "topModule",
     "myhouse"
   ];
   if (obj?.data) {
@@ -43,7 +42,7 @@ if (url.includes("/config/ershoufang/content")) {
   }
   if (obj?.data?.list?.length > 0) {
     obj.data.list = obj.data.list.filter(
-      (i) => !["一周好文"]?.includes(i?.descVice)
+      (i) => !["cms_content"]?.includes(i?.recoItemType)
     );
   }
 } else if (url.includes("v3/house/list")) {
