@@ -46,6 +46,12 @@ if (url.includes("/config/ershoufang/content")) {
   if (obj.data?.bannerList) {
      delete obj.data.bannerList;
   }
+} else if (url.includes("/config/recommend/home")) {
+  if (obj?.data?.list?.length > 0) {
+    obj.data.list = obj.data.list.filter(
+      (i) => !["一周好文"]?.includes(i?.descVice)
+    );
+  }
 }
 
 $done({ body: JSON.stringify(obj) });
