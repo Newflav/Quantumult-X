@@ -16,7 +16,7 @@ if (url.includes("/config/ershoufang/content")) {
   ];
   if (obj?.data) {
     for (let i of items) {
-      obj.data[i] = {};
+      delete obj.data[i]
     }
   }
 } else if (url.includes("/xinfang/shellapp/index/indexv1")) {
