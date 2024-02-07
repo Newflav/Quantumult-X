@@ -30,7 +30,12 @@ if (url.includes("/config/ershoufang/content")) {
   //首页直播、调查问卷、一周好文
   if (obj?.data?.list?.length > 0) {
     obj.data.list = obj.data.list.filter(
-      (i) => !["直播看房","满意度小调研","一周好文"]?.includes(i?.title) || includes(i?.descVice)
+      (i) => !["直播看房","满意度小调研"]?.includes(i?.title)
+    );
+  }
+  if (obj?.data?.list?.length > 0) {
+    obj.data.list = obj.data.list.filter(
+      (i) => !["一周好文"]?.includes(i?.descVice)
     );
   }
 } else if (url.includes("v3/house/list")) {
