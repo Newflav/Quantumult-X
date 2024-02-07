@@ -12,12 +12,11 @@ if (url.includes("/config/ershoufang/content")) {
   const items = [
     "banners",
     "promises",
-    "otherInfo",
     "myhouse"
   ];
   if (obj?.data) {
     for (let i of items) {
-      delete obj.data[i];
+      obj.data[i] = {};
     }
   }
 } else if (url.includes("/xinfang/shellapp/index/indexv1")) {
