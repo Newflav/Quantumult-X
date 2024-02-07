@@ -2,7 +2,7 @@ const url = $request.url;
 if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
 
-  if (url.includes("/config/ershoufang/content")) {
+if (url.includes("/config/ershoufang/content")) {
   //二手房页面直播看房区域
   if (obj.data?.top_banner) {
     delete obj.data.top_banner;
@@ -32,6 +32,11 @@ let obj = JSON.parse($response.body);
     obj.data.list = obj.data.list.filter(
       (i) => !["直播看房","满意度小调研"]?.includes(i?.title)
     );
+  }
+} else if (url.includes("v3/house/list")) {
+  // 租房宝典
+  if (obj.data?.banners) {
+     delete obj.data.banners;
   }
 }
 
