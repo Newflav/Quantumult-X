@@ -10,7 +10,7 @@ if (url.includes("/v2/article/detail")) {
     delete obj.data.infos.ad_content
   }
   if (obj?.data?.infos?.column) {
-    delete obj.data.infos.column;
+    obj.data.infos.column = {};
   }
   if (obj?.data?.infos?.channels?.length > 0) {
     obj.data.infos.channels = obj.data.infos.channels.filter(
