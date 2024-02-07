@@ -27,11 +27,16 @@ if (url.includes("/config/ershoufang/content")) {
     );
   }
 } else if (url.includes("/config/recommend/home")) {
+  //首页直播、调查问卷、一周好文
   if (obj?.data?.list?.length > 0) {
-    const items = ["descVice", "title"];
-    if (obj?.data?.list?.length > 0) {
-      obj.data.list = obj.data.list.filter((i) => items?.includes(i));
-    }
+    obj.data.list = obj.data.list.filter(
+      (i) => !["直播看房","满意度小调研"]?.includes(i?.title)
+    );
+  }
+  if (obj?.data?.list?.length > 0) {
+    obj.data.list = obj.data.list.filter(
+      (i) => !["一周好文"]?.includes(i?.descVice)
+    );
   }
 } else if (url.includes("v3/house/list")) {
   // 租房宝典
