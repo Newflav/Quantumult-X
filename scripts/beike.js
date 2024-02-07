@@ -38,6 +38,11 @@ if (url.includes("/config/ershoufang/content")) {
   if (obj.data?.banners) {
      delete obj.data.banners;
   }
+} else if (url.includes("Rentplat/v1/homepage")) {
+  // 租房顶部横幅
+  if (obj.data?.banners) {
+     delete obj.data.banners;
+  }
 }
 
 $done({ body: JSON.stringify(obj) });
