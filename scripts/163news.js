@@ -13,7 +13,10 @@ if (url.includes("/gentie-web/api/v3/products")) {
     obj.data.items = obj.data.items.filter((i) => !i.hasOwnProperty("videobanner"));
   }
 } else if (url.includes("/commons/user/profile/main")) {
-  
+  if (obj?.data?.creativeCenter) {
+    // 主页创作中心
+    delete obj.data.creativeCenter;
+  }
 } else if (url.includes("/api/v1/doc/unitedCardView")) {
   if (obj?.data) {
     // 文章页底部圈子推广
