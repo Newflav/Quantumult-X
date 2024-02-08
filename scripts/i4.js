@@ -4,11 +4,11 @@ let obj = JSON.parse($response.body);
 
 if (url.includes("/getHotSearchList")) {
   // 热搜页面
-  if (obj?.spappli?.length > 0) {
-    obj.spappli = [];
-  }
   if (obj?.adli?.length > 0) {
     obj.adli = [];
+  }
+  if (obj?.spappli?.length > 0) {
+    obj.spappli = [];
   }
 } else if (url.includes("/adclickcb")) {
     obj = [];
