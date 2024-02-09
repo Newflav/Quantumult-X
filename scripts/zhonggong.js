@@ -6,7 +6,6 @@ if (url.includes("/visitor/home/list")) {
   if (obj.data?.floats) {
     delete obj.data.floats;
   }
-else if (url.includes("/visitor/home/list")) {
 if (obj?.data?.list?.detail?.length > 0) {
     obj.data.list.detail = obj.data.list.detail.filter(
       (i) => !["轮播多图"]?.includes(i?.title)
