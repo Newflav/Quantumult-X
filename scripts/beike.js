@@ -3,9 +3,12 @@ if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
 
 if (url.includes("/config/ershoufang/content")) {
-  //二手房页面直播看房区域
+  //二手房页面净化
   if (obj.data?.top_banner) {
     delete obj.data.top_banner;
+  }
+  if (obj.data?.scene) {
+    delete obj.data.scene;
   }
 } else if (url.includes("/user/profile/getusercenterinfov4")) {
     //我的页面净化
