@@ -10,6 +10,10 @@ if (url.includes("/config/ershoufang/content")) {
   if (obj.data?.scene) {
     delete obj.data.scene;
   }
+} else if (url.includes("/secondhand/ershoufang/homepagesearch")) {
+  if (obj.data?.list?.data) {
+    delete obj.data.list.data;
+  }
 } else if (url.includes("/user/profile/getusercenterinfov4")) {
     //我的页面净化
   const items = ["banners","promises","myhouse"];
