@@ -11,8 +11,11 @@ if (url.includes("/config/ershoufang/content")) {
     delete obj.data.scene;
   }
 } else if (url.includes("/secondhand/ershoufang/homepagesearch")) {
-  if (obj.data?.list?.data) {
-    delete obj.data.list.data;
+    //二手房页面调查
+  if (obj?.data?.list?.length > 0) {
+    obj.data.list = obj.data.list.filter(
+      (i) => !["evaluate"]?.includes(i?.cardType)
+    );
   }
 } else if (url.includes("/user/profile/getusercenterinfov4")) {
     //我的页面净化
