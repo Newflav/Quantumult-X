@@ -7,7 +7,7 @@ if (url.includes("/visitor/home/list")) {
     delete obj.data.floats;
   }
 if (obj?.data?.list?.detail?.more_hidden?.length > 0) {
-    delete obj.data.list.detail.more_hidden;
+    delete obj.data.list.detail.more_hidden
   }
 }
 
