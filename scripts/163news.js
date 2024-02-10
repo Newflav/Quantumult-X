@@ -17,11 +17,6 @@ if (url.includes("/gentie-web/api/v3/products")) {
     // 个人主页创作中心
     delete obj.data.creativeCenter;
   }
-} else if (url.includes("/api/v1/doc/unitedCardView")) {
-  if (obj?.data) {
-    // 文章页底部圈子推广
-    obj.data = {};
-  }
 } else if (url.includes("/commons/config/user/global")) {
   if (obj?.data) {
     // 个人主页VIP
@@ -30,6 +25,11 @@ if (url.includes("/gentie-web/api/v3/products")) {
 } else if (url.includes("/user/profile/signTask")) {
   if (obj?.data) {
     // 每日签到
+    obj.data = {};
+  }
+} else if (url.includes("/api/v1/doc/unitedCardView")) {
+  if (obj?.data) {
+    // 文章底部圈子推广
     obj.data = {};
   }
 } else if (url.includes("/api/v1/daily-guess/today-question")) {
