@@ -66,6 +66,7 @@ host, hermes-us.inspidspad.com, reject
 host, s3.amazonaws.com, reject
 host, cfg.talkatone.com, reject
 host, d.tktn.be, reject
+host, imgx.jampp.com, reject
 host-suffix, tappx.com, reject
 host-suffix, adxinspidsp.com, reject
 
