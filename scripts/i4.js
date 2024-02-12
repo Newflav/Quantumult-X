@@ -17,7 +17,7 @@ if (url.includes("/getHotSearchList")) {
 } else if (url.includes("/getAppList")) {
   //app横幅广告
   if (obj?.ad?.length > 0) {
-    delete obj.ad
+    delete obj.ad;
   }
 }
 $done({ body: JSON.stringify(obj) });
