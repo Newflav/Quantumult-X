@@ -14,7 +14,6 @@ if (url.includes("/getHotSearchList")) {
     obj = [];
 } else if (url.includes("/getopfstadinfo")) {
     obj = [];
-}
 } else if (url.includes("/getAppList")) {
   //app横幅广告
   if (obj?.ad?.length > 0) {
