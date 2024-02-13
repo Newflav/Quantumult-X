@@ -19,5 +19,8 @@ if (url.includes("/getHotSearchList")) {
   if (obj?.ad?.length > 0) {
     delete obj.ad;
   }
+  if (obj?.adli?.length > 0) {
+    delete obj.adli;
+  }
 }
 $done({ body: JSON.stringify(obj) });
