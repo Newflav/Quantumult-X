@@ -22,8 +22,8 @@ if (url.includes("/v2/article/detail")) {
     obj.asian_plans = {};
   }
 } else if (url.includes("/data/detail/match")) {
-  if (obj?.asian_plans) {
-    obj.asian_plans = {};
+  if (obj?.matchSample?.competition_bk_logo?.length > 0) {
+    delete obj.matchSample.competition_bk_logo
   }
 }
 
