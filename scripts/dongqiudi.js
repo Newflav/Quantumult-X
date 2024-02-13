@@ -4,10 +4,10 @@ let obj = JSON.parse($response.body);
 
 if (url.includes("/v2/article/detail")) {
   if (obj?.data?.topic_tags?.length > 0) {
-    delete obj.data.topic_tags
+    delete obj.data.topic_tags;
   }
   if (obj?.data?.infos?.ad_content?.length > 0) {
-    delete obj.data.infos.ad_content
+    delete obj.data.infos.ad_content;
   }
   if (obj?.data?.infos?.column) {
     obj.data.infos.column = {};
@@ -23,7 +23,7 @@ if (url.includes("/v2/article/detail")) {
   }
 } else if (url.includes("/data/detail/match")) {
   if (obj?.matchSample?.competition_bk_logo?.length > 0) {
-    delete obj.matchSample.competition_bk_logo
+    delete obj.matchSample.competition_bk_logo;
   }
 }
 
