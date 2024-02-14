@@ -71,6 +71,11 @@ if (url.includes("/boss/car/order/content_info")) {
   if (obj.data?.carTips?.data?.popupInfo) {
     delete obj.data.carTips.data.popupInfo;
   }
+} else if (url.includes("/aos_public_travel/mixed/recommend_route_plan_list")) {
+  // 公交路线页打车推广
+  if (obj.data?.mixed_plans?.data?.taxiPlans) {
+    delete obj.data.mixed_plans.data.taxiPlans;
+  }
 } else if (url.includes("/shield/dsp/profile/index/nodefaasv3")) {
   // 我的页面
   if (obj?.data?.cardList?.length > 0) {
