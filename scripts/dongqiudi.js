@@ -3,6 +3,7 @@ if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
 
 if (url.includes("/v2/article")) {
+  // 文章广告
   if (obj?.data?.topic_tags?.length > 0) {
     delete obj.data.topic_tags;
   }
@@ -17,6 +18,7 @@ if (url.includes("/v2/article")) {
       (i) => !["剑南春"]?.includes(i?.tag)
     );
   }
+  // 评论区广告
   if (obj?.data?.comment_list?.length > 0) {
     obj.data.comment_list = obj.data.comment_list.filter(
       (i) => !["12320463"]?.includes(i?.user_id)
@@ -28,6 +30,7 @@ if (url.includes("/v2/article")) {
     );
   }
 } else if (url.includes("/data/match/pre_analysis")) {
+  // 直播页广告
   if (obj?.asian_plans) {
     obj.asian_plans = {};
   }
