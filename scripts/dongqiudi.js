@@ -9,9 +9,6 @@ if (url.includes("/v2/article")) {
   if (obj?.data?.infos?.ad_content?.length > 0) {
     delete obj.data.infos.ad_content;
   }
-  if (obj?.data?.recommend_list?.length > 0) {
-    delete obj.data.recommend_list;
-  }
   if (obj?.data?.infos?.column) {
     obj.data.infos.column = {};
   }
