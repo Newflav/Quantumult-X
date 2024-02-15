@@ -20,6 +20,11 @@ if (url.includes("/v2/article")) {
       (i) => !["剑南春"]?.includes(i?.tag)
     );
   }
+  if (obj?.data?.comment_list?.length > 0) {
+    obj.data.comment_list = obj.data.comment_list.filter(
+      (i) => !["12320463"]?.includes(i?.user_id)
+    );
+  }
 } else if (url.includes("/data/match/pre_analysis")) {
   if (obj?.asian_plans) {
     obj.asian_plans = {};
