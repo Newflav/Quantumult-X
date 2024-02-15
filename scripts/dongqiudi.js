@@ -19,13 +19,8 @@ if (url.includes("/v2/article")) {
     );
   }
   // 评论区广告
-  if (obj?.data?.comment_list?.length > 0) {
-    obj.data.comment_list = obj.data.comment_list.filter(
-      (i) => !["12320463"]?.includes(i?.user_id)
-    );
-  }
-  if (obj?.data?.recommend_list?.length > 0) {
-    obj.data.recommend_list = obj.data.recommend_list.filter(
+  if (obj?.data?.comment_list?.length > 0) || if (obj?.data?.recommend_list?.length > 0) {
+    obj.data.comment_list || obj.data.recommend_list =  obj.data.comment_list || obj.data.recommend_list.filter
       (i) => !["12320463"]?.includes(i?.user_id)
     );
   }
