@@ -22,6 +22,11 @@ if (url.includes("/v2/article")) {
       (i) => !["12320463"]?.includes(i?.user_id)
     );
   }
+  if (obj?.data?.recommend_list?.length > 0) {
+    obj.data.recommend_list = obj.data.recommend_list.filter(
+      (i) => !["12320463"]?.includes(i?.user_id)
+    );
+  }
 } else if (url.includes("/data/match/pre_analysis")) {
   if (obj?.asian_plans) {
     obj.asian_plans = {};
