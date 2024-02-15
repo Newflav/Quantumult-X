@@ -30,12 +30,12 @@ obj.data.comment_list.filter(
       (i) => !["12320463"]?.includes(i?.user_id)
     );
   }
-} else if (url.includes("/data/match/pre_analysis")) {
+} else if (url.includes("/match/pre_analysis")) {
   // 直播页广告
   if (obj?.asian_plans) {
     obj.asian_plans = {};
   }
-} else if (url.includes("/data/detail/match")) {
+} else if (url.includes("/detail/match")) {
   if (obj?.matchSample?.competition_bk_logo?.length > 0) {
     delete obj.matchSample.competition_bk_logo;
   }
