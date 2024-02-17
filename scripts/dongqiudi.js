@@ -43,6 +43,9 @@ obj.data.comment_list.filter(
   if (obj?.share_image_info) {
     obj.share_image_info = {};
   }
+  if (obj?.share_miniprogram) {
+    delete obj.share_miniprogram;
+  }
 }
 
 $done({ body: JSON.stringify(obj) });
