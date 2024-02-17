@@ -40,12 +40,10 @@ obj.data.comment_list.filter(
     delete obj.matchSample.competition_bk_logo;
   }
 } else if (url.includes("/articles/info")) {
-const items = ["miniprogram_path", "shares_total", "share", "share_miniprogram", "share_image_info"];
-  if (obj) {
-    for (let i of items) {
-      delete obj.data["105"][i];
-    }
-  }
+  const items = ["miniprogram_path", "shares_total", "share", "share_miniprogram", "share_image_info"];
+  item.forEach((i) => {
+    delete obj[i];
+  });
 }
 
 $done({ body: JSON.stringify(obj) });
