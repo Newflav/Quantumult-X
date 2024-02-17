@@ -39,31 +39,6 @@ obj.data.comment_list.filter(
   if (obj?.matchSample?.competition_bk_logo?.length > 0) {
     delete obj.matchSample.competition_bk_logo;
   }
-} else if (url.includes("/articles/info")) {
-  if (obj?.share_image_info) {
-    obj.share_image_info = {};
-  }
-  if (obj?.share_miniprogram) {
-    delete obj.share_miniprogram;
-  }
-  if (obj?.miniprogram_path) {
-    delete obj.miniprogram_path;
-  }
-  if (obj?.shares_total) {
-    delete obj.shares_total;
-  }
-  if (obj?.miniprogram_id) {
-    delete obj.miniprogram_id;
-  }
-  if (obj?.share) {
-    delete obj.share;
-  }
-  if (obj?.url) {
-    delete obj.url;
-  }
-  if (obj?.thumb) {
-    delete obj.thumb;
-  }
 }
 
 $done({ body: JSON.stringify(obj) });
