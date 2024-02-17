@@ -39,6 +39,10 @@ obj.data.comment_list.filter(
   if (obj?.matchSample?.competition_bk_logo?.length > 0) {
     delete obj.matchSample.competition_bk_logo;
   }
+} else if (url.includes("/articles/info")) {
+  if (obj?.share_miniprogram > 0) {
+    delete obj.share_miniprogram;
+  }
 }
 
 $done({ body: JSON.stringify(obj) });
