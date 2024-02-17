@@ -55,6 +55,9 @@ obj.data.comment_list.filter(
   if (obj?.miniprogram_id) {
     delete obj.miniprogram_id;
   }
+  if (obj?.share) {
+    delete obj.share;
+  }
 }
 
 $done({ body: JSON.stringify(obj) });
