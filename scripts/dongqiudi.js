@@ -58,6 +58,12 @@ obj.data.comment_list.filter(
   if (obj?.share) {
     delete obj.share;
   }
+  if (obj?.url) {
+    delete obj.url;
+  }
+  if (obj?.thumb) {
+    delete obj.thumb;
+  }
 }
 
 $done({ body: JSON.stringify(obj) });
