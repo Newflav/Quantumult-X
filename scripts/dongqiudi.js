@@ -40,10 +40,9 @@ obj.data.comment_list.filter(
     delete obj.matchSample.competition_bk_logo;
   }
 } else if (url.includes("/articles/info")) {
-  const items = ["miniprogram_path", "shares_total", "up_total"];
-  item.forEach((i) => {
-    delete obj[i];
-  });
+  if (obj?.share_image_info) {
+    obj.share_image_info = {};
+  }
 }
 
 $done({ body: JSON.stringify(obj) });
