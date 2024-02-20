@@ -5,10 +5,10 @@ let obj = JSON.parse($response.body);
 if (url.includes("/v2/article")) {
   // 文章广告
   if (obj?.data?.topic_tags?.length > 0) {
-    delete obj.data.topic_tags
+    delete obj.data.topic_tags;
   }
   if (obj?.data?.infos?.ad_content?.length > 0) {
-    delete obj.data.infos.ad_content
+    delete obj.data.infos.ad_content;
   }
   if (obj?.data?.infos?.column) {
     obj.data.infos.column = {};
