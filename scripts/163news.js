@@ -40,7 +40,9 @@ if (url.includes("/gentie-web/api/v3/products")) {
 } else if (url.includes("/v1/feed/dynamic/normal-list")) {
   if (obj?.data?.items?.length > 0) {
     // 网易红彩
-   obj.data.items = obj.data.items.filter((i) => !i.hasOwnProperty("videobanner"));
+   obj.data.items = obj.data.items.filter(
+    (i) => !["网易红彩"]?.includes(i?.source)
+    );
   }
 }
 
