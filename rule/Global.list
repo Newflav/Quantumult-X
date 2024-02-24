@@ -99,6 +99,7 @@ host-suffix, cloudflareclient.com, proxy
 # > Signal
 host-suffix, signal.org, proxy
 host-suffix, hcaptcha.com, proxy
+host-suffix, signalcaptchas.org, proxy
 
 # > Tutanota
 host-suffix, tuta.com, proxy
