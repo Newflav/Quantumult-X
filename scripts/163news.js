@@ -37,6 +37,11 @@ if (url.includes("/gentie-web/api/v3/products")) {
     // 文章底部每日竞猜
     obj.data = {};
   }
+} else if (url.includes("/v1/feed/dynamic/normal-list")) {
+  if (obj?.data?.items?.length > 0) {
+    // 网易红彩
+   obj.data.items = obj.data.items.filter((i) => !i.hasOwnProperty("videobanner"));
+  }
 }
 
 $done({ body: JSON.stringify(obj) });
