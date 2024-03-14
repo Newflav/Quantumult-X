@@ -134,7 +134,7 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
   // 首页 多余方框元素
   if (obj?.floorList?.length > 0) {
     obj.floorList = obj.floorList.filter(
-      (i) => !["1111", " "]?.includes(i?.showName)
+      (i) => !["", "1111"]?.includes(i?.showName)
     );
   }
   // 首页 顶部背景图
