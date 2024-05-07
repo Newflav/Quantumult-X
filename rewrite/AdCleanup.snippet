@@ -201,11 +201,10 @@
 # >>>>>>>>>>>>>>> ✅ P ✅ <<<<<<<<<<<<<<
 # > 拼多多
 ; hostname = api.yangkeduo.com, api.pinduoduo.com, m.pinduoduo.net, *.pddpic.com, *.pddugc.com, meta.pinduoduo.com
-^https?:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash url reject
+^https:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash url reject
+^https:\/\/api\.pinduoduo\.com\/api\/aquarius\/hungary\/global\/homepage url reject
 # 视频页小窗
 ^https:\/\/m\.pinduoduo\.net\/vlayer_tab_popup\.html url reject
-# 聊天界面 多多买菜横幅
-^https:\/\/commimg(.*)\.pddpic\.com\/flow-banner-entrance url reject
 # 营销小窗
 ^http:\/\/video(.*)\.(pddpic|pddugc)\.com\/(tower-video|tower-video-b|tower-video-side|tower-video-side-b)\/.*\.(float|highlights) url reject
 ^http:\/\/video(.*)\.(pddugc|pddpic)\.com\/tower-video-b\/pdd-live url reject
@@ -249,6 +248,11 @@
 ^https:\/\/wxs-weixin\.sd\.zhumanggroup\.com\/api\/v2\/ad url reject-dict
 
 
+# > 顺丰快递 微信小程序
+# hostname = ucmp.sf-express.com
+^https:\/\/ucmp\.sf-express\.com\/proxy\/(operation-platform\/info-flow-adver\/query|esgcempcore\/memberGoods\/pointMallService\/goodsList|esgcempcore\/memberActLengthy\/fullGiveActivityService\/fullGiveInfo) url reject-dict
+
+
 
 # >>>>>>>>>>>>>>> ✅ T ✅ <<<<<<<<<<<<<<
 
@@ -281,7 +285,7 @@
 
 # > 网易新闻
 ; hostname = c.m.163.com, gw.m.163.com
-^https:\/\/gw\.m\.163\.com\/(gentie-web\/api\/v3\/products|nc\/api\/v1\/feed\/dynamic\/video-normal-list|nc-reader\/api\/v1\/doc\/unitedCardView|commons-user-config\/api\/v2\/commons\/config\/user\/global|newsapp-activity-go\/api\/v1\/daily-guess\/today-question|commons-user-main\/api\/v1\/commons\/user\/profile\/main|commons-user-main\/api\/v1\/commons\/user\/profile\/signTask) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/163news.js
+^https:\/\/gw\.m\.163\.com\/(gentie-web\/api\/v3\/products|nc\/api\/v1\/feed\/dynamic\/video-normal-list|nc-reader\/api\/v1\/doc\/unitedCardView|commons-user-config\/api\/v2\/commons\/config\/user\/global|newsapp-activity-go\/api\/v1\/daily-guess\/today-question|commons-user-main\/api\/v1\/commons\/user\/profile\/main|commons-user-main\/api\/v1\/commons\/user\/profile\/signTask|nc\/api\/v1\/feed\/dynamic\/normal-list) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/163news.js
 # 个人主页元素净化(例如京东特供等）
 ^https:\/\/c\.m\.163\.com\/nc\/gl\/newsclient\/ft url reject-dict
 
@@ -403,7 +407,7 @@ https://edith.xiaohongshu.com/api/sns/v5/note/comment/list url script-response-b
 # > 直播吧
 ; hostname = a.qiumibao.com
 ^https:\/\/a\.qiumibao\.com\/(found|activities\/config\.php) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/zhiboba.js
-^http:\/\/(47\.111\.8\.123|118\.178\.168\.156):8091\/allOne url reject
+^http:\/\/118\.178\.168\.156:8091\/allOne url reject
 ; 屏蔽升级
 ^https:\/\/a\.qiumibao\.com\/ios\/\?version_code url reject
 
@@ -414,4 +418,4 @@ https://edith.xiaohongshu.com/api/sns/v5/note/comment/list url script-response-b
 
 
 
-hostname = gab.122.gov.cn, list-app-m.i4.cn, search-app-m.i4.cn, boxer.baidu.com, pan.baidu.com, tiebac.baidu.com, apps.api.ke.com, i-shadow2.ke.com, ap.dongqiudi.com, detail.dongqiudi.com, zc.dongqiudi.com, api.dongqiudi.com, hd.xiaojukeji.com, common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, tiku.fenbi.com, market-api.fenbi.com, ke.fenbi.com, keapi.fenbi.com, api.gongkaoleida.com, *.google.cn, api.m.jd.com, dns.jd.com, s.jiediankeji.com, api-access.pangolin-sdk-toutiao.com, *.qq.com, open.e.kuaishou.com, *.meituan.net, *.meituan.com, app-sc.miguvideo.com, v.miguvideo.com, display-sc.miguvideo.com, display.miguvideo.com, common-sc.miguvideo.com, api.yangkeduo.com, api.pinduoduo.com, m.pinduoduo.net, *.pddpic.com, *.pddugc.com, meta.pinduoduo.com, public.gdtimg.com, y.gtimg.cn, api.shenyin.name, wxs-weixin.sd.zhumanggroup.com, security.wechat.com, ccmsupport-sz.tenpay.com, support.you.163.com, m.you.163.com, c.m.163.com, gw.m.163.com, interface*.music.163.com, cds.wifi188.com, edith.xiaohongshu.com, www.xiaohongshu.com, referee.xiaohongshu.com, pages.xiaohongshu.com, rr*.googlevideo.com, youtubei.googleapis.com, clientaccess.10086.cn, *.coc.10086.cn, a.qiumibao.com, wx.mygolbs.com
+hostname = gab.122.gov.cn, list-app-m.i4.cn, search-app-m.i4.cn, boxer.baidu.com, pan.baidu.com, tiebac.baidu.com, apps.api.ke.com, i-shadow2.ke.com, ap.dongqiudi.com, detail.dongqiudi.com, zc.dongqiudi.com, api.dongqiudi.com, hd.xiaojukeji.com, common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, tiku.fenbi.com, market-api.fenbi.com, ke.fenbi.com, keapi.fenbi.com, api.gongkaoleida.com, *.google.cn, api.m.jd.com, dns.jd.com, s.jiediankeji.com, api-access.pangolin-sdk-toutiao.com, *.qq.com, open.e.kuaishou.com, *.meituan.net, *.meituan.com, app-sc.miguvideo.com, v.miguvideo.com, display-sc.miguvideo.com, display.miguvideo.com, common-sc.miguvideo.com, api.yangkeduo.com, api.pinduoduo.com, m.pinduoduo.net, *.pddpic.com, *.pddugc.com, meta.pinduoduo.com, public.gdtimg.com, y.gtimg.cn, api.shenyin.name, wxs-weixin.sd.zhumanggroup.com, ucmp.sf-express.com, security.wechat.com, ccmsupport-sz.tenpay.com, support.you.163.com, m.you.163.com, c.m.163.com, gw.m.163.com, interface*.music.163.com, cds.wifi188.com, edith.xiaohongshu.com, www.xiaohongshu.com, referee.xiaohongshu.com, pages.xiaohongshu.com, rr*.googlevideo.com, youtubei.googleapis.com, clientaccess.10086.cn, *.coc.10086.cn, a.qiumibao.com, wx.mygolbs.com
