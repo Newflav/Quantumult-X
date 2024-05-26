@@ -70,6 +70,11 @@ host, imgx.jampp.com, reject
 host-suffix, tappx.com, reject
 host-suffix, adxinspidsp.com, reject
 
+# > 京东
+host, dns.jd.com, reject
+ip-cidr, 101.124.19.122/32, reject
+ip6-cidr, 2402:db40:5100:1011::5/128, reject
+
 # > 其他
 host, cf-ads.pinger.com, reject
 host, us.a.iteleserve.com, reject
@@ -78,8 +83,3 @@ host-suffix, pubnative.net, reject
 host-suffix, vrtcal.com, reject
 host-suffix, vungle.com, reject
 host-suffix, amazon-adsystem.com, reject
-
-# > 禁JD HttpDns解析
-host, dns.jd.com, reject
-ip-cidr, 101.124.19.122/32, reject
-ip6-cidr, 2402:db40:5100:1011::5/128, reject
