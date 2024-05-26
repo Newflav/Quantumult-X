@@ -17,9 +17,6 @@
 ; hostname = boxer.baidu.com
 # 防跳转
 ^https:\/\/boxer\.baidu\.com\/scheme\?scheme url script-response-header https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/baidu/baiduNoRedirect.js
-# 禁https dns
-^http:\/\/180\.76\.76\.112\/v4\/resolve url reject
-^http:\/\/180\.76\.76\.220\/v4\/resolve url reject
 
 
 # > 百度网盘
@@ -182,8 +179,6 @@
 # 屏蔽更新
 ^https:\/\/api-unionid\.meituan\.com\/unionid\/ios\/update url reject
 ^https:\/\/dd\.meituan\.com\/api\/wolffy\/checkList url reject
-# 禁https dns
-^http:\/\/103\.37\.155\.60\/fetch url reject
 
 
 # > 咪咕视频
@@ -213,11 +208,6 @@
 ^http(.*):\/\/video-snapshot(.*)\.pddpic\.com\/kiwi-live-image url reject
 # 屏蔽升级
 ^https:\/\/meta\.pinduoduo\.com\/api\/app\/v(.*)\/upgrade\?pdduid url reject
-# 禁止https dns
-^http:\/\/101\.35\.204\.35\/d url reject
-^http:\/\/101\.35\.212\.35\/d url reject
-^http:\/\/114\.110\.96\.26\/d url reject
-^http:\/\/114\.110\.97\.97\/d url reject
 
 
 # >>>>>>>>>>>>>>> ✅ Q ✅ <<<<<<<<<<<<<<
@@ -265,11 +255,6 @@
 ^https:\/\/mp\.weixin\.qq\.com\/mp\/(cps_product_info|getappmsgad|masonryfeed|relatedarticle)\? url reject-dict
 # 微信外部链接解锁
 ^https\:\/\/(weixin110\.qq|security\.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\? url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/weChat110.js
-# 禁https dns
-^https?:\/\/dns\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/newgetdns url reject
-^https?:\/\/dns\.weixin\.qq\.com\.cn\/cgi-bin\/micromsg-bin\/newgetdns url reject
-^https?:\/\/short\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/getcdndns url reject
-^https?:\/\/hkextshort\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/getcdndns url reject
 
 
 # > 微信乘车码小程序
