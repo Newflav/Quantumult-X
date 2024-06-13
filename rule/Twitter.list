@@ -25,7 +25,6 @@ host-suffix, vine.co, twitter
 host-suffix, x.com, twitter
 host-keyword, twitter, twitter
 ip-cidr, 192.133.76.0/22, twitter
-ip-cidr, 199.16.156.0/22, twitter
 ip-cidr, 199.59.148.0/22, twitter
 ip-cidr, 199.96.56.0/21, twitter
 ip-cidr, 202.160.128.0/22, twitter
