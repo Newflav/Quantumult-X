@@ -69,6 +69,7 @@ host, d.tktn.be, reject
 host, imgx.jampp.com, reject
 host-suffix, tappx.com, reject
 host-suffix, adxinspidsp.com, reject
+host-suffix, inhousedsp.com, reject
 
 # > 京东
 host, dns.jd.com, reject
