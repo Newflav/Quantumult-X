@@ -145,7 +145,7 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
   if (obj?.webViewFloorList?.length > 0) {
     obj.webViewFloorList = [];
   }
-} else if (url.includes("/commons/user/profile/main")) {
+} else if (url.includes("functionId=getTabHomeInfo")) {
   if (obj?.result?.iconInfo) {
     // 购物车悬浮窗
     delete obj.result.iconInfo;
