@@ -150,6 +150,12 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
     // 购物车悬浮窗
     delete obj.result.iconInfo;
   }
+} else if (url.includes("functionId=readCustomSurfaceList")) {
+  if (obj?.result?.modeMap?.dark?.navigationAll?.length > 0) {
+    obj.result.modeMap.dark.navigationAll = obj.result.modeMap.dark.navigationAll.filter(
+      (i) => !["new", "find"]?.includes(i?.functionId)
+    );
+  }
 }
 
 $done({ body: JSON.stringify(obj) });
