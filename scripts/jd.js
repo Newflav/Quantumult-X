@@ -150,6 +150,9 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
     if (obj?.config?.jingEggDateConfig) {
       delete obj.config.jingEggDateConfig;
   }
+    if (obj?.digitalBuriedExpLabel) {
+      delete obj.digitalBuriedExpLabel;
+  }
 }
 
 $done({ body: JSON.stringify(obj) });
