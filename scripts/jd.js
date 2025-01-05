@@ -142,7 +142,13 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
 } else if (url.includes("functionId=cart")) {
   // 购物车净化
     if (obj?.config?.textInfo) {
-    delete obj.config.textInfo;
+      delete obj.config.textInfo;
+  }
+    if (obj?.config?.jingEggStrongDateConfig) {
+      delete obj.config.jingEggStrongDateConfig;
+  }
+    if (obj?.config?.jingEggDateConfig) {
+      delete obj.config.jingEggDateConfig;
   }
 }
 
