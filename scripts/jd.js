@@ -139,6 +139,11 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
   if (obj?.webViewFloorList?.length > 0) {
     obj.webViewFloorList = [];
   }
+} else if (url.includes("functionId=cart")) {
+  // 购物车净化
+  if (obj?.config?.textInfo?.jingEggMultipleFailedURL) {
+    delete obj.config.textInfo.jingEggMultipleFailedURL;
+  }
 }
 
 $done({ body: JSON.stringify(obj) });
