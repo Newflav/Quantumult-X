@@ -144,6 +144,9 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
   if (obj?.config?.textInfo?.jingEggMultipleFailedURL) {
     delete obj.config.textInfo.jingEggMultipleFailedURL;
   }
+    if (obj?.config?.textInfo) {
+    delete obj.config.textInfo;
+  }
 }
 
 $done({ body: JSON.stringify(obj) });
