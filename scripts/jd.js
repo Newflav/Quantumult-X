@@ -114,9 +114,6 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
     }
     obj.floors = newFloors;
   }
-  if (floor?.data?.newsInfoList) {
-            delete floor.data.newsInfoList;
-          }
   }
 } else if (url.includes("functionId=start")) {
   // 开屏广告
