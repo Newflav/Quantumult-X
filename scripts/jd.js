@@ -1,5 +1,3 @@
-// 2024-02-06 12:35
-
 const url = $request.url;
 if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
@@ -114,7 +112,6 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
     }
     obj.floors = newFloors;
   }
-  }
 } else if (url.includes("functionId=start")) {
   // 开屏广告
   if (obj?.images?.length > 0) {
@@ -139,20 +136,6 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
   // 首页 下拉二楼
   if (obj?.webViewFloorList?.length > 0) {
     obj.webViewFloorList = [];
-  }
-} else if (url.includes("functionId=cart")) {
-  // 购物车净化
-    if (obj?.config?.textInfo) {
-      delete obj.config.textInfo;
-  }
-    if (obj?.config?.jingEggStrongDateConfig) {
-      delete obj.config.jingEggStrongDateConfig;
-  }
-    if (obj?.config?.jingEggDateConfig) {
-      delete obj.config.jingEggDateConfig;
-  }
-    if (obj?.digitalBuriedExpLabel) {
-      delete obj.digitalBuriedExpLabel;
   }
 }
 
