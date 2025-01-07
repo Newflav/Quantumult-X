@@ -114,10 +114,9 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
     }
     obj.floors = newFloors;
   }
-  if (obj?.floors?.length > 0) {
-    obj.floors = obj.floors.filter(
-      (i) => !["1"]?.includes(i?.sortId)
-    );
+  if (floor?.data?.newsInfoList) {
+            delete floor.data.newsInfoList;
+          }
   }
 } else if (url.includes("functionId=start")) {
   // 开屏广告
