@@ -1,3 +1,5 @@
+// 2023-11-29 12:35
+
 const url = $request.url;
 if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
@@ -80,6 +82,10 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
           if (floor?.data?.commonWindows?.length > 0) {
             floor.data.commonWindows = [];
           }
+          // 京东快讯
+          if (floor?.data?.newsInfoList?.length > 0) {
+            floor.data.newsInfoList = [];
+          }
           // 右下角动图
           if (floor?.data?.floatLayer) {
             delete floor.data.floatLayer;
@@ -98,10 +104,6 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
             floor.data.commentRemindInfo.infos = [];
           }
         } else if (floor?.mId === "userinfo") {
-          // 京东快讯
-     if (floor?.data?.newsInfoList) {
-      delete floor.data.newsInfoList;
-          }
           // 个人页 顶部背景图
           if (floor?.data?.bgImgInfo?.bgImg) {
             delete floor.data.bgImgInfo.bgImg;
