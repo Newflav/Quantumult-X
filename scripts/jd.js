@@ -76,6 +76,9 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
           if (floor?.data?.commonTips?.length > 0) {
             floor.data.commonTips = [];
           }
+          if (floor?.data?.newsInfoList?.length > 0) {
+            floor.data.newsInfoList = [];
+          }
           // 弹窗
           if (floor?.data?.commonWindows?.length > 0) {
             floor.data.commonWindows = [];
