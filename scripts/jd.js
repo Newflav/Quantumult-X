@@ -47,6 +47,9 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
     obj.floors = newFloors;
   }
 } else if (url.includes("functionId=personinfoBusiness")) {
+          if (obj?.floors?.data?.newsInfoList?.length > 0) {
+      ojb.floors.data.newsInfoList = [];
+          }
   // 个人页面
   if (obj?.floors?.length > 0) {
     let newFloors = [];
@@ -75,9 +78,6 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
           // 底部会员续费横幅
           if (floor?.data?.commonTips?.length > 0) {
             floor.data.commonTips = [];
-          }
-          if (floor?.data?.newsInfoList?.length > 0) {
-            floor.data.newsInfoList = [];
           }
           // 弹窗
           if (floor?.data?.commonWindows?.length > 0) {
