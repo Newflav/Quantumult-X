@@ -47,9 +47,6 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
     obj.floors = newFloors;
   }
 } else if (url.includes("functionId=personinfoBusiness")) {
-          if (obj?.floors?.data?.newsInfoList) {
-      delete ojb.floors.data.newsInfoList;
-          }
   // 个人页面
   if (obj?.floors?.length > 0) {
     let newFloors = [];
