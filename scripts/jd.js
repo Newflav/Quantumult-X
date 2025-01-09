@@ -98,6 +98,10 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
             floor.data.commentRemindInfo.infos = [];
           }
         } else if (floor?.mId === "userinfo") {
+          // 京东快讯
+     if (floor?.data?.newsInfoList) {
+      delete floor.data.newsInfoList;
+          }
           // 个人页 顶部背景图
           if (floor?.data?.bgImgInfo?.bgImg) {
             delete floor.data.bgImgInfo.bgImg;
