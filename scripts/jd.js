@@ -82,10 +82,6 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
           if (floor?.data?.commonWindows?.length > 0) {
             floor.data.commonWindows = [];
           }
-          // 京东快讯
-          if (floor?.data?.newsInfoList?.length > 0) {
-            floor.data.newsInfoList = [];
-          }
           // 右下角动图
           if (floor?.data?.floatLayer) {
             delete floor.data.floatLayer;
