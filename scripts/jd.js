@@ -141,8 +141,8 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
     obj.webViewFloorList = [];
   }
 } else if (url.includes("functionId=cart")) {
-    if (obj?.config?.textInfo) {
-    delete obj.config.textInfo;
+    if (obj?.config?.textInfo?.jingEggMultipleFailedURL) {
+    delete obj.config.textInfo.jingEggMultipleFailedURL;
   }
 }
 
