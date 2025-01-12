@@ -140,6 +140,10 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
   if (obj?.webViewFloorList?.length > 0) {
     obj.webViewFloorList = [];
   }
+} else if (url.includes("functionId=cart")) {
+    if (obj?.config?.textInfo) {
+    delete obj.config.textInfo;
+  }
 }
 
 $done({ body: JSON.stringify(obj) });
