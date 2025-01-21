@@ -56,10 +56,10 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
       // orderIdFloor我的订单 keyToolsFloor浏览记录 newWalletIdFloor我的钱包 iconToolFloor底部工具栏
       const items = [
        "bigSaleFloor", // 双十一
-       "newStyleAttentionCard", //关注频道
        "newsFloor", //京东快讯
        "buyOften", // 常买常逛
        "newAttentionCard", // 关注的频道
+       "newStyleAttentionCard", //关注频道
        "newBigSaleFloor", // 双十一
        "noticeFloor", // 顶部横幅
        "recommendfloor" // 我的推荐
