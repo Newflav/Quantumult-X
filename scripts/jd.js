@@ -55,25 +55,24 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
     for (let floor of obj.floors) {
       // orderIdFloor我的订单 keyToolsFloor浏览记录 newWalletIdFloor我的钱包 iconToolFloor底部工具栏
       const items = [
-       "bigSaleFloor", // 双十一
-       "newsFloor", //京东快讯
-       "buyOften", // 常买常逛
-       "newAttentionCard", // 关注的频道
-       "newStyleAttentionCard", //关注频道
-       "newBigSaleFloor", // 双十一
-       "noticeFloor", // 顶部横幅
-       "recommendfloor" // 我的推荐
+        "bigSaleFloor", // 双十一
+        "newsFloor", //京东快讯
+        "buyOften", // 常买常逛
+        "newStyleAttentionCard", //关注频道
+        "newBigSaleFloor", // 双十一
+        "noticeFloor", // 顶部横幅
+        "recommendfloor" // 我的推荐
       ];
       if (items?.includes(floor?.mId)) {
         continue;
       } else {
         if (floor?.mId === "basefloorinfo") {
           // 弹窗
-          if (floor?.data?.commonPopup) {
+        if (floor?.data?.commonPopup) {
             delete floor.data.commonPopup;
           }
           // 弹窗
-          if (floor?.data?.commonPopup_dynamic) {
+        if (floor?.data?.commonPopup_dynamic) {
             delete floor.data.commonPopup_dynamic;
           }
           // 底部会员续费横幅
