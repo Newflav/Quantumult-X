@@ -72,7 +72,6 @@ host-suffix, adxinspidsp.com, reject
 host-suffix, inhousedsp.com, reject
 
 # > 京东
-host, dns.jd.com, reject
 ip-cidr, 101.124.19.122/32, reject
 ip6-cidr, 2402:db40:5100:1011::5/128, reject
 
