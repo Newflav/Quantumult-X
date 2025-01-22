@@ -129,7 +129,7 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
     // 首页 图层列表
     // float推广浮层 recommend为你推荐 ruleFloat资质与规则 searchIcon右上角消费券 topRotate左上角logo
     obj.floorList = obj.floorList.filter(
-      (i) => !["float", "photoCeiling", "ruleFloat", "searchIcon",  "topRotate"]?.includes(i?.type)
+      (i) => !["float", "photoCeiling", "ruleFloat", "searchIcon", "tabBarAtmosphere", "bottomXview", "topRotate"]?.includes(i?.type)
     );
   }
   // 首页 下拉二楼
