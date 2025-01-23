@@ -91,3 +91,4 @@ host-suffix, pubnative.net, reject
 host-suffix, vrtcal.com, reject
 host-suffix, vungle.com, reject
 host-suffix, amazon-adsystem.com, reject
+host-suffix, 163jiasu.com, reject
