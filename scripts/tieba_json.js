@@ -34,6 +34,10 @@ if (url.includes("tiebaads/commonbatch") && method === postMethod) {
         console.log(`去除直播:${liveLength}`);
         body.recom_live_list = [];
     }
+    if (body.recom_live_list) {
+        console.log('去除直播');
+  body.recom_live_list = [];
+    }
 } else if (url.includes("c/u/user/profile")) {
     console.log('贴吧-user');
     if (body.banner) {
