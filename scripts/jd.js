@@ -136,18 +136,15 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
   if (obj?.webViewFloorList?.length > 0) {
     obj.webViewFloorList = [];
   }
-} else if (url.includes("functionId=cart")) {
-    if (obj?.config?.textInfo) {
-    delete obj.config.textInfo;
+} else if (url.includes("functionId=getTabHomeInfo")) {
+  // 新品页面
+  if (obj?.result?.iconInfo) {
+    // 新品页 悬浮动图
+    delete obj.result.iconInfo;
   }
-    if (obj?.config?.jingEggStrongDateConfig) {
-    delete obj.config.jingEggStrongDateConfig;
-  }
-    if (obj?.config?.jingEggDateConfig) {
-    delete obj.config.jingEggDateConfig;
-  }
-    if (obj?.config?.jingEggCouponNumConfig) {
-    delete obj.config.jingEggCouponNumConfig;
+  if (obj?.result?.roofTop) {
+    // 新品页 下拉二楼
+    delete obj.result.roofTop;
   }
 }
 
