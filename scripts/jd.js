@@ -59,6 +59,7 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
         "newsFloor", //京东快讯
         "buyOften", // 常买常逛
         "newStyleAttentionCard", //关注频道
+        "newAttentionCard",  //新版关注频道
         "newBigSaleFloor", // 双十一
         "noticeFloor", // 顶部横幅
         "recommendfloor" // 我的推荐
