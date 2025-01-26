@@ -287,7 +287,7 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
   }
 } else if (url.includes("functionId=cart") || url.includes("functionId=subCartCount")) {
     if (obj?.wait) {
-      obj.wait = 0;
+      delete obj.wait;
   }
 }
 
