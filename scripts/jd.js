@@ -263,6 +263,10 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
   if (obj?.showTimesDaily) {
     obj.showTimesDaily = 0;
   }
+} else if (url.includes("functionId=cart")) 
+   if (obj?.wait) {
+     obj.wait = 0;
+  }
 } else if (url.includes("functionId=welcomeHome")) {
   // 首页配置
   if (obj?.floorList?.length > 0) {
@@ -286,12 +290,6 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
   // 首页 下拉二楼
   if (obj?.webViewFloorList?.length > 0) {
     obj.webViewFloorList = [];
-  }
-  if (obj?.homeConfig) {
-    delete obj.homeConfig;
-  }
-  if (obj?.promotionTabs?.content) {
-    delete obj.promotionTabs.content;
   }
 }
 
