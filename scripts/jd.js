@@ -287,6 +287,9 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
   if (obj?.webViewFloorList?.length > 0) {
     obj.webViewFloorList = [];
   }
+  if (obj?.homeConfig?.length > 0) {
+    obj.homeConfig = [];
+  }
 }
 
 $done({ body: JSON.stringify(obj) });
