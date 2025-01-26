@@ -286,8 +286,8 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
     obj.webViewFloorList = [];
   }
 } else if (url.includes("functionId=cart") || url.includes("functionId=subCartCount")) {
-   if (obj?.echo) {
-     obj.echo = false;
+   if (obj?.wait) {
+     obj.wait = 0;
   }
 }
 
