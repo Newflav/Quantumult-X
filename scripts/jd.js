@@ -286,14 +286,17 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
     obj.webViewFloorList = [];
   }
 } else if (url.includes("functionId=cart") || url.includes("functionId=subCartCount")) {
-   if (obj?.wait) {
-     obj.wait = 0;
+    if (obj?.code) {
+      obj.code = 0;
   }
-   if (obj?.tips) {
-     delete obj.tips;
+    if (obj?.wait) {
+      obj.wait = 0;
   }
-   if (obj?.echo) {
-     delete obj.echo;
+    if (obj?.tips) {
+      delete obj.tips;
+  }
+    if (obj?.echo) {
+      delete obj.echo;
   }
 }
 
