@@ -146,8 +146,8 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
           }
         } else if (floor?.mId === "userinfo") {
           // 个人页 顶部背景图
-         if (floor?.data?.bgImgInfo?.bgImg) {
-            delete floor.data.bgImgInfo.bgImg;
+          // if (floor?.data?.bgImgInfo?.bgImg) {
+          //   delete floor.data.bgImgInfo.bgImg;
           // }
           // 开通plus会员卡片
           if (floor?.data?.newPlusBlackCard) {
