@@ -1,5 +1,3 @@
-// 2024-04-18 17:45
-
 const url = $request.url;
 if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
@@ -262,10 +260,6 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
   }
   if (obj?.showTimesDaily) {
     obj.showTimesDaily = 0;
-  }
-} else if (url.includes("functionId=cart")) 
-   if (obj?.wait) {
-     obj.wait = 0;
   }
 } else if (url.includes("functionId=welcomeHome")) {
   // 首页配置
