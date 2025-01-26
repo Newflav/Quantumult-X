@@ -289,6 +289,9 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
    if (obj?.code) {
      obj.code = 0;
   }
+   if (obj?.echo) {
+     obj.echo = false;
+  }
 }
 
 $done({ body: JSON.stringify(obj) });
