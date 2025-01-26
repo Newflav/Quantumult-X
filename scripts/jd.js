@@ -290,8 +290,8 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
   if (obj?.homeConfig) {
     delete obj.homeConfig;
   }
-  if (obj?.promotionTabs?.promotionTabs?.content) {
-    delete obj.promotionTabs.promotionTabs.content;
+  if (obj?.promotionTabs?.content) {
+    delete obj.promotionTabs.content;
   }
 }
 
