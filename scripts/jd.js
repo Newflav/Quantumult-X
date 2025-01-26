@@ -285,7 +285,7 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
   if (obj?.webViewFloorList?.length > 0) {
     obj.webViewFloorList = [];
   }
-} else if (url.includes("functionId=cart")) 
+} else if (url.includes("functionId=cart")) {
    if (obj?.wait) {
      obj.wait = 0;
   }
