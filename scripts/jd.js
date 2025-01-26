@@ -287,16 +287,7 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
   }
 } else if (url.includes("functionId=cart") || url.includes("functionId=subCartCount")) {
     if (obj?.code) {
-      obj.code = 1;
-  }
-    if (obj?.wait) {
-      obj.wait = 0;
-  }
-    if (obj?.tips) {
-      delete obj.tips;
-  }
-    if (obj?.echo) {
-      delete obj.echo;
+      obj.code = 0;
   }
 }
 
