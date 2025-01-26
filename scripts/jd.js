@@ -286,8 +286,14 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
     obj.webViewFloorList = [];
   }
 } else if (url.includes("functionId=cart") || url.includes("functionId=subCartCount")) {
+    if (obj?.wait) {
+      obj.wait = 0;
+  }
     if (obj?.code) {
-      obj.code = 0;
+      delete obj.code;
+  }
+    if (obj?.echo) {
+      delete obj.echo;
   }
 }
 
