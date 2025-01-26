@@ -290,6 +290,9 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
   if (obj?.homeConfig?.length > 0) {
     obj.homeConfig = [];
   }
+  if (obj?.promotionTabs?.promotionTabs?.content?.length > 0) {
+    obj.promotionTabs.promotionTabs.content = [];
+  }
 }
 
 $done({ body: JSON.stringify(obj) });
