@@ -278,9 +278,9 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
     obj.floorList = obj.floorList.filter((i) => !delItems?.includes(i?.type));
   }
   // 首页 顶部背景图
-   if (obj?.topBgImgBig) {
-     delete obj.topBgImgBig;
-   }
+  // if (obj?.topBgImgBig) {
+   //  delete obj.topBgImgBig;
+   // }
   // 首页 下拉二楼
   if (obj?.webViewFloorList?.length > 0) {
     obj.webViewFloorList = [];
