@@ -293,9 +293,6 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
   if (obj?.promotionTabs?.content) {
     delete obj.promotionTabs.content;
   }
-  if (obj?.multipleTabs?.content) {
-    delete obj.multipleTabs.content;
-  }
 }
 
 $done({ body: JSON.stringify(obj) });
