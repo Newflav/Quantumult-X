@@ -287,11 +287,11 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
   if (obj?.webViewFloorList?.length > 0) {
     obj.webViewFloorList = [];
   }
-  if (obj?.homeConfig?.length > 0) {
-    obj.homeConfig = [];
+  if (obj?.homeConfig) {
+    delete obj.homeConfig;
   }
-  if (obj?.promotionTabs?.promotionTabs?.content?.length > 0) {
-    obj.promotionTabs.promotionTabs.content = [];
+  if (obj?.promotionTabs?.promotionTabs?.content) {
+    delete obj.promotionTabs.promotionTabs.content;
   }
 }
 
