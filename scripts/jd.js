@@ -293,6 +293,9 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
   if (obj?.promotionTabs?.content) {
     delete obj.promotionTabs.content;
   }
+  if (obj?.multipleTabs?.content?.data?.length > 0) {
+    obj.multipleTabs.content.data = obj.multipleTabs.content.data.filter((i) => !["1", "2"]?.includes(i?.tabType));
+  }
 }
 
 $done({ body: JSON.stringify(obj) });
