@@ -70,8 +70,8 @@ if (url.includes("/api/cloud/config/all")) {
   }
 } else if (url.includes("/commercial_api/app_float_layer")) {
   // 悬浮图标
-  if ("feed_egg" in obj) {
-    delete obj;
+    if (obj?.feed_egg) {
+    delete obj.feed_egg;
   }
 } else if (url.includes("/feed/render/tab/config")) {
   if (obj?.selected_sections?.length > 0) {
