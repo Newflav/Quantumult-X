@@ -292,6 +292,12 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
    if (obj?.code) {
      obj.code = 0;
   }
+   if (obj?.tips) {
+    delete obj.tips;
+  }
+   if (obj?.echo) {
+    delete obj.echo;
+  }
 }
 
 $done({ body: JSON.stringify(obj) });
