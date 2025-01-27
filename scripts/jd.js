@@ -285,7 +285,7 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
   if (obj?.webViewFloorList?.length > 0) {
     obj.webViewFloorList = [];
   }
-} else if (url.includes("functionId=cart") || url.includes("functionId=subCartCount") || url.includes("functionId=wait4Delivery")) {
+} else if (url.includes("functionId=cart") || url.includes("functionId=subCartCount") || url.includes("functionId=newPurchaseWareCheck") || url.includes("functionId=wait4Delivery")) {
     if (obj?.wait) {
       obj.wait = 0;
   }
