@@ -3,6 +3,9 @@ if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
 
 if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTrackBusiness")) {
+  if (obj?.wait) {
+    obj.wait = 0;
+  }
   // 物流页面
   if (obj?.bannerInfo) {
     // 收货时寄快递享八折 享受条件苛刻 故移除
