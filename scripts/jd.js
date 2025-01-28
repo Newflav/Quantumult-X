@@ -3,9 +3,6 @@ if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
 
 if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTrackBusiness")) {
-  if (obj?.wait) {
-    obj.wait = 0;
-  }
   // 物流页面
   if (obj?.bannerInfo) {
     // 收货时寄快递享八折 享受条件苛刻 故移除
@@ -288,13 +285,9 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
   if (obj?.webViewFloorList?.length > 0) {
     obj.webViewFloorList = [];
   }
-} else if (url.includes("functionId=cart") || url.includes("functionId=subCartCount") || url.includes("functionId=asynInteface") || url.includes("functionId=wareBusiness") || url.includes("functionId=newPurchaseWareCheck") || url.includes("functionId=wait4Delivery")) {
-    if (obj?.wait) {
-      obj.wait = 0;
-  }
 } else if (url.includes("functionId=basicConfig&uuid")) {
       if (obj?.data?.JDFoundationConfig?.NetworkErrorMtaConfig?.errorCodes) {
-    delete obj.data.JDFoundationConfig.NetworkErrorMtaConfig.errorCodes;
+       delete obj.data.JDFoundationConfig.NetworkErrorMtaConfig.errorCodes;
   }
 }
 
