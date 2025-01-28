@@ -288,7 +288,7 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
   if (obj?.webViewFloorList?.length > 0) {
     obj.webViewFloorList = [];
   }
-} else if (url.includes("functionId=cart") || url.includes("functionId=subCartCount") || url.includes("functionId=asynInteface") || url.includes("functionId=wareBusiness") || url.includes("functionId=newPurchaseWareCheck") || url.includes("functionId=wait4Delivery")) {
+} else if (url.includes("functionId=cart") || url.includes("functionId=subCartCount") || url.includes("functionId=asynInteface") || url.includes("functionId=wareBusiness") || url.includes("functionId=search") || url.includes("functionId=newPurchaseWareCheck") || url.includes("functionId=wait4Delivery")) {
     if (obj?.wait) {
       delete ojb.wait;
   }
