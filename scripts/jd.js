@@ -292,6 +292,10 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
     if (obj?.wait) {
       obj.wait = 0;
   }
+} else if (url.includes("functionId=basicConfig&uuid")) {
+      if (obj?.data?.JDFoundationConfig?.NetworkErrorMtaConfig?.errorCodes) {
+    delete obj.data.JDFoundationConfig.NetworkErrorMtaConfig.errorCodes;
+  }
 }
 
 $done({ body: JSON.stringify(obj) });
