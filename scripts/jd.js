@@ -286,8 +286,8 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
     obj.webViewFloorList = [];
   }
 } else if (url.includes("functionId=basicConfig&uuid")) {
-      if (obj?.data?.JDFoundationConfig?.NetworkErrorMtaConfig?.errorCodes) {
-       delete obj.data.JDFoundationConfig.NetworkErrorMtaConfig.errorCodes;
+      if (obj?.data?.JDFoundationConfig?.NetworkErrorMtaConfig) {
+       delete obj.data.JDFoundationConfig.NetworkErrorMtaConfig;
   }
 }
 
