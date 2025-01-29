@@ -1,194 +1,222 @@
-const url = $request.url;
+// 2023-09-20 16:35
+
 if (!$response.body) $done({});
+const url = $request.url;
 let obj = JSON.parse($response.body);
 
-if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTrackBusiness")) {
-  // 物流页面
-  if (obj?.bannerInfo) {
-    // 收货时寄快递享八折 享受条件苛刻 故移除
-    delete obj.bannerInfo;
-  }
-  if (obj?.floors?.length > 0) {
-    // 运费八折
-    obj.floors = obj.floors.filter((i) => !["banner", "jdDeliveryBanner"]?.includes(i?.mId));
-  }
-} else if (url.includes("functionId=getTabHomeInfo")) {
-  // 新品页面
-  if (obj?.result?.iconInfo) {
-    // 新品页 悬浮动图
-    delete obj.result.iconInfo;
-  }
-  if (obj?.result?.roofTop) {
-    // 新品页 下拉二楼
-    delete obj.result.roofTop;
-  }
-} else if (url.includes("functionId=myOrderInfo")) {
-  // 订单页面
-  if (obj?.floors?.length > 0) {
-    let newFloors = [];
-    for (let floor of obj.floors) {
-      if (["bannerFloor", "bpDynamicFloor", "plusFloor"]?.includes(floor?.mId)) {
-        // bannerFloor满意度评分 bpDynamicFloor专属权益 plusFloor开通会员
-        continue;
-      } else {
-        if (floor?.mId === "virtualServiceCenter") {
-          // 服务中心
-          if (floor?.data?.virtualServiceCenters?.length > 0) {
-            let newItems = [];
-            for (let item of floor.data.virtualServiceCenters) {
-              if (item?.serviceList?.length > 0) {
-                let newCards = [];
-                for (let card of item.serviceList) {
-                  if (card?.serviceTitle === "精选特惠") {
-                    continue;
-                  }
-                  newCards.push(card);
-                }
-                item.serviceList = newCards;
-              }
-              newItems.push(item);
-            }
-            floor.data.virtualServiceCenters = newItems;
-          }
+if (url.includes("/api/cloud/config/all")) {
+  if (obj?.data?.configs) {
+    obj.data.configs.forEach((i) => {
+      if (i.configKey === "feed_gray_theme") {
+        if (i.configValue) {
+          i.configValue.start_time = "2208960000";
+          i.configValue.end_time = "2209046399";
+          i.status = false;
         }
-        if (floor?.mId === "customerServiceFloor") {
-          // 客户服务
-          if (floor?.data?.moreText) {
-            // 点此获得更多服务
-            delete floor.data.moreIcon;
-            delete floor.data.moreIcon_dark;
-            floor.data.moreText = " ";
-          }
+      } else if (i.configKey === "feed_top_res") {
+        if (i.configValue) {
+          i.configValue.start_time = "2208960000";
+          i.configValue.end_time = "2209046399";
+          i.status = false;
         }
-        newFloors.push(floor);
       }
-    }
-    obj.floors = newFloors;
+    });
   }
-} else if (url.includes("functionId=personinfoBusiness")) {
-  // 个人页面
-  if (obj?.floors?.length > 0) {
-    let newFloors = [];
-    for (let floor of obj.floors) {
-      const items = [
-        "bigSaleFloor", // 双十一
-        "buyOften", // 常买常逛
-        // "iconToolFloor", // 底部工具栏
-        // "keyToolsFloor", // 浏览记录
-        "newAttentionCard", // 关注的频道
-        "newBigSaleFloor", // 双十一
-        "newStyleAttentionCard", // 新版关注的频道
-        // "newWalletIdFloor", // 我的钱包
-        "newsFloor", // 京东快讯
-        "noticeFloor", // 顶部横幅
-        // "orderIdFloor", // 我的订单
-        "recommendfloor" // 我的推荐
-      ];
-      if (items?.includes(floor?.mId)) {
-        continue;
-      } else {
-        if (floor?.mId === "basefloorinfo") {
-          // 弹窗
-          if (floor?.data?.commonPopup) {
-            delete floor.data.commonPopup;
+} else if (url.includes("/api/v4/answers")) {
+  if (obj?.data) {
+    delete obj.data;
+  }
+  if (obj?.paging) {
+    delete obj.paging;
+  }
+} else if (url.includes("/api/v4/articles")) {
+  const item = ["ad_info", "paging", "recommend_info"];
+  item.forEach((i) => {
+    delete obj[i];
+  });
+} else if (url.includes("/appcloud2.zhihu.com/v3/config")) {
+  if (obj?.config) {
+    if (obj.config?.homepage_feed_tab) {
+      obj.config.homepage_feed_tab.tab_infos =
+        obj.config.homepage_feed_tab.tab_infos.filter((i) => {
+          if (i.tab_type === "activity_tab") {
+            i.start_time = "2208960000";
+            i.end_time = "2209046399";
+            return true;
+          } else {
+            return false;
           }
-          // 弹窗
-          if (floor?.data?.commonPopup_dynamic) {
-            delete floor.data.commonPopup_dynamic;
-          }
-          // 底部会员续费横幅
-          if (floor?.data?.commonTips?.length > 0) {
-            floor.data.commonTips = [];
-          }
-          // 弹窗
-          if (floor?.data?.commonWindows?.length > 0) {
-            floor.data.commonWindows = [];
-          }
-          // 右下角动图
-          if (floor?.data?.floatLayer) {
-            delete floor.data.floatLayer;
-          }
-        } else if (floor?.mId === "iconToolFloor") {
-          // 底部工具栏
-          if (floor?.data?.nodes?.length > 0) {
-            const sortLists = [
-              "applezhushou", // apple助手 1-1-1
-              "lingjindouxin", // 签到领豆 1-1-2
-              "dongdongnongchangxin", // 京东农场 1-1-3
-              "chongwangwang", // 宠汪汪 1-1-4
-              "kehufuwu", // 客户服务 1-2-1
-              "xianzhiguanjia", // 闲置换钱 1-2-2
-              "wenyisheng", // 问医生 1-2-3
-              "jijianfuwu", // 寄件服务 1-2-5
-              "zhuanzuanhongbao", // 天天赚红包 2-2-1
-              "huanletaojin" // 欢乐淘金 2-2-2
-            ];
-            let node = floor.data.nodes;
-            if (node?.[0]?.length > 0) {
-              // 第一组十个
-              node[0] = node[0]
-                .filter((i) => sortLists?.includes(i?.functionId))
-                .sort((a, b) => sortLists.indexOf(a?.functionId) - sortLists.indexOf(b?.functionId));
-            }
-            if (node?.[1]?.length > 0) {
-              // 第二组四个
-              node[1] = node[1]
-                .filter((i) => sortLists?.includes(i?.functionId))
-                .sort((a, b) => sortLists.indexOf(a?.functionId) - sortLists.indexOf(b?.functionId));
-            }
-          }
-        } else if (floor?.mId === "orderIdFloor") {
-          if (floor?.data?.commentRemindInfo?.infos?.length > 0) {
-            // 发布评价的提醒
-            floor.data.commentRemindInfo.infos = [];
-          }
-        } else if (floor?.mId === "userinfo") {
-          // 个人页 顶部背景图
-          // if (floor?.data?.bgImgInfo?.bgImg) {
-          //   delete floor.data.bgImgInfo.bgImg;
-          // }
-          // 开通plus会员卡片
-          if (floor?.data?.newPlusBlackCard) {
-            delete floor.data.newPlusBlackCard;
-          }
+        });
+    }
+    if (obj.config?.hp_channel_tab) {
+      delete obj.config.hp_channel_tab;
+    }
+    if (obj.config?.zombie_conf) {
+      obj.config.zombie_conf.zombieEnable = false;
+    }
+    if (obj.config?.gray_mode) {
+      obj.config.gray_modeenable = false;
+      obj.config.gray_mode.start_time = "2208960000";
+      obj.config.gray_mode.end_time = "2209046399";
+    }
+    if (obj.config?.zhcnh_thread_sync) {
+      obj.config.zhcnh_thread_sync.LocalDNSSetHostWhiteList = [];
+      obj.config.zhcnh_thread_sync.isOpenLocalDNS = "0";
+      obj.config.zhcnh_thread_sync.ZHBackUpIP_Switch_Open = "0";
+      obj.config.zhcnh_thread_sync.dns_ip_detector_operation_lock = "1";
+      obj.config.zhcnh_thread_sync.ZHHTTPSessionManager_setupZHHTTPHeaderField =
+        "1";
+    }
+    obj.config.zvideo_max_number = 1;
+    obj.config.is_show_followguide_alert = false;
+  }
+} else if (url.includes("/commercial_api/app_float_layer")) {
+  // 悬浮图标
+  if (obj?.feed_egg) {
+    delete obj.feed_egg;
+  }
+} else if (url.includes("/moments_v3")) {
+  if (obj?.data?.length > 0) {
+    obj.data = obj.data.filter((i) => !i?.title?.includes("为您推荐"));
+  }
+} else if (url.includes("/next-bff")) {
+  if (obj?.data?.length > 0) {
+    obj.data = obj.data.filter(
+      (i) =>
+        !(
+          i?.origin_data?.type?.includes("ad") ||
+          i?.origin_data?.resource_type?.includes("ad") ||
+          i?.origin_data?.next_guide?.title?.includes("推荐")
+        )
+    );
+  }
+} else if (url.includes("/next-data")) {
+  if (obj?.data?.data?.length > 0) {
+    obj.data.data = obj.data.data.filter(
+      (i) =>
+        !(i?.type?.includes("ad") || i?.data?.answer_type?.includes("PAID"))
+    );
+  }
+} else if (url.includes("/next-render")) {
+  if (obj?.data?.length > 0) {
+    obj.data = obj.data.filter(
+      (i) =>
+        !(
+          i?.adjson ||
+          i?.biz_type_list?.includes("article") ||
+          i?.biz_type_list?.includes("content") ||
+          i?.business_type?.includes("paid") ||
+          i?.section_info ||
+          i?.tips ||
+          i?.type?.includes("ad")
+        )
+    );
+  }
+} else if (url.includes("/questions/")) {
+  // 问题回答列表
+  if (obj?.data?.length > 0) {
+    obj.data = obj.data.filter(
+      (i) => !i?.target?.answer_type?.includes("paid")
+    );
+  }
+  if (obj?.data?.ad_info) {
+    delete obj.data.ad_info;
+  }
+  if (obj?.ad_info) {
+    delete obj.ad_info;
+  }
+  if (obj?.query_info) {
+    delete obj.query_info;
+  }
+} else if (url.includes("/topstory/hot-lists/everyone-seeing")) {
+  // 热榜信息流
+  if (obj?.data?.data?.length > 0) {
+    // 合作推广
+    obj.data.data = obj.data.data.filter(
+      (i) => !i.target?.metrics_area?.text?.includes("合作推广")
+    );
+  }
+} else if (url.includes("/topstory/hot-lists/total")) {
+  // 热榜排行榜
+  if (obj?.data?.length > 0) {
+    // 品牌甄选
+    obj.data = obj.data.filter((i) => !i?.hasOwnProperty("ad"));
+  }
+} else if (url.includes("/topstory/recommend")) {
+  // 推荐信息流
+  if (obj?.data?.length > 0) {
+    obj.data = obj.data.filter((i) => {
+      if (
+        i.type === "market_card" &&
+        i.fields?.header?.url &&
+        i.fields.body?.video?.id
+      ) {
+        let videoID = getUrlParamValue(item.fields.header.url, "videoID");
+        if (videoID) {
+          i.fields.body.video.id = videoID;
         }
-        newFloors.push(floor);
+      } else if (i.type === "common_card") {
+        if (i.extra?.type === "drama") {
+          // 直播内容
+          return false;
+        } else if (i.extra?.type === "zvideo") {
+          // 推广视频
+          let videoUrl = i.common_card.feed_content.video.customized_page_url;
+          let videoID = getUrlParamValue(videoUrl, "videoID");
+          if (videoID) {
+            i.common_card.feed_content.video.id = videoID;
+          }
+        } else if (i.common_card?.feed_content?.video?.id) {
+          let search = '"feed_content":{"video":{"id":';
+          let str = $response.body.substring(
+            $response.body.indexOf(search) + search.length
+          );
+          let videoID = str.substring(0, str.indexOf(","));
+          i.common_card.feed_content.video.id = videoID;
+        } else if (
+          i.common_card?.footline?.elements?.[0]?.text?.panel_text?.includes(
+            "广告"
+          )
+        ) {
+          return false;
+        } else if (
+          i.common_card?.feed_content?.source_line?.elements?.[1]?.text?.panel_text?.includes(
+            "盐选"
+          )
+        ) {
+          return false;
+        } else if (i?.promotion_extra) {
+          // 营销信息
+          return false;
+        }
+        return true;
+      } else if (i.type.includes("aggregation_card")) {
+        // 横排卡片 知乎热榜
+        return false;
+      } else if (i.type === "feed_advert") {
+        // 伪装成正常内容的卡片
+        return false;
       }
-    }
-    obj.floors = newFloors;
-  }
-} else if (url.includes("functionId=start")) {
-  // 开屏广告
-  if (obj?.images?.length > 0) {
-    obj.images = [];
-  }
-  if (obj?.showTimesDaily) {
-    obj.showTimesDaily = 0;
-  }
-} else if (url.includes("functionId=welcomeHome")) {
-  // 首页配置
-  if (obj?.floorList?.length > 0) {
-    const delItems = [
-      "bottomXview", // 底部悬浮通栏推广
-      "float", // 悬浮推广小圆图
-      "photoCeiling", // 顶部通栏动图推广
-      // "recommend", // 为你推荐
-      "ruleFloat", // 资质与规则
-      "searchIcon", // 右上角消费券
-      "topRotate", // 左上角logo
-      "tabBarAtmosphere" // 底部悬浮通栏推广
-    ];
-    // 首页 图层列表
-    obj.floorList = obj.floorList.filter((i) => !delItems?.includes(i?.type));
-  }
-  // 首页 顶部背景图
-  // if (obj?.topBgImgBig) {
-  //   delete obj.topBgImgBig;
-  // }
-  // 首页 下拉二楼
-  if (obj?.webViewFloorList?.length > 0) {
-    obj.webViewFloorList = [];
+      return true;
+    });
+    fixPos(obj.data);
   }
 }
 
 $done({ body: JSON.stringify(obj) });
+
+// 修复offset
+function fixPos(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    arr[i].offset = i + 1;
+  }
+}
+
+function getUrlParamValue(url, queryName) {
+  return Object.fromEntries(
+    url
+      .substring(url.indexOf("?") + 1)
+      .split("&")
+      .map((pair) => pair.split("="))
+  )[queryName];
+}
