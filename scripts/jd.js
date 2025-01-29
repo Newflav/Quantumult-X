@@ -113,7 +113,7 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
           if (floor?.data?.nodes?.length > 0) {
             const sortLists = [
               "zhuanzuanhongbao", // 赚红包 1-1-1
-              "lingjindouxin", // 签到领豆 1-1-2
+              "wodeshiyong", // 试用领取 1-1-2
               "dongdongnongchangxin", // 京东农场 1-1-3
               "chongwangwang", // 宠汪汪 1-1-4
               "kehufuwu", // 客户服务 1-2-1
