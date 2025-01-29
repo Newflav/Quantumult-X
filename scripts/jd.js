@@ -112,7 +112,7 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
           // 底部工具栏
           if (floor?.data?.nodes?.length > 0) {
             const sortLists = [
-              "applezhushou", // apple助手 1-1-1
+              "zhuanzuanhongbao", // 赚红包 1-1-1
               "lingjindouxin", // 签到领豆 1-1-2
               "dongdongnongchangxin", // 京东农场 1-1-3
               "chongwangwang", // 宠汪汪 1-1-4
