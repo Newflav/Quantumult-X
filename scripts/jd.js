@@ -290,7 +290,7 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
   }
 } else if (url.includes("functionId=cart") || url.includes("functionId=subCartCount") || url.includes("functionId=asynInteface") || url.includes("functionId=wareBusiness") || url.includes("functionId=search") || url.includes("functionId=newPurchaseWareCheck") || url.includes("functionId=wait4Delivery")) {
     if (obj?.wait) {
-      ojb.wait = 0;
+       delete obj.wait;
   }
 }
 
