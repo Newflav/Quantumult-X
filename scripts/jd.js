@@ -295,6 +295,9 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
     if (obj?.tips) {
        delete obj.tips;
   }
+    if (obj?.codes) {
+       obj.codes = 0;
+  }
 }
 
 $done({ body: JSON.stringify(obj) });
