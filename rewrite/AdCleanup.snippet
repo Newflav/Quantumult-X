@@ -4,21 +4,13 @@
 ^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery url reject
 
 
-
 # >>>>>>>>>>>>>>> ✅ A ✅ <<<<<<<<<<<<<<
 # > 爱思助手
 ; hostname = list-app-m.i4.cn, search-app-m.i4.cn
 ^https:\/\/(list-app-m|search-app-m)\.i4\.cn\/(adclickcb|getopfstadinfo|getAppList|getHotSearchList)\.xhtml url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/i4.js
 
 
-
 # >>>>>>>>>>>>>>> ✅ B ✅ <<<<<<<<<<<<<<
-# > 百度
-; hostname = boxer.baidu.com
-# 防跳转
-^https:\/\/boxer\.baidu\.com\/scheme\?scheme url script-response-header https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/baidu/baiduNoRedirect.js
-
-
 # > 百度网盘
 ; hostname = pan.baidu.com
 # 开屏广告
@@ -33,9 +25,10 @@
 
 # > 百度贴吧
 ; hostname = tiebac.baidu.com
-^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/(c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)$|tiebaads\/commonbatch|c\/s\/sync|c\/u\/user) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/tieba_json.js
+^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/(c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)$|tiebaads\/commonbatch|c\/s\/sync|c\/u\/user\/profile) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/tieba_json.js
 ^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/tieba_proto.js
 ^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/s\/(sync|loop) url reject-dict
+^https:\/\/tiebac\.baidu\.com\/c\/f\/forum\/getRecommendForumData url reject-dict
 
 
 # > 贝壳
@@ -50,9 +43,7 @@
 ^https:\/\/i-shadow2\.ke\.com\/app\/checkUpdate url reject
 
 
-
 # >>>>>>>>>>>>>>> ✅ C ✅ <<<<<<<<<<<<<<
-
 
 
 # >>>>>>>>>>>>>>> ✅ D ✅ <<<<<<<<<<<<<<
@@ -75,7 +66,7 @@
 ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/(core|other\/fast) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/didi.js
 ^https:\/\/conf\.diditaxi\.com\.cn\/dynamic\/conf url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/didi.js
 # 微信小程序个人中心净化
-^https:\/\/common\.diditaxi\.com\.cn\/common\/v5 url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didi.js
+^https:\/\/common\.diditaxi\.com\.cn\/common\/v5 url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/didi.js
 
 
 # >>>>>>>>>>>>>>> ✅ F ✅ <<<<<<<<<<<<<<
@@ -94,11 +85,14 @@
 ^https:\/\/tiku\.fenbi\.com\/activity\/app\/versions url reject
 
 
-
 # >>>>>>>>>>>>>>> ✅ G ✅ <<<<<<<<<<<<<<
 # > 公考雷达
 ; hostname = api.gongkaoleida.com
 ^https:\/\/api\.gongkaoleida\.com\/api\/(v2\/ad\/info\?appLaunchChannel|v5_3_8\/sets\/getAppStyle\?appLaunchChannel) url reject
+
+# > 广汽本田
+; hostname = gha.ghac.cn
+^https:\/\/gha\.ghac\.cn:8081\/base\/app\/api\/ad\/startFind url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/honda.js
 
 
 # > 谷歌 重定向
@@ -111,23 +105,20 @@
 ^https?:\/\/translate\.google\.cn url 302 https://translate.google.com
 
 
-
 # >>>>>>>>>>>>>>> ✅ H ✅ <<<<<<<<<<<<<<
-
 
 
 # >>>>>>>>>>>>>>> ✅ J ✅ <<<<<<<<<<<<<<
 # > 京东
 ; hostname = api.m.jd.com, dns.jd.com
-^http:\/\/\w{32}\.jddebug\.com\/diagnose\? url reject
 ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(getEncryptedPinColor|readCustomSurfaceList|getBubbleInfo|searchBoxWord|xview2Config|stationPullService|uniformRecommend[06]) url reject-dict
-^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/jd.js
+^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/jd.js
 # 悬浮窗、直播小窗
-^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=getShopHomeActivityInfo url reject-dict
+^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=getWidgetV1052 url reject
 # 禁京东升级
-^https:\/\/api\.m\.jd\.com\/openUpgrade url reject-dict
-# 禁京东DNS
-^https:\/\/dns\.jd\.com\/ url reject
+^https:\/\/api\.m\.jd\.com\/openUpgrade url reject
+# 禁dns
+^https?:\/\/dns\.jd\.com\/ url reject
 
 
 # > 建设银行
@@ -139,19 +130,18 @@
 ^https:\/\/s\.jiediankeji\.com\/adv url reject-dict
 
 
-
 # >>>>>>>>>>>>>>> ✅ K ✅ <<<<<<<<<<<<<<
 # > 快手联盟,优量汇,穿山甲
 ; hostname = api-access.pangolin-sdk-toutiao.com, *.qq.com, open.e.kuaishou.com
 ^https:\/\/(api-access\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk\/get_ads|open\.e\.kuaishou\.com\/rest\/e\/v3\/open\/univ$|mi\.gdt\.qq\.com\/gdt_mview\.fcg\?) url script-response-body https://raw.githubusercontent.com/app2smile/rules/master/js/adsense.js
 
 
-
 # >>>>>>>>>>>>>>> ✅ L ✅ <<<<<<<<<<<<<<
 
 
-
 # >>>>>>>>>>>>>>> ✅ M ✅ <<<<<<<<<<<<<<
+# > 美团
+; hostname = *.meituan.net, *.meituan.com
 # > 美团
 ; hostname = *.meituan.net, *.meituan.com
 ^https:\/\/flowplus\.meituan\.net\/v1\/mss_\w+\/linglong\/\d+\.(jpg|gif) url reject
@@ -178,7 +168,6 @@
 ^https:\/\/mgm\.meituan\.com\/marketing\/unLoginapi\/pgy_sdk\/ad\/batchAdExchange url reject-200
 # 屏蔽更新
 ^https:\/\/api-unionid\.meituan\.com\/unionid\/ios\/update url reject
-^https:\/\/dd\.meituan\.com\/api\/wolffy\/checkList url reject
 
 
 # > 咪咕视频
@@ -192,7 +181,6 @@
 ^https:\/\/common-sc\.miguvideo\.com\/task\/v7\/task-list\/cmvideo\/visitor url reject
 
 
-
 # >>>>>>>>>>>>>>> ✅ P ✅ <<<<<<<<<<<<<<
 # > 拼多多
 ; hostname = api.yangkeduo.com, api.pinduoduo.com, m.pinduoduo.net, *.pddpic.com, *.pddugc.com, meta.pinduoduo.com
@@ -201,6 +189,7 @@
 # 视频页小窗
 ^https:\/\/m\.pinduoduo\.net\/vlayer_tab_popup\.html url reject
 # 营销小窗
+^http:\/\/pplay-video-(.*)\.pinduoduo\.com\/live url reject
 ^http:\/\/video(.*)\.(pddpic|pddugc)\.com\/(tower-video|tower-video-b|tower-video-side|tower-video-side-b)\/.*\.(float|highlights) url reject
 ^http:\/\/video(.*)\.(pddugc|pddpic)\.com\/tower-video-b\/pdd-live url reject
 ^http:\/\/.*/live-adapt\.pddpic\.com\/live url reject
@@ -222,9 +211,7 @@
 ^https?:\/\/y\.gtimg\.cn\/music\/common\/\/upload\/kg_ad\/.+?\d{3,4}x\d{4} url reject-200
 
 
-
 # >>>>>>>>>>>>>>> ✅ R ✅ <<<<<<<<<<<<<<
-
 
 
 # >>>>>>>>>>>>>>> ✅ S ✅ <<<<<<<<<<<<<<
@@ -243,18 +230,16 @@
 ^https:\/\/ucmp\.sf-express\.com\/proxy\/(operation-platform\/info-flow-adver\/query|esgcempcore\/memberGoods\/pointMallService\/goodsList|esgcempcore\/memberActLengthy\/fullGiveActivityService\/fullGiveInfo) url reject-dict
 
 
-
 # >>>>>>>>>>>>>>> ✅ T ✅ <<<<<<<<<<<<<<
-
 
 
 # >>>>>>>>>>>>>>> ✅ W ✅ <<<<<<<<<<<<<<
 # > 微信
 ; hostname = *.qq.com, security.wechat.com
-# 公众号去广告
-^https:\/\/mp\.weixin\.qq\.com\/mp\/(cps_product_info|getappmsgad|masonryfeed|relatedarticle)\? url reject-dict
+^http:\/\/\w+\.wxs\.qq\.com\/\d+\/\d+\/snssvpdownload\/SH\/reserved\/ads_svp_video url reject-dict
+^https:\/\/mp\.weixin\.qq\.com\/mp\/(cps_product_info|getappmsgad|jsmonitor|masonryfeed|relatedarticle)\? url reject-dict
 # 微信外部链接解锁
-^https\:\/\/(weixin110\.qq|security\.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\? url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/weChat110.js
+^https\:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\? url script-response-body https://raw.githubusercontent.com/zZPiglet/Task/master/asset/UnblockURLinWeChat.js
 
 
 # > 微信乘车码小程序
@@ -277,102 +262,108 @@
 
 # > 网易云音乐
 ; hostname = interface*.music.163.com
-# 通用广告请求
-^https?:\/\/interface(\d)?\.music\.163\.com\/w?e?api\/ad url reject
-# 评论弹窗
-^https?:\/\/interface(\d)?\.music\.163\.com\/w?e?api\/music\/partner\/picked\/user\/top url reject
-# 位置请求
-^https?:\/\/interface(\d)?\.music\.163\.com\/w?e?api\/lbs\/gpsStatus\/upload url reject
-# 每日推荐Tips
-^https?:\/\/interface(\d)?\.music\.163\.com\/w?e?api\/homepage\/daily\/song\/elf\/notice url reject
-# LIKE音乐上方推广
-^https?:\/\/interface(\d)?\.music\.163\.com\/w?e?api\/link\/position\/show\/resource url reject
-# 歌单上方推广
-^https?:\/\/interface(\d)?\.music\.163\.com\/w?e?eapi\/resource-exposure\/config url reject
-# 搜索框专词
-^https?:\/\/interface(\d)?\.music\.163\.com\/w?e?api\/search\/specialkeyword url reject
-# 首页右上角激励图标
-^https?:\/\/interface(\d)?\.music\.163\.com\/w?e?api\/link\/scene\/show\/resource url reject
-# 搜索框推荐
-^https?:\/\/interface(\d)?\.music\.163\.com\/w?e?api\/search\/default url reject
-# 评论区下方广告[新版失效]
-^https?:\/\/interface(\d)?\.music\.163\.com\/w?e?api\/comment\/feed\/inserted url reject
-# 评论回复区广告
-^https?:\/\/interface(\d)?\.music\.163\.com\/w?e?api\/v1\/content\/exposure\/comment url reject
-# 搜索页猜你喜欢
-^https?:\/\/interface(\d)?\.music\.163\.com\/w?e?api\/search\/rcmd\/keyword url reject
-# 搜索框填词
-^https?:\/\/interface(\d)?\.music\.163\.com\/w?e?api\/search\/default\/keyword url reject
-# 评论区右上角
-^https?:\/\/interface(\d)?\.music\.163\.com\/w?e?api\/comment\/hotcomment\/collect url reject
+# ======= 网易云框架区 ======= #
+# 底部Tab
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/home\/framework\/tab url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/refs/heads/main/scripts/163music.js
+# 发现页
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/page\/discovery\/resource\/show url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/refs/heads/main/scripts/163music.js
+# 首推荐页
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/page\/rcmd\/resource\/show url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/refs/heads/main/scripts/163music.js
+# 软件更新
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/ios\/upgrade\/get url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/refs/heads/main/scripts/163music.js
+
+# ======= 网易云搜索区 ======= #
+# 搜索默认填词
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/default\/keyword\/list url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/refs/heads/main/scripts/163music.js
+# 猜你喜欢
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/rcmd\/keyword\/get url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/refs/heads/main/scripts/163music.js
+# 搜索下方Chart
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/chart\/list url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/refs/heads/main/scripts/163music.js
+# 搜索Chart
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/chart\/detail url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/refs/heads/main/scripts/163music.js
+# 相关搜索
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/suggest\/keyword\/get url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/refs/heads/main/scripts/163music.js
+# 特殊词
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/specialkeyword\/get url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/refs/heads/main/scripts/163music.js
+
+# ======= 网易云推广区 ======= #
+# 广告加载
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/ad\/loading\/get url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/refs/heads/main/scripts/163music.js
+# 广告实时
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/ad\/loading\/current url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/refs/heads/main/scripts/163music.js
+# 广告Get
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/ad\/get url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/refs/heads/main/scripts/163music.js
+# 插入广告
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/position\/show\/resource url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/refs/heads/main/scripts/163music.js
+# 歌单顶部广告
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/scene\/show\/resource url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/refs/heads/main/scripts/163music.js
 # 活动推广
-^https?:\/\/interface(\d)?\.music\.163\.com\/w?e?api\/resource-exposure\/activity\/config url reject
-# VIP歌曲提醒框
-^https?:\/\/interface(\d)?\.music\.163\.com\/w?e?api\/vipcenter/tspopup\/get url reject
-# 搜索页下方热搜Card
-^https?:\/\/interface(\d)?\.music\.163\.com\/w?e?api\/search\/chart url reject
-# 不知道是个啥
-^https?:\/\/interface(\d)?\.music\.163\.com\/w?e?api\/sp\/flow url reject
-# 屏蔽更新
-^https?:\/\/interface(\d)?\.music\.163\.com\/w?e?api\/ios\/upgrade url reject
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/content\/activity\/music\/jar\/template\/list url reject-200
+# 弹窗免费听歌
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/vip\/cashier\/tspopup\/get url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/refs/heads/main/scripts/163music.js
+# 启动领VIP弹窗
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/sp\/flow\/popup\/query url reject-200
 
+# ======= 网易云侧栏区 ======= #
+# 侧栏账户
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/vipnewcenter\/app\/resource\/newaccountpage url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/refs/heads/main/scripts/163music.js
+# 侧栏推广
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/side-bar\/mini-program\/music-service\/account url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/refs/heads/main/scripts/163music.js
+# 侧边VIP推广
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/delivery\/deliver url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/refs/heads/main/scripts/163music.js
+# 侧边浮层
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/delivery\/batch-deliver url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/refs/heads/main/scripts/163music.js
+# 优惠券
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/vipmall\/couponcfg\/get url reject-200
+# 侧边兑换黑胶Tips
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/yunbei\/account\/entrance\/get url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/refs/heads/main/scripts/163music.js
+# 侧边创作福利
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/creator\/musician\/reminder\/message\/get url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/refs/heads/main/scripts/163music.js
 
-# > WIFI万能钥匙
-; hostname = cds.wifi188.com
-^http:\/\/cds\.wifi188\.com\/feeds\.sec url reject-dict
+# ======= 网易云歌曲区 ======= #
+# 评论区插入推广
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/batch url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/refs/heads/main/scripts/163music.js
+# 活动推广
+^https?:\/\/interface(\d)?\.music\.163\.com\/w?eapi\/(resource-exposure\/)?activity url reject-200
+# 评论区插入推广
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/comment\/feed\/inserted\/resources url reject-200
+# 购买实体专辑
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/resource-exposure\/config url reject-200
 
-
-
-# >>>>>>>>>>>>>>> ✅ X ✅ <<<<<<<<<<<<<<
-# > 小红书
-; hostname = edith.xiaohongshu.com, www.xiaohongshu.com, referee.xiaohongshu.com, pages.xiaohongshu.com
-# 评论区图片画质增强
-https://edith.xiaohongshu.com/api/sns/v5/note/comment/list url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/xiaohongshu_img.js
-# > 视频播放页商品推广
-^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/widgets url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/xiaohongshu.js
-# > 短视频流去水印+强制开启保存功能
-^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/redtube\? url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/xiaohongshu.js
-# > 信息流视频去水印+强制开启保存功能
-^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/videofeed\? url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/xiaohongshu.js
-# > 信息流图片去水印
-^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/feed\? url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/xiaohongshu.js
-# > 开屏广告
-^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/system_service\/splash_config url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/xiaohongshu.js
-# > 首页瀑布流
-^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/homefeed\? url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/xiaohongshu.js
-# > 启动处理
-^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/system_service\/config\? url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/xiaohongshu.js
-# > 热搜发现
-^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/hot_list url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/xiaohongshu.js
-# > 默认填词
-^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/hint url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/xiaohongshu.js
-# > 去除购物
-^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/homefeed\/categories url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/xiaohongshu.js
-# > 猜你想搜
-^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/trending url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/xiaohongshu.js
-# > 通用广告请求
-^https?:\/\/www\.xiaohongshu\.com\/api\/sns\/v\d\/(tag\/)?ads url reject-dict
-# > 隐私屏蔽
-^https?:\/\/referee\.xiaohongshu\.com\/v\d\/stateReport url reject-dict
-# > Switches
-^https?:\/\/pages\.xiaohongshu\.com\/data\/native\/matrix_switches url reject-dict
-# > 青少年请求
-^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/user\/teenager\/status url reject-dict
-# > 启动引导
-^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/guide\/home_guide url reject-dict
-
+# ======= 网易云请求区 ======= #
+# 删除AEAPI[临时法，等待逆向佬解密aeapi]
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/home\/framework\/tab url script-request-header https://github.com/ddgksf2013/Scripts/raw/master/deleteAeapi.js
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/page\/discovery\/resource\/show url script-request-header https://github.com/ddgksf2013/Scripts/raw/master/deleteAeapi.js
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/page\/rcmd\/resource\/show url script-request-header https://github.com/ddgksf2013/Scripts/raw/master/deleteAeapi.js
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/ios\/upgrade\/get url script-request-header https://github.com/ddgksf2013/Scripts/raw/master/deleteAeapi.js
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/default\/keyword\/list url script-request-header https://github.com/ddgksf2013/Scripts/raw/master/deleteAeapi.js
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/rcmd\/keyword\/get url script-request-header https://github.com/ddgksf2013/Scripts/raw/master/deleteAeapi.js
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/chart\/list url script-request-header https://github.com/ddgksf2013/Scripts/raw/master/deleteAeapi.js
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/chart\/detail url script-request-header https://github.com/ddgksf2013/Scripts/raw/master/deleteAeapi.js
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/suggest\/keyword\/get url script-request-header https://github.com/ddgksf2013/Scripts/raw/master/deleteAeapi.js
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/specialkeyword\/get url script-request-header https://github.com/ddgksf2013/Scripts/raw/master/deleteAeapi.js
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/ad\/loading\/get url script-request-header https://github.com/ddgksf2013/Scripts/raw/master/deleteAeapi.js
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/ad\/loading\/current url script-request-header https://github.com/ddgksf2013/Scripts/raw/master/deleteAeapi.js
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/ad\/get url script-request-header https://github.com/ddgksf2013/Scripts/raw/master/deleteAeapi.js
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/position\/show\/resource url script-request-header https://github.com/ddgksf2013/Scripts/raw/master/deleteAeapi.js
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/scene\/show\/resource url script-request-header https://github.com/ddgksf2013/Scripts/raw/master/deleteAeapi.js
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/vip\/cashier\/tspopup\/get url script-request-header https://github.com/ddgksf2013/Scripts/raw/master/deleteAeapi.js
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/vipnewcenter\/app\/resource\/newaccountpage url script-request-header https://github.com/ddgksf2013/Scripts/raw/master/deleteAeapi.js
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/side-bar\/mini-program\/music-service\/account url script-request-header https://github.com/ddgksf2013/Scripts/raw/master/deleteAeapi.js
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/delivery\/deliver url script-request-header https://github.com/ddgksf2013/Scripts/raw/master/deleteAeapi.js
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/delivery\/batch-deliver url script-request-header https://github.com/ddgksf2013/Scripts/raw/master/deleteAeapi.js
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/yunbei\/account\/entrance\/get url script-request-header https://github.com/ddgksf2013/Scripts/raw/master/deleteAeapi.js
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/creator\/musician\/reminder\/message\/get url script-request-header https://github.com/ddgksf2013/Scripts/raw/master/deleteAeapi.js
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/batch url script-request-header https://github.com/ddgksf2013/Scripts/raw/master/deleteAeapi.js
 
 
 # >>>>>>>>>>>>>>> ✅ Y ✅ <<<<<<<<<<<<<<
 # > YouTube
-; hostname = rr*.googlevideo.com, youtubei.googleapis.com
-# 请求体
-^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence) url script-request-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/youtube_request.js
+; hostname = *.googlevideo.com, youtubei.googleapis.com
 # 响应体
-^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/youtube_response.js
+^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) url script-response-body https://github.com/Maasea/sgmodule/raw/master/Script/Youtube/dist/youtube.response.preview.js
 # 播放页广告
-^https:\/\/[\w-]+\.googlevideo\.com\/initplayback\?.+&oad url reject-dict
-
+^https:\/\/[\w-]+\.googlevideo\.com\/initplayback\? url reject-dict
 
 
 # >>>>>>>>>>>>>>> ✅ Z ✅ <<<<<<<<<<<<<<
@@ -397,10 +388,5 @@ https://edith.xiaohongshu.com/api/sns/v5/note/comment/list url script-response-b
 ^https:\/\/a\.qiumibao\.com\/ios\/\?version_code url reject
 
 
-# > 掌上公交 小程序
-; hostname = wx.mygolbs.com
-^https?:\/\/wx\.mygolbs\.com\/WxBusServer\/ApiData\.do url script-response-body https://github.com/ddgksf2013/Scripts/raw/master/zhangshanggongjiao.js
 
-
-
-hostname = gab.122.gov.cn, list-app-m.i4.cn, search-app-m.i4.cn, boxer.baidu.com, pan.baidu.com, tiebac.baidu.com, apps.api.ke.com, i-shadow2.ke.com, ap.dongqiudi.com, detail.dongqiudi.com, zc.dongqiudi.com, api.dongqiudi.com, hd.xiaojukeji.com, common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, tiku.fenbi.com, market-api.fenbi.com, ke.fenbi.com, keapi.fenbi.com, api.gongkaoleida.com, *.google.cn, api.m.jd.com, dns.jd.com, s.jiediankeji.com, api-access.pangolin-sdk-toutiao.com, *.qq.com, open.e.kuaishou.com, *.meituan.net, *.meituan.com, app-sc.miguvideo.com, v.miguvideo.com, display-sc.miguvideo.com, display.miguvideo.com, common-sc.miguvideo.com, api.yangkeduo.com, api.pinduoduo.com, m.pinduoduo.net, *.pddpic.com, *.pddugc.com, meta.pinduoduo.com, public.gdtimg.com, y.gtimg.cn, api.shenyin.name, wxs-weixin.sd.zhumanggroup.com, ucmp.sf-express.com, security.wechat.com, ccmsupport-sz.tenpay.com, support.you.163.com, m.you.163.com, c.m.163.com, gw.m.163.com, interface*.music.163.com, cds.wifi188.com, edith.xiaohongshu.com, www.xiaohongshu.com, referee.xiaohongshu.com, pages.xiaohongshu.com, rr*.googlevideo.com, youtubei.googleapis.com, clientaccess.10086.cn, *.coc.10086.cn, a.qiumibao.com, wx.mygolbs.com
+hostname = gab.122.gov.cn, list-app-m.i4.cn, search-app-m.i4.cn, pan.baidu.com, tiebac.baidu.com, apps.api.ke.com, i-shadow2.ke.com, ap.dongqiudi.com, detail.dongqiudi.com, zc.dongqiudi.com, api.dongqiudi.com, hd.xiaojukeji.com, common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, tiku.fenbi.com, market-api.fenbi.com, ke.fenbi.com, keapi.fenbi.com, api.gongkaoleida.com, gha.ghac.cn, *.google.cn, api.m.jd.com, dns.jd.com, s.jiediankeji.com, api-access.pangolin-sdk-toutiao.com, *.qq.com, open.e.kuaishou.com, *.meituan.net, *.meituan.com, app-sc.miguvideo.com, v.miguvideo.com, display-sc.miguvideo.com, display.miguvideo.com, common-sc.miguvideo.com, api.yangkeduo.com, api.pinduoduo.com, m.pinduoduo.net, *.pddpic.com, *.pddugc.com, meta.pinduoduo.com, public.gdtimg.com, y.gtimg.cn, api.shenyin.name, wxs-weixin.sd.zhumanggroup.com, ucmp.sf-express.com, security.wechat.com, ccmsupport-sz.tenpay.com, support.you.163.com, m.you.163.com, c.m.163.com, gw.m.163.com, interface*.music.163.com,  *.googlevideo.com, youtubei.googleapis.com, clientaccess.10086.cn, *.coc.10086.cn, a.qiumibao.com
