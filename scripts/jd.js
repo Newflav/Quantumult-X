@@ -112,16 +112,16 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
           // 底部工具栏
           if (floor?.data?.nodes?.length > 0) {
             const sortLists = [
-              "maiguishuangbeipei", // 买贵必赔 1-1-1
-              "lingjindouxin", // 签到领豆 1-1-2
-              "dongdongnongchangxin", // 京东农场 1-1-3
-              "jingpaijianlou", // 竞拍捡漏 1-1-4
-              "kehufuwu", // 客户服务 1-2-1
-              "xianzhiguanjia", // 闲置换钱 1-2-2
-              "wodeyuyue", // 我的预约 1-2-3
-              "jijianfuwu", // 京东快递 1-2-5
-              "zhuanzuanhongbao", // 天天赚红包 2-2-1
-              "dandanfan" // 单单返 2-2-2
+              "xianzhiguanjia", // 闲置换钱
+              "maiguishuangbeipei", // 买贵必赔
+              "lingjindouxin", // 签到领豆
+              "dongdongnongchangxin", // 京东农场
+              "jingpaijianlou", // 竞拍捡漏
+              "kehufuwu", // 客户服务
+              "wodeyuyue", // 我的预约
+              "jijianfuwu", // 京东快递
+              "zhuanzuanhongbao", // 天天赚红包
+              "dandanfan" // 单单返
             ];
             let node = floor.data.nodes;
             if (node?.[0]?.length > 0) {
