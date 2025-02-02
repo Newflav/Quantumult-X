@@ -289,7 +289,7 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
   }
 } else if (url.includes("functionId=wareBusiness")) {
   // 商品详情页
-  if (obj?.floors?.data?.liveInfo) {
+  if (obj?.floors?.data?.liveInfo?.length > 0) {
     delete obj.floors.data.liveInfo;
   }
 }
