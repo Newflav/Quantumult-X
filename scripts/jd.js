@@ -121,7 +121,7 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
               "wodeyuyue", // 我的预约 1-2-3
               "jijianfuwu", // 京东快递 1-2-5
               "zhuanzuanhongbao", // 天天赚红包 2-2-1
-             // "dandanfan" // 单单返 2-2-2
+              "dandanfan" // 单单返 2-2-2
             ];
             let node = floor.data.nodes;
             if (node?.[0]?.length > 0) {
@@ -132,7 +132,7 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
             }
             if (node?.[1]?.length > 0) {
               // 第二组四个
-              node[1] = node[1]
+              node[0] = node[0]
                 .filter((i) => sortLists?.includes(i?.functionId))
                 .sort((a, b) => sortLists.indexOf(a?.functionId) - sortLists.indexOf(b?.functionId));
             }
