@@ -1,7 +1,12 @@
 # >>>>>>>>>> ✅ 会员功能解锁 ✅ <<<<<<<<<
+
+# 稿定设计v4.56
+;hostname = qiye.gaoding.com
+^https:\/\/qiye\.gaoding\.com\/api\/(structure\/company\/current|ccm\/editors\/risk_materials) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/gaoding.js
+
 # 京东比价
 ;hostname = api.m.jd.com
-^https?://api\.m\.jd\.com/(client\.action|api)\?functionId=(wareBusiness|serverConfig|basicConfig|lite_wareBusiness|pingou_item) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/jd_price.js
+^https:\/\/api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig) url script-response-body https://raw.githubusercontent.com/wf021325/qx/master/js/jd_price.js
 
 # Spotify会员
 ;hostname = spclient.wg.spotify.com
@@ -10,10 +15,6 @@
 # AdGuard会员
 ;hostname = mobile-api.adguard.org
 ^https?:\/\/mobile-api\.adguard\.org\/api\/.+\/ios_validate_receipt url script-response-body https://raw.githubusercontent.com/yqc007/QuantumultX/master/AdGuardProCrack.js
-
-# 人人视频会员
-;hostname = api.hujuvod.com, api.qwapp.top
-^https?:\/\/api\.(hujuvod\.com|qwapp\.top)\/(user\/personal\/information|app\/drama\/page) url script-response-body https://raw.githubusercontent.com/chxm1023/Rewrite/main/renrenshipin.js
 
 # 百度网盘会员
 ;hostname = pan.baidu.com
@@ -27,10 +28,5 @@
 ;hostname = *.intsig.net, *.camscanner.com
 ^https?:\/\/.*\.(intsig\.net|camscanner\.com) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/camScanner.js
 
-# 解锁New Bing
-;hostname = www.bing.com
-^https?://www.bing.com url request-header (\r\n)User-Agent:(?=.+(?:iPhone))(?!.+(?:BingSapphire|EdgiOS)).+(\r\n) request-header $1User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 16_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) EdgiOS/110.0.1587.54 Version/16.0 Mobile/15E148 Safari/604.1$2
 
-
-
-hostname = spclient.wg.spotify.com, mobile-api.adguard.org, api.hujuvod.com, api.qwapp.top, *.intsig.net, *.camscanner.com, www.bing.com
+hostname = qiye.gaoding.com, spclient.wg.spotify.com, mobile-api.adguard.org, api.qwapp.top, *.intsig.net, *.camscanner.com
