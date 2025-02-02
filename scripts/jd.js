@@ -130,7 +130,7 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
                 .filter((i) => sortLists?.includes(i?.functionId))
                 .sort((a, b) => sortLists.indexOf(a?.functionId) - sortLists.indexOf(b?.functionId));
             }
-            if (node?.[1]?.length > 0) {
+            if (node?.[0]?.length > 0) {
               // 第二组四个
               node[1] = node[0]
                 .filter((i) => sortLists?.includes(i?.functionId))
