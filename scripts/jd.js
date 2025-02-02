@@ -118,7 +118,7 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
               "jingpaijianlou", // 竞拍捡漏 1-1-4
               "kehufuwu", // 客户服务 1-2-1
               "xianzhiguanjia", // 闲置换钱 1-2-2
-              "wenyisheng", // 问医生 1-2-3
+              "wodeyuyue", // 我的预约 1-2-3
               "jijianfuwu", // 京东快递 1-2-5
               "zhuanzuanhongbao", // 天天赚红包 2-2-1
               "dandanfan" // 单单返 2-2-2
