@@ -123,6 +123,20 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
               "zhuanzuanhongbao", // 天天赚红包
               "dandanfan" // 单单返
             ];
+            let node = floor.data.nodes;
+            if (node?.[0]?.length > 0) {
+              // 第一组十个
+              node[0] = node[0]
+                .filter((i) => sortLists?.includes(i?.functionId))
+                .sort((a, b) => sortLists.indexOf(a?.functionId) - sortLists.indexOf(b?.functionId));
+            }
+            if (node?.[1]?.length > 0) {
+              // 第二组四个
+              node[1] = node[1]
+                .filter((i) => sortLists?.includes(i?.functionId))
+                .sort((a, b) => sortLists.indexOf(a?.functionId) - sortLists.indexOf(b?.functionId));
+            }
+          }
         } else if (floor?.mId === "orderIdFloor") {
           if (floor?.data?.commentRemindInfo?.infos?.length > 0) {
             // 发布评价的提醒
