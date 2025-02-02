@@ -241,10 +241,10 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
             floor.data.commentRemindInfo.infos = [];
           }
         } else if (floor?.mId === "userinfo") {
-          // 个人页 顶部背景图
-          // if (floor?.data?.bgImgInfo?.bgImg) {
-          //   delete floor.data.bgImgInfo.bgImg;
-          // }
+           个人页 顶部背景图
+           if (floor?.data?.bgImgInfo?.bgImg) {
+             delete floor.data.bgImgInfo.bgImg;
+           }
           // 开通plus会员卡片
           if (floor?.data?.newPlusBlackCard) {
             delete floor.data.newPlusBlackCard;
@@ -289,8 +289,19 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
   }
 } else if (url.includes("functionId=wareBusiness")) {
   // 商品详情页
-  if (obj?.floors?.data?.liveInfo?.length > 0) {
-    delete obj.floors.data.liveInfo;
+  if (obj?.floors?.length > 0) {
+    const delItems = [
+      "eCustom_flo_11203", // 底部悬浮通栏推广
+      "eCustom_flo_652", // 悬浮推广小圆图
+      "eCustom_flo_11205", // 顶部通栏动图推广
+      // "recommend", // 为你推荐
+      "ruleFloat", // 资质与规则
+      "searchIcon", // 右上角消费券
+      "topRotate", // 左上角logo
+      "tabBarAtmosphere" // 底部悬浮通栏推广
+    ];
+    // 首页 图层列表
+    obj.floors = obj.floors.filter((i) => !delItems?.includes(i?.bId));
   }
 }
 
