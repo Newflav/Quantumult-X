@@ -294,7 +294,7 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
       "eCustom_flo_11203", // 底部悬浮通栏推广
       "eCustom_flo_652", // 悬浮推广小圆图
       "eCustom_flo_11205", // 顶部通栏动图推广
-      // "recommend", // 为你推荐
+      "eCustom_flo_332", // 为你推荐
       "ruleFloat", // 资质与规则
       "searchIcon", // 右上角消费券
       "topRotate", // 左上角logo
