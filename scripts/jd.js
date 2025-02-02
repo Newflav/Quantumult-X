@@ -287,6 +287,11 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
   if (obj?.webViewFloorList?.length > 0) {
     obj.webViewFloorList = [];
   }
+} else if (url.includes("functionId=wareBusiness")) {
+  // 商品详情页
+  if (obj?.floors?.data?.liveinfo?.length > 0) {
+    obj.floors.data.liveinfo = [];
+  }
 }
 
 $done({ body: JSON.stringify(obj) });
