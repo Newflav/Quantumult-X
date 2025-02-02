@@ -289,8 +289,8 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
   }
 } else if (url.includes("functionId=wareBusiness")) {
   // 商品详情页
-  if (obj?.floors?.data?.liveinfo) {
-    delete obj.floors.data.liveinfo;
+  if (obj?.floors?.data?.liveInfo) {
+    delete obj.floors.data.liveInfo;
   }
 }
 
