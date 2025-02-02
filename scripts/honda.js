@@ -2,11 +2,7 @@ const url = $request.url;
 if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
 
-if (url.includes("pageByTypeNewV2")) {
-  if (obj?.data) {
-    delete obj.data;
-  }
-} else if (url.includes("startFind")) {
+if (url.includes("startFind")) {
   if (obj?.data) {
     delete obj.data;
   }
