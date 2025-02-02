@@ -126,7 +126,7 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
             let node = floor.data.nodes;
             if (node?.[0]?.length > 0) {
               // 第一组十个
-              node[1] = node[1]
+              node[0] = node[0]
                 .filter((i) => sortLists?.includes(i?.functionId))
                 .sort((a, b) => sortLists.indexOf(a?.functionId) - sortLists.indexOf(b?.functionId));
             }
@@ -144,9 +144,9 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
           }
         } else if (floor?.mId === "userinfo") {
           // 个人页 顶部背景图
-           if (floor?.data?.bgImgInfo?.bgImg) {
-             delete floor.data.bgImgInfo.bgImg;
-           }
+           //if (floor?.data?.bgImgInfo?.bgImg) {
+             //delete floor.data.bgImgInfo.bgImg;
+           //}
           // 开通plus会员卡片
           if (floor?.data?.newPlusBlackCard) {
             delete floor.data.newPlusBlackCard;
