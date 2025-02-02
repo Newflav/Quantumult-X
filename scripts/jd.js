@@ -132,7 +132,7 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
             }
             if (node?.[0]?.length > 0) {
               // 第二组四个
-              node[0] = node[1]
+              node[1] = node[1]
                 .filter((i) => sortLists?.includes(i?.functionId))
                 .sort((a, b) => sortLists.indexOf(a?.functionId) - sortLists.indexOf(b?.functionId));
             }
