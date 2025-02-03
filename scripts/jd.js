@@ -109,7 +109,6 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
             delete floor.data.floatLayer;
           }
         } else if (floor?.mId === "iconToolFloor") {
-          /*
           // 底部工具栏
           if (floor?.data?.nodes?.length > 0) {
             const sortLists = [
