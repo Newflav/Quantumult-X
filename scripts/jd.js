@@ -64,8 +64,6 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
       if (items?.includes(floor?.mId)) {
         continue;
       } else {
-        if (floor?.mId === "basefloorinfo") {
-          // 弹窗
           if (floor?.data?.commonPopup) {
             delete floor.data.commonPopup;
           }
