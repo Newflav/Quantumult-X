@@ -2,60 +2,7 @@ const url = $request.url;
 if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
 
-if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTrackBusiness")) {
-  // 物流页面
-  if (obj?.bannerInfo) {
-    // 收货时寄快递享八折 享受条件苛刻 故移除
-    delete obj.bannerInfo;
-  }
-  if (obj?.floors?.length > 0) {
-    // 运费八折
-    obj.floors = obj.floors.filter((i) => !["banner", "jdDeliveryBanner"]?.includes(i?.mId));
-  }
-} else if (url.includes("functionId=myOrderInfo")) {
-  // 订单页面
-  if (obj?.floors?.length > 0) {
-    let newFloors = [];
-    for (let floor of obj.floors) {
-      if (["bannerFloor", "bpDynamicFloor", "plusFloor"]?.includes(floor?.mId)) {
-        // bannerFloor满意度评分 bpDynamicFloor专属权益 plusFloor开通会员
-        continue;
-      } else {
-        if (floor?.mId === "virtualServiceCenter") {
-          // 服务中心
-          if (floor?.data?.virtualServiceCenters?.length > 0) {
-            let newCards = [];
-            for (let card of floor.data.virtualServiceCenters) {
-              if (card?.serviceList?.length > 0) {
-                let newLists = [];
-                for (let item of card.serviceList) {
-                  if (item?.serviceTitle === "精选特惠") {
-                    continue;
-                  }
-                  newLists.push(item);
-                }
-                card.serviceList = newLists;
-              }
-              newCards.push(card);
-            }
-            floor.data.virtualServiceCenters = newCards;
-          }
-        }
-        newFloors.push(floor);
-      }
-    }
-    obj.floors = newFloors;
-  }
-} else if (url.includes("functionId=personinfoBusiness")) {
-          // 个人页 顶部背景图
-          if (floor?.data?.bgImgInfo?.bgImg) {
-            delete floor.data.bgImgInfo.bgImg;
-          }
-          // 开通plus会员卡片
-          if (floor?.data?.newPlusBlackCard) {
-            delete floor.data.newPlusBlackCard;
-          }
-} else if (url.includes("functionId=start")) {
+if (url.includes("functionId=start")) {
   // 开屏广告
   if (obj?.images?.length > 0) {
     obj.images = [];
