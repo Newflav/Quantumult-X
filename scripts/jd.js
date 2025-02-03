@@ -12,16 +12,6 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
     // 运费八折
     obj.floors = obj.floors.filter((i) => !["banner", "jdDeliveryBanner"]?.includes(i?.mId));
   }
-} else if (url.includes("functionId=getTabHomeInfo")) {
-  // 新品页面
-  if (obj?.result?.iconInfo) {
-    // 新品页 悬浮动图
-    delete obj.result.iconInfo;
-  }
-  if (obj?.result?.roofTop) {
-    // 新品页 下拉二楼
-    delete obj.result.roofTop;
-  }
 } else if (url.includes("functionId=myOrderInfo")) {
   // 订单页面
   if (obj?.floors?.length > 0) {
@@ -34,30 +24,21 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
         if (floor?.mId === "virtualServiceCenter") {
           // 服务中心
           if (floor?.data?.virtualServiceCenters?.length > 0) {
-            let newItems = [];
-            for (let item of floor.data.virtualServiceCenters) {
-              if (item?.serviceList?.length > 0) {
-                let newCards = [];
-                for (let card of item.serviceList) {
-                  if (card?.serviceTitle === "精选特惠") {
+            let newCards = [];
+            for (let card of floor.data.virtualServiceCenters) {
+              if (card?.serviceList?.length > 0) {
+                let newLists = [];
+                for (let item of card.serviceList) {
+                  if (item?.serviceTitle === "精选特惠") {
                     continue;
                   }
-                  newCards.push(card);
+                  newLists.push(item);
                 }
-                item.serviceList = newCards;
+                card.serviceList = newLists;
               }
-              newItems.push(item);
+              newCards.push(card);
             }
-            floor.data.virtualServiceCenters = newItems;
-          }
-        }
-        if (floor?.mId === "customerServiceFloor") {
-          // 客户服务
-          if (floor?.data?.moreText) {
-            // 点此获得更多服务
-            delete floor.data.moreIcon;
-            delete floor.data.moreIcon_dark;
-            floor.data.moreText = " ";
+            floor.data.virtualServiceCenters = newCards;
           }
         }
         newFloors.push(floor);
@@ -70,18 +51,14 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
   if (obj?.floors?.length > 0) {
     let newFloors = [];
     for (let floor of obj.floors) {
+      // orderIdFloor我的订单 keyToolsFloor浏览记录 newWalletIdFloor我的钱包 iconToolFloor底部工具栏
       const items = [
         "bigSaleFloor", // 双十一
+        "newsFloor", //京东快讯
         "buyOften", // 常买常逛
-        // "iconToolFloor", // 底部工具栏
-        // "keyToolsFloor", // 浏览记录
         "newAttentionCard", // 关注的频道
         "newBigSaleFloor", // 双十一
-        "newStyleAttentionCard", // 新版关注的频道
-        // "newWalletIdFloor", // 我的钱包
-        "newsFloor", // 京东快讯
         "noticeFloor", // 顶部横幅
-        // "orderIdFloor", // 我的订单
         "recommendfloor" // 我的推荐
       ];
       if (items?.includes(floor?.mId)) {
@@ -111,13 +88,13 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
         } else if (floor?.mId === "orderIdFloor") {
           if (floor?.data?.commentRemindInfo?.infos?.length > 0) {
             // 发布评价的提醒
-   floor.data.commentRemindInfo.infos = [];
+            floor.data.commentRemindInfo.infos = [];
           }
         } else if (floor?.mId === "userinfo") {
           // 个人页 顶部背景图
-          // if (floor?.data?.bgImgInfo?.bgImg) {
-          //   delete floor.data.bgImgInfo.bgImg;
-          // }
+          if (floor?.data?.bgImgInfo?.bgImg) {
+            delete floor.data.bgImgInfo.bgImg;
+          }
           // 开通plus会员卡片
           if (floor?.data?.newPlusBlackCard) {
             delete floor.data.newPlusBlackCard;
@@ -139,26 +116,32 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
 } else if (url.includes("functionId=welcomeHome")) {
   // 首页配置
   if (obj?.floorList?.length > 0) {
-    const delItems = [
-      "bottomXview", // 底部悬浮通栏推广
-      "float", // 悬浮推广小圆图
-      "photoCeiling", // 顶部通栏动图推广
-      // "recommend", // 为你推荐
-      "ruleFloat", // 资质与规则
-      "searchIcon", // 右上角消费券
-      "topRotate", // 左上角logo
-      "tabBarAtmosphere" // 底部悬浮通栏推广
-    ];
     // 首页 图层列表
-    obj.floorList = obj.floorList.filter((i) => !delItems?.includes(i?.type));
+    // float推广浮层 recommend为你推荐 ruleFloat资质与规则 searchIcon右上角消费券 topRotate左上角logo
+    obj.floorList = obj.floorList.filter(
+      (i) => !["float", "photoCeiling", "ruleFloat", "searchIcon",  "topRotate"]?.includes(i?.type)
+    );
   }
   // 首页 顶部背景图
-  // if (obj?.topBgImgBig) {
-  //   delete obj.topBgImgBig;
-  // }
+  if (obj?.topBgImgBig) {
+    delete obj.topBgImgBig;
+  }
   // 首页 下拉二楼
   if (obj?.webViewFloorList?.length > 0) {
     obj.webViewFloorList = [];
+  }
+} else if (url.includes("functionId=cart")) {
+    if (obj?.config?.textInfo) {
+    delete obj.config.textInfo;
+  }
+    if (obj?.config?.jingEggStrongDateConfig) {
+    delete obj.config.jingEggStrongDateConfig;
+  }
+    if (obj?.config?.jingEggDateConfig) {
+    delete obj.config.jingEggDateConfig;
+  }
+    if (obj?.config?.jingEggCouponNumConfig) {
+    delete obj.config.jingEggCouponNumConfig;
   }
 }
 
