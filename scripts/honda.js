@@ -10,6 +10,11 @@ if (url.includes("ad/startFindstartFind")) {
   if (obj?.data) {
     delete obj.data;
   }
+} else if (url.includes("/query")) {
+  //开屏广告
+  if (obj?.data) {
+    delete obj.data;
+  }
 }
 
 $done({ body: JSON.stringify(obj) });
