@@ -6,7 +6,10 @@ if (url.includes("ad/startFindstartFind")) {
   if (obj?.data) {
     delete obj.data;
   }
+} else if (url.includes("/pageByTypeNewV2")) {
+  if (obj?.data) {
+    delete obj.data;
+  }
 }
 
 $done({ body: JSON.stringify(obj) });
-/pageByTypeNewV2
