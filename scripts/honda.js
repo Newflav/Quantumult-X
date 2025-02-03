@@ -9,3 +9,4 @@ if (url.includes("ad/startFindstartFind")) {
 }
 
 $done({ body: JSON.stringify(obj) });
+/pageByTypeNewV2
