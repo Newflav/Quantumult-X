@@ -88,7 +88,7 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
         } else if (floor?.mId === "orderIdFloor") {
           if (floor?.data?.commentRemindInfo?.infos?.length > 0) {
             // 发布评价的提醒
-            floor.data.commentRemindInfo.infos = [];
+    floor.data.commentRemindInfo.infos = [];
           }
         } else if (floor?.mId === "userinfo") {
           // 个人页 顶部背景图
