@@ -111,14 +111,14 @@
 # >>>>>>>>>>>>>>> ✅ J ✅ <<<<<<<<<<<<<<
 # > 京东
 ; hostname = api.m.jd.com, dns.jd.com
-^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(getBubbleInfo|searchBoxWord|xview2Config|uniformRecommend|ase_mc_commonQuery|stationPullService|uniformRecommend[06]) url reject-dict
+^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(getBubbleInfo|xview2Config|uniformRecommend|ase_mc_commonQuery|stationPullService|uniformRecommend[06]) url reject-dict
 ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/jd.js
 # 悬浮窗、直播小窗
-^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=getWidgetV1052 url reject
+^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=getWidgetV1052 url reject
 # 禁京东升级
 ^https:\/\/api\.m\.jd\.com\/getIosDegrade url reject
 # 禁dns
-^https?:\/\/dns\.jd\.com\/ url reject
+^https:\/\/dns\.jd\.com\/ url reject
 
 
 # > 建设银行
@@ -147,25 +147,7 @@
 ^https:\/\/flowplus\.meituan\.net\/v1\/mss_\w+\/linglong\/\d+\.(jpg|gif) url reject
 ^https:\/\/game\.meituan\.com\/mgc\/gamecenter\/ad url reject
 ^https:\/\/grocery-mtapp\.meituan\.com\/mp\/check\/img\.gif url reject
-#悬浮小窗
-^https:\/\/(p0|p1)\.meituan\.net\/(travelcube|linglong|scarlett)\/\w+\.gif url reject
-^https:\/\/p0\.meituan\.net\/bizoperate\/.*\.gif@144w_1e_0c_0l url reject
-^https:\/\/p0\.meituan\.net\/travelcube\/f14a0dea1a8a1c3870a7575e4acdd8481473\.png url reject
-^https:\/\/p0\.meituan\.net\/travelcube\/.*\.png\.webp@200w_200h_1e_1 url reject
-^https:\/\/p0\.meituan\.net\/travelcube\/\w+\.png\.webp@50w_50h_1e_1l url reject
-^https:\/\/(p0|p1)\.meituan\.net\/linglong\/\w+\.png\.webp(@1284w_1l|@200w_200h_1e_1l) url reject
-^https:\/\/p1\.meituan\.net\/linglong\/\w+\.jpg\.webp@1200w_0h_1e_1l url reject
-^https:\/\/p0\.meituan\.net\/ioswhale\/.*\.png\.webp url reject
-^https:\/\/p0\.meituan\.net\/(linglong|travelcube)\/(7ae4f2836035e4b439e58476985592142777|7b1797f1a0e9dd936ee134657470507f2067|c3c05a3609eb6eeed5b3bf8f53a9b982640)\.png url reject-dict
-# 外卖悬浮窗
-^https:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/adx\/\w+\.gif url reject
-^https:\/\/p0\.meituan\.net\/(60\.0\.60|0\.40\.60|0\.88\.60)\/wmbanner\/\w+\.gif url reject
-^https:\/\/p1\.meituan\.net\/0\.0\.80\/travelcube\/\w+\.png\.webp url reject
-# 外卖页下拉
-^https:\/\/(p0|p1)\.meituan\.net\/0\.2532\.80\/wmbanner\/\w+\.png\.webp url reject-200
-^https:\/\/(p0|p1)\.meituan\.net\/wmbanner\/\w+\.jpg url reject-200
-# 月付页下拉
-^https:\/\/mgm\.meituan\.com\/marketing\/unLoginapi\/pgy_sdk\/ad\/batchAdExchange url reject-200
+^https:\/\/p0\.meituan\.net\/(linglong|travelcube)\/d+\.(gif|png)\/ url reject
 # 屏蔽更新
 ^https:\/\/api-unionid\.meituan\.com\/unionid\/ios\/update url reject
 
