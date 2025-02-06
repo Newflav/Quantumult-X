@@ -112,7 +112,6 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
           // 底部工具栏
           if (floor?.data?.nodes?.length > 0) {
             const sortLists = [
-              "applezhushou", // apple助手 1-1-1
               "lingjindouxin", // 签到领豆 1-1-2
               "dongdongnongchangxin", // 京东农场 1-1-3
               "chongwangwang", // 宠汪汪 1-1-4
@@ -140,7 +139,7 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
         } else if (floor?.mId === "orderIdFloor") {
           if (floor?.data?.commentRemindInfo?.infos?.length > 0) {
             // 发布评价的提醒
-            floor.data.commentRemindInfo.infos = [];
+    floor.data.commentRemindInfo.infos = [];
           }
         } else if (floor?.mId === "userinfo") {
           // 个人页 顶部背景图
