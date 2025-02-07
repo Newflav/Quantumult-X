@@ -343,9 +343,9 @@
 # > YouTube
 ; hostname = *.googlevideo.com, youtubei.googleapis.com
 # 响应体
-^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) url script-response-body https://github.com/Maasea/sgmodule/raw/master/Script/Youtube/dist/youtube.response.preview.js
+^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) url script-response-body https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.response.preview.js
 # 播放页广告
-^https:\/\/[\w-]+\.googlevideo\.com\/initplayback\? url reject-dict
+^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad url reject-dict
 
 
 # >>>>>>>>>>>>>>> ✅ Z ✅ <<<<<<<<<<<<<<
