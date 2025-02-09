@@ -138,6 +138,19 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
   if (obj?.webViewFloorList?.length > 0) {
     obj.webViewFloorList = [];
   }
+} else if (url.includes("functionId=cart")) {
+    if (obj?.config?.textInfo) {
+    delete obj.config.textInfo;
+  }
+    if (obj?.config?.jingEggStrongDateConfig) {
+    delete obj.config.jingEggStrongDateConfig;
+  }
+    if (obj?.config?.jingEggDateConfig) {
+    delete obj.config.jingEggDateConfig;
+  }
+    if (obj?.config?.jingEggCouponNumConfig) {
+    delete obj.config.jingEggCouponNumConfig;
+  }
 }
 
 $done({ body: JSON.stringify(obj) });
