@@ -112,7 +112,7 @@
 # > 京东
 ; hostname = api.m.jd.com
 ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(getBubbleInfo|xview2Config|ase_mc_commonQuery|stationPullService|uniformRecommend[06]) url reject
-^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/jd.js
+^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|cart|orderTrackBusiness|personinfoBusiness|start|welcomeHome) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/jd.js
 # 禁京东升级
 ^https:\/\/api\.m\.jd\.com\/getIosDegrade url reject
 
