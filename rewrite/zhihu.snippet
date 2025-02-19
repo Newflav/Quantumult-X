@@ -27,7 +27,6 @@
 ^https:\/\/www\.zhihu\.com\/api\/v4\/search\/related_queries\/(article|answer)\/\d+ url reject-dict
 
 # 回答详情页,评论区顶部,下一个回答
-^https:\/\/api\.zhihu\.com\/commercial_api\/answer url reject-dict
 ^https:\/\/api\.zhihu\.com\/comment_v5\/(articles|answers)\/\d+\/list-headers url reject-dict
 ^https:\/\/api\.zhihu\.com\/commercial_api\/answer url reject-dict
 ^https:\/\/api\.zhihu\.com\/next-(bff|data|render)\? url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/zhihu.js
