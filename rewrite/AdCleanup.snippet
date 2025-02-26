@@ -111,7 +111,7 @@
 # >>>>>>>>>>>>>>> ✅ J ✅ <<<<<<<<<<<<<<
 # > 京东
 ; hostname = api.m.jd.com
-^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(getBubbleInfo|xview2Config|stationPullService|uniformRecommend[06]) url reject-dict
+^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(getBubbleInfo|xview2Config|ase_mc_commonQuery|stationPullService|uniformRecommend[06]) url reject-dict
 ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/jd.js
 # 禁京东升级
 ^https:\/\/api\.m\.jd\.com\/getIosDegrade url reject-dict
@@ -149,14 +149,12 @@
 
 
 # > 咪咕视频
-; host = app-sc.miguvideo.com, v.miguvideo.com, display-sc.miguvideo.com, display.miguvideo.com, common-sc.miguvideo.com
-^https:\/\/app-sc\.miguvideo\.com\/common\/v1\/settings-list\/INITPARAM url reject
-^https:\/\/v\.miguvideo\.com\/videoActivity\/activityList url reject
-^https:\/\/(app-sc|display)\.miguvideo\.com\/app-management\/v4\/staticcache\/navigation-list url reject
-# 我的界面净化
-^https:\/\/display-sc\.miguvideo\.com\/display\/v3\/static\/PERSONAL_CENTER url reject
-# 播放界面小部件
-^https:\/\/common-sc\.miguvideo\.com\/task\/v7\/task-list\/cmvideo\/visitor url reject
+; host = api.miguvideo.com
+^https:\/\/api\.miguvideo\.com\/videoActivity\/get\?request url reject-dict
+^http:\/\/ggx\.cmvideo\.cn\/request\/sdk10\?cid url reject-dict
+^http:\/\/common\.miguvideo\.com\/common\/v1\/settings-list\/GLOBAL url reject-dict
+^http:\/\/v\.miguvideo\.com\/app-management\/v3\/staticcache\/navigation-list\/miguvideo\/ios\/DEFAULT url reject-dict
+^http:\/\/display\.miguvideo\.com\/display\/v3\/all\/static\/PERSONAL_CENTER\/(056cbd1d21464d0fa191a42ac50f6c0f|44616500eb7a4a8faa4c23592cbe6790|fc035faeaa3544a5a553e6c30f632d96) url reject-dict
 
 
 # >>>>>>>>>>>>>>> ✅ P ✅ <<<<<<<<<<<<<<
@@ -361,10 +359,10 @@
 # > 直播吧
 ; hostname = a.qiumibao.com
 ^https:\/\/a\.qiumibao\.com\/(found|activities\/config\.php) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/zhiboba.js
-^http:\/\/118\.178\.168\.156:8091\/allOne url reject-dict
+^http:\/\/118\.178\.168\.156:8091\/allOne url reject
 ; 屏蔽升级
 ^https:\/\/a\.qiumibao\.com\/ios\/\?version_code url reject
 
 
 
-hostname = gab.122.gov.cn, list-app-m.i4.cn, search-app-m.i4.cn, pan.baidu.com, tiebac.baidu.com, apps.api.ke.com, i-shadow2.ke.com, ap.dongqiudi.com, detail.dongqiudi.com, zc.dongqiudi.com, api.dongqiudi.com, hd.xiaojukeji.com, common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, tiku.fenbi.com, market-api.fenbi.com, ke.fenbi.com, keapi.fenbi.com, api.gongkaoleida.com, gha.ghac.cn, *.google.cn, api.m.jd.com, s.jiediankeji.com, api-access.pangolin-sdk-toutiao.com, *.qq.com, open.e.kuaishou.com, *.meituan.net, *.meituan.com, app-sc.miguvideo.com, v.miguvideo.com, display-sc.miguvideo.com, display.miguvideo.com, common-sc.miguvideo.com, api.yangkeduo.com, api.pinduoduo.com, m.pinduoduo.net, *.pddpic.com, *.pddugc.com, meta.pinduoduo.com, public.gdtimg.com, y.gtimg.cn, api.shenyin.name, wxs-weixin.sd.zhumanggroup.com, ucmp.sf-express.com, security.wechat.com, ccmsupport-sz.tenpay.com, support.you.163.com, m.you.163.com, c.m.163.com, gw.m.163.com, interface*.music.163.com,  *.googlevideo.com, youtubei.googleapis.com, clientaccess.10086.cn, *.coc.10086.cn, a.qiumibao.com
+hostname = gab.122.gov.cn, list-app-m.i4.cn, search-app-m.i4.cn, pan.baidu.com, tiebac.baidu.com, apps.api.ke.com, i-shadow2.ke.com, ap.dongqiudi.com, detail.dongqiudi.com, zc.dongqiudi.com, api.dongqiudi.com, hd.xiaojukeji.com, common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, tiku.fenbi.com, market-api.fenbi.com, ke.fenbi.com, keapi.fenbi.com, api.gongkaoleida.com, gha.ghac.cn, *.google.cn, api.m.jd.com, s.jiediankeji.com, api-access.pangolin-sdk-toutiao.com, *.qq.com, open.e.kuaishou.com, *.meituan.net, *.meituan.com, api.miguvideo.com, api.yangkeduo.com, api.pinduoduo.com, m.pinduoduo.net, *.pddpic.com, *.pddugc.com, meta.pinduoduo.com, public.gdtimg.com, y.gtimg.cn, api.shenyin.name, wxs-weixin.sd.zhumanggroup.com, ucmp.sf-express.com, security.wechat.com, ccmsupport-sz.tenpay.com, support.you.163.com, m.you.163.com, c.m.163.com, gw.m.163.com, interface*.music.163.com,  *.googlevideo.com, youtubei.googleapis.com, clientaccess.10086.cn, *.coc.10086.cn, a.qiumibao.com
