@@ -64,6 +64,12 @@ if (url.includes("/config/ershoufang/content")) {
   if (obj.data?.bannerList) {
      delete obj.data.bannerList;
   }
+} else if (url.includes("config/home/contentv5")) {
+    if (obj?.data?.moduleList?.length > 0) {
+    obj.data.modules = obj.data.modules.filter(
+      (i) => !["decoration_v2"]?.includes(i?.itemKey)
+    );
+  }
 }
 
 $done({ body: JSON.stringify(obj) });
