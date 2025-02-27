@@ -70,6 +70,10 @@ if (url.includes("/config/ershoufang/content")) {
       (i) => !["decoration_v2"]?.includes(i?.itemKey)
     );
   }
+} else if (url.includes("platform\/shellapp\/userCenter\/feed")) {
+    if (obj?.data?.length > 0) {
+    obj.data = []
+  }
 }
 
 $done({ body: JSON.stringify(obj) });
