@@ -66,7 +66,7 @@ if (url.includes("/config/ershoufang/content")) {
   }
 } else if (url.includes("config/home/contentv5")) {
     if (obj?.data?.moduleList?.length > 0) {
-    obj.data.modules = obj.data.modules.filter(
+    obj.data.moduleList = obj.data.moduleList.filter(
       (i) => !["decoration_v2"]?.includes(i?.itemKey)
     );
   }
