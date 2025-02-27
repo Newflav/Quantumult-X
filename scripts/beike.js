@@ -71,8 +71,8 @@ if (url.includes("/config/ershoufang/content")) {
     );
   }
 } else if (url.includes("platform/shellapp/userCenter/feed")) {
-  if (obj?.data) {
-     delete obj.data;
+  if (obj.data?.list) {
+     delete obj.data.list;
   }
 }
 
