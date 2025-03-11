@@ -10,6 +10,11 @@ if (url.includes("/boss/car/order/content_info")) {
     // oss营销皮肤
     obj.data.lubanData.skin.dataList = [];
   }
+} else if (url.includes("/search_bff/hotword")) {
+  // 搜索页面
+  if (obj?.data?.headerHotWord) {
+    delete obj.data.headerHotWord;
+  }
 } else if (url.includes("/boss/order_web/friendly_information")) {
   // 打车页面
   const items = ["banners", "carouselTips", "integratedBanners", "integratedTips", "skins", "skinAndTips", "tips"];
