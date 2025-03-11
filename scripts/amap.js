@@ -211,7 +211,7 @@ if (url.includes("/boss/car/order/content_info")) {
   }
 } else if (url.includes("/shield/search/poi/detail")) {
   if (obj?.data?.modules) {
-      delete obj.data.modules;
+      obj.data.modules = {};
     }
 } else if (url.includes("/shield/search_business/process/marketingOperationStructured")) {
   // 详情页 顶部优惠横幅
