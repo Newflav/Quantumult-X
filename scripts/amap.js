@@ -215,8 +215,11 @@ if (url.includes("/boss/car/order/content_info")) {
     }
   }
 } else if (url.includes("/shield/search/poi/detail")) {
-    if (obj?.data?.modules?.length > 0) {
-    obj.data.modules = obj.data.modules.filter((i) => !i?.title?.includes("comprehensiveEditEntranc", "check_in", "reviews", "merchantSettlement", "nearbyRecommendModule"));
+  if (obj?.data?.modules) {
+    const items = ["comprehensiveEditEntranc", "check_in", "reviews", "merchantSettlement", "nearbyRecommendModule"];
+    for (let i of items) {
+      delete obj.data.modules[i];
+    }
   }
 } else if (url.includes("/shield/search_business/process/marketingOperationStructured")) {
   // 详情页 顶部优惠横幅
