@@ -215,8 +215,9 @@ if (url.includes("/boss/car/order/content_info")) {
     }
   }
 } else if (url.includes("/shield/search/poi/detail")) {
+  #搜索地点详情页
   if (obj?.data?.modules) {
-    const items = ["comprehensiveEditEntranc", "check_in", "reviews", "merchantSettlement", "nearbyRecommendModule"];
+    const items = ["comprehensiveEditEntranc", "check_in", "reviews", "merchantSettlement", "societyPublicExperience", "poiDetailWaterFeed", "nearbyRecommendModule"];
     for (let i of items) {
       delete obj.data.modules[i];
     }
