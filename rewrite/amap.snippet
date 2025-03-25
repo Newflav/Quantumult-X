@@ -7,6 +7,7 @@
 ;^https:\/\/mps\.amap\.com\/ws\/mps\/scene\? url reject-dict
 
 # 其他
+^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable url reject-dict
 ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$ url script-response-header https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/amap_else.js
 
 # 升级提醒
@@ -17,8 +18,7 @@
 ^https:\/\/m5\.amap\.com\/ws\/aggregate\/user\/login-guide url reject-dict
 
 # 导航广告语音及其他页面元素
-^https:\/\/m5\.amap\.com\/ws\/perception\/drive\/routePlan url reject-dict
-^https:\/\/m5\.amap\.com\/ws\/perception\/drive\/routeInfo url reject-dict
+^https:\/\/m5\.amap\.com\/ws\/perception\/drive\/(routePlan|routeInfo) url reject-dict
 
 # 导航详情页,路线规划,地点详情页,搜索详情页,导航结束页
 ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/card-service-(car-end|route-plan)\? url reject-dict
