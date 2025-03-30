@@ -79,16 +79,6 @@ host-suffix, tappx.com, reject
 host-suffix, adxinspidsp.com, reject
 host-suffix, inhousedsp.com, reject
 
-# > 拼多多
-host, titan.pinduoduo.com, reject
-host, apm.pinduoduo.com, reject
-host, m.pinduoduo.net, reject
-host, ta-a.pinduoduo.com, reject
-host, ta.pinduoduo.com, reject
-host, th-a.pinduoduo.com, reject
-host, th-b.pinduoduo.com, reject
-host, th.pinduoduo.com, reject
-
 # > 京东
 ip-cidr, 101.124.19.122/32, reject
 ip6-cidr, 2402:db40:5100:1011::5/128, reject
