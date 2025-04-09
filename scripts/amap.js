@@ -222,8 +222,8 @@ if (url.includes("/boss/car/order/content_info")) {
       delete obj.data.modules[i];
     }
   }
-  if (obj?.data?.modules?.attractGalleryInfo?.length > 0) {
-    obj.data.modules.attractGalleryInfo = obj.data.modules.attractGalleryInfo.filter((i) => i?.AttractGalleryUpload === "card_id");
+  if (obj.data?.modules?.attractGalleryInfo?.length > 0) {
+    obj.data.modules.attractGalleryInfo = obj.data.modules.attractGalleryInfo.filter((i) => i?.card_id === "AttractGalleryUpload");
   }
 } else if (url.includes("/shield/search/client/push")) {
   if (obj?.data) {
