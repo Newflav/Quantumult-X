@@ -222,9 +222,11 @@ if (url.includes("/boss/car/order/content_info")) {
       delete obj.data.modules[i];
     }
   }
-  //if (obj?.data?.modules?.attractGalleryInfo?.card_id) {
-    //delete obj.data.modules.attractGalleryInfo.card_id;
-  //}
+  if (obj?.data?.modules?.attractGalleryInfo?.length > 0) {
+    obj.data.modules.attractGalleryInfo = obj.data.modules.attractGalleryInfo.filter(
+      (i) => !["AttractGalleryUpload"]?.includes(i?.card_id)
+    );
+  }
 } else if (url.includes("/shield/search/client/push")) {
   if (obj?.data) {
     obj.data = {};
