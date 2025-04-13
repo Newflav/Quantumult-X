@@ -239,7 +239,7 @@ if (url.includes("/boss/car/order/content_info")) {
   }
 } else if (url.includes("/shield/search_business/process/middleLayer")) {
   // 搜索页列表净化
-  if (obj?.city_list?.tip_list?.tip) {
+  if (obj.city_list?.tip_list?.tip) {
       let list = obj.city_list.tip_list.tip;
   if (list?.product_info)
       delete list.product_info;
