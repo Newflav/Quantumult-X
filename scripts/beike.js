@@ -25,12 +25,15 @@ if (url.includes("/config/ershoufang/content")) {
       delete obj.data[i]
     }
   }
-} else if (url.includes("/xinfang/shellapp/index/indexv1")) {
+} else if (url.includes("/xinfang/shellapp/index/index")) {
   //新房页面文章区域
   if (obj?.data?.modules?.length > 0) {
     obj.data.modules = obj.data.modules.filter(
-      (i) => !["operation_area"]?.includes(i?.type)
+      (i) => !["operation_area","articles"]?.includes(i?.type)
     );
+  }
+  if (obj.data?.modules?.data?.banner) {
+    delete obj.data.modules.data.banner;
   }
 } else if (url.includes("/xinfang/shellapp/feed/index")) {
   //新房页面调查问卷、反馈
