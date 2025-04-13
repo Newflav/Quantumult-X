@@ -48,7 +48,7 @@ if (url.includes("/config/ershoufang/content")) {
   }
   if (obj?.data?.list?.length > 0) {
     obj.data.list = obj.data.list.filter(
-      (i) => !["cms_content"]?.includes(i?.recoItemType)
+      (i) => !["cms_banner", "cms_content"]?.includes(i?.recoItemType)
     );
   }
 } else if (url.includes("v3/house/list")) {
