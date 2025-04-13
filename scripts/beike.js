@@ -32,7 +32,7 @@ if (url.includes("/config/ershoufang/content")) {
       (i) => !["operation_area","articles"]?.includes(i?.type)
     );
   }
-  if (obj.data?.modules?.data?.banner) {
+  if (obj.data?.modules?.data?.banner?.length > 0) {
     delete obj.data.modules.data.banner;
   }
 } else if (url.includes("/xinfang/shellapp/feed/index")) {
