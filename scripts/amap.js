@@ -239,8 +239,8 @@ if (url.includes("/boss/car/order/content_info")) {
   }
 } else if (url.includes("/shield/search_business/process/middleLayer")) {
   // 搜索页列表净化
-  if (obj?.city_list?.tip_list?.tip?.product_info) {
-   obj.city_list.tip_list.tip.product_info = {};
+  if (obj?.city_list?.tip_list?.tip?.length > 0) {
+    obj.data.tip_list.tip = obj.data.tip_list.tip.filter((i) => !i.hasOwnProperty("product_info"));
   }
 } else if (url.includes("/shield/search_poi/homepage")) {
   // 首页 搜索框历史记录 推广标签
