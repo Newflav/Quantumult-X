@@ -19,7 +19,7 @@ if (url.includes("/config/ershoufang/content")) {
   }
 } else if (url.includes("/user/profile/getusercenterinfov4")) {
     //我的页面净化
-  const items = ["banners","promises","myhouse"];
+  const items = ["banners", "promises", "myhouse", "recommendTabs"];
   if (obj?.data) {
     for (let i of items) {
       delete obj.data[i]
