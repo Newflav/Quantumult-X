@@ -242,7 +242,7 @@ if (url.includes("/boss/car/order/content_info")) {
   if (obj?.city_list?.tip_list?.tip) {
       let list = obj.city_list.tip_list.tip;
   if (list?.product_info)
-      delete list.product_info
+      delete list.product_info;
   }
 } else if (url.includes("/shield/search_poi/homepage")) {
   // 首页 搜索框历史记录 推广标签
