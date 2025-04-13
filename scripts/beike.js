@@ -32,8 +32,8 @@ if (url.includes("/config/ershoufang/content")) {
       (i) => !["operation_area","articles"]?.includes(i?.type)
     );
   }
-  if (obj.data?.modules?.data?.banner?.length > 0) {
-    obj.data.modules.data.banner = {};
+  if (obj?.data?.modules?.data?.banner?.length > 0) {
+    delete obj.data.modules.data.banner;
   }
 } else if (url.includes("/xinfang/shellapp/feed/index")) {
   //新房页面调查问卷、反馈
