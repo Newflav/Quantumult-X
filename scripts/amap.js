@@ -222,12 +222,15 @@ if (url.includes("/boss/car/order/content_info")) {
       delete obj.data.modules[i];
     }
  }
-  if (obj?.data?.modules) {
-    let list = obj.data.modules.attractGalleryInfo[0];
-      if (list?.data?.header) {
-        delete list.data.header;
+  if (obj?.data) {
+    let list = obj.data.modules[0];
+    if (list?.attractGalleryInfo) {
+      let hookData = list.attractGalleryInfo.data;
+      if (hookData?.title) {
+        delete hookData.title;
       }
-    }
+  }
+ }
 } else if (url.includes("/shield/search/client/push")) {
   if (obj?.data) {
     obj.data = {};
