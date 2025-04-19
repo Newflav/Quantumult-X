@@ -229,6 +229,9 @@ if (url.includes("/boss/car/order/content_info")) {
       if (hookData?.title) {
         delete hookData.title;
       }
+      if (hookData?.desc) {
+        delete hookData.desc;
+      }
   }
  }
 } else if (url.includes("/shield/search/client/push")) {
