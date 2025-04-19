@@ -222,12 +222,6 @@ if (url.includes("/boss/car/order/content_info")) {
       delete obj.data.modules[i];
     }
  }
-  if (obj?.data?.modules) {
-    let list = obj.data.modules.attractGalleryInfo[0];
-      if (list?.title) {
-        delete list.title;
-      }
-  }
 } else if (url.includes("/shield/search/client/push")) {
   if (obj?.data) {
     obj.data = {};
