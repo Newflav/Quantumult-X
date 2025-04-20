@@ -222,7 +222,7 @@ if (url.includes("/boss/car/order/content_info")) {
       delete obj.data.modules[i];
   }
   if (obj.data?.modules?.attractGalleryInfo?.data?.title) {
-    delete (obj.data.modules.attractGalleryInfo.data.title)
+    delete obj.data.modules.attractGalleryInfo.data.title;
   }
  }
 } else if (url.includes("/shield/search/client/push")) {
