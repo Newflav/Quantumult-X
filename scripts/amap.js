@@ -221,10 +221,7 @@ if (url.includes("/boss/car/order/content_info")) {
     for (let i of items) {
       delete obj.data.modules[i];
   }
-  const items = [
-    "title",
-    "desc"
-  ];
+  const items = ["title", "desc"];
   if (obj?.data?.modules?.attractGalleryInfo?.data) {
     for (let i of items) {
       delete obj.data.modules.attractGalleryInfo.data[i];
