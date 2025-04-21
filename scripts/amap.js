@@ -215,11 +215,11 @@ if (url.includes("/boss/car/order/content_info")) {
     }
   }
 } else if (url.includes("/shield/search/poi/detail")) {
-    if (obj?.data?.modules) {
-    let list = obj.data.modules.attractGalleryInfo[0];
-      if (list?.data) {
-        delete list.data;
-      }
+  if (obj?.data?.modules?.attractGalleryInfo) {
+    const items = ["data"];
+    for (let i of items) {
+      delete obj.data.modules.attractGalleryInfo[i];
+    }
   }
   //搜索地点详情页
   if (obj?.data?.modules) {
