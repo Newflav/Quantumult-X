@@ -221,9 +221,12 @@ if (url.includes("/boss/car/order/content_info")) {
     for (let i of items) {
       delete obj.data.modules[i];
   }
-  if (obj?.data?.modules?.attractGalleryInfo?.data) {
-    delete obj.data.modules.attractGalleryInfo.data;
-  }
+  if (obj?.data?.modules) {
+    let list = obj.data.modules.attractGalleryInfo[0];
+      if (list?.data) {
+        delete list.data;
+      }
+    }
  }
 } else if (url.includes("/shield/search/client/push")) {
   if (obj?.data) {
