@@ -221,11 +221,8 @@ if (url.includes("/boss/car/order/content_info")) {
     for (let i of items) {
       delete obj.data.modules[i];
   }
-  const items = ["title", "desc"];
   if (obj?.data?.modules?.attractGalleryInfo?.data) {
-    for (let i of items) {
-      delete obj.data.modules.attractGalleryInfo.data[i];
-    }
+    delete obj.data.modules.attractGalleryInfo.data;
   }
  }
 } else if (url.includes("/shield/search/client/push")) {
