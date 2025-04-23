@@ -215,12 +215,9 @@ if (url.includes("/boss/car/order/content_info")) {
     }
   }
 } else if (url.includes("/shield/search/poi/detail")) {
-  if (obj?.data?.modules?.attractGalleryInfo) {
-    const items = ["data"];
-    for (let i of items) {
-      delete obj.data.modules.attractGalleryInfo[i];
+  if (obj?.data?.modules?.attractGalleryInfo?.data) {
+      delete obj.data.modules.attractGalleryInfo.data;
     }
-  }
 } else if (url.includes("/shield/search/client/push")) {
   if (obj?.data) {
     obj.data = {};
