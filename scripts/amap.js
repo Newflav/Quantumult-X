@@ -214,6 +214,13 @@ if (url.includes("/boss/car/order/content_info")) {
       obj.data.modules = obj.data.modules.filter((i) => items?.includes(i));
     }
   }
+} else if (url.includes("/shield/search/poi/detail")) {
+  if (obj?.data?.modules?.attractGalleryInfo) {
+    const items = ["data"];
+    for (let i of items) {
+      delete obj.data.modules.attractGalleryInfo[i];
+    }
+  }
 } else if (url.includes("/shield/search/client/push")) {
   if (obj?.data) {
     obj.data = {};
