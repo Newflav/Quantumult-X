@@ -249,7 +249,7 @@ if (url.includes("/boss/car/order/content_info")) {
   }
 } else if (url.includes("/shield/search_poi/search/sp") || url.includes("/shield/search_poi/mps")) {
   if (obj?.data?.modules?.listResult?.length > 0) {
-    obj.data.list = obj.data.list.filter(
+    obj.data.modules.listResult = obj.data.modules.listResult.filter(
       (i) => !["ListResultContainer"]?.includes(i?.card_id)
     );
   }
