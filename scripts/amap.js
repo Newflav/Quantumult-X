@@ -248,6 +248,12 @@ if (url.includes("/boss/car/order/content_info")) {
     delete obj.history_tags;
   }
 } else if (url.includes("/shield/search_poi/search/sp") || url.includes("/shield/search_poi/mps")) {
+    if (obj?.data?.modules?.listResult.card_id) {
+    const items = ["ListResultContainer"];
+    for (let i of items) {
+      delete obj.data.modules.listResult.card_id[i];
+  }
+ }
   if (obj?.data?.list_data) {
     let list = obj.data.list_data.content[0];
     // 详情页 底部 房产推广
