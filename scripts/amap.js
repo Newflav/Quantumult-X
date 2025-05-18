@@ -248,10 +248,8 @@ if (url.includes("/boss/car/order/content_info")) {
     delete obj.history_tags;
   }
 } else if (url.includes("/shield/search_poi/search/sp") || url.includes("/shield/search_poi/mps")) {
-  if (obj?.data?.modules?.listResult?.length > 0) {
-    obj.data.modules.listResult = obj.data.modules.listResult.filter(
-      (i) => !["ListResultContainer"]?.includes(i?.card_id)
-    );
+  if (obj?.data?.modules?.listResult) {
+    delete obj.data.modules.listResult;
   }
   if (obj?.data?.list_data) {
     let list = obj.data.list_data.content[0];
