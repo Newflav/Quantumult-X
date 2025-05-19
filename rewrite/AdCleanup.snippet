@@ -36,10 +36,12 @@
 # 开屏广告
 ^https:\/\/apps\.api\.ke\.com\/config\/config\/(bootpage|getactivityconfig) url reject
 # 元素净化
+^https:\/\/apps\.api\.ke\.com\/user\/key\/getcaid url reject-dict
+^https:\/\/apps\.api\.ke\.com\/house\/ershoufang\/liveinfo url reject-dict
 ^https:\/\/apps\.api\.ke\.com\/xinfang\/shellapp\/resblock\/getAtrium url reject-dict
 ^https:\/\/apps\.api\.ke\.com\/(api\/user\/profile\/getusercenterinfov4|api\/secondhand\/ershoufang\/homepagesearch|Rentplat\/v3\/house\/list|Rentplat\/v1\/homepage|api\/config\/home\/contentv5|platform\/shellapp\/userCenter\/feed) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/beike.js
 ^https:\/\/apps\.api\.ke\.com\/config\/(ershoufang\/content|recommend\/home) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/beike.js
-^https:\/\/apps\.api\.ke\.com\/xinfang\/shellapp\/(feed\/index|index\/indexv1) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/beike.js
+^https:\/\/apps\.api\.ke\.com\/xinfang\/shellapp\/(feed\/index|index\/index) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/beike.js
 # 升级提醒
 ^https:\/\/i-shadow2\.ke\.com\/app\/checkUpdate url reject
 
@@ -51,6 +53,7 @@
 # > 懂球帝
 ; hostname = ap.dongqiudi.com, detail.dongqiudi.com, zc.dongqiudi.com, api.dongqiudi.com
 ^https:\/\/ap\.dongqiudi\.com\/plat\/v url reject-dict
+^https:\/\/entry\.ubixioe\.com\/mob\/sdk\/v2\/endpoint url reject-dict
 ^https:\/\/zc\.dongqiudi\.com\/(api|expert)\/(gettabs|getMatchExpertInfo)\?(match_id|chatroom_id) url reject-dict
 ^https:\/\/(api|detail)\.dongqiudi\.com\/v2\/article url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/dongqiudi.js
 ^https:\/\/api\.dongqiudi\.com\/data\/(detail\/match|match\/pre_analysis) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/dongqiudi.js
@@ -73,10 +76,6 @@
 
 
 # >>>>>>>>>>>>>>> ✅ G ✅ <<<<<<<<<<<<<<
-# > 公考雷达
-; hostname = api.gongkaoleida.com
-^https:\/\/api\.gongkaoleida\.com\/api\/(v2\/ad\/info\?appLaunchChannel|v5_3_8\/sets\/getAppStyle\?appLaunchChannel) url reject
-
 # > 广汽本田
 ; hostname = gha.ghac.cn
 ^https:\/\/gha\.ghac\.cn:(8081|8082)\/(base\/app\/api\/ad\/(query|startFind)|discover\/app\/api\/discover-news-manage\/pageByTypeNewV2) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/honda.js
@@ -98,7 +97,7 @@
 # >>>>>>>>>>>>>>> ✅ J ✅ <<<<<<<<<<<<<<
 # > 京东
 ; hostname = api.m.jd.com
-^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(getBubbleInfo|xview2Config|ase_mc_commonQuery|uniformRecommend[06]) url reject-dict
+^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(getEncryptedPinColor|getBubbleInfo|searchBoxWord|xview2Config|stationPullService|uniformRecommend[06]|ase_mc_commonQuery) url reject-dict
 ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/jd.js
 # 禁京东升级
 ^https:\/\/api\.m\.jd\.com\/getIosDegrade url reject-dict
@@ -127,23 +126,29 @@
 ; hostname = *.meituan.net, *.meituan.com
 ^https:\/\/flowplus\.meituan\.net\/v1\/mss_\w+\/linglong\/\d+\.(jpg|gif) url reject
 ^https:\/\/grocery-mtapp\.meituan\.com\/mp\/check\/img\.gif url reject
-^https:\/\/p0\.meituan\.net\/(linglong|travelcube)\/d+\.(gif|png)\/ url reject
+^https:\/\/(p0|p1)\.meituan\.net\/(linglong|travelcube)\/(\d)\.(gif|png) url reject
+
 
 
 # >>>>>>>>>>>>>>> ✅ P ✅ <<<<<<<<<<<<<<
 # > 拼多多
-; hostname = api.yangkeduo.com, m.pinduoduo.net, *.pddpic.com, *.pinduoduo.com
-^https:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash url reject
-^https:\/\/api\.pinduoduo\.com\/api\/aquarius\/hungary\/global\/homepage url reject
+; hostname = api.yangkeduo.com, api.pinduoduo.com, m.pinduoduo.net, *.pddpic.com, *.pddugc.com
+^https?:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash url reject
 # 视频页小窗
 ^https:\/\/m\.pinduoduo\.net\/vlayer_tab_popup\.html url reject
+# 聊天界面 多多买菜横幅
+^https:\/\/commimg(.*)\.pddpic\.com\/flow-banner-entrance url reject
 # 营销小窗
-^http:\/\/pplay-video-(.*)\.pinduoduo\.com\/live url reject
 ^http:\/\/video(.*)\.(pddpic|pddugc)\.com\/(tower-video|tower-video-b|tower-video-side|tower-video-side-b)\/.*\.(float|highlights) url reject
 ^http:\/\/video(.*)\.(pddugc|pddpic)\.com\/tower-video-b\/pdd-live url reject
 ^http:\/\/.*/live-adapt\.pddpic\.com\/live url reject
 ^http:\/\/live(.*)-adapt\.(pddpic|pddugc)\.com\/live url reject
-^http(.*):\/\/video-snapshot(.*)\.pddpic\.com\/(lupus-cover-b|kiwi-live-image) url reject
+^http(.*):\/\/video-snapshot(.*)\.pddpic\.com\/kiwi-live-image url reject
+# 禁止https dns
+^http:\/\/101\.35\.204\.35\/d url reject
+^http:\/\/101\.35\.212\.35\/d url reject
+^http:\/\/114\.110\.96\.26\/d url reject
+^http:\/\/114\.110\.97\.97\/d url reject
 
 
 # >>>>>>>>>>>>>>> ✅ Q ✅ <<<<<<<<<<<<<<
@@ -323,4 +328,4 @@
 
 
 
-hostname = gab.122.gov.cn, list-app-m.i4.cn, search-app-m.i4.cn, pan.baidu.com, tiebac.baidu.com, apps.api.ke.com, i-shadow2.ke.com, ap.dongqiudi.com, detail.dongqiudi.com, zc.dongqiudi.com, api.dongqiudi.com, tiku.fenbi.com, market-api.fenbi.com, ke.fenbi.com, keapi.fenbi.com, api.gongkaoleida.com, gha.ghac.cn, *.google.cn, api.m.jd.com, s.jiediankeji.com, api-access.pangolin-sdk-toutiao.com, *.qq.com, open.e.kuaishou.com, *.meituan.net, *.meituan.com, api.yangkeduo.com, m.pinduoduo.net, *.pddpic.com, *.pinduoduo.com, public.gdtimg.com, y.gtimg.cn, api.shenyin.name, wxs-weixin.sd.zhumanggroup.com, ucmp.sf-express.com, security.wechat.com, ccmsupport-sz.tenpay.com, support.you.163.com, m.you.163.com, c.m.163.com, gw.m.163.com, interface*.music.163.com,  rr*.googlevideo.com, youtubei.googleapis.com, a.qiumibao.com
+hostname = gab.122.gov.cn, list-app-m.i4.cn, search-app-m.i4.cn, pan.baidu.com, tiebac.baidu.com, apps.api.ke.com, i-shadow2.ke.com, ap.dongqiudi.com, detail.dongqiudi.com, zc.dongqiudi.com, api.dongqiudi.com, entry.ubixioe.com, tiku.fenbi.com, market-api.fenbi.com, ke.fenbi.com, keapi.fenbi.com, gha.ghac.cn, *.google.cn, api.m.jd.com, s.jiediankeji.com, api-access.pangolin-sdk-toutiao.com, api.yangkeduo.com, api.pinduoduo.com, m.pinduoduo.net, *.pddpic.com, *.pddugc.com, *.qq.com, open.e.kuaishou.com, *.meituan.net, *.meituan.com, public.gdtimg.com, y.gtimg.cn, api.shenyin.name, wxs-weixin.sd.zhumanggroup.com, ucmp.sf-express.com, security.wechat.com, ccmsupport-sz.tenpay.com, support.you.163.com, m.you.163.com, c.m.163.com, gw.m.163.com, interface*.music.163.com,  rr*.googlevideo.com, youtubei.googleapis.com, a.qiumibao.com
