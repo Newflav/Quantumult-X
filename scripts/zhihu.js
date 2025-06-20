@@ -22,6 +22,14 @@ if (url.includes("/api/cloud/config/all")) {
       }
     });
   }
+} else if (url.includes("answers/v2")) {
+    if (obj?.third_business) {
+      delete obj.third_business;
+  }
+    if (obj?.interaction_bar_plugins) {
+      delete obj.interaction_bar_plugins;
+  }
+
 } else if (url.includes("/api/v4/answers")) {
   if (obj?.data) {
     delete obj.data;
