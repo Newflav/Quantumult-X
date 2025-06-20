@@ -29,7 +29,11 @@ if (url.includes("/api/cloud/config/all")) {
     if (obj?.interaction_bar_plugins) {
       delete obj.interaction_bar_plugins;
   }
-
+    if (obj?.structured_content?.segments?.length > 0) {
+      obj.structured_content.segments = obj.structured_content.segments.filter(
+        (i) => !["card"]?.includes(i?.type)
+    );
+  }
 } else if (url.includes("/api/v4/answers")) {
   if (obj?.data) {
     delete obj.data;
