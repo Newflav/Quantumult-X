@@ -22,19 +22,16 @@ if (url.includes("/api/cloud/config/all")) {
       }
     });
   }
-} else if (url.includes("answers/v2")) {
+} else if (url.includes("answers/v2")) || url.includes("articles/v2")) {
     if (obj?.third_business) {
       delete obj.third_business;
+  }
+    if (obj?.endorsement) {
+      delete obj.endorsement;
   }
     if (obj?.interaction_bar_plugins) {
       delete obj.interaction_bar_plugins;
   }
-    if (obj?.structured_content?.segments?.length > 0) {
-      obj.structured_content.segments = obj.structured_content.segments.filter(
-        (i) => !["card"]?.includes(i?.type)
-    );
-  }
-} else if (url.includes("articles/v2")) {
     if (obj?.structured_content?.segments?.length > 0) {
       obj.structured_content.segments = obj.structured_content.segments.filter(
         (i) => !["card"]?.includes(i?.type)
