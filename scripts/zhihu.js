@@ -34,6 +34,12 @@ if (url.includes("/api/cloud/config/all")) {
         (i) => !["card"]?.includes(i?.type)
     );
   }
+} else if (url.includes("articles/v2")) {
+    if (obj?.structured_content?.segments?.length > 0) {
+      obj.structured_content.segments = obj.structured_content.segments.filter(
+        (i) => !["card"]?.includes(i?.type)
+    );
+  }
 } else if (url.includes("/api/v4/answers")) {
   if (obj?.data) {
     delete obj.data;
