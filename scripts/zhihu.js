@@ -22,7 +22,7 @@ if (url.includes("/api/cloud/config/all")) {
       }
     });
   }
-} else if (url.includes("answers/v2")) || url.includes("articles/v2")) {
+} else if (url.includes("answers/v2") || url.includes("articles/v2")) {
     if (obj?.third_business) {
       delete obj.third_business;
   }
