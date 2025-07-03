@@ -1,4 +1,4 @@
-// 2023-09-20 16:35
+// 2025-07-03 16:35
 
 if (!$response.body) $done({});
 const url = $request.url;
@@ -34,7 +34,7 @@ if (url.includes("/api/cloud/config/all")) {
   }
     if (obj?.structured_content?.segments?.length > 0) {
       obj.structured_content.segments = obj.structured_content.segments.filter(
-        (i) => !["card"]?.includes(i?.type)
+        (i) => !["heading", "card"]?.includes(i?.type)
     );
   }
 } else if (url.includes("/api/v4/answers")) {
