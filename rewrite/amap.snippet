@@ -14,7 +14,7 @@
 ^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/app\/startup\/init\?ent url reject-dict
 
 # 登录提醒
-^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/main-page url reject-dict
+#^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/main-page url reject-dict
 ^https:\/\/m5\.amap\.com\/ws\/aggregate\/user\/login-guide url reject-dict
 
 # 导航广告语音及其他页面元素
@@ -57,7 +57,7 @@
 ^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(order\/car\/king_toolbox_car_bubble|tips\/onscene_visual_optimization)\? url reject-dict
 ^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/amap.js
 ^https:\/\/m5-zb\.amap\.com\/ws\/sharedtrip\/taxi\/order_detail_car_tips\? url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/amap.js
-#^https:\/\/center\.amap\.com\/ws\/message\/notice\/list\? url reject-dict
+^https:\/\/center\.amap\.com\/ws\/message\/notice\/list\? url reject-dict
 
 
 hostname = m5.amap.com, m5-zb.amap.com, info.amap.com, oss.amap.com, sns.amap.com, center.amap.com
