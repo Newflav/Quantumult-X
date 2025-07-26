@@ -4,7 +4,7 @@
 #!update = 2024-01-11 17:00
 
 # 此条可以屏蔽首次进入的天气动效图层  但是会导致足迹不显示地图数据
-;^https:\/\/mps\.amap\.com\/ws\/mps\/scene\? url reject-dict
+#^https:\/\/mps\.amap\.com\/ws\/mps\/scene\? url reject-dict
 
 # 其他
 #^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable url reject-dict
@@ -24,7 +24,7 @@
 # 导航详情页,路线规划,地点详情页,搜索详情页,导航结束页
 ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/card-service-(car-end|route-plan)\? url reject-dict
 ^https:\/\/m5\.amap\.com\/ws\/perception\/drive\/routePlan\? url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/amap.js
-#^https:\/\/m5\.amap\.com\/ws\/shield\/search\/new_hotword\? url reject-dict
+^https:\/\/m5\.amap\.com\/ws\/shield\/search\/new_hotword\? url reject-dict
 ^https:\/\/(m5|info)\.amap\.com\/ws\/shield\/search\/(common\/coupon\/info|client\/push|poi\/detail)\? url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/amap.js
 ^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/(middleLayer|marketingOperationStructured) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/amap.js
 #^https:\/\/m5\.amap\.com\/ws\/shield\/search_bff\/hotword\? url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/amap.js
