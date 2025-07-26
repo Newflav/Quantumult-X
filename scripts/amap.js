@@ -234,14 +234,14 @@ if (url.includes("/boss/car/order/content_info")) {
   if (obj?.data?.resourcePlacement) {
     delete obj.data.resourcePlacement;
   }
-//} else if (url.includes("/shield/search_business/process/middleLayer")) {
+} else if (url.includes("/shield/search_business/process/middleLayer")) {
   // 搜索页列表净化
-  //if (obj?.city_list) {
-    //obj.city_list = {};
-  //}
-  //if (obj?.tip_list) {
-    //obj.tip_list = {};
-  //}
+  if (obj?.city_list) {
+    obj.city_list = {};
+  }
+  if (obj?.tip_list) {
+    obj.tip_list = {};
+  }
 } else if (url.includes("/shield/search_poi/homepage")) {
   // 首页 搜索框历史记录 推广标签
   if (obj?.history_tags) {
