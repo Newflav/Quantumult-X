@@ -31,10 +31,10 @@ obj.data.comment_list.filter(
     );
   }
   if (obj?.data?.body) {
-    obj.data.body = obj.data.body.replace(
-      /https:\/\/bdimg6\.qunliao\.info\/fastdfs7\/M00\/B3\/2A\/rBUBsmbwW56AIsp-AACsJBHa6v0979\.jpg/g,
-      ""
-    );
+  obj.data.body = obj.data.body
+    .replace(/https:\/\/bdimg6\.qunliao\.info\/fastdfs7\/M00\/B3\/2A\/rBUBsmbwW56AIsp-AACsJBHa6v0979\.jpg/g, "")
+    .replace(/https:\/\/bdimg6\.qunliao\.info\/fastdfs7\/M00\/A7\/3D\/720x-\/-\/-\/rBUC6GbCLy-AHrr-AACzip6CW1Y560\.jpg/g, "")
+    .replace(/https:\/\/bdimg6\.qunliao\.info\/fastdfs7\/M00\/A3\/06\/720x-\/-\/-\/rBUBsmbCLyaAeCT7AACzip6CW1Y979\.jpg/g, "");
   }
 } else if (url.includes("/match/pre_analysis")) {
   // 直播页广告
