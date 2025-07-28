@@ -36,7 +36,6 @@ obj.data.comment_list.filter(
       ""
     );
   }
-}
 } else if (url.includes("/match/pre_analysis")) {
   // 直播页广告
   if (obj?.asian_plans) {
