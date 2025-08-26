@@ -13,13 +13,15 @@
 # 升级提醒
 ^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/app\/startup\/init\?ent url reject-dict
 
-^https:\/\/m5-zb\.amap\.com\/ws\/boss\/transportation\/diversion\/resource\/driving url reject-dict
-# 线路导航时出现的火车推荐tab
-^https:\/\/m5\.amap\.com\/ws\/boss\/transportation\/diversion\/car_train_all_car url reject-dict
-
 # 登录提醒
 ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/main-page url reject-dict
 ^https:\/\/m5\.amap\.com\/ws\/aggregate\/user\/login-guide url reject-dict
+
+# 搜索框下推广
+^https:\/\/m5\.amap\.com\/ws\/c3frontend\/af-search\/search url reject-dict
+
+#  导航tab去除顺风车预估收入
+^https:\/\/m5-zb\.amap\.com\/ws\/boss\/transportation\/diversion\/resource\/driving url reject-dict
 
 # 导航广告语音及其他页面元素
 ^https:\/\/m5\.amap\.com\/ws\/perception\/drive\/(routePlan|routeInfo) url reject-dict
