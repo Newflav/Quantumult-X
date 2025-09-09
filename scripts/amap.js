@@ -10,6 +10,23 @@ if (url.includes("/boss/car/order/content_info")) {
     // oss营销皮肤
     obj.data.lubanData.skin.dataList = [];
   }
+} else if (url.includes("/bus/plan/integrate")) {
+  // 公交列表
+  if (obj?.data?.banner_lists?.data?.length > 0) {
+    // 公交列表 顶部滚动横图
+    obj.data.banner_lists.data = [];
+  }
+  if (obj?.data?.banner_lists?.tips?.length > 0) {
+    obj.data.banner_lists.tips = [];
+  }
+  if (obj?.data?.mixed_plans?.data?.taxiPlans?.length > 0) {
+    // 公交列表 推广打车出行
+    obj.data.mixed_plans.data.taxiPlans = [];
+  }
+  if (obj?.data?.mixed_plans?.data?.hkfRecommendPlans?.length > 0) {
+    // 公交列表 推广打车出行
+    obj.data.mixed_plans.data.hkfRecommendPlans = [];
+  }
 } else if (url.includes("/search_bff/hotword")) {
   // 搜索页面
   if (obj?.data?.headerHotWord) {
