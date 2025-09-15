@@ -239,8 +239,8 @@ if (url.includes("/boss/car/order/content_info")) {
       delete obj.data.modules[i];
   }
  }
-    if (obj?.data?.modules?.attractGalleryInfo?.list) {
-obj.data.modules.attractGalleryInfo.list = [];
+    if (obj?.data?.modules?.attractGalleryInfo?.data?.list) {
+obj.data.modules.attractGalleryInfo.data.list = [];
  }
 } else if (url.includes("/shield/search/client/push")) {
   if (obj?.data) {
