@@ -114,111 +114,6 @@ if (url.includes("/boss/car/order/content_info")) {
   if (obj?.data?.memberInfo) {
     delete obj.data.memberInfo;
   }
-} else if (url.includes("/shield/frogserver/aocs")) {
-  // 整体图层
-  const items = [
-    // "ARWalkNavi", // AR导航
-    // "Clipboard", // 剪贴板
-    // "DIYMap", // DIY地图
-    // "GuiJi", // 轨迹
-    "Naviendpage_Searchwords",
-    "SplashScreenControl",
-    "TipsTaxiButton",
-    // "TrainOrderBanner", // 火车票订单
-    // "_testmark_info",
-    // "_user_profile_",
-    // "air_card",
-    // "amap_basemap_config", // 基本库
-    "amapCoin",
-    // "aos_feedback",
-    // "app_improve", // app改进
-    // "apple_location_log_collect",
-    // "collect",
-    // "comment_info",
-    // "deviceml_force_recommend",
-    // "deviceml_update_apk_conf",
-    "feedback_banner", // 店主专属通道
-    "footprint", // 足迹
-    // "gd_code_cover",
-    // "gd_notch_logo",
-    "his_input_tip",
-    "home_business_position_config", // 首页右上角动图
-    // "homepage_resource_config",
-    // "hotcity", // 热门城市
-    "hotel_activity",
-    "hotel_fillin_opt",
-    "hotel_loop",
-    "hotel_portal",
-    "hotel_tipsicon",
-    "hotsaleConfig", // 酒店限时抢购
-    // "icon_show",
-    // "info_env_setting",
-    // "ip_square",
-    // "ip_square_share",
-    // "isNewSearchMapCard", // 可能是足迹
-    // "isPoiBubbleDisplay",
-    // "lab_beta",
-    // "lab_screenrecording",
-    "landing_page_info", // 发现吃喝玩乐好去处
-    // "list_action_drawer",
-    // "listguide",
-    // "map_environment_air",
-    // "map_weather_switch", // 天气
-    // "maplayers", // 赏花地图
-    // "message_tab",
-    "navi_end", // 导航结束 领油滴
-    // "nearby",
-    "nearby_business_popup",
-    "nearby_map_entry_guide",
-    "nearby_map_pull_down_guide",
-    // "newcommentreply",
-    // "nore_rec",
-    "operation_layer", // 首页右上角图层
-    // "photo_with_location",
-    // "poi_rec",
-    // "preword",
-    // "profileHeaderPic",
-    // "profiletTopBtn",
-    // "recommend_api",
-    // "recommend_key",
-    // "redesign_user",
-    // "renovate_control", // 今夜特价
-    "route_banner", // 搜索路线 免费抽机票
-    "routeresult_banner",
-    "search_homepage",
-    "search_keyword",
-    "search_moni",
-    "search_perf",
-    "search_poi_recommend",
-    "search_service_adcode",
-    "search_word",
-    "small_biz_b2b_kb", // 入驻高德
-    "small_biz_case", // 推广
-    "small_biz_fun",
-    "small_biz_index",
-    "small_biz_news",
-    "splashscreen",
-    "splashview_config",
-    "sur_bar", // 十一特惠
-    "taxi_activity", // 打车活动
-    // "tel_retention_popup",
-    "testflight_adiu",
-    "tf_remind", // tf测试版
-    // "third_party_places",
-    "tips_bar_black_list",
-    // "tips_hook",
-    // "trackupload",
-    // "user_insight", // 您对本次导航满意吗
-    "vip"
-    // "weather_restrict_config",
-  ];
-  if (obj?.data) {
-    for (let i of items) {
-      if (obj?.data?.[i]) {
-        obj.data[i] = { status: 1, version: "", value: "" };
-      }
-    }
-  }
 } else if (url.includes("/shield/search/common/coupon/info")) {
   if (obj?.data) {
     obj.data = {};
@@ -231,17 +126,17 @@ if (url.includes("/boss/car/order/content_info")) {
       obj.data.modules = obj.data.modules.filter((i) => items?.includes(i));
     }
   }
-} else if (url.includes("/shield/search/poi/detail")) {
+#} else if (url.includes("/shield/search/poi/detail")) {
   //搜索地点详情页
-    const items = ["comprehensiveEditEntranc", "check_in", "reviews", "merchantSettlement", "societyPublicExperience", "widgets", "business_scope", "business_scope", "comprehensiveEditEntrance", "claim", "evaluateVO", "discount_commodity", "yellowPageAdRecommendModule", "similarShopRecommend", "commonGoodsShelf", "platformCustomerCommonModule", "platformCustomerComplianceInfo", "subscription", "shopQualifications", "verification", "shopBasePerson", "brand_story", "push_data", "businessQualifications", "brand_service", "horizontalGoodsShelf", "CouponBanner", "poiDetailNewBeltV2", "human_traffic", "floorGuideGbf", "new_operation_banner", "commonAiAgent", "similarShelfRecommend", "travelGuideAndQa", "poiDetailWaterFeed", "poiDetailWaterFeedTitle", "dayTripRecommendList", "adStoreBigBannerModule", "outdoorActivity", "dayTripList", "scenic_ticket", "mini_hook_shelf", "scenic_filter", "packageShelf", "poiDetailCommonConfig", "serviceBookingGoodsShelf", "waterFallFeedTitle", "cityCardFeed", "hotelList", "flash_purchase_ticket", "cards", "hotelRooms", "roomSelect", "shop_story", "house_price_v2", "gas_station_recommend", "nearbyGoodCar", "shoppingMallEvent", "official_account", "houseShelf", "residentialOwners", "carServiceCard", "hotelMustRead", "hotelFacilities", "scenic_mustplay", "legal_document", "surroundOldSellHouse", "recommend_food", "surroundRentHouse", "rentSaleHouse", "serviceGuide", "anchor", "poiMapModule", "hkfMiniPortal", "transportation", "navbarMore", "enhanceCustomerServicePoiModule", "hotelGraphicDetail", "shopStructGift", "nearbyRecommendModule", "retainInfo", "matrix_banner", "recommend_real_case", "recommend_designer_card", "transportationGBF", "poiDetailBottomBar", "combineReviews", "hospital_strategy", "houseAgentService", "commonHkfMiniPortal", "official_account_hospital"];
-  if (obj?.data?.modules) {
-    for (let i of items) {
-      delete obj.data.modules[i];
-  }
- }
-    if (obj?.data?.modules?.attractGalleryInfo?.data?.list) {
-obj.data.modules.attractGalleryInfo.data.list = [];
- }
+    #const items = ["comprehensiveEditEntranc", "check_in", "reviews", "merchantSettlement", "societyPublicExperience", "widgets", "business_scope", "business_scope", "comprehensiveEditEntrance", "claim", "evaluateVO", "discount_commodity", "yellowPageAdRecommendModule", "similarShopRecommend", "commonGoodsShelf", "platformCustomerCommonModule", "platformCustomerComplianceInfo", "subscription", "shopQualifications", "verification", "shopBasePerson", "brand_story", "push_data", "businessQualifications", "brand_service", "horizontalGoodsShelf", "CouponBanner", "poiDetailNewBeltV2", "human_traffic", "floorGuideGbf", "new_operation_banner", "commonAiAgent", "similarShelfRecommend", "travelGuideAndQa", "poiDetailWaterFeed", "poiDetailWaterFeedTitle", "dayTripRecommendList", "adStoreBigBannerModule", "outdoorActivity", "dayTripList", "scenic_ticket", "mini_hook_shelf", "scenic_filter", "packageShelf", "poiDetailCommonConfig", "serviceBookingGoodsShelf", "waterFallFeedTitle", "cityCardFeed", "hotelList", "flash_purchase_ticket", "cards", "hotelRooms", "roomSelect", "shop_story", "house_price_v2", "gas_station_recommend", "nearbyGoodCar", "shoppingMallEvent", "official_account", "houseShelf", "residentialOwners", "carServiceCard", "hotelMustRead", "hotelFacilities", "scenic_mustplay", "legal_document", "surroundOldSellHouse", "recommend_food", "surroundRentHouse", "rentSaleHouse", "serviceGuide", "anchor", "poiMapModule", "hkfMiniPortal", "transportation", "navbarMore", "enhanceCustomerServicePoiModule", "hotelGraphicDetail", "shopStructGift", "nearbyRecommendModule", "retainInfo", "matrix_banner", "recommend_real_case", "recommend_designer_card", "transportationGBF", "poiDetailBottomBar", "combineReviews", "hospital_strategy", "houseAgentService", "commonHkfMiniPortal", "official_account_hospital"];
+  #if (obj?.data?.modules) {
+    #for (let i of items) {
+      #delete obj.data.modules[i];
+  #}
+ #}
+    #if (obj?.data?.modules?.attractGalleryInfo?.data?.list) {
+#obj.data.modules.attractGalleryInfo.data.list = [];
+ #}
 } else if (url.includes("/shield/search/client/push")) {
   if (obj?.data) {
     obj.data = {};
