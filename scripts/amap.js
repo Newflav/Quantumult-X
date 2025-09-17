@@ -11,8 +11,8 @@ if (url.includes("/boss/car/order/content_info")) {
     obj.data.lubanData.skin.dataList = [];
   }
 } else if (url.includes("/search_poi/search/sp")) {
-    if (obj?.data?.modules?.length > 0) {
-    obj.data.modules = {};
+    if (obj?.data?.modules?.commonHkfMiniPortal?.length > 0) {
+    obj.data.modules.commonHkfMiniPortal = {};
   }
 } else if (url.includes("/shield/search/poi/detail")) {
   //搜索地点详情页
