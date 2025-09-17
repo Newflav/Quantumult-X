@@ -21,6 +21,137 @@ if (url.includes("/boss/car/order/content_info")) {
     if (obj?.data?.modules?.attractGalleryInfo?.data?.list) {
 obj.data.modules.attractGalleryInfo.data.list = [];
  }
+} else if (url.includes("/shield/search_poi/search/sp") || url.includes("/shield/search_poi/mps")) {
+  if (obj?.data?.list_data) {
+    let list = obj.data.list_data.content[0];
+    // 详情页 底部 房产推广
+    if (list?.hookInfo) {
+      let hookData = list.hookInfo.data;
+      if (hookData?.header) {
+        delete hookData.header;
+      }
+      if (hookData?.house_info) {
+        delete hookData.house_info;
+      }
+    }
+    // 详情页 底部 订酒店
+    if (list?.map_bottom_bar?.hotel) {
+      delete list.map_bottom_bar.hotel;
+    }
+    if (list?.poi?.item_info?.tips_bottombar_button?.hotel) {
+      delete list.poi.item_info.tips_bottombar_button.hotel;
+    }
+    // 地图优惠推广
+    if (list?.map?.main_point) {
+      delete list.map.main_point;
+    }
+    if (list?.tips_operation_info) {
+      delete list.tips_operation_info;
+    }
+    if (list?.bottom?.bottombar_button?.hotel) {
+      delete list.bottom.bottombar_button.hotel;
+    }
+    // 搜索页 顶部卡片
+    if (list?.card?.card_id === "SearchCardBrand" && list?.item_type === "brandAdCard") {
+      delete list.card;
+    }
+    if (list?.card?.card_id === "NearbyGroupBuy" && list?.item_type === "toplist") {
+      delete list.card;
+    }
+    if (list?.card?.card_id === "ImageBanner" && list?.item_type === "ImageBanner") {
+      delete list.card;
+    }
+  } else if (obj?.data?.district?.poi_list) {
+    // 搜索列表详情页
+    let poi = obj.data.district.poi_list[0];
+    // 订票横幅
+    if (poi?.transportation) {
+      delete poi.transportation;
+    }
+    // 景点门票 酒店特惠 特色美食 休闲玩乐
+    if (poi?.feed_rec_tab) {
+      delete poi.feed_rec_tab;
+    }
+  } else if (obj?.data?.modules) {
+    if (obj?.data?.modules?.not_parse_result?.data?.list_data) {
+      let list = obj.data.modules.not_parse_result.data.list_data.content[0];
+      // 详情页 底部 房产推广
+      if (list?.hookInfo) {
+        let hookData = list.hookInfo.data;
+        if (hookData?.header) {
+          delete hookData.header;
+        }
+        if (hookData?.house_info) {
+          delete hookData.house_info;
+        }
+      }
+      // 详情页 底部 订酒店
+      if (list?.map_bottom_bar?.hotel) {
+        delete list.map_bottom_bar.hotel;
+      }
+      if (list?.poi?.item_info?.tips_bottombar_button?.hotel) {
+        delete list.poi.item_info.tips_bottombar_button.hotel;
+      }
+      // 地图优惠推广
+      if (list?.map?.main_point) {
+        delete list.map.main_point;
+      }
+      // 左上角动图推广
+      if (list?.tips_operation_info) {
+        delete list.tips_operation_info;
+      }
+      if (list?.bottom?.bottombar_button?.hotel) {
+        delete list.bottom.bottombar_button.hotel;
+      }
+    }
+    if (obj?.data?.modules?.list_data?.data) {
+      // 搜索列表
+      let list = obj.data.modules.list_data.data;
+      if (list?.content?.length > 0) {
+        // brandAdCard广告卡片 toplist_al人气榜单 高德指南
+        list.content = list.content.filter((i) => !["brandAdCard", "toplist_al"]?.includes(i?.item_type));
+      }
+    }
+  }
+} else if (url.includes("/shield/search_poi/sug")) {
+  if (obj?.tip_list) {
+    let newLists = [];
+    if (obj?.tip_list?.length > 0) {
+      for (let item of obj.tip_list) {
+        if (
+          ["12"]?.includes(item?.tip?.datatype_spec) ||
+          ["ad", "poi_ad", "toplist"]?.includes(item?.tip?.result_type) ||
+          ["ad", "exct_query_sug_merge_theme", "query_sug_merge_theme", "sp"]?.includes(item?.tip?.task_tag)
+        ) {
+          continue;
+        } else {
+          newLists.push(item);
+        }
+      }
+      obj.tip_list = newLists;
+    }
+  } else if (obj?.city_list) {
+    let newLists = [];
+    if (obj?.city_list?.length > 0) {
+      for (let item of obj.city_list) {
+        let newTips = [];
+        if (item?.tip_list?.length > 0) {
+          for (let ii of item.tip_list) {
+            if (["12"]?.includes(ii?.tip?.datatype_spec)) {
+              continue;
+            } else if (["ad", "poi_ad"]?.includes(ii?.tip?.result_type)) {
+              continue;
+            } else {
+              newTips.push(ii);
+            }
+          }
+          item.tip_list = newTips;
+        }
+        newLists.push(item);
+      }
+      obj.city_list = newLists;
+    }
+  }
 } else if (url.includes("/bus/plan/integrate")) {
   // 公交列表
   if (obj?.data?.banner_lists?.data?.length > 0) {
