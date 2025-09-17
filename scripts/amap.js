@@ -154,45 +154,6 @@ obj.data.modules.attractGalleryInfo.data.list = [];
   if (obj?.history_tags) {
     delete obj.history_tags;
   }
-} else if (url.includes("/shield/search_poi/sug")) {
-  if (obj?.tip_list) {
-    let newLists = [];
-    if (obj?.tip_list?.length > 0) {
-      for (let item of obj.tip_list) {
-        if (
-          ["12"]?.includes(item?.tip?.datatype_spec) ||
-          ["ad", "poi_ad", "toplist"]?.includes(item?.tip?.result_type) ||
-          ["ad", "exct_query_sug_merge_theme", "query_sug_merge_theme", "sp"]?.includes(item?.tip?.task_tag)
-        ) {
-          continue;
-        } else {
-          newLists.push(item);
-        }
-      }
-      obj.tip_list = newLists;
-    }
-  } else if (obj?.city_list) {
-    let newLists = [];
-    if (obj?.city_list?.length > 0) {
-      for (let item of obj.city_list) {
-        let newTips = [];
-        if (item?.tip_list?.length > 0) {
-          for (let ii of item.tip_list) {
-            if (["12"]?.includes(ii?.tip?.datatype_spec)) {
-              continue;
-            } else if (["ad", "poi_ad"]?.includes(ii?.tip?.result_type)) {
-              continue;
-            } else {
-              newTips.push(ii);
-            }
-          }
-          item.tip_list = newTips;
-        }
-        newLists.push(item);
-      }
-      obj.city_list = newLists;
-    }
-  }
 } else if (url.includes("/shield/search_poi/tips_operation_location")) {
   // 搜索页面 底部结果上方窄横幅
   if (obj?.data?.coupon) {
