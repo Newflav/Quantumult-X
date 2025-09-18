@@ -16,6 +16,21 @@ if (url.includes("/shield/search/poi/detail")) {
     if (obj?.data?.modules?.attractGalleryInfo?.data?.list) {
 obj.data.modules.attractGalleryInfo.data.list = [];
  }
+} else if (url.includes("/faas/amap-navigation/main-page")) {
+  // 首页底部卡片
+  if (obj?.data?.cardList?.length > 0) {
+    obj.data.cardList = obj.data.cardList.filter(
+      (i) =>
+        i?.dataKey === "ContinueNavigationCard" || // 继续导航
+        i?.dataKey === "FrequentLocation" || // 常去地点
+        i?.dataKey === "LoginCard" // 登陆卡片
+    );
+  }
+  if (obj?.data?.mapBizList?.length > 0) {
+    obj.data.mapBizList = obj.data.mapBizList.filter(
+      (i) => i?.dataKey === "FindCarVirtualCard" // 显示关联车辆位置
+    );
+  }
 }
 
 $done({ body: JSON.stringify(obj) });
