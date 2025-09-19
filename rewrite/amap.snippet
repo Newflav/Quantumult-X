@@ -35,7 +35,7 @@
 ^https:\/\/m5\.amap\.com\/\/ws\/traffic\/tts\/getSpeechAudioRt url reject-dict
 
 # 导航详情页,路线规划,地点详情页,搜索详情页,导航结束页
-^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/middleLayer url jsonjq-response-body 'del(.. | .product_info?, .product_vo?, .comprehensive?) | .tip_list |= map(select(.tip.task_tag != "meta_special" and .tip.result_type != "common_rec"))'
+^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/middleLayer url jsonjq-response-body 'del(.. | .product_info?, .product_vo?, .comprehensive?) | (.. | objects | select(has("tip_list")) | .tip_list) |= map(select((.tip.task_tag // "") != "meta_special" and (.tip.result_type // "") != "common_rec" and (.tip.task_tag // "") != "general_topic_tpp"))'
 ^https:\/\/m5\.amap\.com\/ws\/shield\/search\/poi\/detail url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/amap.js
 
 # 打车页面
