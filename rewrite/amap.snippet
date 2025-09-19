@@ -6,7 +6,7 @@
 #^https:\/\/mps\.amap\.com\/ws\/mps\/scene\? url reject-dict
 
 # 其他
-^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$ url script-response-header https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/amap_else.js
+^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch url script-response-header https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/amap_else.js
 
 # 去除软件多余元素
 ^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable url jsonjq-response-body '{data: .data | {external_traffic_light, carowner_feature, RtBus_Stop_Board, designToken, search}}'
