@@ -1,6 +1,5 @@
 #!name = 高德地图
 #!desc = 去广告
-#!author = RuCu6 kokoryh
 #!update = 2025-09-19 17:00
 
 # 此条可以屏蔽首次进入的天气动效图层  但是会导致足迹不显示地图数据
@@ -44,7 +43,7 @@
 ^https:\/\/m5\.amap\.com\/ws\/shield\/search\/poi\/detail url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/amap.js
 
 # 搜索结果页面推广
-^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/search\/sp url jsonjq-response-body 'del(.data.meta.listBottomFilterGuide, .data.modules.commonHkfMiniPortal)'
+^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/search\/sp url jsonjq-response-body 'del(.. | .product_info?) | del(.data.meta.listBottomFilterGuide, .data.modules.commonHkfMiniPortal)'
 
 # 打车页面
 ^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource\/home url reject-dict
@@ -65,7 +64,7 @@
 # 地图层营销推广
 ^https:\/\/mps\.amap\.com\/ws\/mps\/lyrdata\/rendermap url reject-dict
 
-# 天气、长辈等图层
+# 天气、长辈图层、图层小程序
 ^https:\/\/m5\.amap\.com\/ws\/oss\/maplayer\/list url jsonjq-response-body '.layer_list = {}'
 
 
