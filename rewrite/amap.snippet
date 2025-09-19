@@ -1,5 +1,6 @@
 #!name = 高德地图
 #!desc = 去广告
+#!author = RuCu6 kokoryh
 #!update = 2025-09-19 17:00
 
 # 此条可以屏蔽首次进入的天气动效图层  但是会导致足迹不显示地图数据
@@ -8,15 +9,20 @@
 # 其他
 ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$ url script-response-header https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/amap_else.js
 
-# 系统去除其他多余元素
+# 去除软件多余元素
 ^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable url jsonjq-response-body '{data: .data | {external_traffic_light, carowner_feature, RtBus_Stop_Board, designToken, search}}'
 
 # 升级提醒
 ^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/app\/startup\/init url reject-dict
 
 # 登录提醒
-^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/main-page url reject-dict
 ^https:\/\/m5\.amap\.com\/ws\/aggregate\/user\/login-guide url reject-dict
+
+# 主页下方推广
+^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/main-page url reject-dict
+
+# 主页下方图标推广
+^https:\/\/m5\.amap\.com\/ws\/shield\/scene\/recommend url jsonjq-response-body '.data = {}'
 
 # 搜索框下推广
 ^https:\/\/m5\.amap\.com\/ws\/c3frontend\/af-search\/search url reject-dict
@@ -27,16 +33,18 @@
 # 导航卡片
 ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/card-service-route-plan url reject-dict
 
-# 导航tab顺风车预估收入
-^https:\/\/m5-zb\.amap\.com\/ws\/boss\/transportation\/diversion\/resource\/driving url reject-dict
-
 # 导航广告语音及其他页面元素
 ^https:\/\/m5\.amap\.com\/ws\/perception\/drive\/(routePlan|routeInfo) url reject-dict
 ^https:\/\/m5\.amap\.com\/\/ws\/traffic\/tts\/getSpeechAudioRt url reject-dict
 
-# 导航详情页,路线规划,地点详情页,搜索详情页,导航结束页
+# 搜索详情页
 ^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/middleLayer url jsonjq-response-body 'del(.. | .product_info?, .product_vo?, .comprehensive?) | (.. | objects | select(has("tip_list")) | .tip_list) |= map(select((.tip.task_tag // "") != "meta_special" and (.tip.result_type // "") != "common_rec" and (.tip.task_tag // "") != "general_topic_tpp"))'
+
+# 搜索定位多余元素
 ^https:\/\/m5\.amap\.com\/ws\/shield\/search\/poi\/detail url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/amap.js
+
+# 搜索结果页面推广
+^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/search\/sp url jsonjq-response-body 'del(.data.meta.listBottomFilterGuide, .data.modules.commonHkfMiniPortal)'
 
 # 打车页面
 ^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource\/home url reject-dict
@@ -53,8 +61,13 @@
 
 # 开屏广告
 ^https:\/\/m5\.amap\.com\/ws\/valueadded\/alimama\/splash_screen url jsonjq-response-body '.data = {}'
-^https:\/\/m5\.amap\.com\/ws\/shield\/scene\/recommend url jsonjq-response-body '.data = {}'
+
+# 地图层营销推广
+^https:\/\/mps\.amap\.com\/ws\/mps\/lyrdata\/rendermap url reject-dict
+
+# 天气、长辈等图层
+^https:\/\/m5\.amap\.com\/ws\/oss\/maplayer\/list url jsonjq-response-body '.layer_list = {}'
 
 
 
-hostname = m5.amap.com, m5-zb.amap.com
+hostname = m5.amap.com, m5-zb.amap.com, mps.amap.com
