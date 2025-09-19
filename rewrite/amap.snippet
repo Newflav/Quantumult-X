@@ -40,7 +40,7 @@
 # 搜索详情页
 ^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/middleLayer url jsonjq-response-body 'del(.. | .product_info?, .product_vo?, .comprehensive?) | (.. | objects | select(has("tip_list")) | .tip_list) |= map(select((.tip.task_tag // "") != "meta_special" and (.tip.result_type // "") != "common_rec" and (.tip.task_tag // "") != "general_topic_tpp"))'
 
-# 搜索定位多余元素
+# 搜索定位位置多余元素
 ^https:\/\/m5\.amap\.com\/ws\/shield\/search\/poi\/detail url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/amap.js
 
 # 搜索结果页面推广
