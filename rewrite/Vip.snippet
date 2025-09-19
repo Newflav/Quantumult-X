@@ -16,13 +16,9 @@
 ;hostname = pan.baidu.com
 ^https:\/\/pan\.baidu\.com\/rest\/.*\/membership\/user\?app_id url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/baiduwangpan.js
 
-# 网易云音乐会员
-;hostname = interface*.music.163.com
-^http[s]?:\/\/.+music.+(player\/url|playlist|entrance|\/eapi\/search\/).*$ url script-request-header https://raw.githubusercontent.com/gjwj666/qx/main/Wyy.js
-
 # 扫描全能王会员
 ;hostname = *.intsig.net, *.camscanner.com
 ^https?:\/\/.*\.(intsig\.net|camscanner\.com) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/camScanner.js
 
 
-hostname = qiye.gaoding.com, spclient.wg.spotify.com, mobile-api.adguard.org, api.qwapp.top, *.intsig.net, *.camscanner.com
+hostname = qiye.gaoding.com, spclient.wg.spotify.com, mobile-api.adguard.org, *.intsig.net, *.camscanner.com
