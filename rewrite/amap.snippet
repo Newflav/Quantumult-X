@@ -26,6 +26,9 @@
 # 导航下方卡片
 ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/card-service-route-plan url reject-dict
 
+# 导航顺风车tag
+^https:\/\/m5-zb\.amap\.com\/ws\/boss\/transportation\/diversion\/resource\/driving url reject-dict
+
 # 导航广告语音及其他页面元素
 ^https:\/\/m5\.amap\.com\/ws\/perception\/drive\/(routePlan|routeInfo) url reject-dict
 ^https:\/\/m5\.amap\.com\/\/ws\/traffic\/tts\/getSpeechAudioRt url reject-dict
@@ -34,7 +37,7 @@
 ^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/middleLayer url jsonjq-response-body 'del(..|.product_info?,.product_vo?,.comprehensive?) | walk(if type=="object" and (has("task_tag") or has("result_type") or has("item_type")) then select((.task_tag//"")!="meta_special" and (.result_type//"")!="common_rec" and (.task_tag//"")!="general_topic_tpp" and (.item_type//0)!=3) else . end)'
 
 # 定位位置多余元素
-^https:\/\/m5\.amap\.com\/ws\/shield\/search\/poi\/detail url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/amap.js
+^https:\/\/m5\.amap\.com\/ws\/shield\/search\/poi\/detail url jsonjq-response-body 'del(.data.modules["comprehensiveEditEntranc","check_in","reviews","merchantSettlement","societyPublicExperience","widgets","business_scope","relatedPoiList","comprehensiveEditEntrance","claim","evaluateVO","discount_commodity","yellowPageAdRecommendModule","similarShopRecommend","commonGoodsShelf","platformCustomerCommonModule","platformCustomerComplianceInfo","subscription","shopQualifications","verification","shopBasePerson","brand_story","push_data","businessQualifications","brand_service","horizontalGoodsShelf","CouponBanner","poiDetailNewBeltV2","human_traffic","floorGuideGbf","new_operation_banner","commonAiAgent","similarShelfRecommend","travelGuideAndQa","poiDetailWaterFeed","poiDetailWaterFeedTitle","dayTripRecommendList","adStoreBigBannerModule","outdoorActivity","dayTripList","scenic_ticket","mini_hook_shelf","scenic_filter","packageShelf","poiDetailCommonConfig","serviceBookingGoodsShelf","waterFallFeedTitle","cityCardFeed","hotelList","flash_purchase_ticket","cards","hotelRooms","roomSelect","shop_story","house_price_v2","gas_station_recommend","nearbyGoodCar","shoppingMallEvent","official_account","houseShelf","residentialOwners","carServiceCard","hotelMustRead","hotelFacilities","scenic_mustplay","legal_document","surroundOldSellHouse","recommend_food","surroundRentHouse","rentSaleHouse","serviceGuide","anchor","poiMapModule","hkfMiniPortal","transportation","navbarMore","enhanceCustomerServicePoiModule","hotelGraphicDetail","shopStructGift","nearbyRecommendModule","retainInfo","matrix_banner","recommend_real_case","recommend_designer_card","transportationGBF","poiDetailBottomBar","combineReviews","hospital_strategy","houseAgentService","commonHkfMiniPortal","official_account_hospital"])'
 
 # 搜索结果页面推广
 ^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/search\/sp url jsonjq-response-body 'del(.. | .product_info?) | del(.data.meta.listBottomFilterGuide, .data.modules.commonHkfMiniPortal)'
