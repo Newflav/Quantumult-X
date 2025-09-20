@@ -13,9 +13,6 @@ if (url.includes("/shield/search/poi/detail")) {
       delete obj.data.modules[i];
   }
  }
-    if (obj?.data?.modules?.attractGalleryInfo?.data?.list) {
-obj.data.modules.attractGalleryInfo.data.list = [];
- }
 }
 
 $done({ body: JSON.stringify(obj) });
