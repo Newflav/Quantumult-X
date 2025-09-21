@@ -16,6 +16,9 @@ if (url.includes("/shield/search/poi/detail")) {
     if (obj?.data?.modules?.attractGalleryInfo?.data?.list) {
 obj.data.modules.attractGalleryInfo.data.list = [];
  }
+    if (obj?.data?.modules?.baseInfo?.data?.wikilist) {
+obj.data.modules.baseInfo.data.wikilist = [];
+ }
 }
 
 $done({ body: JSON.stringify(obj) });
