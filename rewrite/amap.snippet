@@ -43,7 +43,7 @@
 ^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/search\/sp url jsonjq-response-body 'del(.. | .product_info?) | del(.data.meta.listBottomFilterGuide, .data.modules.commonHkfMiniPortal)'
 
 # 打车页面
-^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource\/home url reject-dict
+^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource url reject-dict
 ^https:\/\/m5-zb\.amap\.com\/ws\/boss\/car\/order\/content_info url reject-dict
 
 # 打车角标推广
