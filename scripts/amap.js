@@ -17,10 +17,9 @@ if (url.includes("/shield/search/poi/detail")) {
     if (list) {
 obj.data.modules.attractGalleryInfo.data.list = list.filter(item => (item.source || "").toUpperCase() !== "NOTE");
     }
-    if (obj?.data?.modules?.baseInfo?.data?.baseExtendInfo) {
+    if (obj?.data?.modules?.baseInfo?.data?.baseExtendInfo?.poiDetailBottomBarConfig) {
     delete obj.data.modules.baseInfo.data.baseExtendInfo.poiDetailBottomBarConfig;
   }
-
   // 清理 attractGalleryInfo 的 "上传图片" 和 "帮助更多人"
     if (obj?.data?.modules?.attractGalleryInfo?.data) {
     let ag = obj.data.modules.attractGalleryInfo.data;
