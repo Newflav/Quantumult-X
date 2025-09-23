@@ -33,6 +33,14 @@
 ^https:\/\/m5\.amap\.com\/ws\/perception\/drive\/(routePlan|routeInfo) url reject-dict
 ^https:\/\/m5\.amap\.com\/\/ws\/traffic\/tts\/getSpeechAudioRt url reject-dict
 
+# 导航结束页推广
+^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/card-service-car-end url jsonjq-response-body 'del(.data[ "listHeader", "recommendPark", "radarPark", "arriveSceneList", "children", "feedbackReviewData" ])'
+
+# 步行结束页推广
+^https:\/\/m5\.amap\.com\/ws\/publicverify\/questions\/ridewalk url reject-dict
+^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/ridewalk-end-fc url reject-dict
+^https:\/\/m5\.amap\.com\/ws\/c3frontend\/af-(hotel|launch)\/page\/main url reject-dict
+
 # 搜索详情页
 ^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/middleLayer url jsonjq-response-body 'del(..|.product_info?,.product_vo?,.comprehensive?) | walk(if type=="object" and (has("task_tag") or has("result_type") or has("item_type")) then select((.task_tag//"")!="meta_special" and (.result_type//"")!="common_rec" and (.task_tag//"")!="general_topic_tpp" and (.item_type//0)!=3) else . end)'
 
@@ -53,7 +61,7 @@
 ^https:\/\/m5\.amap\.com\/ws\/aos\/perception\/publicTravel\/beforeNavi url reject-dict
 
 # 我的页面
-^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv3 url jsonjq-response-body '.data = {}'
+^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv3 url jsonjq-response-body 'del(.. | .content?, .topMixedCard?)'
 
 # 地图层营销推广
 ^https:\/\/mps\.amap\.com\/ws\/mps\/lyrdata\/rendermap url reject-dict
