@@ -83,7 +83,7 @@
 # >>>>>>>>>>>>>>> ✅ G ✅ <<<<<<<<<<<<<<
 # > 广汽本田
 ; hostname = gha.ghac.cn
-^https:\/\/gha\.ghac\.cn:(8081|8082)\/(base\/app\/api\/ad\/(query|startFind)|discover\/app\/api\/discover-news-manage\/pageByTypeNewV2) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/honda.js
+^https:\/\/gha\.ghac\.cn:(8081|8082)\/(base\/app\/api\/ad\/(query|startFind)|discover\/app\/api\/discover-news-manage\/pageByTypeNewV2) url jsonjq-response-body '.data = {}'
 
 
 # > 谷歌 重定向
@@ -102,10 +102,10 @@
 # >>>>>>>>>>>>>>> ✅ J ✅ <<<<<<<<<<<<<<
 # > 京东
 ; hostname = api.m.jd.com
-^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(getEncryptedPinColor|getBubbleInfo|searchBoxWord|xview2Config|stationPullService|uniformRecommend[06]|ase_mc_commonQuery) url reject-dict
+^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(getEncryptedPinColor|getBubbleInfo|searchBoxWord|xview2Config|stationPullService|uniformRecommend[06]|ase_mc_commonQuery|getWidgetV1052) url reject-dict
 ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/jd.js
-# 禁京东直播小窗
-^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=getWidgetV1052 url reject
+# 禁京东dns
+^https:\/\/dns\.jd\.com\/v6\/b url reject
 # 禁京东升级提醒
 ^https:\/\/api\.m\.jd\.com\/getIosDegrade url reject-dict
 
@@ -151,6 +151,11 @@
 ^http:\/\/.*/live-adapt\.pddpic\.com\/live url reject
 ^http:\/\/live(.*)-adapt\.(pddpic|pddugc)\.com\/live url reject
 ^http(.*):\/\/video-snapshot(.*)\.pddpic\.com\/kiwi-live-image url reject
+# 禁止https dns
+^http:\/\/101\.35\.204\.35\/d url reject
+^http:\/\/101\.35\.212\.35\/d url reject
+^http:\/\/114\.110\.96\.26\/d url reject
+^http:\/\/114\.110\.97\.97\/d url reject
 
 
 # >>>>>>>>>>>>>>> ✅ Q ✅ <<<<<<<<<<<<<<
@@ -219,16 +224,23 @@
 
 # >>>>>>>>>>>>>>> ✅ Y ✅ <<<<<<<<<<<<<<
 # > YouTube
-; hostname = -redirector*.googlevideo.com, *.googlevideo.com, www.youtube.com, s.youtube.com, youtubei.googleapis.com
-# ======= 视频广告请求 ======= #
-(^https?:\/\/[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)&ctier=L(&.+?),ctier,(.+) url 302 $1$2$3
-^https?:\/\/[\w-]+\.googlevideo\.com\/(?!(dclk_video_ads|videoplayback\?)).+&oad url reject-200
-# ======= 视频PIP|后台播放|瀑布流|搜索页|播放页|短视频|贴片广告  ======= #
-^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) url script-response-body https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/Script/Youtube/youtube.response.js
-# ======= 通用广告请求 ======= #
-^https?:\/\/(www|s)\.youtube\.com\/api\/stats\/ads url reject-200
-^https?:\/\/(www|s)\.youtube\.com\/(pagead|ptracking) url reject-200
-^https?:\/\/s\.youtube\.com\/api\/stats\/qoe\?adcontext url reject-200
+; hostname = rr*.googlevideo.com, youtubei.googleapis.com
+^https:\/\/rr[\w-]+\.googlevideo\.com\/initplayback\? url reject-dict
+#^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) url script-response-body https://github.com/Maasea/sgmodule/raw/refs/heads/master/Script/Youtube/youtube.response.js
+//  信息流
+^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/browse url script-response-body https://github.com/Maasea/sgmodule/raw/refs/heads/master/Script/Youtube/youtube.response.js
+//  搜索页结果
+^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/search url script-response-body https://github.com/Maasea/sgmodule/raw/refs/heads/master/Script/Youtube/youtube.response.js
+//  指导
+^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/guide url script-response-body https://github.com/Maasea/sgmodule/raw/refs/heads/master/Script/Youtube/youtube.response.js
+//  获取配置
+^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/account\/get_setting url script-response-body https://github.com/Maasea/sgmodule/raw/refs/heads/master/Script/Youtube/youtube.response.js
+//  播放页
+^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/get_watch url script-response-body https://github.com/Maasea/sgmodule/raw/refs/heads/master/Script/Youtube/youtube.response.js
+^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/next url script-response-body https://github.com/Maasea/sgmodule/raw/refs/heads/master/Script/Youtube/youtube.response.js
+//  短视频
+^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/player\? url script-response-body https://github.com/Maasea/sgmodule/raw/refs/heads/master/Script/Youtube/youtube.response.js
+^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/reel\/reel_watch_sequence url script-response-body https://github.com/Maasea/sgmodule/raw/refs/heads/master/Script/Youtube/youtube.response.js
 
 
 # >>>>>>>>>>>>>>> ✅ Z ✅ <<<<<<<<<<<<<<
@@ -241,4 +253,4 @@
 
 
 
-hostname = gab.122.gov.cn, acs.m.taobao.com, list-app-m.i4.cn, search-app-m.i4.cn, pan.baidu.com, tiebac.baidu.com, apps.api.ke.com, i-shadow2.ke.com, ap.dongqiudi.com, detail.dongqiudi.com, zc.dongqiudi.com, api.dongqiudi.com, entry.ubixioe.com, tiku.fenbi.com, market-api.fenbi.com, ke.fenbi.com, keapi.fenbi.com, gha.ghac.cn, *.google.cn, api.m.jd.com, s.jiediankeji.com, api-access.pangolin-sdk-toutiao.com, api.yangkeduo.com, api.pinduoduo.com, m.pinduoduo.net, *.pddpic.com, *.qq.com, open.e.kuaishou.com, *.meituan.net, *.meituan.com, public.gdtimg.com, y.gtimg.cn, api.shenyin.name, wxs-weixin.sd.zhumanggroup.com, ucmp.sf-express.com, gateway.tuhu.cn, security.wechat.com, ccmsupport-sz.tenpay.com, support.you.163.com, m.you.163.com, c.m.163.com, gw.m.163.com,  -redirector*.googlevideo.com, *.googlevideo.com, www.youtube.com, s.youtube.com, youtubei.googleapis.com, a.qiumibao.com
+hostname = gab.122.gov.cn, acs.m.taobao.com, list-app-m.i4.cn, search-app-m.i4.cn, pan.baidu.com, tiebac.baidu.com, apps.api.ke.com, i-shadow2.ke.com, ap.dongqiudi.com, detail.dongqiudi.com, zc.dongqiudi.com, api.dongqiudi.com, entry.ubixioe.com, tiku.fenbi.com, market-api.fenbi.com, ke.fenbi.com, keapi.fenbi.com, gha.ghac.cn, *.google.cn, api.m.jd.com, s.jiediankeji.com, api-access.pangolin-sdk-toutiao.com, api.yangkeduo.com, api.pinduoduo.com, m.pinduoduo.net, *.pddpic.com, *.qq.com, open.e.kuaishou.com, *.meituan.net, *.meituan.com, public.gdtimg.com, y.gtimg.cn, api.shenyin.name, wxs-weixin.sd.zhumanggroup.com, ucmp.sf-express.com, gateway.tuhu.cn, security.wechat.com, ccmsupport-sz.tenpay.com, support.you.163.com, m.you.163.com, c.m.163.com, gw.m.163.com,  rr*.googlevideo.com, youtubei.googleapis.com, a.qiumibao.com
