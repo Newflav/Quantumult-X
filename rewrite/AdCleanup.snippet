@@ -30,11 +30,8 @@
 
 # > 百度贴吧
 ; hostname = tiebac.baidu.com
-^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/(c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)$|tiebaads\/commonbatch|c\/s\/sync|c\/u\/user\/profile) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/tieba_json.js
-^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/tieba_proto.js
-^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/s\/(sync|loop) url reject-dict
-^https:\/\/tiebac\.baidu\.com\/c\/f\/forum\/getRecommendForumData url reject-dict
-
+^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/(c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)$|tiebaads\/commonbatch|c\/s\/sync$) url script-response-body https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js
+^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd url script-response-body https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js
 
 # > 贝壳
 ; hostname = apps.api.ke.com, i-shadow2.ke.com
@@ -152,11 +149,6 @@
 ^http:\/\/.*/live-adapt\.pddpic\.com\/live url reject
 ^http:\/\/live(.*)-adapt\.(pddpic|pddugc)\.com\/live url reject
 ^http(.*):\/\/video-snapshot(.*)\.pddpic\.com\/kiwi-live-image url reject
-# 禁止https dns
-^http:\/\/101\.35\.204\.35\/d url reject
-^http:\/\/101\.35\.212\.35\/d url reject
-^http:\/\/114\.110\.96\.26\/d url reject
-^http:\/\/114\.110\.97\.97\/d url reject
 
 
 # >>>>>>>>>>>>>>> ✅ Q ✅ <<<<<<<<<<<<<<
