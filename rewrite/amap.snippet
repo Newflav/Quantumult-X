@@ -1,6 +1,6 @@
 #!name = 高德地图
 #!desc = 去广告
-#!update = 2025-09-19 17:00
+#!update = 2025-10-06 5:30
 
 # 其他
 ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch url script-response-header https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/amap_else.js
@@ -25,6 +25,9 @@
 
 # 导航下方卡片
 ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/card-service-route-plan url reject-dict
+
+#导航添加途径点推广
+^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/drive\/line\/routeSearch url jsonjq-response-body '.data.classify.item_data.level2_data[].category |= map(select(.show_type != "img"))'
 
 # 导航顺风车tag
 ^https:\/\/m5-zb\.amap\.com\/ws\/boss\/transportation\/diversion\/resource\/driving url reject-dict
