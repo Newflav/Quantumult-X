@@ -21,11 +21,9 @@ obj.data.modules.attractGalleryInfo.data.list = list.filter(item => (item.source
     delete obj.data.modules.baseInfo.data.baseExtendInfo.poiDetailBottomBarConfig;
   }
   // 清理 attractGalleryInfo 的 "上传图片" 和 "帮助更多人"
-    if (obj?.data?.modules?.attractGalleryInfo?.data) {
-    let ag = obj.data.modules.attractGalleryInfo.data;
-    if (ag.title === "上传图片") delete ag.title;
-    if (ag.desc === "帮助更多人") delete ag.desc;
-  }
+    if (obj?.data?.modules?.attractGalleryInfo?.card_id === "AttractGalleryUpload") {
+    delete obj.data.modules.attractGalleryInfo.card_id;
+   }
 }
 
 $done({ body: JSON.stringify(obj) });
