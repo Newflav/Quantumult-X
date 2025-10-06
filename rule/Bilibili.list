@@ -1,7 +1,12 @@
-# > Bilibili
-host-suffix, biliapi.com, bilibili
-host-suffix, biliapi.net, bilibili
-host-suffix, bilibili.com, bilibili
-host-suffix, bilivideo.com, bilibili
-host, upos-hz-mirrorakam.akamaized.net, bilibili
-host-keyword, cn-hk-eq-bcache-, bilibili
+# > bilibili
+DOMAIN, api.biliapi.com
+DOMAIN, api.biliapi.net
+DOMAIN, api.bilibili.com
+DOMAIN, app.biliapi.com
+DOMAIN, app.biliapi.net
+DOMAIN, app.bilibili.com
+DOMAIN, grpc.biliapi.net
+DOMAIN, m.bilibili.com
+DOMAIN, upos-hz-mirrorakam.akamaized.net
+DOMAIN, www.bilibili.com
+DOMAIN-KEYWORD, cn-hk-eq-bcache-
