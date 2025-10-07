@@ -27,7 +27,6 @@
 # 活动推广
 ^https?:\/\/pan\.baidu\.com\/act\/api\/activityentry url reject-200
 
-
 # > 百度贴吧
 ; hostname = tiebac.baidu.com
 ^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/(c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)$|tiebaads\/commonbatch|c\/s\/sync$) url script-response-body https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js
@@ -100,10 +99,9 @@
 # > 京东
 ; hostname = api.m.jd.com
 ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(getEncryptedPinColor|getBubbleInfo|searchBoxWord|xview2Config|stationPullService|uniformRecommend[06]|ase_mc_commonQuery|getWidgetV1052) url reject-dict
-
 ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/jd.js
 # 禁京东dns
-^https:\/\/dns\.jd\.com\/v6\/b url reject
+^https:\/\/dns\.jd\.com\/v6\/b url reject-dict
 # 禁京东升级提醒
 ^https:\/\/api\.m\.jd\.com\/getIosDegrade url reject-dict
 
@@ -194,8 +192,6 @@
 ; hostname = *.qq.com, security.wechat.com
 ^http:\/\/\w+\.wxs\.qq\.com\/\d+\/\d+\/snssvpdownload\/SH\/reserved\/ads_svp_video url reject-dict
 ^https:\/\/mp\.weixin\.qq\.com\/mp\/(cps_product_info|getappmsgad|jsmonitor|masonryfeed|relatedarticle)\? url reject-dict
-# 微信外部链接解锁
-^https\:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\? url script-response-body https://raw.githubusercontent.com/zZPiglet/Task/master/asset/UnblockURLinWeChat.js
 # > 微信乘车码小程序
 ; hostname = ccmsupport-sz.tenpay.com
 ^https:\/\/ccmsupport-sz\.tenpay\.com\/cgi-bin\/common\/ccm_page_element.cgi url reject
@@ -219,9 +215,7 @@
 # > YouTube
 ; hostname = rr*.googlevideo.com, youtubei.googleapis.com
 ^https:\/\/rr[\w-]+\.googlevideo\.com\/initplayback\? url reject-dict
-
 #^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) url script-response-body https://github.com/Maasea/sgmodule/raw/refs/heads/master/Script/Youtube/youtube.response.js
-
 //  信息流
 ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/browse url script-response-body https://github.com/Maasea/sgmodule/raw/refs/heads/master/Script/Youtube/youtube.response.js
 //  搜索页结果
