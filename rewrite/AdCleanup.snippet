@@ -9,7 +9,6 @@
 ; hostname = acs.m.taobao.com
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.cbu\.app\.homepage\.startup url reject-dict
 
-
 # > 爱思助手
 ; hostname = list-app-m.i4.cn, search-app-m.i4.cn
 ^https:\/\/(list-app-m|search-app-m)\.i4\.cn\/(adclickcb|getopfstadinfo|getAppList|getHotSearchList)\.xhtml url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/i4.js
@@ -61,26 +60,12 @@
 
 
 # >>>>>>>>>>>>>>> ✅ F ✅ <<<<<<<<<<<<<<
-# > 粉笔
-; hostname = tiku.fenbi.com, market-api.fenbi.com, ke.fenbi.com, keapi.fenbi.com
-# 开屏广告
-^https:\/\/tiku\.fenbi\.com\/activity\/app\/launcher url reject
-# 界面净化
-^https:\/\/tiku\.fenbi\.com\/iphone\/.*\/launcher\/v2 url reject-dict
-^https:\/\/market-api\.fenbi\.com\/iphone\/v1\/assistant url reject-dict
-^https:\/\/keapi\.fenbi\.com\/app\/iphone\/.*\/(small_banner|popup) url reject-dict
-^https:\/\/ke\.fenbi\.com\/iphone\/v3\/user_member\/entry url reject-dict
-# 课程直播提醒
-^https:\/\/ke\.fenbi\.com\/iphone\/v3\/remind\/instant url reject-dict
-# 屏蔽更新提醒
-^https:\/\/tiku\.fenbi\.com\/activity\/app\/versions url reject
 
 
 # >>>>>>>>>>>>>>> ✅ G ✅ <<<<<<<<<<<<<<
 # > 广汽本田
 ; hostname = gha.ghac.cn
 ^https:\/\/gha\.ghac\.cn:(8081|8082)\/(base\/app\/api\/ad\/(query|startFind)|discover\/app\/api\/discover-news-manage\/pageByTypeNewV2) url jsonjq-response-body '.data = {}'
-
 
 # > 谷歌 重定向
 ; hostname = *.google.cn
@@ -97,7 +82,7 @@
 
 # >>>>>>>>>>>>>>> ✅ J ✅ <<<<<<<<<<<<<<
 # > 京东
-; hostname = api.m.jd.com
+; hostname = api.m.jd.com, dns.jd.com
 ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(getEncryptedPinColor|getBubbleInfo|searchBoxWord|xview2Config|stationPullService|uniformRecommend[06]|ase_mc_commonQuery|getWidgetV1052) url reject-dict
 ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/jd.js
 # 禁京东dns
@@ -105,10 +90,8 @@
 # 禁京东升级提醒
 ^https:\/\/api\.m\.jd\.com\/getIosDegrade url reject-dict
 
-
 # > 建设银行
 ^http:\/\/image1\.ccb\.com\/newsinfo\/eBranch\/check\/(nf\/newfin\/activity|po\/poortheme\/activity)\/\w+\.png url reject
-
 
 # > 街电 微信小程序
 ; hostname = s.jiediankeji.com
@@ -117,7 +100,7 @@
 
 # >>>>>>>>>>>>>>> ✅ K ✅ <<<<<<<<<<<<<<
 # > 快手联盟,优量汇,穿山甲
-; hostname = api-access.pangolin-sdk-toutiao.com, *.qq.com, open.e.kuaishou.com
+; hostname = api-access.pangolin-sdk-toutiao.com, mi.gdt.qq.com, open.e.kuaishou.com
 ^https:\/\/(api-access\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk\/get_ads|open\.e\.kuaishou\.com\/rest\/e\/v3\/open\/univ$|mi\.gdt\.qq\.com\/gdt_mview\.fcg\?) url script-response-body https://raw.githubusercontent.com/app2smile/rules/master/js/adsense.js
 
 
@@ -126,17 +109,16 @@
 
 # >>>>>>>>>>>>>>> ✅ M ✅ <<<<<<<<<<<<<<
 # > 美团
-; hostname = *.meituan.net, *.meituan.com
+; hostname = flowplus.meituan.net, grocery-mtapp.meituan.com, p0.meituan.net, p1.meituan.net
 ^https:\/\/flowplus\.meituan\.net\/v1\/mss_\w+\/linglong\/\d+\.(jpg|gif) url reject
 ^https:\/\/grocery-mtapp\.meituan\.com\/mp\/check\/img\.gif url reject
 ^https:\/\/(p0|p1)\.meituan\.net\/(linglong|travelcube)\/d+\.(gif|png) url reject
 
 
-
 # >>>>>>>>>>>>>>> ✅ P ✅ <<<<<<<<<<<<<<
 # > 拼多多
 ; hostname = api.yangkeduo.com, api.pinduoduo.com, m.pinduoduo.net, *.pddpic.com
-^https?:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash url reject
+^https:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash url reject
 # 视频页小窗
 ^https:\/\/m\.pinduoduo\.net\/vlayer_tab_popup\.html url reject
 # 聊天界面 多多买菜横幅
@@ -151,14 +133,9 @@
 
 # >>>>>>>>>>>>>>> ✅ Q ✅ <<<<<<<<<<<<<<
 # > QQ
-; host = *.qq.com
+; hostname = ecdn.qianbao.qq.com
 # 钱包
 ^https:\/\/ecdn\.qianbao\.qq\.com\/services\/walletHome\/.*\?height url reject-dict
-
-
-# > 全民K歌
-; hostname = y.gtimg.cn
-^https?:\/\/y\.gtimg\.cn\/music\/common\/\/upload\/kg_ad\/.+?\d{3,4}x\d{4} url reject-200
 
 
 # >>>>>>>>>>>>>>> ✅ R ✅ <<<<<<<<<<<<<<
@@ -169,39 +146,31 @@
 ; hostname = api.shenyin.name
 ^https?:\/\/api\.shenyin\.name\/stay-fork\/browse\/featured$ url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/stay.js
 
-
 # > 搜电充电 微信小程序
 ; hostname = wxs-weixin.sd.zhumanggroup.com
 ^https:\/\/wxs-weixin\.sd\.zhumanggroup\.com\/api\/v2\/ad url reject-dict
 
-
 # > 顺丰快递 微信小程序
-# hostname = ucmp.sf-express.com
+; hostname = ucmp.sf-express.com
 ^https:\/\/ucmp\.sf-express\.com\/proxy\/(operation-platform\/info-flow-adver\/query|esgcempcore\/memberGoods\/pointMallService\/goodsList|esgcempcore\/memberActLengthy\/fullGiveActivityService\/fullGiveInfo) url reject-dict
 
 
 # >>>>>>>>>>>>>>> ✅ T ✅ <<<<<<<<<<<<<<
-# > 途虎
-; hostname = gateway.tuhu.cn
-^https:\/\/gateway\.tuhu\.cn\/mkt\/mkt-scene-marketing-service\/api\/scene\/queryScheme url reject-dict
-^https:\/\/gateway\.tuhu\.cn\/cl\/(cl-homepage-service\/homePage\/getHomePageInfo|cl-common-api\/api\/personalCenter\/getCmsModuleList) url reject-dict
 
 
 # >>>>>>>>>>>>>>> ✅ W ✅ <<<<<<<<<<<<<<
 # > 微信
-; hostname = *.qq.com, security.wechat.com
+; hostname = mp.weixin.qq.com
 ^http:\/\/\w+\.wxs\.qq\.com\/\d+\/\d+\/snssvpdownload\/SH\/reserved\/ads_svp_video url reject-dict
 ^https:\/\/mp\.weixin\.qq\.com\/mp\/(cps_product_info|getappmsgad|jsmonitor|masonryfeed|relatedarticle)\? url reject-dict
 # > 微信乘车码小程序
 ; hostname = ccmsupport-sz.tenpay.com
 ^https:\/\/ccmsupport-sz\.tenpay\.com\/cgi-bin\/common\/ccm_page_element.cgi url reject
 
-
 # > 网易严选
 ; hostname = support.you.163.com, m.you.163.com
 ^https:\/\/support\.you\.163\.com\/xhr\/boot\/getBootMedia\.json url reject
 ^https:\/\/m\.you\.163\.com\/activity\/popWindow url reject
-
 
 # > 网易新闻
 ; hostname = c.m.163.com, gw.m.163.com
@@ -215,7 +184,7 @@
 # > YouTube
 ; hostname = rr*.googlevideo.com, youtubei.googleapis.com
 ^https:\/\/rr[\w-]+\.googlevideo\.com\/initplayback\? url reject-dict
-#^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) url script-response-body https://github.com/Maasea/sgmodule/raw/refs/heads/master/Script/Youtube/youtube.response.js
+^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) url script-response-body https://github.com/Maasea/sgmodule/raw/refs/heads/master/Script/Youtube/youtube.response.js
 //  信息流
 ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/browse url script-response-body https://github.com/Maasea/sgmodule/raw/refs/heads/master/Script/Youtube/youtube.response.js
 //  搜索页结果
@@ -242,4 +211,4 @@
 
 
 
-hostname = gab.122.gov.cn, acs.m.taobao.com, list-app-m.i4.cn, search-app-m.i4.cn, pan.baidu.com, tiebac.baidu.com, apps.api.ke.com, i-shadow2.ke.com, ap.dongqiudi.com, detail.dongqiudi.com, zc.dongqiudi.com, api.dongqiudi.com, entry.ubixioe.com, tiku.fenbi.com, market-api.fenbi.com, ke.fenbi.com, keapi.fenbi.com, gha.ghac.cn, *.google.cn, api.m.jd.com, dns.jd.com, s.jiediankeji.com, api-access.pangolin-sdk-toutiao.com, api.yangkeduo.com, api.pinduoduo.com, m.pinduoduo.net, *.pddpic.com, *.qq.com, open.e.kuaishou.com, *.meituan.net, *.meituan.com, public.gdtimg.com, y.gtimg.cn, api.shenyin.name, wxs-weixin.sd.zhumanggroup.com, ucmp.sf-express.com, gateway.tuhu.cn, security.wechat.com, ccmsupport-sz.tenpay.com, support.you.163.com, m.you.163.com, c.m.163.com, gw.m.163.com,  rr*.googlevideo.com, youtubei.googleapis.com, a.qiumibao.com
+hostname = gab.122.gov.cn, acs.m.taobao.com, list-app-m.i4.cn, search-app-m.i4.cn, pan.baidu.com, tiebac.baidu.com, apps.api.ke.com, i-shadow2.ke.com, ap.dongqiudi.com, detail.dongqiudi.com, zc.dongqiudi.com, api.dongqiudi.com, entry.ubixioe.com, gha.ghac.cn, *.google.cn, api.m.jd.com, dns.jd.com, s.jiediankeji.com, api-access.pangolin-sdk-toutiao.com, mi.gdt.qq.com, open.e.kuaishou.com, flowplus.meituan.net, grocery-mtapp.meituan.com, p0.meituan.net, p1.meituan.net, api.yangkeduo.com, api.pinduoduo.com, m.pinduoduo.net, *.pddpic.com, ecdn.qianbao.qq.com, api.shenyin.name, wxs-weixin.sd.zhumanggroup.com, ucmp.sf-express.com, mp.weixin.qq.com, ccmsupport-sz.tenpay.com, support.you.163.com, m.you.163.com, c.m.163.com, gw.m.163.com, rr*.googlevideo.com, youtubei.googleapis.com, a.qiumibao.com
