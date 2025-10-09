@@ -71,12 +71,12 @@
 ^https:\/\/gha\.ghac\.cn:(8081|8082)\/(base\/app\/api\/ad\/(query|startFind)|discover\/app\/api\/discover-news-manage\/pageByTypeNewV2) url jsonjq-response-body '.data = {}'
 
 # > 谷歌 重定向
-; hostname = *.google.cn
-# Maps
-^https?:\/\/(ditu|maps).google\.cn url 302 https://maps.google.com
-# Search
-^https?:\/\/(www.)?(g|google)\.cn url 302 https://www.google.com
-# Translate
+; hostname = www.google.cn, maps.google.cn, translate.google.cn, ditu.google.cn
+# 搜索页
+^https?:\/\/www\.google\.cn url 302 https://www.google.com
+# Maps 地图
+^https?:\/\/(maps|ditu)\.google\.cn url 302 https://maps.google.com
+# Translate 翻译
 ^https?:\/\/translate\.google\.cn url 302 https://translate.google.com
 
 
@@ -120,18 +120,17 @@
 
 # >>>>>>>>>>>>>>> ✅ P ✅ <<<<<<<<<<<<<<
 # > 拼多多
-; hostname = api.yangkeduo.com, api.pinduoduo.com, m.pinduoduo.net, *.pddpic.com
+; hostname = api.yangkeduo.com, api.pinduoduo.com, m.pinduoduo.net, *.pddpic.com, *.pddugc.com
+# 开屏广告
 ^https:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash url reject
 # 视频页小窗
-^https:\/\/m\.pinduoduo\.net\/vlayer_tab_popup\.html url reject
-# 聊天界面 多多买菜横幅
-^https:\/\/commimg(.*)\.pddpic\.com\/flow-banner-entrance url reject
-# 营销小窗
-^http:\/\/video(.*)\.(pddpic|pddugc)\.com\/(tower-video|tower-video-b|tower-video-side|tower-video-side-b)\/.*\.(float|highlights) url reject
-^http:\/\/video(.*)\.(pddugc|pddpic)\.com\/tower-video-b\/pdd-live url reject
-^http:\/\/.*/live-adapt\.pddpic\.com\/live url reject
-^http:\/\/live(.*)-adapt\.(pddpic|pddugc)\.com\/live url reject
-^http(.*):\/\/video-snapshot(.*)\.pddpic\.com\/kiwi-live-image url reject
+^https?:\/\/m\.pinduoduo\.net\/vlayer_tab_popup\.html url reject
+# 聊天界面横幅
+^https:\/\/commimg.*\/flow-banner-entrance url reject
+# 视频/直播小窗及快照
+^https?:\/\/video[\w-]*\.(pddpic|pddugc)\.com\/tower-video(-b|-side(-b)?)?\/.*\.(float|highlights|pdd-live) url reject
+^https?:\/\/.*-adapt\.(pddpic|pddugc)\.com\/live url reject
+^https?:\/\/video-snapshot.*\.pddpic\.com\/kiwi-live-image url reject
 
 
 # >>>>>>>>>>>>>>> ✅ Q ✅ <<<<<<<<<<<<<<
@@ -214,4 +213,4 @@
 
 
 
-hostname = gab.122.gov.cn, acs.m.taobao.com, list-app-m.i4.cn, search-app-m.i4.cn, pan.baidu.com, tiebac.baidu.com, apps.api.ke.com, i-shadow2.ke.com, ap.dongqiudi.com, detail.dongqiudi.com, zc.dongqiudi.com, api.dongqiudi.com, entry.ubixioe.com, gha.ghac.cn, *.google.cn, api.m.jd.com, dns.jd.com, s.jiediankeji.com, api-access.pangolin-sdk-toutiao.com, mi.gdt.qq.com, open.e.kuaishou.com, flowplus.meituan.net, grocery-mtapp.meituan.com, p0.meituan.net, p1.meituan.net, api.yangkeduo.com, api.pinduoduo.com, m.pinduoduo.net, *.pddpic.com, ecdn.qianbao.qq.com, api.shenyin.name, wxs-weixin.sd.zhumanggroup.com, ucmp.sf-express.com, mp.weixin.qq.com, ccmsupport-sz.tenpay.com, support.you.163.com, m.you.163.com, c.m.163.com, gw.m.163.com, rr*.googlevideo.com, youtubei.googleapis.com, a.qiumibao.com
+hostname = gab.122.gov.cn, acs.m.taobao.com, list-app-m.i4.cn, search-app-m.i4.cn, pan.baidu.com, tiebac.baidu.com, apps.api.ke.com, i-shadow2.ke.com, ap.dongqiudi.com, detail.dongqiudi.com, zc.dongqiudi.com, api.dongqiudi.com, entry.ubixioe.com, gha.ghac.cn, www.google.cn, maps.google.cn, translate.google.cn, ditu.google.cn, api.m.jd.com, dns.jd.com, s.jiediankeji.com, api-access.pangolin-sdk-toutiao.com, mi.gdt.qq.com, open.e.kuaishou.com, flowplus.meituan.net, grocery-mtapp.meituan.com, p0.meituan.net, p1.meituan.net, api.yangkeduo.com, api.pinduoduo.com, m.pinduoduo.net, *.pddpic.com, *.pddugc.com, ecdn.qianbao.qq.com, api.shenyin.name, wxs-weixin.sd.zhumanggroup.com, ucmp.sf-express.com, mp.weixin.qq.com, ccmsupport-sz.tenpay.com, support.you.163.com, m.you.163.com, c.m.163.com, gw.m.163.com, rr*.googlevideo.com, youtubei.googleapis.com, a.qiumibao.com
