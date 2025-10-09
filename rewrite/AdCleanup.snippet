@@ -86,12 +86,12 @@
 # >>>>>>>>>>>>>>> ✅ J ✅ <<<<<<<<<<<<<<
 # > 京东
 ; hostname = api.m.jd.com, dns.jd.com
-^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(getEncryptedPinColor|getBubbleInfo|searchBoxWord|xview2Config|stationPullService|uniformRecommend[06]|ase_mc_commonQuery|getWidgetV1052) url reject-dict
-^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/jd.js
+^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(getEncryptedPinColor|getBubbleInfo|searchBoxWord|xview2Config|stationPullService|uniformRecommend[06]|ase_mc_commonQuery|getWidgetV1052) url reject-dict
+^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/jd.js
 # 禁京东dns
-^https:\/\/dns\.jd\.com\/v6\/b url reject-dict
+^https?:\/\/dns\.jd\.com\/v6\/b url reject-dict
 # 禁京东升级提醒
-^https:\/\/api\.m\.jd\.com\/getIosDegrade url reject-dict
+^https?:\/\/api\.m\.jd\.com\/getIosDegrade url reject-dict
 
 # > 建设银行
 ^http:\/\/image1\.ccb\.com\/newsinfo\/eBranch\/check\/(nf\/newfin\/activity|po\/poortheme\/activity)\/\w+\.png url reject
@@ -120,7 +120,7 @@
 
 # >>>>>>>>>>>>>>> ✅ P ✅ <<<<<<<<<<<<<<
 # > 拼多多
-; hostname = api.yangkeduo.com, api.pinduoduo.com, m.pinduoduo.net, *.pddpic.com, *.pddugc.com
+; hostname = api.yangkeduo.com, api.pinduoduo.com, m.pinduoduo.net, *.pddpic.com
 # 开屏广告
 ^https:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash url reject
 # 视频页小窗
@@ -128,8 +128,8 @@
 # 聊天界面横幅
 ^https:\/\/commimg.*\/flow-banner-entrance url reject
 # 视频/直播小窗及快照
-^https?:\/\/video[\w-]*\.(pddpic|pddugc)\.com\/tower-video(-b|-side(-b)?)?\/.*\.(float|highlights|pdd-live) url reject
-^https?:\/\/.*-adapt\.(pddpic|pddugc)\.com\/live url reject
+^http:\/\/video[\w-]*\.(pddpic|pddugc)\.com\/tower-video(-b|-side(-b)?)?\/.*\.(float|highlights|pdd-live) url reject
+^http:\/\/.*-adapt\.(pddpic|pddugc)\.com\/live url reject
 ^https?:\/\/video-snapshot.*\.pddpic\.com\/kiwi-live-image url reject
 
 
@@ -213,4 +213,4 @@
 
 
 
-hostname = gab.122.gov.cn, acs.m.taobao.com, list-app-m.i4.cn, search-app-m.i4.cn, pan.baidu.com, tiebac.baidu.com, apps.api.ke.com, i-shadow2.ke.com, ap.dongqiudi.com, detail.dongqiudi.com, zc.dongqiudi.com, api.dongqiudi.com, entry.ubixioe.com, gha.ghac.cn, www.google.cn, maps.google.cn, translate.google.cn, ditu.google.cn, api.m.jd.com, dns.jd.com, s.jiediankeji.com, api-access.pangolin-sdk-toutiao.com, mi.gdt.qq.com, open.e.kuaishou.com, flowplus.meituan.net, grocery-mtapp.meituan.com, p0.meituan.net, p1.meituan.net, api.yangkeduo.com, api.pinduoduo.com, m.pinduoduo.net, *.pddpic.com, *.pddugc.com, ecdn.qianbao.qq.com, api.shenyin.name, wxs-weixin.sd.zhumanggroup.com, ucmp.sf-express.com, mp.weixin.qq.com, ccmsupport-sz.tenpay.com, support.you.163.com, m.you.163.com, c.m.163.com, gw.m.163.com, rr*.googlevideo.com, youtubei.googleapis.com, a.qiumibao.com
+hostname = gab.122.gov.cn, acs.m.taobao.com, list-app-m.i4.cn, search-app-m.i4.cn, pan.baidu.com, tiebac.baidu.com, apps.api.ke.com, i-shadow2.ke.com, ap.dongqiudi.com, detail.dongqiudi.com, zc.dongqiudi.com, api.dongqiudi.com, entry.ubixioe.com, gha.ghac.cn, www.google.cn, maps.google.cn, translate.google.cn, ditu.google.cn, api.m.jd.com, dns.jd.com, s.jiediankeji.com, api-access.pangolin-sdk-toutiao.com, mi.gdt.qq.com, open.e.kuaishou.com, flowplus.meituan.net, grocery-mtapp.meituan.com, p0.meituan.net, p1.meituan.net, api.yangkeduo.com, api.pinduoduo.com, m.pinduoduo.net, *.pddpic.com, ecdn.qianbao.qq.com, api.shenyin.name, wxs-weixin.sd.zhumanggroup.com, ucmp.sf-express.com, mp.weixin.qq.com, ccmsupport-sz.tenpay.com, support.you.163.com, m.you.163.com, c.m.163.com, gw.m.163.com, rr*.googlevideo.com, youtubei.googleapis.com, a.qiumibao.com
