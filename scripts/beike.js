@@ -57,6 +57,12 @@ if (url.includes("/config/ershoufang/content")) {
       (i) => !["cms_banner", "xinfang_demand_card", "cms_content"]?.includes(i?.recoItemType)
     );
   }
+  if (obj?.data?.list?.length > 0) {
+    //楼龄接受程度调查
+    obj.data.list = obj.data.list.filter(
+      (i) => !["demandV3"]?.includes(i?.cardType)
+    );
+  }
 } else if (url.includes("v3/house/list")) {
   // 租房宝典
   if (obj.data?.banners) {
