@@ -46,13 +46,13 @@ if (url.includes("/config/ershoufang/content")) {
     );
   }
 } else if (url.includes("/config/recommend/home")) {
-// 过滤掉不需要展示的卡片
+  // 过滤掉首页不需要展示的卡片
 if (obj?.data?.list?.length > 0) {
   obj.data.list = obj.data.list.filter(
     (i) =>
-      !["直播看房", "满意度小调研"].includes(i?.title) &&          // 过滤首页直播、调查问卷、一周好文
-      !["cms_banner", "xinfang_demand_card", "cms_content"].includes(i?.recoItemType) && // 按推荐类型过滤
-      !["demandV3"].includes(i?.cardType)                           // 过滤首页楼龄接受程度调查
+      !["直播看房", "满意度小调研"].includes(i?.title) &&       // 过滤首页直播、调查问卷、一周好文
+      !["cms_banner", "xinfang_demand_card", "cms_content"].includes(i?.recoItemType) && // 
+      !["demandV3"].includes(i?.cardType)                                   // 过滤首页楼龄接受程度调查
   );
   }
 } else if (url.includes("v3/house/list")) {
