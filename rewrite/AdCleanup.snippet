@@ -1,6 +1,3 @@
-#!name = 去广告
-#!desc = 去广告合集
-
 # >>>>>>>>>>>>>> ✅ 0-9 ✅ <<<<<<<<<<<<<
 # > 交管12123
 ; hostname = gab.122.gov.cn
@@ -42,6 +39,7 @@
 ^https:\/\/apps\.api\.ke\.com\/user\/key\/getcaid url reject-dict
 ^https:\/\/apps\.api\.ke\.com\/house\/ershoufang\/liveinfo url reject-dict
 ^https:\/\/apps\.api\.ke\.com\/xinfang\/shellapp\/resblock\/getAtrium url reject-dict
+^https:\/\/apps\.api\.ke\.com\/api\/user\/needcardv2\/getquestion url reject-dict
 ^https:\/\/apps\.api\.ke\.com\/(api\/user\/profile\/getusercenterinfov4|api\/secondhand\/ershoufang\/homepagesearch|Rentplat\/v3\/house\/list|Rentplat\/v1\/homepage|api\/config\/home\/contentv5|platform\/shellapp\/userCenter\/feed) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/beike.js
 ^https:\/\/apps\.api\.ke\.com\/config\/(ershoufang\/content|recommend\/home) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/beike.js
 ^https:\/\/apps\.api\.ke\.com\/xinfang\/shellapp\/(feed\/index|index\/index) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/beike.js
@@ -70,6 +68,8 @@
 ; hostname = gha.ghac.cn
 ^https:\/\/gha\.ghac\.cn:(8081|8082)\/(base\/app\/api\/ad\/(query|startFind)|discover\/app\/api\/discover-news-manage\/pageByTypeNewV2) url jsonjq-response-body '.data = {}'
 
+
+# >>>>>>>>>>>>>>> ✅ G ✅ <<<<<<<<<<<<<<
 # > 谷歌 重定向
 ; hostname = www.google.cn, maps.google.cn, translate.google.cn, ditu.google.cn
 # 搜索页
@@ -86,12 +86,12 @@
 # >>>>>>>>>>>>>>> ✅ J ✅ <<<<<<<<<<<<<<
 # > 京东
 ; hostname = api.m.jd.com, dns.jd.com
-^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(getEncryptedPinColor|getBubbleInfo|searchBoxWord|xview2Config|stationPullService|uniformRecommend[06]|ase_mc_commonQuery|getWidgetV1052) url reject-dict
-^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/jd.js
+^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(getEncryptedPinColor|getBubbleInfo|searchBoxWord|xview2Config|stationPullService|uniformRecommend[06]|ase_mc_commonQuery|getWidgetV1052) url reject-dict
+^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/jd.js
 # 禁京东dns
-^https?:\/\/dns\.jd\.com\/v6\/b url reject-dict
+^https:\/\/dns\.jd\.com\/v6\/b url reject-dict
 # 禁京东升级提醒
-^https?:\/\/api\.m\.jd\.com\/getIosDegrade url reject-dict
+^https:\/\/api\.m\.jd\.com\/getIosDegrade url reject-dict
 
 # > 建设银行
 ^http:\/\/image1\.ccb\.com\/newsinfo\/eBranch\/check\/(nf\/newfin\/activity|po\/poortheme\/activity)\/\w+\.png url reject
@@ -121,16 +121,17 @@
 # >>>>>>>>>>>>>>> ✅ P ✅ <<<<<<<<<<<<<<
 # > 拼多多
 ; hostname = api.yangkeduo.com, api.pinduoduo.com, m.pinduoduo.net, *.pddpic.com
-# 开屏广告
-^https:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash url reject-dict
-# 视频页金币小窗
-^https:\/\/m\.pinduoduo\.net\/vlayer_tab_popup\.html url reject
+^https:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash url reject
+# 视频页小窗
+^https?:\/\/m\.pinduoduo\.net\/vlayer_tab_popup\.html url reject
 # 聊天界面 多多买菜横幅
 ^https:\/\/commimg(.*)\.pddpic\.com\/flow-banner-entrance url reject
-# 营销、直播小窗
-^http:\/\/video[\w-]*\.(pddpic|pddugc)\.com\/tower-video(-b|-side(-b)?)?\/.*\.(float|highlights|pdd-live) url reject
-^http:\/\/.*-adapt\.(pddpic|pddugc)\.com\/live url reject
-^https?:\/\/video-snapshot.*\.pddpic\.com\/kiwi-live-image url reject
+# 营销小窗
+^http:\/\/video(.*)\.(pddpic|pddugc)\.com\/(tower-video|tower-video-b|tower-video-side|tower-video-side-b)\/.*\.(float|highlights) url reject
+^http:\/\/video(.*)\.(pddugc|pddpic)\.com\/tower-video-b\/pdd-live url reject
+^http:\/\/.*/live-adapt\.pddpic\.com\/live url reject
+^http:\/\/live(.*)-adapt\.(pddpic|pddugc)\.com\/live url reject
+^http(.*):\/\/video-snapshot(.*)\.pddpic\.com\/kiwi-live-image url reject
 
 
 # >>>>>>>>>>>>>>> ✅ Q ✅ <<<<<<<<<<<<<<
