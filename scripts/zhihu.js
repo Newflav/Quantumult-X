@@ -70,7 +70,7 @@ if (url.includes("/api/cloud/config/all")) {
       obj.config.zombie_conf.zombieEnable = false;
     }
     if (obj.config?.gray_mode) {
-      obj.config.gray_modeenable = false;
+      obj.config.gray_mode.enable = false;
       obj.config.gray_mode.start_time = "2208960000";
       obj.config.gray_mode.end_time = "2209046399";
     }
