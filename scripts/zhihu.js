@@ -68,11 +68,6 @@ if (url.includes("/api/cloud/config/all")) {
     obj.config.zvideo_max_number = 1;
     obj.config.is_show_followguide_alert = false;
   }
-} else if (url.includes("/commercial_api/app_float_layer")) {
-  // 悬浮图标
-  if ("feed_egg" in obj) {
-    delete obj;
-  }
 } else if (url.includes("/moments_v3")) {
   if (obj?.data?.length > 0) {
     obj.data = obj.data.filter((i) => !i?.title?.includes("为您推荐"));
