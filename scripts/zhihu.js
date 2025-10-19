@@ -27,6 +27,11 @@ if (url.includes("/api/cloud/config/all")) {
   if (obj?.paging) {
     delete obj.paging;
   }
+} else if (url.includes("comment_v5/answers")) {
+  // 评论区氛围调查
+  if ("atmosphere_voting_config" in obj) {
+    delete obj;
+  }
 } else if (url.includes("/api/v4/articles")) {
   const item = ["ad_info", "paging", "recommend_info"];
   item.forEach((i) => {
