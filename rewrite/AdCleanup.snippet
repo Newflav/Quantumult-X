@@ -208,7 +208,7 @@
 # >>>>>>>>>>>>>>> ✅ Z ✅ <<<<<<<<<<<<<<
 # > 直播吧
 ; hostname = a.qiumibao.com
-^https:\/\/a\.qiumibao\.com\/(found|activities\/config\.php) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/zhiboba.js
+^https:\/\/a\.qiumibao\.com\/(found|activities\/config\.php) url jsonjq-response-body '[]'
 ^http:\/\/118\.178\.168\.156:8091\/allOne url reject
 ; 屏蔽升级
 ^https:\/\/a\.qiumibao\.com\/ios\/\?version_code url reject
