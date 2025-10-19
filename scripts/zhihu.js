@@ -77,6 +77,11 @@ if (url.includes("/answers/v2/") || url.includes("/articles/v2/")) {
   if ("feed_egg" in obj) {
     delete obj;
   }
+} else if (url.includes("/comment_v5/answers")) {
+  // 评论区氛围调查
+  if ("atmosphere_voting_config" in obj) {
+    delete obj;
+  }
 } else if (url.includes("/feed/render/tab/config")) {
   // 首页二级标签 白名单 live直播 edu人工智能AI
   if (obj?.selected_sections?.length > 0) {
