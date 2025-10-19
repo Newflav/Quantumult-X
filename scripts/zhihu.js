@@ -1,5 +1,3 @@
-// 2025-07-03 16:35
-
 if (!$response.body) $done({});
 const url = $request.url;
 let obj = JSON.parse($response.body);
@@ -21,21 +19,6 @@ if (url.includes("/api/cloud/config/all")) {
         }
       }
     });
-  }
-} else if (url.includes("answers/v2") || url.includes("articles/v2")) {
-    if (obj?.third_business) {
-      delete obj.third_business;
-  }
-    if (obj?.endorsement) {
-      delete obj.endorsement;
-  }
-    if (obj?.interaction_bar_plugins) {
-      delete obj.interaction_bar_plugins;
-  }
-    if (obj?.structured_content?.segments?.length > 0) {
-      obj.structured_content.segments = obj.structured_content.segments.filter(
-        (i) => !["heading", "card"]?.includes(i?.type)
-    );
   }
 } else if (url.includes("/api/v4/answers")) {
   if (obj?.data) {
@@ -70,7 +53,7 @@ if (url.includes("/api/cloud/config/all")) {
       obj.config.zombie_conf.zombieEnable = false;
     }
     if (obj.config?.gray_mode) {
-      obj.config.gray_mode.enable = false;
+      obj.config.gray_modeenable = false;
       obj.config.gray_mode.start_time = "2208960000";
       obj.config.gray_mode.end_time = "2209046399";
     }
@@ -84,6 +67,11 @@ if (url.includes("/api/cloud/config/all")) {
     }
     obj.config.zvideo_max_number = 1;
     obj.config.is_show_followguide_alert = false;
+  }
+} else if (url.includes("/commercial_api/app_float_layer")) {
+  // 悬浮图标
+  if ("feed_egg" in obj) {
+    delete obj;
   }
 } else if (url.includes("/moments_v3")) {
   if (obj?.data?.length > 0) {
