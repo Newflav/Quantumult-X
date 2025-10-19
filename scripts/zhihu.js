@@ -2,76 +2,79 @@ if (!$response.body) $done({});
 const url = $request.url;
 let obj = JSON.parse($response.body);
 
-if (url.includes("/api/cloud/config/all")) {
-  if (obj?.data?.configs) {
-    obj.data.configs.forEach((i) => {
-      if (i.configKey === "feed_gray_theme") {
-        if (i.configValue) {
-          i.configValue.start_time = "2208960000";
-          i.configValue.end_time = "2209046399";
+if (url.includes("/answers/v2/") || url.includes("/articles/v2/")) {
+  // 2024-04-29 新版知乎 回答列表下的相关提问
+  if (obj?.third_business?.related_queries?.queries?.length > 0) {
+    obj.third_business.related_queries.queries = [];
+  }
+} else if (url.includes("/api/cloud/zhihu/config/all")) {
+  // 全局配置
+  if (obj?.data?.configs?.length > 0) {
+    for (let i of obj.data.configs) {
+      if (i?.configKey === "feed_gray_theme") {
+        if (i?.configValue) {
+          i.configValue.start_time = 3818332800; // Unix 时间戳 2090-12-31 00:00:00
+          i.configValue.end_time = 3818419199; // Unix 时间戳 2090-12-31 23:59:59
           i.status = false;
         }
-      } else if (i.configKey === "feed_top_res") {
-        if (i.configValue) {
-          i.configValue.start_time = "2208960000";
-          i.configValue.end_time = "2209046399";
-          i.status = false;
+      } else if (i?.configKey === "feed_top_res") {
+        // 首页顶部背景图
+        if (i?.configValue) {
+          i.configValue.start_time = 3818332800; // Unix 时间戳 2090-12-31 00:00:00
+          i.configValue.end_time = 3818419199; // Unix 时间戳 2090-12-31 23:59:59
         }
       }
-    });
+    }
   }
 } else if (url.includes("/api/v4/answers")) {
-  if (obj?.data) {
-    delete obj.data;
-  }
-  if (obj?.paging) {
-    delete obj.paging;
-  }
-} else if (url.includes("comment_v5/answers")) {
-  // 评论区氛围调查
-  if ("atmosphere_voting_config" in obj) {
-    delete obj;
-  }
+  delete obj.data;
+  delete obj.paging;
 } else if (url.includes("/api/v4/articles")) {
   const item = ["ad_info", "paging", "recommend_info"];
   item.forEach((i) => {
     delete obj[i];
   });
 } else if (url.includes("/appcloud2.zhihu.com/v3/config")) {
+  delete obj.config.hp_channel_tab;
   if (obj?.config) {
     if (obj.config?.homepage_feed_tab) {
-      obj.config.homepage_feed_tab.tab_infos =
-        obj.config.homepage_feed_tab.tab_infos.filter((i) => {
-          if (i.tab_type === "activity_tab") {
-            i.start_time = "2208960000";
-            i.end_time = "2209046399";
-            return true;
-          } else {
-            return false;
-          }
-        });
-    }
-    if (obj.config?.hp_channel_tab) {
-      delete obj.config.hp_channel_tab;
+      obj.config.homepage_feed_tab.tab_infos = obj.config.homepage_feed_tab.tab_infos.filter((i) => {
+        if (i.tab_type === "activity_tab") {
+          i.start_time = "3818332800"; // Unix 时间戳 2090-12-31 00:00:00
+          i.end_time = "3818419199"; // Unix 时间戳 2090-12-31 23:59:59
+          return true;
+        } else {
+          return false;
+        }
+      });
     }
     if (obj.config?.zombie_conf) {
       obj.config.zombie_conf.zombieEnable = false;
     }
     if (obj.config?.gray_mode) {
       obj.config.gray_modeenable = false;
-      obj.config.gray_mode.start_time = "2208960000";
-      obj.config.gray_mode.end_time = "2209046399";
+      obj.config.gray_mode.start_time = "3818332800"; // Unix 时间戳 2090-12-31 00:00:00
+      obj.config.gray_mode.end_time = "3818419199"; // Unix 时间戳 2090-12-31 23:59:59
     }
     if (obj.config?.zhcnh_thread_sync) {
       obj.config.zhcnh_thread_sync.LocalDNSSetHostWhiteList = [];
       obj.config.zhcnh_thread_sync.isOpenLocalDNS = "0";
       obj.config.zhcnh_thread_sync.ZHBackUpIP_Switch_Open = "0";
       obj.config.zhcnh_thread_sync.dns_ip_detector_operation_lock = "1";
-      obj.config.zhcnh_thread_sync.ZHHTTPSessionManager_setupZHHTTPHeaderField =
-        "1";
+      obj.config.zhcnh_thread_sync.ZHHTTPSessionManager_setupZHHTTPHeaderField = "1";
     }
     obj.config.zvideo_max_number = 1;
     obj.config.is_show_followguide_alert = false;
+  }
+} else if (url.includes("/commercial_api/app_float_layer")) {
+  // 悬浮图标
+  if ("feed_egg" in obj) {
+    delete obj;
+  }
+} else if (url.includes("/feed/render/tab/config")) {
+  // 首页二级标签 白名单 live直播 edu人工智能AI
+  if (obj?.selected_sections?.length > 0) {
+    obj.selected_sections = obj.selected_sections.filter((i) => ["recommend", "section"]?.includes(i?.tab_type));
   }
 } else if (url.includes("/moments_v3")) {
   if (obj?.data?.length > 0) {
@@ -90,10 +93,7 @@ if (url.includes("/api/cloud/config/all")) {
   }
 } else if (url.includes("/next-data")) {
   if (obj?.data?.data?.length > 0) {
-    obj.data.data = obj.data.data.filter(
-      (i) =>
-        !(i?.type?.includes("ad") || i?.data?.answer_type?.includes("PAID"))
-    );
+    obj.data.data = obj.data.data.filter((i) => !(i?.type?.includes("ad") || i?.data?.answer_type?.includes("PAID")));
   }
 } else if (url.includes("/next-render")) {
   if (obj?.data?.length > 0) {
@@ -112,43 +112,34 @@ if (url.includes("/api/cloud/config/all")) {
   }
 } else if (url.includes("/questions/")) {
   // 问题回答列表
+  delete obj.ad_info;
+  delete obj.data.ad_info;
+  delete obj.query_info;
   if (obj?.data?.length > 0) {
-    obj.data = obj.data.filter(
-      (i) => !i?.target?.answer_type?.includes("paid")
-    );
+    obj.data = obj.data.filter((i) => !i?.target?.answer_type?.includes("paid"));
   }
-  if (obj?.data?.ad_info) {
-    delete obj.data.ad_info;
-  }
-  if (obj?.ad_info) {
-    delete obj.ad_info;
-  }
-  if (obj?.query_info) {
-    delete obj.query_info;
+} else if (url.includes("/root/tab")) {
+  // 首页一级标签 白名单
+  if (obj?.tab_list?.length > 0) {
+    obj.tab_list = obj.tab_list.filter((i) => ["follow", "hot", "recommend"]?.includes(i?.tab_type));
   }
 } else if (url.includes("/topstory/hot-lists/everyone-seeing")) {
   // 热榜信息流
   if (obj?.data?.data?.length > 0) {
     // 合作推广
-    obj.data.data = obj.data.data.filter(
-      (i) => !i.target?.metrics_area?.text?.includes("合作推广")
-    );
+    obj.data.data = obj.data.data.filter((i) => !i.target?.metrics_area?.text?.includes("合作推广"));
   }
 } else if (url.includes("/topstory/hot-lists/total")) {
   // 热榜排行榜
   if (obj?.data?.length > 0) {
     // 品牌甄选
-    obj.data = obj.data.filter((i) => !i?.hasOwnProperty("ad"));
+    obj.data = obj.data.filter((i) => !i.hasOwnProperty("ad"));
   }
 } else if (url.includes("/topstory/recommend")) {
   // 推荐信息流
   if (obj?.data?.length > 0) {
     obj.data = obj.data.filter((i) => {
-      if (
-        i.type === "market_card" &&
-        i.fields?.header?.url &&
-        i.fields.body?.video?.id
-      ) {
+      if (i.type === "market_card" && i.fields?.header?.url && i.fields.body?.video?.id) {
         let videoID = getUrlParamValue(item.fields.header.url, "videoID");
         if (videoID) {
           i.fields.body.video.id = videoID;
@@ -166,29 +157,19 @@ if (url.includes("/api/cloud/config/all")) {
           }
         } else if (i.common_card?.feed_content?.video?.id) {
           let search = '"feed_content":{"video":{"id":';
-          let str = $response.body.substring(
-            $response.body.indexOf(search) + search.length
-          );
+          let str = $response.body.substring($response.body.indexOf(search) + search.length);
           let videoID = str.substring(0, str.indexOf(","));
           i.common_card.feed_content.video.id = videoID;
-        } else if (
-          i.common_card?.footline?.elements?.[0]?.text?.panel_text?.includes(
-            "广告"
-          )
-        ) {
+        } else if (i.common_card?.footline?.elements?.[0]?.text?.panel_text?.includes("广告")) {
           return false;
-        } else if (
-          i.common_card?.feed_content?.source_line?.elements?.[1]?.text?.panel_text?.includes(
-            "盐选"
-          )
-        ) {
+        } else if (i.common_card?.feed_content?.source_line?.elements?.[1]?.text?.panel_text?.includes("盐选")) {
           return false;
         } else if (i?.promotion_extra) {
           // 营销信息
           return false;
         }
         return true;
-      } else if (i.type.includes("aggregation_card")) {
+      } else if (i.type?.includes("aggregation_card")) {
         // 横排卡片 知乎热榜
         return false;
       } else if (i.type === "feed_advert") {
