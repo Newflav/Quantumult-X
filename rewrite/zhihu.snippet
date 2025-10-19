@@ -31,6 +31,7 @@
 ^https:\/\/www\.zhihu\.com\/api\/v4\/members\/homepage_card url reject-dict
 ^https:\/\/api\.zhihu\.com\/kvip\/right\/my_card\?style_type url reject-dict
 ^https:\/\/api\.zhihu\.com\/comment_v5\/(articles|answers)\/\d+\/list-headers url reject-dict
+^https:\/\/api\.zhihu\.com\/comment_v5\/answers url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/zhihu.js
 ^https:\/\/api\.zhihu\.com\/commercial_api\/answer url reject-dict
 ^https:\/\/api\.zhihu\.com\/next-(bff|data|render)\? url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/zhihu.js
 ^https:\/\/api\.zhihu\.com\/prague\/related_suggestion_native\/feed\? url reject-dict
