@@ -72,11 +72,6 @@ if (url.includes("/answers/v2/") || url.includes("/articles/v2/")) {
     obj.config.zvideo_max_number = 1;
     obj.config.is_show_followguide_alert = false;
   }
-} else if (url.includes("/commercial_api/app_float_layer")) {
-  // 悬浮图标
-  if ("feed_egg" in obj) {
-    delete obj;
-  }
 } else if (url.includes("/comment_v5/answers")) {
   // 评论区氛围调查
   if ("atmosphere_voting_config" in obj) {
