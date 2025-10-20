@@ -1,6 +1,6 @@
 # > Talkatone
-host-suffix, tktn.be, proxy
-host-suffix, tktn.at, proxy
-host-suffix, tenor.com, proxy
-host-suffix, talkatone.com, proxy
-IP-ASN, 18779, proxy
+host-suffix, tktn.be, Talkatone
+host-suffix, tktn.at, Talkatone
+host-suffix, tenor.com, Talkatone
+host-suffix, talkatone.com, Talkatone
+IP-ASN, 18779, Talkatone
