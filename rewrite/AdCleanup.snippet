@@ -123,7 +123,7 @@
 ; hostname = api.yangkeduo.com, api.pinduoduo.com, m.pinduoduo.net, *.pddpic.com
 ^https:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash url reject
 # 视频页小窗
-^https?:\/\/m\.pinduoduo\.net\/vlayer_tab_popup\.html url reject
+^https:\/\/m\.pinduoduo\.net\/vlayer_tab_popup\.html url reject
 # 聊天界面 多多买菜横幅
 ^https:\/\/commimg(.*)\.pddpic\.com\/flow-banner-entrance url reject
 # 营销小窗
@@ -131,7 +131,7 @@
 ^http:\/\/video(.*)\.(pddugc|pddpic)\.com\/tower-video-b\/pdd-live url reject
 ^http:\/\/.*/live-adapt\.pddpic\.com\/live url reject
 ^http:\/\/live(.*)-adapt\.(pddpic|pddugc)\.com\/live url reject
-^http(.*):\/\/video-snapshot(.*)\.pddpic\.com\/kiwi-live-image url reject
+^https?:\/\/video-snapshot(.*)\.pddpic\.com\/kiwi-live-image url reject
 
 
 # >>>>>>>>>>>>>>> ✅ Q ✅ <<<<<<<<<<<<<<
@@ -209,9 +209,9 @@
 # > 直播吧
 ; hostname = a.qiumibao.com
 ^https:\/\/a\.qiumibao\.com\/(found|activities\/config\.php) url jsonjq-response-body '[]'
-^http:\/\/118\.178\.168\.156:8091\/allOne url reject
+^http:\/\/118\.178\.168\.156:8091\/allOne url reject-dict
 ; 屏蔽升级
-^https:\/\/a\.qiumibao\.com\/ios\/\?version_code url reject
+^https:\/\/a\.qiumibao\.com\/ios\/\?version_code url reject-dict
 
 
 
