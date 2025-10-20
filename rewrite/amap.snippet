@@ -1,5 +1,5 @@
-#!name = 高德地图v15.09.1
-#!desc = 净化广告
+#!name = 高德地图
+#!desc = 去广告
 #!update = 2025-10-06 5:30
 
 # 其他
@@ -64,7 +64,7 @@
 ^https:\/\/m5\.amap\.com\/ws\/aos\/perception\/publicTravel\/beforeNavi url reject-dict
 
 # 我的页面
-^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv3 url jsonjq-response-body 'del(.. | .content?)'
+^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv3 url jsonjq-response-body 'del(.. | .data?)'
 
 # 地图层营销推广
 ^https:\/\/mps\.amap\.com\/ws\/mps\/lyrdata\/rendermap url reject-dict
