@@ -1,12 +1,12 @@
 # > bilibili
-DOMAIN, api.biliapi.com
-DOMAIN, api.biliapi.net
-DOMAIN, api.bilibili.com
-DOMAIN, app.biliapi.com
-DOMAIN, app.biliapi.net
-DOMAIN, app.bilibili.com
-DOMAIN, grpc.biliapi.net
-DOMAIN, m.bilibili.com
-DOMAIN, upos-hz-mirrorakam.akamaized.net
-DOMAIN, www.bilibili.com
-DOMAIN-KEYWORD, cn-hk-eq-bcache-
+HOST, api.biliapi.com
+HOST, api.biliapi.net
+HOST, api.bilibili.com
+HOST, app.biliapi.com
+HOST, app.biliapi.net
+HOST, app.bilibili.com
+HOST, grpc.biliapi.net
+HOST, m.bilibili.com
+HOST, upos-hz-mirrorakam.akamaized.net
+HOST, www.bilibili.com
+HOST-KEYWORD, cn-hk-eq-bcache-
