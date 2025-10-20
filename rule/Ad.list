@@ -1,71 +1,47 @@
-# > Apple
-host, advertising.apple.com, reject
-host, api-adservices.apple.com, reject
-host, apple.comscoreresearch.com, reject
-host, iadcontent.apple.com, reject
-host, iadmoo.apple.com, reject
-host, iadworkbench.apple.com, reject
-host, qwapi.apple.com, reject
-host, launch.apple.com, reject
-host-suffix, advp.apple.com, reject
-host-suffix, iad-apple.com, reject
+# > Apple安全浏览限制解除
+host, lookup.api.bsb.baidu.com, reject
+host, proxy.safebrowsing.apple, reject
+host, safebrowsing.g.applimg.com, reject
+host, safebrowsing.googleapis.com, reject
+host, safebrowsing.urlsec.qq.com, reject
+host, token.safebrowsing.apple, reject
+host, vs6.bj2ct.u3.ucweb.com, reject
+host-suffix, safebrowsing.apple, reject
+host-suffix, u3.ucweb.com, reject
 
-# 阿里巴巴
-host, ossgw.alicdn.com, reject
-host, ems.youku.com, reject
-host, hudong.alicdn.com, reject
-host-suffix, ut.taobao.com, reject
+# > 阿里云
+ip-cidr, 203.107.1.1/24, reject
 
-# > 滴滴出行
-host, gwp.xiaojukeji.com, reject
+# > 百度贴吧屏蔽域名dns查询
+ip-cidr, 180.76.76.200/32, reject
 
-# > 建设银行
-host, adv.ccb.com, reject
-
-# > 美团
-host, al-log.d.meituan.net, reject
-host, babel-statistics-android.d.meituan.net, reject
-host, maplocatesdksnapshot.d.meituan.net, reject
-host, metrics-picture.d.meituan.net, reject
-host, route-stats.d.meituan.net, reject
-host, open.kuaishouzt.com, reject
+# > 京东屏蔽DNS
+ip-cidr, 101.124.19.122/32, reject
+ip6-cidr, 2402:db40:5100:1011::5/128, reject
 
 # > 腾讯
-host, tpns.qq.com, reject
-host, info4.video.qq.com, reject
-host, info6.video.qq.com, reject
-host, ios.video.mpush.qq.com, reject
-host, vv6.video.qq.com, reject
-ip-cidr, 47.110.187.87/32, reject
-host, dns.weixin.qq.com, reject
 ip-cidr, 42.81.232.18/32, reject
 ip-cidr, 42.187.182.106/32, reject
 ip-cidr, 42.187.182.123/32, reject
 ip-cidr, 42.187.184.154/32, reject
+ip-cidr, 47.110.187.87/32, reject
 ip-cidr, 123.151.54.50/32, reject
 ip6-cidr, 2402:4e00:1900:1700:0:9554:1ad9:c3a/128, reject
 ip6-cidr, 240e:928:1400:10::25/128, reject
 
 # > 知乎
+user-agent, AVOS*, reject
 host, appcloud.zhihu.com, reject
-host, crash2.zhihu.com, reject
-host, mqtt.zhihu.com, reject
-host, sugar.zhihu.com, reject
+host, appcloud2.in.zhihu.com, reject
 host, zxid-m.mobileservice.cn, reject
-ip-cidr, 182.61.194.7/32, reject
 ip-cidr, 103.41.167.237/32, reject
 ip-cidr, 118.89.204.198/32, reject
+ip-cidr, 182.61.194.7/32, reject
 ip6-cidr, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128, reject
-
-# > 字节跳动
-host, ad.zijieapi.com, reject
 
 # > 阻止反诈收集信息
 host-suffix, gjfzpt.cn, reject
 ip-cidr, 219.143.187.136/32, reject
-
-# > 百度贴吧屏蔽域名dns查询
-ip-cidr, 180.76.76.200/32, reject
 
 # > Talkatone
 host, a1.tktn.be, reject
@@ -74,17 +50,3 @@ host, cfg.talkatone.com, reject
 host, d.tktn.be, reject
 host-suffix, adxinspidsp.com, reject
 host-suffix, inhousedsp.com, reject
-
-# > 京东
-ip-cidr, 101.124.19.122/32, reject
-ip6-cidr, 2402:db40:5100:1011::5/128, reject
-
-# > 其他
-host, cf-ads.pinger.com, reject
-host, us.a.iteleserve.com, reject
-host, notify.rtbuniverse.com, reject
-host-suffix, pubnative.net, reject
-host-suffix, vrtcal.com, reject
-host-suffix, vungle.com, reject
-host-suffix, amazon-adsystem.com, reject
-host-suffix, 163jiasu.com, reject
