@@ -42,8 +42,8 @@ ip-cidr, 219.143.187.136/32, reject
 
 # > Talkatone
 host, a1.tktn.be, reject
-host, hermes-us.inspidspad.com, reject
-host, cfg.talkatone.com, reject
 host, d.tktn.be, reject
+host, cfg.talkatone.com, reject
+host, hermes-us.inspidspad.com, reject
 host-suffix, adxinspidsp.com, reject
 host-suffix, inhousedsp.com, reject
