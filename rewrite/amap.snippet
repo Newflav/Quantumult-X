@@ -64,7 +64,7 @@
 ^https:\/\/m5\.amap\.com\/ws\/aos\/perception\/publicTravel\/beforeNavi url reject-dict
 
 # 我的页面
-^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv3 url jsonjq-response-body 'del(.. | .data?)'
+^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv3 url jsonjq-response-body 'del(.. | .content?)'
 
 # 地图层营销推广
 ^https:\/\/mps\.amap\.com\/ws\/mps\/lyrdata\/rendermap url reject-dict
