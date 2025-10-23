@@ -13,7 +13,7 @@
 ^https:\/\/api\.zhihu\.com\/commercial_api\/app_float_layer url jsonjq-response-body '{}'
 ^https:\/\/api\.zhihu\.com\/commercial_api\/(banners_v3\/app_topstory_banner|launch_v2|real_time_launch_v2|article) url reject-dict
 ^https:\/\/api\.zhihu\.com\/content-distribution-core\/bubble\/common\/settings url reject-dict
-^https:\/\/api\.zhihu\.com\/feed\/render\/tab\/config\? url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/zhihu.js
+^https:\/\/api\.zhihu\.com\/feed\/render\/tab\/config url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/zhihu.js
 ^https:\/\/api\.zhihu\.com\/(moments\/lastread|drama\/hot-drama-list) url reject-dict
 ^https:\/\/api\.zhihu\.com\/(moments_v3|topstory\/hot-lists\/total|topstory\/recommend) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/zhihu.js
 ^https:\/\/api\.zhihu\.com\/root\/window url reject-dict
@@ -32,7 +32,7 @@
 ^https:\/\/www\.zhihu\.com\/api\/v4\/members\/homepage_card url reject-dict
 ^https:\/\/api\.zhihu\.com\/kvip\/right\/my_card\?style_type url reject-dict
 ^https:\/\/api\.zhihu\.com\/comment_v5\/(articles|answers)\/\d+\/list-headers url reject-dict
-^https:\/\/api\.zhihu\.com\/comment_v5\/answers\/d+\/root_comment url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/zhihu.js
+^https:\/\/api\.zhihu\.com\/comment_v5\/answers\/\d+\/root_comment url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/zhihu.js
 ^https:\/\/api\.zhihu\.com\/commercial_api\/answer url reject-dict
 ^https:\/\/api\.zhihu\.com\/next-(bff|data|render)\? url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/zhihu.js
 ^https:\/\/api\.zhihu\.com\/prague\/related_suggestion_native\/feed\? url reject-dict
