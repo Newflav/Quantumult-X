@@ -6,7 +6,7 @@
 ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch url script-response-header https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/amap_else.js
 
 # 去除软件多余元素
-^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable url jsonjq-response-body '{data: .data | {external_traffic_light, carowner_feature, RouteLive, DriveLiveView, RtBus_Stop_Board, engine_pos, engine_eyrie, designToken, navi_cloud, search}}'
+^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable url jsonjq-response-body '{data: .data | {external_traffic_light, carowner_feature, RouteLive, DriveLiveView, RtBus_Stop_Board, engine_pos, engine_eyrie, designToken, navi_cloud, airticket_service_switch, search}}'
 
 # 升级提醒
 ^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/app\/startup\/init url reject-dict
@@ -38,6 +38,9 @@
 
 # 导航结束页推广
 ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/card-service-car-end url jsonjq-response-body 'del(.data[ "listHeader", "recommendPark", "radarPark", "arriveSceneList", "children", "feedbackReviewData" ])'
+
+# 火车、飞机规划横幅
+^https:\/\/m5\.amap\.com\/ws\/c3frontend\/af-hkf\/hkf url jsonjq-response-body 'del(.. | .hkfProductListNoema?, .CouponBanner?, .commonMaterial?)'
 
 # 步行结束页推广
 ^https:\/\/m5\.amap\.com\/ws\/publicverify\/questions\/ridewalk url reject-dict
