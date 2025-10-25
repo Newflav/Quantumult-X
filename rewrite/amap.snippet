@@ -40,8 +40,8 @@
 ^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/marketingOperationStructured url reject-dict
 ^https:\/\/m5\.amap\.com\/ws\/c3frontend\/af-hkf\/hkf url jsonjq-response-body 'walk(if type=="object" then del(.hkfProductListNoema?,.CouponBanner?,.commonMaterial?,.loginCardInfo?) | if .card_id?=="HkfGuideBanner" then empty else . end else . end)'
 
-# 火车优惠券领取页面
-^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/tips_operation_location url reject-dict
+# 火车优惠券领取广告
+^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/tips_operation_location url jsonjq-response-body '.data = {}'
 
 #公交路线租车推广
 ^https:\/\/m5\.amap\.com\/\/ws\/bus\/plan\/original_integrate url jsonjq-response-body 'del(.data.carRentalPlans)'
@@ -77,7 +77,7 @@
 ^https:\/\/mps\.amap\.com\/ws\/mps\/lyrdata\/rendermap url reject-dict
 
 # 天气、长辈图层及图层小程序
-^https:\/\/m5\.amap\.com\/ws\/oss\/maplayer\/list url jsonjq-response-body '.layer_list = {}'
+^https:\/\/(m5|center)\.amap\.com\/ws\/oss\/maplayer\/list url jsonjq-response-body '.layer_list = {}'
 
 # 升级提醒
 ^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/app\/startup\/init url reject-dict
