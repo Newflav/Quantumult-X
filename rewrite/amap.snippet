@@ -38,7 +38,7 @@
 
 # 火车、飞机规划页横幅
 ^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/marketingOperationStructured url reject-dict
-^https:\/\/m5\.amap\.com\/ws\/c3frontend\/af-hkf\/hkf url jsonjq-response-body 'walk(if type=="object" then del(.hkfProductListNoema?,.CouponBanner?,.commonMaterial?,.loginCardInfo?) | if .card_id?=="HkfGuideBanner" then empty else . end else . end)'
+^https:\/\/m5\.amap\.com\/ws\/c3frontend\/af-hkf\/hkf url jsonjq-response-body 'walk(if type=="object" then del(.hkfProductListNoema?,.CouponBanner?,.commonMaterial?,.statement?) | if (.card_id?=="HkfGuideBanner" or .card_id?=="MoneySavingPlan") then empty else . end else . end)'
 
 # 火车优惠券领取广告
 ^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/tips_operation_location url jsonjq-response-body '.data = {}'
