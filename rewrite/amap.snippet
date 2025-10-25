@@ -1,15 +1,12 @@
 #!name = 高德地图
 #!desc = 去广告
-#!update = 2025-10-06 5:30
+#!update = 2025-10-26 5:30
 
 # 其他
 ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch url script-response-header https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/amap_else.js
 
-# 去除软件多余元素
-^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable url jsonjq-response-body '{data: .data | {external_traffic_light, carowner_feature, RouteLive, DriveLiveView, RtBus_Stop_Board, engine_pos, engine_eyrie, designToken, navi_cloud, airticket_service_switch, search}}'
-
-# 升级提醒
-^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/app\/startup\/init url reject-dict
+# 只保留软件常用控制开关元素
+^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable url jsonjq-response-body '{data: .data | {external_traffic_light, carowner_feature, RouteLive, DriveLiveView, RtBus_Stop_Board, engine_pos, engine_eyrie, designToken, navi_cloud, search, gongjiao_kuacheng, amap_config, flightNewPageSwitch}}'
 
 # 登录提醒
 ^https:\/\/m5\.amap\.com\/ws\/aggregate\/user\/login-guide url reject-dict
@@ -39,8 +36,15 @@
 # 导航结束页推广
 ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/card-service-car-end url jsonjq-response-body 'del(.data[ "listHeader", "recommendPark", "radarPark", "arriveSceneList", "children", "feedbackReviewData" ])'
 
-# 火车、飞机规划横幅
-^https:\/\/m5\.amap\.com\/ws\/c3frontend\/af-hkf\/hkf url jsonjq-response-body 'del(.. | .hkfProductListNoema?, .CouponBanner?, .commonMaterial?)'
+# 火车、飞机规划页横幅
+^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/marketingOperationStructured url reject-dict
+^https:\/\/m5\.amap\.com\/ws\/c3frontend\/af-hkf\/hkf url jsonjq-response-body 'walk(if type=="object" then del(.hkfProductListNoema?,.CouponBanner?,.commonMaterial?,.loginCardInfo?) | if .card_id?=="HkfGuideBanner" then empty else . end else . end)'
+
+# 火车优惠券领取页面
+^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/tips_operation_location url reject-dict
+
+#公交路线租车推广
+^https:\/\/m5\.amap\.com\/\/ws\/bus\/plan\/original_integrate url jsonjq-response-body 'del(.data.carRentalPlans)'
 
 # 步行结束页推广
 ^https:\/\/m5\.amap\.com\/ws\/publicverify\/questions\/ridewalk url reject-dict
@@ -61,7 +65,7 @@
 ^https:\/\/m5-zb\.amap\.com\/ws\/boss\/car\/order\/content_info url reject-dict
 
 # 打车角标推广
-^https:\/\/m5\.amap\.com\/ws\/message\/notice\/list url reject-dict
+^https:\/\/(m5|center)\.amap\.com\/ws\/message\/notice\/list url reject-dict
 
 # 步行页天气提示
 ^https:\/\/m5\.amap\.com\/ws\/aos\/perception\/publicTravel\/beforeNavi url reject-dict
@@ -73,8 +77,11 @@
 ^https:\/\/mps\.amap\.com\/ws\/mps\/lyrdata\/rendermap url reject-dict
 
 # 天气、长辈图层及图层小程序
-^https:\/\/(m5|center)\.amap\.com\/ws\/oss\/maplayer\/list url jsonjq-response-body '.layer_list = {}'
+^https:\/\/m5\.amap\.com\/ws\/oss\/maplayer\/list url jsonjq-response-body '.layer_list = {}'
+
+# 升级提醒
+^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/app\/startup\/init url reject-dict
 
 
 
-hostname = m5.amap.com, m5-zb.amap.com, mps.amap.com
+hostname = m5.amap.com, m5-zb.amap.com, center.amap.com, mps.amap.com
