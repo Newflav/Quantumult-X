@@ -73,6 +73,7 @@ if (url.includes("functionId=deliverLayer") || url.includes("functionId=orderTra
       const items = [
         "bigSaleFloor", // 双十一
         "buyOften", // 常买常逛
+        "newCardFloor", // 省钱卡
         // "iconToolFloor", // 底部工具栏
         // "keyToolsFloor", // 浏览记录
         "newAttentionCard", // 关注的频道
