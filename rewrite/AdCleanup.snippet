@@ -88,8 +88,9 @@
 ; hostname = api.m.jd.com, dns.jd.com, lop-proxy.jd.com
 ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(getEncryptedPinColor|getBubbleInfo|searchBoxWord|xview2Config|stationPullService|uniformRecommend[06]|ase_mc_commonQuery|kylin_recommend|hybrid) url reject-dict
 ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/jd.js
-# 快递页弹窗
+# 快递页弹窗、查件页浮窗
 ^https:\/\/lop-proxy\.jd\.com\/home\/queryMarketContent url reject-dict
+^https:\/\/lop-proxy\.jd\.com\/BeaconFireApi\/queryMarketingRecommendRuleConfigInfo url reject-dict
 # 禁京东直播小窗
 ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=getWidgetV1052 url reject
 # 禁京东dns
