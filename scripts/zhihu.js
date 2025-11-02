@@ -76,8 +76,8 @@ if (url.includes("/answers/v2/") || url.includes("/articles/v2/")) {
     obj.config.is_show_followguide_alert = false;
   }
 } else if (url.includes("/comment_v5/answers")) {
-  // 评论区氛围调查
-  if ("atmosphere_voting_config" in obj) {
+  // 评论区氛围调查、回答题主标签
+  if ("atmosphere_voting_config", "content_author" in obj) {
     delete obj;
   }
 } else if (url.includes("/feed/render/tab/config")) {
