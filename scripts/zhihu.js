@@ -2,15 +2,7 @@ if (!$response.body) $done({});
 const url = $request.url;
 let obj = JSON.parse($response.body);
 
-if (url.includes("/answers/v2/") || url.includes("/articles/v2/")) {
-  // 2024-04-29 新版知乎 回答列表下的相关提问
-  if (obj?.third_business) {
-    delete obj.third_business;
-  }
-  if (obj?.comment_config) {
-    delete obj.comment_config;
-  }
-} else if (url.includes("/api/cloud/zhihu/config/all")) {
+if (url.includes("/api/cloud/zhihu/config/all")) {
   // 全局配置
   if (obj?.data?.configs?.length > 0) {
     for (let i of obj.data.configs) {
