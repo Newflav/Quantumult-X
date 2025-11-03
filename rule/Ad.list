@@ -31,6 +31,7 @@ user-agent, AVOS*, reject
 host, appcloud.zhihu.com, reject
 host, appcloud2.in.zhihu.com, reject
 host, zxid-m.mobileservice.cn, reject
+host, httpdns.zhihu.com, reject
 ip-cidr, 103.41.167.237/32, reject
 ip-cidr, 118.89.204.198/32, reject
 ip-cidr, 182.61.194.7/32, reject
