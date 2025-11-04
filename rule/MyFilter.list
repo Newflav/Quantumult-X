@@ -51,7 +51,6 @@ host-suffix, netease.com, direct
 host-suffix, 126.net, direct
 host-suffix, 127.net, direct
 host-suffix, 163.com, direct
-host-suffix, hk, 香港节点
 host-suffix, tw, 台湾节点
 host-suffix, jp, 日本节点
 host-suffix, sg, 新加坡节点
