@@ -23,22 +23,7 @@ ip6-cidr, 2403:300:a42::/48, direct
 ip6-cidr, 2403:300:a51::/48, direct
 ip6-cidr, 2a01:b740:a42::/48, direct
 
-# > NSFW
-host-suffix, bestjavporn.com, direct
-host-suffix, video-delivery.net, direct
-host-suffix, bestjavcdn.com, direct
-host-suffix, helloavgirls.com, direct
-host-suffix, mushroomtrack.com, direct
-
 # > 其他分流修正
-host, video.xhyded.com, direct
-host, pull-gaia-bac.soucan.so, direct
-host-suffix, b7k.cc, direct
-host-suffix, m9k.cc, direct
-host-suffix, olelive.com, direct
-host-suffix, tpian.xyz, direct
-host-suffix, livemi.live, direct
-host-suffix, wtmdjxkq.com, direct
 host-suffix, servicewechat.com, direct
 host-suffix, qq.com, direct
 host-suffix, wechat.com, direct
