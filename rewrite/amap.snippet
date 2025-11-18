@@ -1,11 +1,11 @@
 #!name = 高德地图
 #!desc = 去广告
-#!update = 2025-10-26 5:30
+#!update = 2025-11-19 5:30
 
 # 其他
 ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch url script-response-header https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/amap_else.js
 
-# 只保留软件常用控制开关
+# 只保留软件常用控制开关元素
 ^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable url jsonjq-response-body '{data: .data | {external_traffic_light, carowner_feature, RouteLive, DriveLiveView, RtBus_Stop_Board, engine_pos, engine_eyrie, designToken, navi_cloud, search, gongjiao_kuacheng, amap_config, flightNewPageSwitch}}'
 
 # 登录提醒
@@ -78,6 +78,9 @@
 
 # 天气、长辈图层及图层小程序
 ^https:\/\/m5\.amap\.com\/ws\/oss\/maplayer\/list url jsonjq-response-body '.layer_list = {}'
+
+# 新开屏广告
+^https:\/\/m5\.amap\.com\/ws\/valueadded\/alimama\/splash_screen url reject-dict
 
 # 升级提醒
 ^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/app\/startup\/init url reject-dict
