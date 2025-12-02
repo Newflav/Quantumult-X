@@ -55,6 +55,8 @@
 ; hostname = ap.dongqiudi.com, detail.dongqiudi.com, zc.dongqiudi.com, api.dongqiudi.com, entry.ubixioe.com
 ^https:\/\/ap\.dongqiudi\.com\/plat\/v url reject-dict
 ^https:\/\/entry\.ubixioe\.com\/mob\/sdk\/v2\/endpoint url reject-dict
+^https:\/\/api\.dongqiudi\.com\/share\/list\/article url reject-dict
+^https:\/\/api\.dongqiudi\.com\/v2\/article\/relative url reject-dict
 ^https:\/\/zc\.dongqiudi\.com\/(api|expert)\/(gettabs|getMatchExpertInfo)\?(match_id|chatroom_id) url reject-dict
 ^https:\/\/(api|detail)\.dongqiudi\.com\/v2\/article url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/dongqiudi.js
 ^https:\/\/api\.dongqiudi\.com\/data\/(detail\/match|match\/pre_analysis) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/dongqiudi.js
@@ -160,6 +162,7 @@
 # > 顺丰快递 微信小程序
 ; hostname = ucmp.sf-express.com
 ^https:\/\/ucmp\.sf-express\.com\/proxy\/(operation-platform\/info-flow-adver\/query|esgcempcore\/memberGoods\/pointMallService\/goodsList|esgcempcore\/memberActLengthy\/fullGiveActivityService\/fullGiveInfo) url reject-dict
+^https:\/\/ucmp\.sf-express\.com\/cx-wechat-member\/member\/quick\/question\/check url reject-dict
 
 
 # >>>>>>>>>>>>>>> ✅ T ✅ <<<<<<<<<<<<<<
