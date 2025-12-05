@@ -1,6 +1,6 @@
 #!name = 高德地图
 #!desc = 去广告
-#!update = 2025-11-19 5:30
+#!update = 2025-10-26 5:30
 
 # 其他
 ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch url script-response-header https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/amap_else.js
@@ -35,6 +35,7 @@
 
 # 导航结束页推广
 ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/card-service-car-end url jsonjq-response-body 'del(.data[ "listHeader", "recommendPark", "radarPark", "arriveSceneList", "children", "feedbackReviewData" ])'
+^https:\/\/oss\.amap\.com\/ws\/banner\/lists url reject-dict
 
 # 火车、飞机规划页横幅
 ^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/marketingOperationStructured url reject-dict
@@ -87,4 +88,4 @@
 
 
 
-hostname = m5.amap.com, m5-zb.amap.com, center.amap.com, mps.amap.com
+hostname = m5.amap.com, m5-zb.amap.com, center.amap.com, mps.amap.com, oss.amap.com
