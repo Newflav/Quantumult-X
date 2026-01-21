@@ -68,8 +68,8 @@
 # >>>>>>>>>>>>>>> ✅ G ✅ <<<<<<<<<<<<<<
 # > 广汽本田
 ; hostname = gha.ghac.cn
-^https:\/\/gha\.ghac\.cn:(8081|8082)\/(base\/app\/api\/ad\/(query|startFind)|discover\/app\/api\/discover-news-manage\/pageByTypeNewV2) url jsonjq-response-body '.data = {}'
 ^https:\/\/gha\.ghac\.cn:8081\/base\/app\/api\/sys-private-message\/recall\/force url jsonjq-response-body '.data = {}'
+^https:\/\/gha\.ghac\.cn:8082\/discover\/app\/api\/discover-news-manage\/pageByTypeNewV2 url jsonjq-response-body '.data = {}'
 
 
 # > 谷歌 重定向
