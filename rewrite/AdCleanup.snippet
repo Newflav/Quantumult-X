@@ -68,9 +68,7 @@
 # >>>>>>>>>>>>>>> ✅ G ✅ <<<<<<<<<<<<<<
 # > 广汽本田
 ; hostname = gha.ghac.cn
-^https:\/\/gha\.ghac\.cn:8081\/base\/app\/api\/sys-private-message\/recall\/force url jsonjq-response-body '.data = {}'
-^https:\/\/gha\.ghac\.cn:8082\/discover\/app\/api\/discover-news-manage\/pageByTypeNewV2 url jsonjq-response-body '.data = {}'
-
+^https:\/\/gha\.ghac\.cn:8081\/base\/app\/api\/(ad|sys-private-message) url jsonjq-response-body '.data = {}'
 
 # > 谷歌 重定向
 ; hostname = www.google.cn, maps.google.cn, translate.google.cn, ditu.google.cn
@@ -197,22 +195,15 @@
 # >>>>>>>>>>>>>>> ✅ Y ✅ <<<<<<<<<<<<<<
 # > YouTube
 ; hostname = rr*.googlevideo.com, youtubei.googleapis.com
-^https:\/\/rr[\w-]+\.googlevideo\.com\/initplayback\? url reject-dict
-^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) url script-response-body https://github.com/Maasea/sgmodule/raw/refs/heads/master/Script/Youtube/youtube.response.js
-//  信息流
-^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/browse url script-response-body https://github.com/Maasea/sgmodule/raw/refs/heads/master/Script/Youtube/youtube.response.js
-//  搜索页结果
-^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/search url script-response-body https://github.com/Maasea/sgmodule/raw/refs/heads/master/Script/Youtube/youtube.response.js
-//  指导
-^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/guide url script-response-body https://github.com/Maasea/sgmodule/raw/refs/heads/master/Script/Youtube/youtube.response.js
-//  获取配置
-^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/account\/get_setting url script-response-body https://github.com/Maasea/sgmodule/raw/refs/heads/master/Script/Youtube/youtube.response.js
-//  播放页
-^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/get_watch url script-response-body https://github.com/Maasea/sgmodule/raw/refs/heads/master/Script/Youtube/youtube.response.js
-^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/next url script-response-body https://github.com/Maasea/sgmodule/raw/refs/heads/master/Script/Youtube/youtube.response.js
-//  短视频
-^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/player\? url script-response-body https://github.com/Maasea/sgmodule/raw/refs/heads/master/Script/Youtube/youtube.response.js
-^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/reel\/reel_watch_sequence url script-response-body https://github.com/Maasea/sgmodule/raw/refs/heads/master/Script/Youtube/youtube.response.js
+# ======= 视频广告请求 ======= #
+(^https?:\/\/[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)&ctier=L(&.+?),ctier,(.+) url 302 $1$2$3
+^https?:\/\/[\w-]+\.googlevideo\.com\/(?!(dclk_video_ads|videoplayback\?)).+&oad url reject-200
+# ======= 视频PIP|后台播放|瀑布流|搜索页|播放页|短视频|贴片广告  ======= #
+^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) url script-response-body https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/Script/Youtube/youtube.response.js
+# ======= 通用广告请求 ======= #
+^https?:\/\/(www|s)\.youtube\.com\/api\/stats\/ads url reject-200
+^https?:\/\/(www|s)\.youtube\.com\/(pagead|ptracking) url reject-200
+^https?:\/\/s\.youtube\.com\/api\/stats\/qoe\?adcontext url reject-200
 
 
 # >>>>>>>>>>>>>>> ✅ Z ✅ <<<<<<<<<<<<<<
