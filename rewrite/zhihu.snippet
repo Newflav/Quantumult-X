@@ -11,7 +11,6 @@
 # 盐选
 ^https:\/\/api\.zhihu\.com\/unlimited\/go\/my_card\/v2 url reject-dict
 # 文章、回答插入广告
-^https:\/\/api\.zhihu\.com\/commercial_api\/(answer|article) url reject-dict
 ^https:\/\/(api|page-info)\.zhihu\.com\/(answers|articles)\/v2 url jsonjq-response-body 'del(.third_business, .endorsement)'
 ^https:\/\/api\.zhihu\.com\/next-render url jsonjq-response-body 'del(.data[].adjson)'
 ^https:\/\/lens\.zhihu\.com\/api\/v4 url reject-dict
