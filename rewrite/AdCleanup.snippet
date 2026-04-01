@@ -219,6 +219,14 @@
 ; 屏蔽升级
 ^https:\/\/a\.qiumibao\.com\/ios\/\?version_code url reject-dict
 
+# > 知乎
+# 文章、回答插入广告
+^https:\/\/(api|page-info)\.zhihu\.com\/(answers|articles)\/v2 url jsonjq-response-body 'del(.third_business, .endorsement)'
+^https:\/\/api\.zhihu\.com\/next-render url jsonjq-response-body 'del(.data[].adjson)'
+^https:\/\/lens\.zhihu\.com\/api\/v4 url reject-dict
+# 评论区氛围调查
+^https:\/\/api\.zhihu\.com\/comment_v5\/answers url jsonjq-response-body 'del(.atmosphere_voting_config)'
+
 
 
 hostname = gab.122.gov.cn, update.baidu.com, aiqicha.baidu.com, acs.m.taobao.com, list-app-m.i4.cn, search-app-m.i4.cn, pan.baidu.com, tiebac.baidu.com, apps.api.ke.com, i-shadow2.ke.com, ap.dongqiudi.com, detail.dongqiudi.com, zc.dongqiudi.com, api.dongqiudi.com, entry.ubixioe.com, gha.ghac.cn, www.google.cn, maps.google.cn, translate.google.cn, ditu.google.cn, api.m.jd.com, dns.jd.com, lop-proxy.jd.com, s.jiediankeji.com, api-access.pangolin-sdk-toutiao.com, mi.gdt.qq.com, open.e.kuaishou.com, flowplus.meituan.net, grocery-mtapp.meituan.com, p0.meituan.net, p1.meituan.net, api.yangkeduo.com, api.pinduoduo.com, m.pinduoduo.net, *.pddpic.com, ecdn.qianbao.qq.com, api.shenyin.name, wxs-weixin.sd.zhumanggroup.com, ucmp.sf-express.com, mp.weixin.qq.com, ccmsupport-sz.tenpay.com, support.you.163.com, m.you.163.com, c.m.163.com, gw.m.163.com, rr*.googlevideo.com, youtubei.googleapis.com, a.qiumibao.com
