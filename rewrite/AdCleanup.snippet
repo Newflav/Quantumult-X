@@ -5,14 +5,14 @@
 
 
 # >>>>>>>>>>>>>>> ✅ A ✅ <<<<<<<<<<<<<<
+# > 阿里巴巴
+; hostname = acs.m.taobao.com
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.cbu\.app\.homepage\.startup url reject-dict
+
 # > 爱企查
 ; hostname = update.baidu.com, aiqicha.baidu.com
 ^https:\/\/update\.baidu\.com\/lcmanage\/index\.php url reject-dict
 ^https:\/\/aiqicha\.baidu\.com\/app\/getGoodsInfoAjax url reject-dict
-
-# > 阿里巴巴
-; hostname = acs.m.taobao.com
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.cbu\.app\.homepage\.startup url reject-dict
 
 # > 爱思助手
 ; hostname = list-app-m.i4.cn, search-app-m.i4.cn
@@ -191,7 +191,9 @@
 
 # > 网易新闻
 ; hostname = c.m.163.com, gw.m.163.com
-^https:\/\/gw\.m\.163\.com\/nc\/api\/v2\/article url jsonjq-response-body 'del(.. | .promoLinks?, .sourceinfo?)'
+^https:\/\/gw\.m\.163\.com\/nc\/api\/v2\/article url jsonjq-response-body 'del(.. | .promoLinks?, .aiQuestions?, .sourceinfo?)'
+^https:\/\/gw\.m\.163\.com\/gentie-web\/api\/v3\/products url jsonjq-response-body 'del(.. | .aiInfo?, .parkingInfo?)'
+^https:\/\/gw\.m\.163\.com\/newsapp-activity\/cargame\/api\/v1\/external\/parkingPlace url reject-dict
 ^https:\/\/gw\.m\.163\.com\/(gentie-web\/api\/v3\/products|nc\/api\/v1\/feed\/dynamic\/video-normal-list|nc-reader\/api\/v1\/doc\/unitedCardView|commons-user-config\/api\/v2\/commons\/config\/user\/global|newsapp-activity-go\/api\/v1\/daily-guess\/today-question|commons-user-main\/api\/v1\/commons\/user\/profile\/main|commons-user-main\/api\/v1\/commons\/user\/profile\/signTask|nc\/api\/v1\/feed\/dynamic\/normal-list) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/163news.js
 # 个人主页元素净化(例如京东特供等）
 ^https:\/\/c\.m\.163\.com\/nc\/gl\/newsclient\/ft url reject-dict
