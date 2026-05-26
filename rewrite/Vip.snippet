@@ -20,7 +20,7 @@
 
 # 扫描全能王会员
 ;hostname = *.intsig.net, *.camscanner.com
-^https:\/\/open-bak\.camscanner\.com\/sync\/get_ad_cfg url reject-dict
+^https:\/\/(open|open-bak)\.camscanner\.com\/sync\/get_ad_cfg url reject-dict
 ^https?:\/\/.*\.(intsig\.net|camscanner\.com) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/camScanner.js
 
 
