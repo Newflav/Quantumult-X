@@ -2,7 +2,6 @@
 #!desc = 净化广告
 #!update = 2026-6-8 11:30
 
-/***********************************
 
 # > 知乎_拦截DNS解析@blackmatrix7
 ^https?:\/\/118\.89\.204\.198 url reject-200
@@ -122,17 +121,17 @@
 # > 知乎_我的页面底部@ddgksf2013
 ^https?:\/\/www\.zhihu\.com\/appview\/v\d\/zhmore url reject-200
 
+# > 知乎_搜索发现@ddgksf2013
+https://api.zhihu.com/search/hot_search url script-response-body https://ddgksf2013.top/scripts/zhihu.ads.js
+
 # > 自己写的
 ^https:\/\/(api|page-info)\.zhihu\.com\/(next-render|answers\/v2|articles\/v2) url jsonjq-response-body del(.. | .card?, .third_business?, .endorsement?, .adjson?)
 ^https:\/\/lens\.zhihu\.com\/api\/v4 url reject-dict
 
 # 评论区氛围调查
-^https:\/\/api\.zhihu\.com\/comment_v5\/answers url jsonjq-response-body 'del(.atmosphere_voting_config)'
+^https:\/\/api\.zhihu\.com\/comment_v5\/(articles|answers) url jsonjq-response-body 'del(.atmosphere_voting_config)'
 
-# > 知乎_搜索发现@ddgksf2013
-https://api.zhihu.com/search/hot_search url script-response-body https://ddgksf2013.top/scripts/zhihu.ads.js
 
-[mitm] 
 
 hostname = 118.89.204.198, 103.41.167.237, 2402:4e00:1200:ed00:0:9089:6dac:96b6, www.zhihu.com, api.zhihu.com,page-info.zhihu.com, zhuanlan.zhihu.com, appcloud2.zhihu.com, m-cloud.zhihu.com, 103.41.167.236, 103.41.167.234, 103.41.167.235, 103.41.167.226
 
