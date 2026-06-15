@@ -1,4 +1,4 @@
-#!name = 高德地图
+#!name = 高德地图v15.09
 #!desc = 去广告
 #!update = 2025-10-26 5:30
 
@@ -56,7 +56,7 @@
 ^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/middleLayer url jsonjq-response-body 'del(..|.product_info?,.product_vo?,.comprehensive?) | walk(if type=="object" and (has("task_tag") or has("result_type") or has("item_type")) then select((.task_tag//"")!="meta_special" and (.result_type//"")!="common_rec" and (.task_tag//"")!="general_topic_tpp" and (.item_type//0)!=3) else . end)'
 
 # 定位位置多余元素
-^https:\/\/m5\.amap\.com\/ws\/shield\/search\/poi\/detail url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/amap.js
+#^https:\/\/m5\.amap\.com\/ws\/shield\/search\/poi\/detail url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/amap.js
 
 # 搜索结果页面推广
 ^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/search\/sp url jsonjq-response-body 'def walk(f): . as $in | if type=="object" then reduce keys[] as $k ({}; . + { ($k): ($in[$k] | walk(f)) }) | f elif type=="array" then map(walk(f)) | f else f end; walk(if type=="object" then del(.product_info?) else . end) | del(.data?.list_data?.content[]?.map?, .data?.meta?.listBottomFilterGuide?, .data?.modules?.commonHkfMiniPortal?)'
