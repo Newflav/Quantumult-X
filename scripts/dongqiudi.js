@@ -26,11 +26,9 @@ obj.data.comment_list.filter(
     );
   }
   if (obj?.data?.recommend_list?.length > 0) {
-  obj.data.recommend_list = obj.data.recommend_list.filter(
-    (i) =>
-      i?.user_id !== "12320463" &&
-      i?.id !== "0"
-  );
+   obj.data.recommend_list = obj.data.recommend_list.filter(
+      (i) => !["ad_dplus"]?.includes(i?.comment_type)
+    );
   }
 } else if (url.includes("/match/pre_analysis")) {
   // 直播页广告
