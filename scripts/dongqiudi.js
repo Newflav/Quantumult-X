@@ -27,7 +27,7 @@ obj.data.comment_list.filter(
   }
   if (obj?.data?.recommend_list?.length > 0) {
    obj.data.recommend_list = obj.data.recommend_list.filter(
-      (i) => !["ad_dplus"]?.includes(i?.comment_type)
+      (i) => !["12320463"]?.includes(i?.user_id)
     );
   }
 } else if (url.includes("/match/pre_analysis")) {
