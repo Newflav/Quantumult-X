@@ -30,9 +30,10 @@ obj.data.comment_list.filter(
       (i) => !["12320463"]?.includes(i?.user_id)
     );
   }
-  if (obj?.data?.body) {
-  obj.data.body = obj.data.body
-    .replace(/https:\/\/bdimg6\.qunliao\.info\/fastdfs7\/M00\/B3\/2A\/rBUBsmbwW56AIsp-AACsJBHa6v0979\.jpg/g, "");
+  if (obj?.data?.recommend_list?.length > 0) {
+   obj.data.recommend_list = obj.data.recommend_list.filter(
+      (i) => !["ad_dplus"]?.includes(i?.comment_type)
+    );
   }
 } else if (url.includes("/match/pre_analysis")) {
   // 直播页广告
