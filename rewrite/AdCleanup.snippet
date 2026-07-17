@@ -56,7 +56,7 @@
 ^https:\/\/api\.dongqiudi\.com\/share\/list\/article url reject
 ^https:\/\/api\.dongqiudi\.com\/v2\/article\/relative url reject
 ^https:\/\/zc\.dongqiudi\.com\/(api|expert)\/(gettabs|getMatchExpertInfo)\?(match_id|chatroom_id) url reject
-^https:\/\/api\.dongqiudi\.com\/groups\/topic\/all url jsonjq-response-body '.data.data |= map(select(.user_id as $id | ["658126397", "661187355", "652108013"] | all(. != $id)))'
+^https:\/\/api\.dongqiudi\.com\/groups\/topic\/all url jsonjq-response-body '.data.data |= map(select(.user_id as $id | ["658126397", "664329094", "661187355", "652108013"] | all(. != $id)))'
 ^https:\/\/(api|detail)\.dongqiudi\.com\/v2\/article url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/dongqiudi.js
 ^https:\/\/api\.dongqiudi\.com\/data\/(detail\/match|match\/pre_analysis) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/dongqiudi.js
 
@@ -113,20 +113,16 @@
 
 # >>>>>>>>>>>>>>> ✅ P ✅ <<<<<<<<<<<<<<
 # > 拼多多
-; hostname = api.yangkeduo.com, api.pinduoduo.com, m.pinduoduo.net, *.pddpic.com
+; hostname = api.pinduoduo.com, api.yangkeduo.com, m.pinduoduo.net, video-snapshot.pddpic
 ^https:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash url reject
 # 视频页小窗
 ^https:\/\/m\.pinduoduo\.net\/vlayer_tab_popup\.html url reject
-# 聊天界面 多多买菜横幅
-^https:\/\/commimg(.*)\.pddpic\.com\/flow-banner-entrance url reject
 # 营销小窗
-^http:\/\/video(.*)\.(pddpic|pddugc)\.com\/(tower-video|tower-video-b|tower-video-side|tower-video-side-b)\/.*\.(float|highlights) url reject
-^http:\/\/video(.*)\.(pddugc|pddpic)\.com\/tower-video-b\/pdd-live url reject
-^http:\/\/.*/live-adapt\.pddpic\.com\/live url reject
-^http:\/\/live(.*)-adapt\.(pddpic|pddugc)\.com\/live url reject
-^http:\/\/liveplay04-edge\.pddpic\.com\/live url reject
-^https?:\/\/video-snapshot(.*)\.pddpic\.com\/kiwi-live-image url reject
-^https:\/\/video-snapshot\.pddpic\.com\/lupus-cover url reject
+^http:\/\/video[^.]+\.(pddpic|pddugc)\.com\/(tower-video|tower-video-b|tower-video-side|tower-video-side-b)\/.*\.(float|highlights) url reject
+#^http:\/\/video[^.]+\.(pddugc|pddpic)\.com\/tower-video-b\/pdd-live url reject
+^http:\/\/live\d+-adapt\.(pddpic|pddugc)\.com\/live url reject
+^http:\/\/liveplay\d+-edge\.pddpic\.com\/live url reject
+^https?:\/\/video-snapshot\.pddpic\.com\/(lupus-cover|kiwi-live-image) url reject
 
 
 # >>>>>>>>>>>>>>> ✅ Q ✅ <<<<<<<<<<<<<<
@@ -187,4 +183,4 @@
 
 
 
-hostname = gab.122.gov.cn, list-app-m.i4.cn, search-app-m.i4.cn, pan.baidu.com, tiebac.baidu.com, apps.api.ke.com, i-shadow2.ke.com, ap.dongqiudi.com, detail.dongqiudi.com, zc.dongqiudi.com, api.dongqiudi.com, entry.ubixioe.com, gha.ghac.cn, www.google.cn, maps.google.cn, translate.google.cn, ditu.google.cn, api.m.jd.com, dns.jd.com, lop-proxy.jd.com, api-access.pangolin-sdk-toutiao.com, mi.gdt.qq.com, open.e.kuaishou.com, api.yangkeduo.com, api.pinduoduo.com, m.pinduoduo.net, *.pddpic.com, ucmp.sf-express.com, weixin110.qq.com, security.wechat.com, ccmsupport-sz.tenpay.com, c.m.163.com, gw.m.163.com, rr*.googlevideo.com, youtubei.googleapis.com, a.qiumibao.com
+hostname = gab.122.gov.cn, list-app-m.i4.cn, search-app-m.i4.cn, pan.baidu.com, tiebac.baidu.com, apps.api.ke.com, i-shadow2.ke.com, ap.dongqiudi.com, detail.dongqiudi.com, zc.dongqiudi.com, api.dongqiudi.com, entry.ubixioe.com, gha.ghac.cn, www.google.cn, maps.google.cn, translate.google.cn, ditu.google.cn, api.m.jd.com, dns.jd.com, lop-proxy.jd.com, api-access.pangolin-sdk-toutiao.com, mi.gdt.qq.com, open.e.kuaishou.com, api.pinduoduo.com, api.yangkeduo.com, m.pinduoduo.net, video-snapshot.pddpic, ucmp.sf-express.com, weixin110.qq.com, security.wechat.com, ccmsupport-sz.tenpay.com, c.m.163.com, gw.m.163.com, rr*.googlevideo.com, youtubei.googleapis.com, a.qiumibao.com
