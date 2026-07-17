@@ -1,5 +1,5 @@
 # >>>>>>>>>>>>>> ✅ 0-9 ✅ <<<<<<<<<<<<<
-# > 交管12123
+# > 12123
 ; hostname = gab.122.gov.cn
 ^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery url reject
 
@@ -26,7 +26,7 @@
 ; hostname = tiebac.baidu.com
 ^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/(c\/(s\/sync|f\/(ad\/getSplashAd|frs\/(page|threadlist|generalTabList)|pb\/(pic)?page|excellent\/personalized))$|tiebaads\/commonbatch\?) url script-response-body https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js
 ^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/(b\/ad\/adBid|f\/(frs\/(page|threadlist|generalTabList)|ad\/getFeedAd|pb\/page|excellent\/personalized))\?cmd url script-response-body https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js
-# > 我的页面@ddgksf2013
+# > 我的页面
 ^https?:\/\/tieba(c)?\.baidu\.com\/c\/u\/user\/profile url jsonjq-response-body 'del(.duxiaoman, .namoaixud, .namoaixud_entry, .recom_naws_list, .duxiaoman_entry, .vip_banner) | .zone_info |= map(select(.type == "common_func" or .type == "auxiliary_func"))'
 
 # > 贝壳
@@ -50,7 +50,7 @@
 
 # >>>>>>>>>>>>>>> ✅ D ✅ <<<<<<<<<<<<<<
 # > 懂球帝
-; hostname = ap.dongqiudi.com, detail.dongqiudi.com, zc.dongqiudi.com, api.dongqiudi.com, entry.ubixioe.com
+; hostname = ap.dongqiudi.com, entry.ubixioe.com, api.dongqiudi.com, zc.dongqiudi.com, detail.dongqiudi.com
 ^https:\/\/ap\.dongqiudi\.com\/plat\/v url reject
 ^https:\/\/entry\.ubixioe\.com\/mob\/sdk\/v2\/endpoint url reject
 ^https:\/\/api\.dongqiudi\.com\/share\/list\/article url reject
@@ -70,7 +70,7 @@
 ^https:\/\/gha\.ghac\.cn:8081\/base\/app\/api\/(ad|sys-private-message) url jsonjq-response-body '.data = {}'
 
 # > 谷歌 重定向
-; hostname = www.google.cn, maps.google.cn, translate.google.cn, ditu.google.cn
+; hostname = www.google.cn, maps.google.cn, ditu.google.cn, translate.google.cn
 # 搜索页
 ^https?:\/\/www\.google\.cn url 302 https://www.google.com
 # Maps 地图
@@ -151,7 +151,7 @@
 ^https:\/\/ccmsupport-sz\.tenpay\.com\/cgi-bin\/common\/ccm_page_element.cgi url reject
 
 # > 网易新闻
-; hostname = c.m.163.com, gw.m.163.com
+; hostname = gw.m.163.com, c.m.163.com
 ^https:\/\/gw\.m\.163\.com\/nc\/api\/v2\/article url jsonjq-response-body 'del(.. | .promoLinks?, .aiQuestions?, .sourceinfo?)'
 ^https:\/\/gw\.m\.163\.com\/gentie-web\/api\/v3\/products url jsonjq-response-body 'del(.. | .aiInfo?, .parkingInfo?, .parkingCardInfo?)'
 ^https:\/\/gw\.m\.163\.com\/newsapp-activity\/cargame\/api\/v1\/external\/parkingPlace url reject-dict
@@ -183,4 +183,4 @@
 
 
 
-hostname = gab.122.gov.cn, list-app-m.i4.cn, search-app-m.i4.cn, pan.baidu.com, tiebac.baidu.com, apps.api.ke.com, i-shadow2.ke.com, ap.dongqiudi.com, detail.dongqiudi.com, zc.dongqiudi.com, api.dongqiudi.com, entry.ubixioe.com, gha.ghac.cn, www.google.cn, maps.google.cn, translate.google.cn, ditu.google.cn, api.m.jd.com, dns.jd.com, lop-proxy.jd.com, api-access.pangolin-sdk-toutiao.com, mi.gdt.qq.com, open.e.kuaishou.com, api.pinduoduo.com, api.yangkeduo.com, m.pinduoduo.net, video-snapshot.pddpic, ucmp.sf-express.com, weixin110.qq.com, security.wechat.com, ccmsupport-sz.tenpay.com, c.m.163.com, gw.m.163.com, rr*.googlevideo.com, youtubei.googleapis.com, a.qiumibao.com
+hostname = gab.122.gov.cn, list-app-m.i4.cn, search-app-m.i4.cn, pan.baidu.com, tiebac.baidu.com, apps.api.ke.com, i-shadow2.ke.com, ap.dongqiudi.com, entry.ubixioe.com, api.dongqiudi.com, zc.dongqiudi.com, detail.dongqiudi.com, gha.ghac.cn, www.google.cn, maps.google.cn, ditu.google.cn, translate.google.cn, api.m.jd.com, dns.jd.com, lop-proxy.jd.com, api-access.pangolin-sdk-toutiao.com, mi.gdt.qq.com, open.e.kuaishou.com, api.pinduoduo.com, api.yangkeduo.com, m.pinduoduo.net, video-snapshot.pddpic, ucmp.sf-express.com, weixin110.qq.com, security.wechat.com, ccmsupport-sz.tenpay.com, gw.m.163.com, c.m.163.com, rr*.googlevideo.com, youtubei.googleapis.com, a.qiumibao.com
