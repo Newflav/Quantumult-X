@@ -1,12 +1,15 @@
-#!name = 高德地图
+#!name = 高德地图v15.09
 #!desc = 去广告
 #!update = 2025-10-26 5:30
+
+^https:\/\/render-prod-tile\.amap\.com\/ws\/render\/bmd\/tile url reject-dict
+
 
 # 其他
 ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch url script-response-header https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/amap_else.js
 
 # 只保留软件常用控制开关元素
-^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable url jsonjq-response-body '{data: .data | {external_traffic_light, carowner_feature, RouteLive, DriveLiveView, RtBus_Stop_Board, engine_pos, engine_eyrie, designToken, navi_cloud, search, gongjiao_kuacheng, amap_config, flightNewPageSwitch}}'
+^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable url jsonjq-response-body '{data: .data | {amap_config, flightNewPageSwitch, gongjiao_kuacheng, external_traffic_light, RouteLive, search, engine_pos, engine_eyrie, designToken}}'
 
 # 登录提醒
 ^https:\/\/m5\.amap\.com\/ws\/aggregate\/user\/login-guide url reject-dict
