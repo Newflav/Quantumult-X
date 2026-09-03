@@ -67,7 +67,7 @@
 # >>>>>>>>>>>>>>> ✅ G ✅ <<<<<<<<<<<<<<
 # > 广汽本田
 ; hostname = gha.ghac.cn
-^https:\/\/gha\.ghac\.cn:8081\/base\/app\/api\/(ad|sys-private-message) url jsonjq-response-body '.data = {}'
+^https:\/\/gha\.ghac\.cn:8081\/base\/app\/api\/ad url jsonjq-response-body '.data = {}'
 
 # > 谷歌 重定向
 ; hostname = www.google.cn, maps.google.cn, ditu.google.cn, translate.google.cn
@@ -142,8 +142,12 @@
 
 # >>>>>>>>>>>>>>> ✅ W ✅ <<<<<<<<<<<<<<
 # > 微信
-; hostname = weixin110.qq.com, security.wechat.com
-^https\:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\? url script-response-body https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/weixin110.js
+; hostname = weixin110.qq.com, security.wechat.com, mp.weixin.qq.com
+# 封禁链接恢复
+^https\:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\? url script-response-body https://raw.githubusercontent.com/zZPiglet/Task/master/asset/UnblockURLinWeChat.js
+# 微信公众号去广告
+^https:\/\/mp\.weixin\.qq\.com\/mp\/(cps_product_info|getappmsgad|jsmonitor|masonryfeed|relatedarticle)\? url reject-dict
+^https:\/\/mp\.weixin\.qq\.com\/mp\/relatedsearchword url reject-dict
 
 # > 微信乘车码小程序
 ; hostname = ccmsupport-sz.tenpay.com
@@ -182,4 +186,4 @@
 
 
 
-hostname = gab.122.gov.cn, list-app-m.i4.cn, search-app-m.i4.cn, pan.baidu.com, tiebac.baidu.com, apps.api.ke.com, i-shadow2.ke.com, ap.dongqiudi.com, entry.ubixioe.com, api.dongqiudi.com, zc.dongqiudi.com, detail.dongqiudi.com, gha.ghac.cn, www.google.cn, maps.google.cn, ditu.google.cn, translate.google.cn, api.m.jd.com, dns.jd.com, lop-proxy.jd.com, api-access.pangolin-sdk-toutiao.com, mi.gdt.qq.com, open.e.kuaishou.com, api.pinduoduo.com, api.yangkeduo.com, m.pinduoduo.net, video-snapshot.pddpic, ucmp.sf-express.com, weixin110.qq.com, security.wechat.com, ccmsupport-sz.tenpay.com, gw.m.163.com, c.m.163.com, rr*.googlevideo.com, youtubei.googleapis.com, a.qiumibao.com
+hostname = gab.122.gov.cn, list-app-m.i4.cn, search-app-m.i4.cn, pan.baidu.com, tiebac.baidu.com, apps.api.ke.com, i-shadow2.ke.com, ap.dongqiudi.com, entry.ubixioe.com, api.dongqiudi.com, zc.dongqiudi.com, detail.dongqiudi.com, gha.ghac.cn, www.google.cn, maps.google.cn, ditu.google.cn, translate.google.cn, api.m.jd.com, dns.jd.com, lop-proxy.jd.com, api-access.pangolin-sdk-toutiao.com, mi.gdt.qq.com, open.e.kuaishou.com, api.pinduoduo.com, api.yangkeduo.com, m.pinduoduo.net, video-snapshot.pddpic, ucmp.sf-express.com, weixin110.qq.com, security.wechat.com, mp.weixin.qq.com, ccmsupport-sz.tenpay.com, gw.m.163.com, c.m.163.com, rr*.googlevideo.com, youtubei.googleapis.com, a.qiumibao.com
