@@ -48,6 +48,13 @@ obj.data.modules.filter(
   if (obj.data?.list) {
      delete obj.data.list;
   }
+} else if (url.includes("platform/shellapp/userCenter/info")) {
+  if (obj.data?.islandModule) {
+     delete obj.data.islandModule;
+  }
+  if (obj.data?.myHomeChannel) {
+     delete obj.data.myHomeChannel;
+  }
 }
 
 $done({ body: JSON.stringify(obj) });
