@@ -23,7 +23,12 @@ if (url.includes("/xinfang/shellapp/index/index")) {
     );
   }
 } else if (url.includes("/platform/shellapp/homepage/index")) {
-  
+  if (obj?.data?.modules?.length > 0) {
+    obj.data.modules = 
+obj.data.modules.filter(
+      (i) => !["waist"]?.includes(i?.type)
+    );
+  }
 } else if (url.includes("/platform/shellapp/homepage/feed")) {
   // 过滤掉首页不需要展示的卡片
   if (obj?.data?.list?.length > 0) {
