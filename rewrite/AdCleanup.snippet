@@ -29,33 +29,11 @@
 # > 我的页面
 ^https?:\/\/tieba(c)?\.baidu\.com\/c\/u\/user\/profile url jsonjq-response-body 'del(.duxiaoman, .namoaixud, .namoaixud_entry, .recom_naws_list, .duxiaoman_entry, .vip_banner) | .zone_info |= map(select(.type == "common_func" or .type == "auxiliary_func"))'
 
-# > 贝壳
-; hostname = apps.api.ke.com, i-shadow2.ke.com
-# 开屏广告
-^https:\/\/apps\.api\.ke\.com\/config\/config\/(bootpage|getactivityconfig) url reject
-# 元素净化
-^https:\/\/apps\.api\.ke\.com\/user\/key\/getcaid url reject
-^https:\/\/apps\.api\.ke\.com\/Rentplat\/v3\/house\/list url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/beike.js
-^https:\/\/apps\.api\.ke\.com\/platform\/shellapp\/(homepage\/index|homepage\/feed|userCenter\/feed|userCenter\/info) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/beike.js
-^https:\/\/apps\.api\.ke\.com\/xinfang\/shellapp\/(feed\/index|index\/index) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/beike.js
-# 升级提醒
-^https:\/\/i-shadow2\.ke\.com\/app\/checkUpdate url reject
-
 
 # >>>>>>>>>>>>>>> ✅ C ✅ <<<<<<<<<<<<<<
 
 
 # >>>>>>>>>>>>>>> ✅ D ✅ <<<<<<<<<<<<<<
-# > 懂球帝
-; hostname = ap.dongqiudi.com, entry.ubixioe.com, api.dongqiudi.com, zc.dongqiudi.com, detail.dongqiudi.com
-^https:\/\/ap\.dongqiudi\.com\/plat\/v url reject
-^https:\/\/entry\.ubixioe\.com\/mob\/sdk\/v2\/endpoint url reject
-^https:\/\/api\.dongqiudi\.com\/share\/list\/article url reject
-^https:\/\/api\.dongqiudi\.com\/v2\/article\/relative url reject
-^https:\/\/zc\.dongqiudi\.com\/(api|expert)\/(gettabs|getMatchExpertInfo)\?(match_id|chatroom_id) url reject
-^https:\/\/api\.dongqiudi\.com\/groups\/topic\/all url jsonjq-response-body '.data.data |= map(select(.user_id as $id | ["658126397", "664329094", "661187355", "652108013"] | all(. != $id)))'
-^https:\/\/(api|detail)\.dongqiudi\.com\/v2\/article url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/dongqiudi.js
-^https:\/\/api\.dongqiudi\.com\/data\/(detail\/match|match\/pre_analysis) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/dongqiudi.js
 
 
 # >>>>>>>>>>>>>>> ✅ F ✅ <<<<<<<<<<<<<<
@@ -183,4 +161,4 @@
 
 
 
-hostname = gab.122.gov.cn, list-app-m.i4.cn, search-app-m.i4.cn, pan.baidu.com, tiebac.baidu.com, apps.api.ke.com, i-shadow2.ke.com, ap.dongqiudi.com, entry.ubixioe.com, api.dongqiudi.com, zc.dongqiudi.com, detail.dongqiudi.com, gha.ghac.cn, www.google.cn, maps.google.cn, ditu.google.cn, translate.google.cn, api.m.jd.com, dns.jd.com, lop-proxy.jd.com, api-access.pangolin-sdk-toutiao.com, mi.gdt.qq.com, open.e.kuaishou.com, api.pinduoduo.com, api.yangkeduo.com, m.pinduoduo.net, video-snapshot.pddpic, ucmp.sf-express.com, weixin110.qq.com, security.wechat.com, mp.weixin.qq.com, ccmsupport-sz.tenpay.com, gw.m.163.com, c.m.163.com, rr*.googlevideo.com, youtubei.googleapis.com, a.qiumibao.com
+hostname = gab.122.gov.cn, list-app-m.i4.cn, search-app-m.i4.cn, pan.baidu.com, tiebac.baidu.com, gha.ghac.cn, www.google.cn, maps.google.cn, ditu.google.cn, translate.google.cn, api.m.jd.com, dns.jd.com, lop-proxy.jd.com, api-access.pangolin-sdk-toutiao.com, mi.gdt.qq.com, open.e.kuaishou.com, api.pinduoduo.com, api.yangkeduo.com, m.pinduoduo.net, video-snapshot.pddpic, ucmp.sf-express.com, weixin110.qq.com, security.wechat.com, mp.weixin.qq.com, ccmsupport-sz.tenpay.com, gw.m.163.com, c.m.163.com, rr*.googlevideo.com, youtubei.googleapis.com, a.qiumibao.com
