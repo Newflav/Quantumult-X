@@ -16,6 +16,8 @@
 ^https:\/\/qiye\.gaoding\.com\/api\/v3\/oc\/(gaoding\/app\/upgrade|app\/releases) url reject-dict
 # 开屏广告
 ^https:\/\/qiye\.gaoding\.com\/api\/v3\/oc\/v2\/delivery-pits\/ios-splash\/modules url reject-dict
+# 个人中心弹窗
+^https:\/\/qiye\.gaoding\.com\/api\/v3\/oc\/delivery-pits\/mine-page-dialog\/modules url reject-dict
 # 解锁会员
 ^https:\/\/qiye\.gaoding\.com\/api\/(structure\/company\/current|ccm\/editors\/risk_materials) url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/gaoding.js
 
