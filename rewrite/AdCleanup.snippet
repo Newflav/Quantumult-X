@@ -11,17 +11,6 @@
 
 
 # >>>>>>>>>>>>>>> ✅ B ✅ <<<<<<<<<<<<<<
-# > 百度网盘
-; hostname = pan.baidu.com
-# 开屏广告
-^https?:\/\/pan\.baidu\.com\/api\/getsyscfg url script-response-body https://raw.githubusercontent.com/Newflav/Quantumult-X/main/scripts/baiduwangpan.js
-# 设置信息流
-^https?:\/\/pan\.baidu\.com\/act\/v\d\/(bchannel|welfare)\/list url reject-200
-# 通用广告
-^https?:\/\/pan\.baidu\.com\/rest\/.*\/pcs\/ad url reject-200
-# 活动推广
-^https?:\/\/pan\.baidu\.com\/act\/api\/activityentry url reject-200
-
 # > 百度贴吧
 ; hostname = tiebac.baidu.com
 ^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/(c\/(s\/sync|f\/(ad\/getSplashAd|frs\/(page|threadlist|generalTabList)|pb\/(pic)?page|excellent\/personalized))$|tiebaads\/commonbatch\?) url script-response-body https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js
@@ -161,4 +150,4 @@
 
 
 
-hostname = gab.122.gov.cn, list-app-m.i4.cn, search-app-m.i4.cn, pan.baidu.com, tiebac.baidu.com, gha.ghac.cn, www.google.cn, maps.google.cn, ditu.google.cn, translate.google.cn, api.m.jd.com, dns.jd.com, lop-proxy.jd.com, api-access.pangolin-sdk-toutiao.com, mi.gdt.qq.com, open.e.kuaishou.com, api.pinduoduo.com, api.yangkeduo.com, m.pinduoduo.net, video-snapshot.pddpic.com, ucmp.sf-express.com, weixin110.qq.com, security.wechat.com, mp.weixin.qq.com, ccmsupport-sz.tenpay.com, gw.m.163.com, c.m.163.com, rr*.googlevideo.com, youtubei.googleapis.com, a.qiumibao.com
+hostname = gab.122.gov.cn, list-app-m.i4.cn, search-app-m.i4.cn, tiebac.baidu.com, gha.ghac.cn, www.google.cn, maps.google.cn, ditu.google.cn, translate.google.cn, api.m.jd.com, dns.jd.com, lop-proxy.jd.com, api-access.pangolin-sdk-toutiao.com, mi.gdt.qq.com, open.e.kuaishou.com, api.pinduoduo.com, api.yangkeduo.com, m.pinduoduo.net, video-snapshot.pddpic.com, ucmp.sf-express.com, weixin110.qq.com, security.wechat.com, mp.weixin.qq.com, ccmsupport-sz.tenpay.com, gw.m.163.com, c.m.163.com, rr*.googlevideo.com, youtubei.googleapis.com, a.qiumibao.com
