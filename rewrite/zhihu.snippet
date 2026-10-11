@@ -2,7 +2,6 @@
 #!desc = 净化广告
 #!update = 2026-6-8 11:30
 
-
 # > 知乎_拦截DNS解析@blackmatrix7
 ^https?:\/\/118\.89\.204\.198 url reject-200
 ^https?:\/\/103\.41\.167\.237 url reject-200
@@ -129,6 +128,12 @@ https://api.zhihu.com/search/hot_search url script-response-body https://ddgksf2
 
 # 评论区氛围调查
 ^https:\/\/api\.zhihu\.com\/comment_v5\/(pins|articles|answers) url jsonjq-response-body 'del(.atmosphere_voting_config)'
+
+# tag➕号悬浮窗
+^https:\/\/api\.zhihu\.com\/content-distribution-core\/bubble\/common\/show url reject-dict
+# 盐选弹窗
+^https:\/\/api\.zhihu\.com\/guide_center\/strategy url reject-dict
+^https:\/\/api\.zhihu\.com\/bazaar\/vip_tab\/header url reject-dict
 
 
 
