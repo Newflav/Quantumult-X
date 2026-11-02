@@ -22,7 +22,7 @@ host, shark-default.meituan.com, reject
 host, shark-dp.meituan.com, reject
 host, shark-ps.meituan.com, reject
 host, shark-wm.sankuai.com, reject
-#host, shark.dianping.com, reject
+host, shark.dianping.com, reject
 host-wildcard, mquic-*.meituan.com, reject
 host, httpdnsmultiapi.meituan.com, reject
 host, httpdnsmultiapivip.meituan.com, reject
